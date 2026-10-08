@@ -1,0 +1,42 @@
+# Monorepo-wide — sem âncora de barra inicial, pra valer em qualquer
+# subpasta (raiz, packages/flutter_widgets_hub, apps/showcase).
+
+# Diversos
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IDE
+*.iml
+*.ipr
+*.iws
+.idea/
+#.vscode/
+
+# Flutter/Dart/Pub
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+coverage/
+
+# Símbolos / obfuscation
+app.*.symbols
+app.*.map.json
+
+# Android Studio
+android/app/debug
+android/app/profile
+android/app/release

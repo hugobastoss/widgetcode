@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  analyze-test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install workspace dependencies
+        run: flutter pub get
+
+      - name: Analyze (packages + showcase)
+        run: flutter analyze
+
+      - name: Test flutter_widgets_hub
+        run: flutter test
+        working-directory: packages/flutter_widgets_hub
+
+      - name: Regenerate code snippets
+        run: dart run tool/generate_snippets.dart
+        working-directory: apps/showcase
+
+      - name: Fail if generated snippets drifted from source
+        run: git diff --exit-code -- apps/showcase/lib/catalog/generated_snippets.g.dart
+
+      - name: Test showcase app
+        run: flutter test
+        working-directory: apps/showcase
+
+      - name: Build showcase app (web)
+        run: flutter build web
+        working-directory: apps/showcase

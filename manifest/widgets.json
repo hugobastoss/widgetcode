@@ -1,0 +1,112 @@
+{
+  "widgets": [
+    {
+      "id": "primary-button",
+      "name": "Primary Button",
+      "category": "buttons",
+      "filePath": "packages/flutter_widgets_hub/lib/src/buttons/primary_button.dart",
+      "exportedSymbols": ["HubPrimaryButton"],
+      "description": "Botão primário de largura cheia com estado de carregamento incorporado (troca o rótulo por um indicador de progresso).",
+      "selfContained": true,
+      "requiredPackages": [],
+      "showcaseRoute": "/buttons/primary-button",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "id": "confirmation-dialog",
+      "name": "Confirmation Dialog",
+      "category": "dialogs",
+      "filePath": "packages/flutter_widgets_hub/lib/src/dialogs/confirmation_dialog.dart",
+      "exportedSymbols": ["HubConfirmationDialog"],
+      "description": "Diálogo de confirmação com ícone centralizado, botão primário de largura cheia (vermelho quando destrutivo) e Cancelar abaixo.",
+      "selfContained": true,
+      "requiredPackages": [],
+      "showcaseRoute": "/dialogs/confirmation-dialog",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "id": "primary-fab",
+      "name": "Primary FAB + Extended FAB",
+      "category": "navigation",
+      "filePath": "packages/flutter_widgets_hub/lib/src/navigation/primary_fab.dart",
+      "exportedSymbols": ["HubPrimaryFab", "HubExtendedFab"],
+      "description": "FAB circular principal de uma aba (HubPrimaryFab) e a variante deliberada com rótulo de texto pra ações secundárias/contextuais (HubExtendedFab).",
+      "selfContained": true,
+      "requiredPackages": [],
+      "showcaseRoute": "/navigation/primary-fab",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "id": "settings-section-label",
+      "name": "Settings Section Label",
+      "category": "settings",
+      "filePath": "packages/flutter_widgets_hub/lib/src/settings/settings_section_label.dart",
+      "exportedSymbols": ["HubSettingsSectionLabel", "HubSectionLabelVariant"],
+      "description": "Rótulo de seção em caixa alta pra telas de Configurações, com duas variantes de estilo (bold/muted).",
+      "selfContained": true,
+      "requiredPackages": [],
+      "showcaseRoute": "/settings/settings-section-label",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "id": "settings-grouped-card",
+      "name": "Settings Grouped Card",
+      "category": "settings",
+      "filePath": "packages/flutter_widgets_hub/lib/src/settings/settings_grouped_card.dart",
+      "exportedSymbols": ["HubSettingsGroupedCard", "HubGroupedCardVariant"],
+      "description": "Agrupa ListTiles numa tela de Configurações, com divisor entre eles e duas variantes de fundo (Card real ou Container com borda).",
+      "selfContained": true,
+      "requiredPackages": [],
+      "showcaseRoute": "/settings/settings-grouped-card",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "id": "data-list-row",
+      "name": "Data List Row",
+      "category": "lists",
+      "filePath": "packages/flutter_widgets_hub/lib/src/lists/data_list_row.dart",
+      "exportedSymbols": ["HubDataListRow"],
+      "description": "Linha de lista de dados, deliberadamente sem elevação (não é um Card) — superfície plana com borda fina, mais densa/tabular.",
+      "selfContained": true,
+      "requiredPackages": [],
+      "showcaseRoute": "/lists/data-list-row",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "id": "appearance-selector",
+      "name": "Appearance Selector",
+      "category": "selectors",
+      "filePath": "packages/flutter_widgets_hub/lib/src/selectors/appearance_selector.dart",
+      "exportedSymbols": ["HubAppearanceSelector"],
+      "description": "Seletor claro/escuro/automático — 3 cards com amostra de cor e rótulo.",
+      "selfContained": true,
+      "requiredPackages": [],
+      "showcaseRoute": "/selectors/appearance-selector",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "id": "language-selector",
+      "name": "Language Selector",
+      "category": "selectors",
+      "filePath": "packages/flutter_widgets_hub/lib/src/selectors/language_selector.dart",
+      "exportedSymbols": ["HubLanguageSelector", "HubLanguageOption"],
+      "description": "Lista de rádio agrupada pra escolher idioma, um idioma por linha.",
+      "selfContained": true,
+      "requiredPackages": [],
+      "showcaseRoute": "/selectors/language-selector",
+      "lastVerified": "2026-10-08"
+    },
+    {
+      "id": "feature-page",
+      "name": "Feature Page",
+      "category": "misc",
+      "filePath": "packages/flutter_widgets_hub/lib/src/misc/feature_page.dart",
+      "exportedSymbols": ["HubFeaturePage"],
+      "description": "Página centralizada com ícone, título, corpo e botão de ação — generalização da página de onboarding, útil também pra estado vazio ou tela de erro.",
+      "selfContained": true,
+      "requiredPackages": [],
+      "showcaseRoute": "/misc/feature-page",
+      "lastVerified": "2026-10-08"
+    }
+  ]
+}
