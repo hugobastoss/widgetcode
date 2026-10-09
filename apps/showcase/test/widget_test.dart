@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_widgets_hub_showcase/learn/favorites.dart';
 import 'package:flutter_widgets_hub_showcase/learn/locale_controller.dart';
 import 'package:flutter_widgets_hub_showcase/learn/models.dart';
 import 'package:flutter_widgets_hub_showcase/learn/screens/widget_screen.dart';
@@ -9,12 +10,17 @@ import 'package:flutter_widgets_hub_showcase/learn/theme_mode_controller.dart';
 import 'package:flutter_widgets_hub_showcase/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// O app em português — os testes procuram os textos em pt —, salvo quando
-/// o teste escolhe outro idioma ou tema.
-ShowcaseApp _app({ThemeModeController? tema, LocaleController? idioma}) {
+/// O app em português — os testes procuram os textos em pt — e sem
+/// favoritos, salvo quando o teste escolhe outro idioma, tema ou favoritos.
+ShowcaseApp _app({
+  ThemeModeController? tema,
+  LocaleController? idioma,
+  FavoritesController? favoritos,
+}) {
   return ShowcaseApp(
     themeController: tema ?? ThemeModeController.inMemory(),
     localeController: idioma ?? LocaleController.inMemory(const Locale('pt')),
+    favoritesController: favoritos ?? FavoritesController.inMemory(),
   );
 }
 
@@ -267,6 +273,97 @@ void main() {
     await rolarAteOFim(rolagemDoPainel);
     await rolarAteOFim(rolagemDoPainel);
     acimaDaBarra(find.textContaining('class CupertinoNavBarTituloGrande'));
+  });
+
+  testWidgets('favoritar um exemplo e pedir todos os favoritos para a IA', (
+    tester,
+  ) async {
+    final favoritos = FavoritesController.inMemory();
+    await tester.pumpWidget(_app(favoritos: favoritos));
+
+    // Sem favoritos, a tela inicial não mostra o atalho.
+    expect(find.text('Favoritos'), findsNothing);
+
+    await tester.tap(find.text('Botões'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('ElevatedButton'));
+    await tester.pumpAndSettle();
+
+    // A estrela do primeiro exemplo (Básico).
+    await tester.tap(find.byTooltip('Favoritar').first);
+    await tester.pump();
+    expect(favoritos.contains('buttons/elevated_button_basico'), isTrue);
+    expect(find.byTooltip('Remover dos favoritos'), findsOneWidget);
+
+    // Volta para a tela inicial: o atalho aparece com a contagem.
+    await tester.tap(find.byTooltip('Voltar'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byTooltip('Voltar'));
+    await tester.pumpAndSettle();
+    expect(find.text('Favoritos'), findsOneWidget);
+    expect(find.text('1 exemplo'), findsOneWidget);
+
+    await tester.tap(find.text('Favoritos'));
+    await tester.pumpAndSettle();
+    expect(find.text('ElevatedButton · Básico'), findsOneWidget);
+    expect(find.text('Salvar'), findsOneWidget); // a demo roda aqui também
+
+    String? copiado;
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+      SystemChannels.platform,
+      (chamada) async {
+        if (chamada.method == 'Clipboard.setData') {
+          copiado = (chamada.arguments as Map)['text'] as String;
+        }
+        return null;
+      },
+    );
+    addTearDown(
+      () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+        SystemChannels.platform,
+        null,
+      ),
+    );
+    await tester.tap(find.text('Pedir todos para a IA'));
+    await tester.pump();
+    expect(
+      copiado,
+      'Traga estes exemplos do Flutter Widgets Hub '
+      '(github.com/hugobastoss/flutterwidgetshub) para o meu projeto: '
+      '"buttons/elevated_button_basico".',
+    );
+    await tester.pump(const Duration(seconds: 3));
+
+    // Desfavoritar o último deixa a lista vazia.
+    await tester.tap(find.byTooltip('Remover dos favoritos'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('Nenhum favorito ainda'), findsOneWidget);
+  });
+
+  test('os favoritos ficam salvos para a próxima abertura', () async {
+    SharedPreferences.setMockInitialValues({});
+
+    final primeiraVez = await FavoritesController.load();
+    expect(primeiraVez.examples, isEmpty);
+
+    await primeiraVez.toggle('lists/page_view_botoes');
+    await primeiraVez.toggle('buttons/fab_grande');
+
+    final proximaAbertura = await FavoritesController.load();
+    // Na ordem do app (Botões vem antes de Listas), não na ordem do toque.
+    expect(
+      [for (final (_, exemplo) in proximaAbertura.examples) exemplo.id],
+      ['buttons/fab_grande', 'lists/page_view_botoes'],
+    );
+
+    await proximaAbertura.toggle('buttons/fab_grande');
+    expect(
+      [
+        for (final (_, exemplo) in (await FavoritesController.load()).examples)
+          exemplo.id,
+      ],
+      ['lists/page_view_botoes'],
+    );
   });
 
   testWidgets('o cartão da tela inicial abre o "Como usar"', (tester) async {

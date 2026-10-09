@@ -283,7 +283,7 @@ abstract class AppLocalizations {
   /// No description provided for @helpStep2Body.
   ///
   /// In pt, this message translates to:
-  /// **'Abra o widget, toque em Código no exemplo que você quer e depois em Pedir para a IA. Isso copia um pedido pronto, com o ID do exemplo (como buttons/elevated_button_carregando).'**
+  /// **'Abra o widget, toque em Código no exemplo que você quer e depois em Pedir para a IA. Isso copia um pedido pronto, com o ID do exemplo (como buttons/elevated_button_carregando). Para levar vários, toque na estrela de cada um e use Pedir todos para a IA na tela Favoritos.'**
   String get helpStep2Body;
 
   /// No description provided for @helpStep3Title.
@@ -315,6 +315,42 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Abrir o repositório'**
   String get helpOpenRepo;
+
+  /// No description provided for @favoriteAdd.
+  ///
+  /// In pt, this message translates to:
+  /// **'Favoritar'**
+  String get favoriteAdd;
+
+  /// No description provided for @favoriteRemove.
+  ///
+  /// In pt, this message translates to:
+  /// **'Remover dos favoritos'**
+  String get favoriteRemove;
+
+  /// No description provided for @favoritesTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Favoritos'**
+  String get favoritesTitle;
+
+  /// No description provided for @favoritesEmpty.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nenhum favorito ainda. Toque na estrela de um exemplo para guardá-lo aqui.'**
+  String get favoritesEmpty;
+
+  /// No description provided for @askAiAllButton.
+  ///
+  /// In pt, this message translates to:
+  /// **'Pedir todos para a IA'**
+  String get askAiAllButton;
+
+  /// No description provided for @aiRequestMany.
+  ///
+  /// In pt, this message translates to:
+  /// **'Traga estes exemplos do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto: {ids}.'**
+  String aiRequestMany(String ids);
 }
 
 class _AppLocalizationsDelegate

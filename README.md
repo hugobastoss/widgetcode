@@ -22,6 +22,10 @@ qualquer um desses exemplos para o projeto dele. Licença MIT.
    > Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu
    > projeto.
 
+   Para levar vários de uma vez, toque na estrela dos exemplos que quiser.
+   Na tela **Favoritos**, o botão **"Pedir todos para a IA"** copia um só
+   pedido com todos os IDs.
+
 ## Dando à sua IA a referência do repositório
 
 **Com a skill (Claude Code).** Copie a pasta

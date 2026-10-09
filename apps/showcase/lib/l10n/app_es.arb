@@ -30,10 +30,16 @@
   "helpStep1Title": "Dale a tu IA la referencia del repositorio",
   "helpStep1Body": "Instala la skill flutter-widgets-hub en tu proyecto (copia la carpeta .claude/skills/flutter-widgets-hub del repositorio a tu proyecto) o simplemente menciona la dirección del repositorio en tu pedido, si tu IA puede navegar por internet.",
   "helpStep2Title": "Elige el ejemplo en la app",
-  "helpStep2Body": "Abre el widget, toca Código en el ejemplo que quieras y luego Pedir a la IA. Así se copia un pedido listo, con el ID del ejemplo (como buttons/elevated_button_carregando).",
+  "helpStep2Body": "Abre el widget, toca Código en el ejemplo que quieras y luego Pedir a la IA. Así se copia un pedido listo, con el ID del ejemplo (como buttons/elevated_button_carregando). Para llevar varios, toca la estrella de cada uno y usa Pedir todos a la IA en la pantalla Favoritos.",
   "helpStep3Title": "Pega el pedido en tu IA",
   "helpStep3Body": "La IA busca el archivo, lo agrega a tu proyecto y adapta nombres y textos. Si el ejemplo usa una imagen o internet, también configura el pubspec.yaml o el permiso de Android.",
   "helpManualTitle": "Sin IA",
   "helpManualBody": "Toca Copiar código, crea un archivo .dart en la carpeta lib de tu proyecto, pega el código, importa ese archivo en tu pantalla y usa el widget; por ejemplo, const ElevatedButtonBasico().",
-  "helpOpenRepo": "Abrir el repositorio"
+  "helpOpenRepo": "Abrir el repositorio",
+  "favoriteAdd": "Añadir a favoritos",
+  "favoriteRemove": "Quitar de favoritos",
+  "favoritesTitle": "Favoritos",
+  "favoritesEmpty": "Aún no hay favoritos. Toca la estrella de un ejemplo para guardarlo aquí.",
+  "askAiAllButton": "Pedir todos a la IA",
+  "aiRequestMany": "Trae estos ejemplos de Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) a mi proyecto: {ids}."
 }

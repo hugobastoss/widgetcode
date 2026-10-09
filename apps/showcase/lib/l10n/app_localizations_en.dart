@@ -127,7 +127,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get helpStep2Body =>
-      'Open the widget, tap Code on the example you want, then Ask your AI. This copies a ready-made request with the example ID (like buttons/elevated_button_carregando).';
+      'Open the widget, tap Code on the example you want, then Ask your AI. This copies a ready-made request with the example ID (like buttons/elevated_button_carregando). To take several, tap the star on each one and use Ask your AI for all on the Favorites screen.';
 
   @override
   String get helpStep3Title => 'Paste the request into your AI';
@@ -145,4 +145,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get helpOpenRepo => 'Open the repository';
+
+  @override
+  String get favoriteAdd => 'Add to favorites';
+
+  @override
+  String get favoriteRemove => 'Remove from favorites';
+
+  @override
+  String get favoritesTitle => 'Favorites';
+
+  @override
+  String get favoritesEmpty =>
+      'No favorites yet. Tap the star on an example to keep it here.';
+
+  @override
+  String get askAiAllButton => 'Ask your AI for all';
+
+  @override
+  String aiRequestMany(String ids) {
+    return 'Bring these examples from Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) into my project: $ids.';
+  }
 }

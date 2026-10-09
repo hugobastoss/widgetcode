@@ -127,7 +127,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get helpStep2Body =>
-      'Abra o widget, toque em Código no exemplo que você quer e depois em Pedir para a IA. Isso copia um pedido pronto, com o ID do exemplo (como buttons/elevated_button_carregando).';
+      'Abra o widget, toque em Código no exemplo que você quer e depois em Pedir para a IA. Isso copia um pedido pronto, com o ID do exemplo (como buttons/elevated_button_carregando). Para levar vários, toque na estrela de cada um e use Pedir todos para a IA na tela Favoritos.';
 
   @override
   String get helpStep3Title => 'Cole o pedido na sua IA';
@@ -145,4 +145,25 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get helpOpenRepo => 'Abrir o repositório';
+
+  @override
+  String get favoriteAdd => 'Favoritar';
+
+  @override
+  String get favoriteRemove => 'Remover dos favoritos';
+
+  @override
+  String get favoritesTitle => 'Favoritos';
+
+  @override
+  String get favoritesEmpty =>
+      'Nenhum favorito ainda. Toque na estrela de um exemplo para guardá-lo aqui.';
+
+  @override
+  String get askAiAllButton => 'Pedir todos para a IA';
+
+  @override
+  String aiRequestMany(String ids) {
+    return 'Traga estes exemplos do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto: $ids.';
+  }
 }

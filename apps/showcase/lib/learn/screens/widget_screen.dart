@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../l10n/app_localizations.dart';
+import '../favorites.dart';
 import '../models.dart';
 import 'code_sheet.dart';
 import 'system_padding.dart';
@@ -38,14 +39,10 @@ class WidgetScreen extends StatelessWidget {
           const SizedBox(height: 12),
           for (final (i, exemplo) in doc.examples.indexed) ...[
             if (i > 0) const SizedBox(height: 12),
-            _ExampleCard(
-              number: i + 1,
+            ExampleCard(
+              heading: '${i + 1} · ${exemplo.title.of(context)}',
+              widgetName: doc.name,
               example: exemplo,
-              onShowCode: () => CodeSheet.show(
-                context,
-                widgetName: doc.name,
-                example: exemplo,
-              ),
             ),
           ],
         ],
@@ -54,21 +51,29 @@ class WidgetScreen extends StatelessWidget {
   }
 }
 
-class _ExampleCard extends StatelessWidget {
-  const _ExampleCard({
-    required this.number,
+/// Um exemplo: título, descrição, demo ao vivo, estrela de favorito e o
+/// botão que abre o código. Usado na página do widget e nos Favoritos.
+class ExampleCard extends StatelessWidget {
+  const ExampleCard({
+    super.key,
+    required this.heading,
+    required this.widgetName,
     required this.example,
-    required this.onShowCode,
   });
 
-  final int number;
+  /// A linha de título — "1 · Básico" na página do widget,
+  /// "ElevatedButton · Básico" nos Favoritos.
+  final String heading;
+  final String widgetName;
   final WidgetExample example;
-  final VoidCallback onShowCode;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cores = theme.colorScheme;
+    final textos = AppLocalizations.of(context);
+    final favoritos = FavoritesScope.of(context);
+    final favorito = favoritos.contains(example.id);
 
     return Card.outlined(
       margin: EdgeInsets.zero,
@@ -77,23 +82,42 @@ class _ExampleCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
-            child: Column(
+            padding: const EdgeInsets.fromLTRB(16, 4, 4, 0),
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '$number · ${example.title.of(context)}',
-                  style: theme.textTheme.titleSmall?.copyWith(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          heading,
+                          style: theme.textTheme.titleSmall?.copyWith(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          example.description.of(context),
+                          style: theme.textTheme.bodyMedium?.copyWith(
+                            color: cores.onSurfaceVariant,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  example.description.of(context),
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: cores.onSurfaceVariant,
-                  ),
+                IconButton(
+                  tooltip: favorito
+                      ? textos.favoriteRemove
+                      : textos.favoriteAdd,
+                  isSelected: favorito,
+                  icon: const Icon(Icons.star_border),
+                  selectedIcon: Icon(Icons.star, color: Colors.amber.shade700),
+                  onPressed: () => favoritos.toggle(example.id),
                 ),
               ],
             ),
@@ -104,9 +128,13 @@ class _ExampleCard extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerRight,
               child: TextButton.icon(
-                onPressed: onShowCode,
+                onPressed: () => CodeSheet.show(
+                  context,
+                  widgetName: widgetName,
+                  example: example,
+                ),
                 icon: const Icon(Icons.code),
-                label: Text(AppLocalizations.of(context).codeButton),
+                label: Text(textos.codeButton),
               ),
             ),
           ),

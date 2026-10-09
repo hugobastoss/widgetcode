@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../l10n/app_localizations.dart';
+import '../favorites.dart';
 import '../locale_controller.dart';
 import '../models.dart';
 import '../sections.dart';
 import '../theme_mode_controller.dart';
+import 'favorites_screen.dart';
 import 'help_screen.dart';
 import 'section_screen.dart';
 import 'system_padding.dart';
@@ -39,6 +41,8 @@ class LearnHomeScreen extends StatelessWidget {
       0,
       (soma, secao) => soma + secao.plannedWidgets.length,
     );
+    // Depender do FavoritesScope reconstrói a tela quando um favorito muda.
+    final quantosFavoritos = FavoritesScope.of(context).examples.length;
 
     return Scaffold(
       appBar: AppBar(
@@ -87,6 +91,25 @@ class LearnHomeScreen extends StatelessWidget {
                     EdgeInsets.symmetric(horizontal: 16),
                   ),
                 ),
+                // Só aparece quando há algum exemplo favoritado.
+                if (quantosFavoritos > 0) ...[
+                  const SizedBox(height: 16),
+                  Card.outlined(
+                    margin: EdgeInsets.zero,
+                    clipBehavior: Clip.antiAlias,
+                    child: ListTile(
+                      leading: Icon(Icons.star, color: Colors.amber.shade700),
+                      title: Text(textos.favoritesTitle),
+                      subtitle: Text(textos.exampleCount(quantosFavoritos)),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => const FavoritesScreen(),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
                 const SizedBox(height: 24),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.baseline,
