@@ -7,6 +7,7 @@ import '../sections.dart';
 import '../theme_mode_controller.dart';
 import 'help_screen.dart';
 import 'section_screen.dart';
+import 'system_padding.dart';
 
 /// Tela inicial: grade com todas as seções.
 class LearnHomeScreen extends StatelessWidget {
@@ -25,9 +26,9 @@ class LearnHomeScreen extends StatelessWidget {
       _avisar(context, textos.sectionUnderConstruction(secao.name.of(context)));
       return;
     }
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => SectionScreen(section: secao)),
-    );
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (_) => SectionScreen(section: secao)));
   }
 
   @override
@@ -109,7 +110,10 @@ class LearnHomeScreen extends StatelessWidget {
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+            padding: withSystemPadding(
+              context,
+              const EdgeInsets.fromLTRB(16, 0, 16, 24),
+            ),
             sliver: SliverGrid.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,

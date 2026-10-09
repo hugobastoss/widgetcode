@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n/app_localizations.dart';
+import 'system_padding.dart';
 
 const _kRepositorio = 'https://github.com/hugobastoss/flutterwidgetshub';
 
@@ -19,7 +20,10 @@ class HelpScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(textos.helpTitle)),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+        padding: withSystemPadding(
+          context,
+          const EdgeInsets.fromLTRB(16, 0, 16, 24),
+        ),
         children: [
           Text(
             textos.helpIntro,
@@ -96,7 +100,10 @@ class _Passo extends StatelessWidget {
             backgroundColor: cores.primaryContainer,
             foregroundColor: cores.onPrimaryContainer,
             child: numero != null
-                ? Text(numero!, style: const TextStyle(fontWeight: FontWeight.bold))
+                ? Text(
+                    numero!,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  )
                 : Icon(icone, size: 18),
           ),
           Expanded(

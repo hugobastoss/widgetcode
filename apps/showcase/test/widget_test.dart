@@ -195,6 +195,80 @@ void main() {
     expect(LocaleController.resolve(null), const Locale('en'));
   });
 
+  testWidgets('o fim de cada tela fica acima da barra de gestos', (
+    tester,
+  ) async {
+    // Celular de 360 × 800 com barra de gestos de 48 embaixo (o Android
+    // desenha o app atrás dela: edge-to-edge).
+    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.devicePixelRatio = 3;
+    tester.view.padding = const FakeViewPadding(bottom: 144);
+    tester.view.viewPadding = const FakeViewPadding(bottom: 144);
+    addTearDown(tester.view.reset);
+    const limite = 800.0 - 48;
+
+    // Por padrão, a rolagem da própria tela: a primeira na árvore (exemplos
+    // podem ter listas próprias dentro, que vêm depois).
+    Future<void> rolarAteOFim([Finder? rolagem]) async {
+      await tester.drag(
+        rolagem ?? find.byType(Scrollable).first,
+        const Offset(0, -20000),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    void acimaDaBarra(Finder alvo) {
+      expect(
+        tester.getRect(alvo.last).bottom,
+        lessThanOrEqualTo(limite),
+        reason: '$alvo ficou embaixo da barra de gestos',
+      );
+    }
+
+    // O cartão inteiro, não só o texto dele (o texto fica no meio).
+    Finder cartaoCom(String texto) =>
+        find.ancestor(of: find.text(texto), matching: find.byType(Card)).first;
+
+    await tester.pumpWidget(_app());
+    await rolarAteOFim();
+    acimaDaBarra(cartaoCom('Estilo iOS'));
+
+    await tester.tap(find.text('Estilo iOS'));
+    await tester.pumpAndSettle();
+    await rolarAteOFim();
+    acimaDaBarra(cartaoCom('CupertinoSlider'));
+
+    // Uma página de widget longa (duas telas em miniatura), que rola. Depois
+    // de ir até o fim, o cartão dela saiu da lista: rola de volta até ele.
+    await tester.scrollUntilVisible(
+      find.text('CupertinoNavigationBar'),
+      -200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('CupertinoNavigationBar'));
+    await tester.pumpAndSettle();
+    await rolarAteOFim();
+    acimaDaBarra(find.text('Código'));
+
+    // O painel de código: abre, expande até o topo e rola até o fim.
+    await tester.tap(find.text('Código').last);
+    await tester.pump();
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 200)),
+    );
+    await tester.pumpAndSettle();
+    // A rolagem vertical do painel (a última é a horizontal do código). O
+    // primeiro arrasto só expande o painel; o segundo rola o código.
+    final rolagemDoPainel = find.descendant(
+      of: find.byType(BottomSheet),
+      matching: find.byType(CustomScrollView),
+    );
+    await rolarAteOFim(rolagemDoPainel);
+    await rolarAteOFim(rolagemDoPainel);
+    acimaDaBarra(find.textContaining('class CupertinoNavBarTituloGrande'));
+  });
+
   testWidgets('o cartão da tela inicial abre o "Como usar"', (tester) async {
     await tester.pumpWidget(_app());
 

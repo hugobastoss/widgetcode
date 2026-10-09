@@ -8,26 +8,31 @@ class BottomSheetBasico extends StatelessWidget {
     // dele ou arrastar para baixo fecha.
     showModalBottomSheet<void>(
       context: context,
-      builder: (context) => Column(
-        // min: o painel fica só da altura do conteúdo.
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ListTile(
-            leading: const Icon(Icons.share_outlined),
-            title: const Text('Compartilhar'),
-            onTap: () => Navigator.of(context).pop(),
-          ),
-          ListTile(
-            leading: const Icon(Icons.link),
-            title: const Text('Copiar link'),
-            onTap: () => Navigator.of(context).pop(),
-          ),
-          ListTile(
-            leading: const Icon(Icons.delete_outline),
-            title: const Text('Excluir'),
-            onTap: () => Navigator.of(context).pop(),
-          ),
-        ],
+      // O painel vai até a borda de baixo da tela. SafeArea afasta o
+      // conteúdo da barra de gestos do celular, para o último item não
+      // ficar embaixo dela.
+      builder: (context) => SafeArea(
+        child: Column(
+          // min: o painel fica só da altura do conteúdo.
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              leading: const Icon(Icons.share_outlined),
+              title: const Text('Compartilhar'),
+              onTap: () => Navigator.of(context).pop(),
+            ),
+            ListTile(
+              leading: const Icon(Icons.link),
+              title: const Text('Copiar link'),
+              onTap: () => Navigator.of(context).pop(),
+            ),
+            ListTile(
+              leading: const Icon(Icons.delete_outline),
+              title: const Text('Excluir'),
+              onTap: () => Navigator.of(context).pop(),
+            ),
+          ],
+        ),
       ),
     );
   }

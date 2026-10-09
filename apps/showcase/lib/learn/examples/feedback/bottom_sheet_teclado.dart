@@ -13,25 +13,29 @@ class BottomSheetTeclado extends StatelessWidget {
         padding: EdgeInsets.only(
           bottom: MediaQuery.viewInsetsOf(context).bottom,
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            spacing: 12,
-            children: [
-              const TextField(
-                autofocus: true, // já abre o teclado
-                decoration: InputDecoration(
-                  labelText: 'Nova tarefa',
-                  border: OutlineInputBorder(),
+        // Com o teclado fechado, SafeArea afasta o botão da barra de gestos.
+        // (Com o teclado aberto, o espaço da barra vira zero.)
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              spacing: 12,
+              children: [
+                const TextField(
+                  autofocus: true, // já abre o teclado
+                  decoration: InputDecoration(
+                    labelText: 'Nova tarefa',
+                    border: OutlineInputBorder(),
+                  ),
                 ),
-              ),
-              FilledButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: const Text('Adicionar'),
-              ),
-            ],
+                FilledButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: const Text('Adicionar'),
+                ),
+              ],
+            ),
           ),
         ),
       ),

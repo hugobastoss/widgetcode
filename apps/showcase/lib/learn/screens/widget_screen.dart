@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import '../models.dart';
 import 'code_sheet.dart';
+import 'system_padding.dart';
 
 /// Página de um widget: quando usar e todos os exemplos empilhados, cada um
 /// com a demo ao vivo e o botão que abre o código-fonte.
@@ -18,7 +19,10 @@ class WidgetScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(doc.name)),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+        padding: withSystemPadding(
+          context,
+          const EdgeInsets.fromLTRB(16, 0, 16, 24),
+        ),
         children: [
           Text(
             doc.description.of(context),

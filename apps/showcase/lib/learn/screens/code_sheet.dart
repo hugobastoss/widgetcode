@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../models.dart';
+import 'system_padding.dart';
 
 const _kRepoBlobBase =
     'https://github.com/hugobastoss/flutterwidgetshub/blob/main/apps/showcase/';
@@ -13,11 +14,7 @@ const _kRepoBlobBase =
 /// quase a tela toda. O texto vem do próprio arquivo do exemplo, empacotado
 /// como asset — é o mesmo arquivo que roda na demo.
 class CodeSheet extends StatefulWidget {
-  const CodeSheet({
-    super.key,
-    required this.widgetName,
-    required this.example,
-  });
+  const CodeSheet({super.key, required this.widgetName, required this.example});
 
   final String widgetName;
   final WidgetExample example;
@@ -59,8 +56,7 @@ class _CodeSheetState extends State<CodeSheet> {
     setState(() => _copiado = null);
   }
 
-  Future<void> _copiarCodigo() async =>
-      _copiar(_Copiado.codigo, await _codigo);
+  Future<void> _copiarCodigo() async => _copiar(_Copiado.codigo, await _codigo);
 
   /// O pedido pronto para colar na IA de código: leva o ID do exemplo e o
   /// endereço do repositório (que a skill flutter-widgets-hub entende).
@@ -172,7 +168,10 @@ class _CodeSheetState extends State<CodeSheet> {
               SliverToBoxAdapter(
                 child: Container(
                   color: cores.secondaryContainer,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 10,
+                  ),
                   child: Row(
                     spacing: 12,
                     children: [
@@ -207,7 +206,10 @@ class _CodeSheetState extends State<CodeSheet> {
               SliverToBoxAdapter(
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
+                  padding: withSystemPadding(
+                    context,
+                    const EdgeInsets.fromLTRB(16, 16, 16, 32),
+                  ),
                   child: SelectableText(
                     snapshot.data!,
                     style: TextStyle(

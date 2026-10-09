@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import '../models.dart';
 import 'widget_screen.dart';
+import 'system_padding.dart';
 
 /// Lista os widgets de uma seção. Cada cartão desenha o widget real como
 /// pré-visualização, mas sem receber toques: o toque vai pro cartão inteiro,
@@ -35,7 +36,10 @@ class SectionScreen extends StatelessWidget {
         ],
       ),
       body: ListView.separated(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+        padding: withSystemPadding(
+          context,
+          const EdgeInsets.fromLTRB(16, 0, 16, 24),
+        ),
         itemCount: docs.length + 1,
         separatorBuilder: (_, i) => SizedBox(height: i == 0 ? 20 : 12),
         itemBuilder: (context, i) {
@@ -50,9 +54,9 @@ class SectionScreen extends StatelessWidget {
           final doc = docs[i - 1];
           return _WidgetCard(
             doc: doc,
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => WidgetScreen(doc: doc)),
-            ),
+            onTap: () => Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (_) => WidgetScreen(doc: doc))),
           );
         },
       ),
