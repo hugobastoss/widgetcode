@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'models.dart';
 import 'sections/buttons.dart';
+import 'sections/cards.dart';
 import 'sections/feedback.dart';
 import 'sections/forms.dart';
 import 'sections/layout.dart';
@@ -77,10 +78,13 @@ final kLearnSections = <LearnSection>[
         'Como o app conversa com a pessoa: confirmações, avisos, painéis e indicadores de carregando.',
     docs: kFeedbackDocs,
   ),
-  const LearnSection(
+  LearnSection(
     name: 'Cartões e painéis',
     icon: Icons.style_outlined,
-    plannedWidgets: ['Card', 'ExpansionTile', 'ExpansionPanelList'],
+    plannedWidgets: [for (final doc in kCardsDocs) doc.name],
+    intro:
+        'Superfícies que agrupam conteúdo e painéis que abrem e fecham para mostrar mais.',
+    docs: kCardsDocs,
   ),
   const LearnSection(
     name: 'Animações',

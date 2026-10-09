@@ -36,5 +36,6 @@ flutter:
     - lib/learn/examples/selection/
     - lib/learn/examples/feedback/
     - lib/learn/examples/navigation/
+    - lib/learn/examples/cards/
     # Imagens usadas pelos próprios exemplos (Image.asset, AssetImage).
     - assets/images/
