@@ -19,5 +19,21 @@
   "themeDark": "Oscuro",
   "themeSystem": "Seguir el sistema",
   "languageTooltip": "Idioma",
-  "languageSystem": "Seguir el sistema"
+  "languageSystem": "Seguir el sistema",
+  "askAiButton": "Pedir a la IA",
+  "aiRequestCopied": "Pedido copiado",
+  "aiRequest": "Trae el ejemplo \"{id}\" de Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) a mi proyecto.",
+  "helpCardTitle": "Lleva un ejemplo a tu app",
+  "helpCardSubtitle": "Con tu IA de código, en 3 pasos",
+  "helpTitle": "Cómo usar",
+  "helpIntro": "Cada ejemplo de la app es un archivo del repositorio en GitHub. Para llevar uno a tu proyecto, pídeselo a tu IA de código: ella busca el archivo y lo adapta a tu app.",
+  "helpStep1Title": "Dale a tu IA la referencia del repositorio",
+  "helpStep1Body": "Instala la skill flutter-widgets-hub en tu proyecto (copia la carpeta .claude/skills/flutter-widgets-hub del repositorio a tu proyecto) o simplemente menciona la dirección del repositorio en tu pedido, si tu IA puede navegar por internet.",
+  "helpStep2Title": "Elige el ejemplo en la app",
+  "helpStep2Body": "Abre el widget, toca Código en el ejemplo que quieras y luego Pedir a la IA. Así se copia un pedido listo, con el ID del ejemplo (como buttons/elevated_button_carregando).",
+  "helpStep3Title": "Pega el pedido en tu IA",
+  "helpStep3Body": "La IA busca el archivo, lo agrega a tu proyecto y adapta nombres y textos. Si el ejemplo usa una imagen o internet, también configura el pubspec.yaml o el permiso de Android.",
+  "helpManualTitle": "Sin IA",
+  "helpManualBody": "Toca Copiar código, crea un archivo .dart en la carpeta lib de tu proyecto, pega el código, importa ese archivo en tu pantalla y usa el widget; por ejemplo, const ElevatedButtonBasico().",
+  "helpOpenRepo": "Abrir el repositorio"
 }

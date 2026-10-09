@@ -50,13 +50,40 @@ void main() {
         () => Future<void>.delayed(const Duration(milliseconds: 200)),
       );
       await tester.pumpAndSettle();
-      expect(
-        find.textContaining('class ElevatedButtonBasico'),
-        findsOneWidget,
-      );
+      expect(find.textContaining('class ElevatedButtonBasico'), findsOneWidget);
       // O código abre num painel por cima: a página do widget continua lá.
       expect(find.byType(BottomSheet), findsOneWidget);
       expect(find.text('Exemplos (5)'), findsOneWidget);
+
+      // O painel mostra o ID do exemplo e copia o pedido pronto para a IA.
+      expect(find.text('buttons/elevated_button_basico'), findsOneWidget);
+      String? copiado;
+      tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+        SystemChannels.platform,
+        (chamada) async {
+          if (chamada.method == 'Clipboard.setData') {
+            copiado = (chamada.arguments as Map)['text'] as String;
+          }
+          return null;
+        },
+      );
+      addTearDown(
+        () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+          SystemChannels.platform,
+          null,
+        ),
+      );
+      await tester.tap(find.text('Pedir para a IA'));
+      await tester.pump();
+      expect(
+        copiado,
+        'Traga o exemplo "buttons/elevated_button_basico" do Flutter Widgets '
+        'Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto.',
+      );
+      expect(find.text('Pedido copiado'), findsOneWidget);
+      // Deixa passar os 2 segundos em que o botão mostra o ✓.
+      await tester.pump(const Duration(seconds: 3));
+      expect(find.text('Pedir para a IA'), findsOneWidget);
     },
   );
 
@@ -70,14 +97,18 @@ void main() {
 
     await tester.tap(find.byTooltip('Tema'));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Claro'));
+    await tester.tap(
+      find.widgetWithText(CheckedPopupMenuItem<ThemeMode>, 'Claro'),
+    );
     await tester.pumpAndSettle();
     expect(tema.value, ThemeMode.light);
     expect(modoDoApp(), ThemeMode.light);
 
     await tester.tap(find.byTooltip('Tema'));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Escuro'));
+    await tester.tap(
+      find.widgetWithText(CheckedPopupMenuItem<ThemeMode>, 'Escuro'),
+    );
     await tester.pumpAndSettle();
     expect(modoDoApp(), ThemeMode.dark);
   });
@@ -110,7 +141,7 @@ void main() {
     Future<void> escolher(String nome) async {
       await tester.tap(find.byType(PopupMenuButton<String>));
       await tester.pumpAndSettle();
-      await tester.tap(find.text(nome));
+      await tester.tap(find.widgetWithText(CheckedPopupMenuItem<String>, nome));
       await tester.pumpAndSettle();
     }
 
@@ -125,6 +156,9 @@ void main() {
     expect(find.text('Botones'), findsOneWidget);
 
     // O conteúdo também troca: a descrição do ElevatedButton em espanhol.
+    // Na tela pequena, o bloco da seção fica abaixo da dobra: rola até ele.
+    await tester.ensureVisible(find.text('Botones'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Botones'));
     await tester.pumpAndSettle();
     expect(
@@ -154,8 +188,25 @@ void main() {
       LocaleController.resolve([const Locale('fr'), const Locale('es', 'MX')]),
       const Locale('es'),
     );
-    expect(LocaleController.resolve([const Locale('pt', 'BR')]), const Locale('pt'));
+    expect(
+      LocaleController.resolve([const Locale('pt', 'BR')]),
+      const Locale('pt'),
+    );
     expect(LocaleController.resolve(null), const Locale('en'));
+  });
+
+  testWidgets('o cartão da tela inicial abre o "Como usar"', (tester) async {
+    await tester.pumpWidget(_app());
+
+    await tester.tap(find.text('Leve um exemplo para o seu app'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Como usar'), findsOneWidget);
+    expect(
+      find.text('Dê à sua IA a referência do repositório'),
+      findsOneWidget,
+    );
+    expect(find.text('Cole o pedido na sua IA'), findsOneWidget);
   });
 
   testWidgets('a seção Layout abre com seus 11 widgets', (tester) async {

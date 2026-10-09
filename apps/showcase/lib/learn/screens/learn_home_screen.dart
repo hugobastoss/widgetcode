@@ -5,6 +5,7 @@ import '../locale_controller.dart';
 import '../models.dart';
 import '../sections.dart';
 import '../theme_mode_controller.dart';
+import 'help_screen.dart';
 import 'section_screen.dart';
 
 /// Tela inicial: grade com todas as seções.
@@ -56,6 +57,24 @@ class LearnHomeScreen extends StatelessWidget {
                   textos.homeIntro,
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                // Como levar um exemplo para o próprio app (pela IA).
+                Card.filled(
+                  margin: EdgeInsets.zero,
+                  clipBehavior: Clip.antiAlias,
+                  color: theme.colorScheme.secondaryContainer,
+                  child: ListTile(
+                    leading: const Icon(Icons.smart_toy_outlined),
+                    title: Text(textos.helpCardTitle),
+                    subtitle: Text(textos.helpCardSubtitle),
+                    trailing: const Icon(Icons.chevron_right),
+                    textColor: theme.colorScheme.onSecondaryContainer,
+                    iconColor: theme.colorScheme.onSecondaryContainer,
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const HelpScreen()),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),

@@ -48,17 +48,26 @@ class _CodeSheetState extends State<CodeSheet> {
 
   // Uma SnackBar apareceria atrás do painel; a confirmação de "copiado" é o
   // próprio botão, que vira um ✓ por alguns segundos.
-  bool _copiado = false;
+  _Copiado? _copiado;
 
-  Future<void> _copiar() async {
-    final codigo = await _codigo;
-    await Clipboard.setData(ClipboardData(text: codigo));
+  Future<void> _copiar(_Copiado oQue, String texto) async {
+    await Clipboard.setData(ClipboardData(text: texto));
     if (!mounted) return;
-    setState(() => _copiado = true);
+    setState(() => _copiado = oQue);
     await Future<void>.delayed(const Duration(seconds: 2));
-    if (!mounted) return;
-    setState(() => _copiado = false);
+    if (!mounted || _copiado != oQue) return;
+    setState(() => _copiado = null);
   }
+
+  Future<void> _copiarCodigo() async =>
+      _copiar(_Copiado.codigo, await _codigo);
+
+  /// O pedido pronto para colar na IA de código: leva o ID do exemplo e o
+  /// endereço do repositório (que a skill flutter-widgets-hub entende).
+  Future<void> _copiarPedido() => _copiar(
+    _Copiado.pedido,
+    AppLocalizations.of(context).aiRequest(widget.example.id),
+  );
 
   Future<void> _abrirNoGitHub() async {
     // inAppBrowserView abre por cima do app (Custom Tabs no Android,
@@ -109,9 +118,15 @@ class _CodeSheetState extends State<CodeSheet> {
               ),
               actions: [
                 IconButton(
-                  tooltip: _copiado ? textos.codeCopied : textos.copyCodeTooltip,
-                  icon: Icon(_copiado ? Icons.check : Icons.copy_outlined),
-                  onPressed: _copiar,
+                  tooltip: _copiado == _Copiado.codigo
+                      ? textos.codeCopied
+                      : textos.copyCodeTooltip,
+                  icon: Icon(
+                    _copiado == _Copiado.codigo
+                        ? Icons.check
+                        : Icons.copy_outlined,
+                  ),
+                  onPressed: _copiarCodigo,
                 ),
                 IconButton(
                   tooltip: textos.openOnGitHubTooltip,
@@ -119,6 +134,39 @@ class _CodeSheetState extends State<CodeSheet> {
                   onPressed: _abrirNoGitHub,
                 ),
               ],
+            ),
+            // O ID do exemplo e o pedido pronto para a IA de código.
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                child: Row(
+                  spacing: 12,
+                  children: [
+                    Expanded(
+                      child: SelectableText(
+                        widget.example.id,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          fontFamily: 'monospace',
+                          color: cores.onSurfaceVariant,
+                        ),
+                      ),
+                    ),
+                    FilledButton.tonalIcon(
+                      onPressed: _copiarPedido,
+                      icon: Icon(
+                        _copiado == _Copiado.pedido
+                            ? Icons.check
+                            : Icons.smart_toy_outlined,
+                      ),
+                      label: Text(
+                        _copiado == _Copiado.pedido
+                            ? textos.aiRequestCopied
+                            : textos.askAiButton,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
             if (comentariosEmOutroIdioma)
               SliverToBoxAdapter(
@@ -177,3 +225,6 @@ class _CodeSheetState extends State<CodeSheet> {
     );
   }
 }
+
+/// Qual botão do painel acabou de copiar algo (e mostra o ✓).
+enum _Copiado { codigo, pedido }

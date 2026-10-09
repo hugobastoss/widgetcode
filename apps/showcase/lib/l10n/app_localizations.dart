@@ -219,6 +219,102 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Seguir o sistema'**
   String get languageSystem;
+
+  /// No description provided for @askAiButton.
+  ///
+  /// In pt, this message translates to:
+  /// **'Pedir para a IA'**
+  String get askAiButton;
+
+  /// No description provided for @aiRequestCopied.
+  ///
+  /// In pt, this message translates to:
+  /// **'Pedido copiado'**
+  String get aiRequestCopied;
+
+  /// No description provided for @aiRequest.
+  ///
+  /// In pt, this message translates to:
+  /// **'Traga o exemplo \"{id}\" do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto.'**
+  String aiRequest(String id);
+
+  /// No description provided for @helpCardTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Leve um exemplo para o seu app'**
+  String get helpCardTitle;
+
+  /// No description provided for @helpCardSubtitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Com a sua IA de código, em 3 passos'**
+  String get helpCardSubtitle;
+
+  /// No description provided for @helpTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Como usar'**
+  String get helpTitle;
+
+  /// No description provided for @helpIntro.
+  ///
+  /// In pt, this message translates to:
+  /// **'Cada exemplo do app é um arquivo do repositório no GitHub. Para trazer um exemplo para o seu projeto, peça para a sua IA de código: ela busca o arquivo e adapta para o seu app.'**
+  String get helpIntro;
+
+  /// No description provided for @helpStep1Title.
+  ///
+  /// In pt, this message translates to:
+  /// **'Dê à sua IA a referência do repositório'**
+  String get helpStep1Title;
+
+  /// No description provided for @helpStep1Body.
+  ///
+  /// In pt, this message translates to:
+  /// **'Instale a skill flutter-widgets-hub no seu projeto (copie a pasta .claude/skills/flutter-widgets-hub do repositório para o seu projeto) ou apenas cite o endereço do repositório no pedido, se a sua IA acessa a internet.'**
+  String get helpStep1Body;
+
+  /// No description provided for @helpStep2Title.
+  ///
+  /// In pt, this message translates to:
+  /// **'Escolha o exemplo no app'**
+  String get helpStep2Title;
+
+  /// No description provided for @helpStep2Body.
+  ///
+  /// In pt, this message translates to:
+  /// **'Abra o widget, toque em Código no exemplo que você quer e depois em Pedir para a IA. Isso copia um pedido pronto, com o ID do exemplo (como buttons/elevated_button_carregando).'**
+  String get helpStep2Body;
+
+  /// No description provided for @helpStep3Title.
+  ///
+  /// In pt, this message translates to:
+  /// **'Cole o pedido na sua IA'**
+  String get helpStep3Title;
+
+  /// No description provided for @helpStep3Body.
+  ///
+  /// In pt, this message translates to:
+  /// **'A IA busca o arquivo, coloca no seu projeto e adapta nomes e textos. Se o exemplo usa uma imagem ou a internet, ela também configura o pubspec.yaml ou a permissão do Android.'**
+  String get helpStep3Body;
+
+  /// No description provided for @helpManualTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Sem IA'**
+  String get helpManualTitle;
+
+  /// No description provided for @helpManualBody.
+  ///
+  /// In pt, this message translates to:
+  /// **'Toque em Copiar código, crie um arquivo .dart na pasta lib do seu projeto, cole o código, importe esse arquivo na sua tela e use o widget — por exemplo, const ElevatedButtonBasico().'**
+  String get helpManualBody;
+
+  /// No description provided for @helpOpenRepo.
+  ///
+  /// In pt, this message translates to:
+  /// **'Abrir o repositório'**
+  String get helpOpenRepo;
 }
 
 class _AppLocalizationsDelegate
