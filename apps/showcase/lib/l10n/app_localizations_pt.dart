@@ -83,9 +83,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get themeSystem => 'Automático';
 
   @override
-  String get languageSystem => 'Seguir o sistema';
-
-  @override
   String get askAiButton => 'Pedir para a IA';
 
   @override
@@ -95,12 +92,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String aiRequest(String id) {
     return 'Traga o exemplo \"$id\" do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto.';
   }
-
-  @override
-  String get helpCardTitle => 'Leve um exemplo para o seu app';
-
-  @override
-  String get helpCardSubtitle => 'Com a sua IA de código, em 3 passos';
 
   @override
   String get helpTitle => 'Como usar';

@@ -47,8 +47,34 @@ class LearnHomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Widgets Hub'),
+        // Com três ícones, o título não cabe inteiro num celular de 360 de
+        // largura: encolhe um pouco em vez de ser cortado com "…".
+        title: const FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: AlignmentDirectional.centerStart,
+          child: Text('Flutter Widgets Hub'),
+        ),
         actions: [
+          // Como levar um exemplo para o próprio app (pela IA).
+          IconButton(
+            tooltip: textos.helpTitle,
+            icon: const Icon(Icons.smart_toy_outlined),
+            onPressed: () => Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (_) => const HelpScreen())),
+          ),
+          IconButton(
+            tooltip: textos.favoritesTitle,
+            // O número de favoritos, quando há algum.
+            icon: Badge.count(
+              count: quantosFavoritos,
+              isLabelVisible: quantosFavoritos > 0,
+              child: const Icon(Icons.star_outline),
+            ),
+            onPressed: () => Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (_) => const FavoritesScreen())),
+          ),
           IconButton(
             tooltip: textos.settingsTitle,
             icon: const Icon(Icons.settings_outlined),
@@ -76,24 +102,6 @@ class LearnHomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                // Como levar um exemplo para o próprio app (pela IA).
-                Card.filled(
-                  margin: EdgeInsets.zero,
-                  clipBehavior: Clip.antiAlias,
-                  color: theme.colorScheme.secondaryContainer,
-                  child: ListTile(
-                    leading: const Icon(Icons.smart_toy_outlined),
-                    title: Text(textos.helpCardTitle),
-                    subtitle: Text(textos.helpCardSubtitle),
-                    trailing: const Icon(Icons.chevron_right),
-                    textColor: theme.colorScheme.onSecondaryContainer,
-                    iconColor: theme.colorScheme.onSecondaryContainer,
-                    onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const HelpScreen()),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
                 SearchBar(
                   hintText: textos.searchHint,
                   leading: const Icon(Icons.search),
@@ -102,25 +110,6 @@ class LearnHomeScreen extends StatelessWidget {
                     EdgeInsets.symmetric(horizontal: 16),
                   ),
                 ),
-                // Só aparece quando há algum exemplo favoritado.
-                if (quantosFavoritos > 0) ...[
-                  const SizedBox(height: 16),
-                  Card.outlined(
-                    margin: EdgeInsets.zero,
-                    clipBehavior: Clip.antiAlias,
-                    child: ListTile(
-                      leading: Icon(Icons.star, color: Colors.amber.shade700),
-                      title: Text(textos.favoritesTitle),
-                      subtitle: Text(textos.exampleCount(quantosFavoritos)),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (_) => const FavoritesScreen(),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
                 const SizedBox(height: 24),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.baseline,

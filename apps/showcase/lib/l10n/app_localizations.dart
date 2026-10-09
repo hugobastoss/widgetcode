@@ -202,12 +202,6 @@ abstract class AppLocalizations {
   /// **'Automático'**
   String get themeSystem;
 
-  /// No description provided for @languageSystem.
-  ///
-  /// In pt, this message translates to:
-  /// **'Seguir o sistema'**
-  String get languageSystem;
-
   /// No description provided for @askAiButton.
   ///
   /// In pt, this message translates to:
@@ -225,18 +219,6 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Traga o exemplo \"{id}\" do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto.'**
   String aiRequest(String id);
-
-  /// No description provided for @helpCardTitle.
-  ///
-  /// In pt, this message translates to:
-  /// **'Leve um exemplo para o seu app'**
-  String get helpCardTitle;
-
-  /// No description provided for @helpCardSubtitle.
-  ///
-  /// In pt, this message translates to:
-  /// **'Com a sua IA de código, em 3 passos'**
-  String get helpCardSubtitle;
 
   /// No description provided for @helpTitle.
   ///

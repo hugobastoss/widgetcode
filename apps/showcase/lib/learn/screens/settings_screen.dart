@@ -386,8 +386,11 @@ class _OpcaoDeTema extends StatelessWidget {
   }
 }
 
-/// Os idiomas do app, com um ✓ no escolhido. Os nomes ficam no próprio
-/// idioma, como é costume, para quem não lê o idioma atual.
+/// Os idiomas do app, com um ✓ no que está em uso. Os nomes ficam no
+/// próprio idioma, como é costume, para quem não lê o idioma atual.
+///
+/// Sem escolha salva, o app segue o idioma do celular — e o ✓ fica nesse
+/// idioma. Tocar num idioma fixa o app nele.
 class _SeletorDeIdioma extends StatelessWidget {
   const _SeletorDeIdioma({required this.controller});
 
@@ -397,29 +400,23 @@ class _SeletorDeIdioma extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textos = AppLocalizations.of(context);
     final cores = Theme.of(context).colorScheme;
+    // O idioma em uso de fato (o escolhido ou o do sistema). Quando a
+    // escolha muda, o MaterialApp troca o idioma e esta tela se reconstrói.
+    final emUso = Localizations.localeOf(context).languageCode;
 
-    Widget opcao(String rotulo, Locale? idioma, Locale? atual) {
-      final escolhido = idioma?.languageCode == atual?.languageCode;
-      return ListTile(
-        title: Text(rotulo),
-        selected: escolhido,
-        trailing: escolhido ? Icon(Icons.check, color: cores.primary) : null,
-        onTap: () => controller.select(idioma),
-      );
-    }
-
-    return ValueListenableBuilder<Locale?>(
-      valueListenable: controller,
-      builder: (context, atual, _) => _Grupo(
-        children: [
-          // null = segue o idioma do sistema.
-          opcao(textos.languageSystem, null, atual),
-          for (final idioma in LocaleController.supportedLocales)
-            opcao(_nomes[idioma.languageCode]!, idioma, atual),
-        ],
-      ),
+    return _Grupo(
+      children: [
+        for (final idioma in LocaleController.supportedLocales)
+          ListTile(
+            title: Text(_nomes[idioma.languageCode]!),
+            selected: idioma.languageCode == emUso,
+            trailing: idioma.languageCode == emUso
+                ? Icon(Icons.check, color: cores.primary)
+                : null,
+            onTap: () => controller.select(idioma),
+          ),
+      ],
     );
   }
 }

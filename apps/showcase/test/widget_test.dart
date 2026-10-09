@@ -199,6 +199,28 @@ void main() {
     );
   });
 
+  testWidgets('sem idioma escolhido, o ✓ fica no idioma do sistema', (
+    tester,
+  ) async {
+    // O "sistema" dos testes está em inglês (en_US).
+    final idioma = LocaleController.inMemory();
+    await tester.pumpWidget(_app(idioma: idioma));
+    await tester.tap(find.byTooltip('Settings'));
+    await tester.pumpAndSettle();
+
+    bool marcado(String nome) =>
+        tester.widget<ListTile>(find.widgetWithText(ListTile, nome)).selected;
+    expect(find.text('Follow system'), findsNothing);
+    expect(marcado('English'), isTrue);
+    expect(marcado('Português'), isFalse);
+
+    await tester.tap(find.text('Português'));
+    await tester.pumpAndSettle();
+    expect(idioma.value, const Locale('pt'));
+    expect(marcado('Português'), isTrue);
+    expect(marcado('English'), isFalse);
+  });
+
   test('a escolha de idioma fica salva para a próxima abertura', () async {
     SharedPreferences.setMockInitialValues({});
 
@@ -312,8 +334,15 @@ void main() {
     final favoritos = FavoritesController.inMemory();
     await tester.pumpWidget(_app(favoritos: favoritos));
 
-    // Sem favoritos, a tela inicial não mostra o atalho.
-    expect(find.text('Favoritos'), findsNothing);
+    // A estrela da AppBar mostra quantos favoritos há — sem nenhum, só a
+    // estrela.
+    Badge contador() => tester.widget<Badge>(
+      find.ancestor(
+        of: find.byIcon(Icons.star_outline),
+        matching: find.byType(Badge),
+      ),
+    );
+    expect(contador().isLabelVisible, isFalse);
 
     await tester.tap(find.text('Botões'));
     await tester.pumpAndSettle();
@@ -331,10 +360,13 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.byTooltip('Voltar'));
     await tester.pumpAndSettle();
-    expect(find.text('Favoritos'), findsOneWidget);
-    expect(find.text('1 exemplo'), findsOneWidget);
+    expect(contador().isLabelVisible, isTrue);
+    expect(
+      find.descendant(of: find.byType(Badge), matching: find.text('1')),
+      findsOneWidget,
+    );
 
-    await tester.tap(find.text('Favoritos'));
+    await tester.tap(find.byTooltip('Favoritos'));
     await tester.pumpAndSettle();
     expect(find.text('ElevatedButton · Básico'), findsOneWidget);
     expect(find.text('Salvar'), findsOneWidget); // a demo roda aqui também
@@ -467,10 +499,10 @@ void main() {
     expect(suporte.queryParameters['body'], 'Dúvida:\n\n---\nversão 1');
   });
 
-  testWidgets('o cartão da tela inicial abre o "Como usar"', (tester) async {
+  testWidgets('o robô da AppBar abre o "Como usar"', (tester) async {
     await tester.pumpWidget(_app());
 
-    await tester.tap(find.text('Leve um exemplo para o seu app'));
+    await tester.tap(find.byIcon(Icons.smart_toy_outlined));
     await tester.pumpAndSettle();
 
     expect(find.text('Como usar'), findsOneWidget);

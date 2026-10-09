@@ -35,15 +35,12 @@
   "themeLight": "Claro",
   "themeDark": "Escuro",
   "themeSystem": "Automático",
-  "languageSystem": "Seguir o sistema",
   "askAiButton": "Pedir para a IA",
   "aiRequestCopied": "Pedido copiado",
   "aiRequest": "Traga o exemplo \"{id}\" do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto.",
   "@aiRequest": {
     "placeholders": {"id": {"type": "String"}}
   },
-  "helpCardTitle": "Leve um exemplo para o seu app",
-  "helpCardSubtitle": "Com a sua IA de código, em 3 passos",
   "helpTitle": "Como usar",
   "helpIntro": "Cada exemplo do app é um arquivo do repositório no GitHub. Para trazer um exemplo para o seu projeto, peça para a sua IA de código: ela busca o arquivo e adapta para o seu app.",
   "helpStep1Title": "Dê à sua IA a referência do repositório",
