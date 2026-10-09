@@ -13,8 +13,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_widgets_hub:
     path: ../../packages/flutter_widgets_hub
+  intl: any
   shared_preferences: ^2.5.6
   url_launcher: ^6.3.0
 
@@ -25,6 +28,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  # Gera lib/l10n/app_localizations.dart a partir dos arquivos .arb (textos
+  # da interface em pt, en e es). Configuração em l10n.yaml.
+  generate: true
   # Os arquivos de exemplo também viram assets: a tela de código lê o
   # próprio arquivo que roda na demo. Pastas de asset não são recursivas —
   # cada seção nova precisa da sua linha aqui.

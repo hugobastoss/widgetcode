@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'l10n/app_localizations.dart';
+import 'learn/locale_controller.dart';
 import 'learn/screens/learn_home_screen.dart';
 import 'learn/theme_mode_controller.dart';
 
@@ -11,20 +13,26 @@ Future<void> main() async {
   // depois disto.
   WidgetsFlutterBinding.ensureInitialized();
   final tema = await ThemeModeController.load();
-  runApp(ShowcaseApp(themeController: tema));
+  final idioma = await LocaleController.load();
+  runApp(ShowcaseApp(themeController: tema, localeController: idioma));
 }
 
 class ShowcaseApp extends StatelessWidget {
-  const ShowcaseApp({super.key, required this.themeController});
+  const ShowcaseApp({
+    super.key,
+    required this.themeController,
+    required this.localeController,
+  });
 
   final ThemeModeController themeController;
+  final LocaleController localeController;
 
   @override
   Widget build(BuildContext context) {
-    // Reconstrói o MaterialApp quando a pessoa troca o tema no menu.
-    return ValueListenableBuilder<ThemeMode>(
-      valueListenable: themeController,
-      builder: (context, modo, _) => MaterialApp(
+    // Reconstrói o MaterialApp quando a pessoa troca o tema ou o idioma.
+    return ListenableBuilder(
+      listenable: Listenable.merge([themeController, localeController]),
+      builder: (context, _) => MaterialApp(
         title: 'Flutter Widgets Hub',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -37,10 +45,21 @@ class ShowcaseApp extends StatelessWidget {
           colorSchemeSeed: _kCorSemente,
           brightness: Brightness.dark,
         ),
-        themeMode: modo,
+        themeMode: themeController.value,
+        // null = segue o idioma do sistema (resolvido abaixo).
+        locale: localeController.value,
+        supportedLocales: LocaleController.supportedLocales,
+        // Traduz os textos do app e os textos prontos do Material e do
+        // Cupertino (dicas de "Voltar", menu de copiar e colar...).
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        localeListResolutionCallback: (doSistema, _) =>
+            LocaleController.resolve(doSistema),
         // A Home antiga do catálogo Hub (screens/home_screen.dart) continua
         // no projeto, só deixou de ser a tela inicial.
-        home: LearnHomeScreen(themeController: themeController),
+        home: LearnHomeScreen(
+          themeController: themeController,
+          localeController: localeController,
+        ),
       ),
     );
   }

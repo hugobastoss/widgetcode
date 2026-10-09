@@ -31,8 +31,16 @@ import '../examples/layout/stack_texto_sobre_fundo.dart';
 import '../examples/layout/wrap_basico.dart';
 import '../examples/layout/wrap_centralizado.dart';
 import '../models.dart';
+import '../tr.dart';
 
 const _kPasta = 'lib/learn/examples/layout';
+
+const _basico = Tr(pt: 'Básico', en: 'Basic', es: 'Básico');
+const _alinhamentoPrincipal = Tr(
+  pt: 'Alinhamento principal',
+  en: 'Main axis alignment',
+  es: 'Alineación principal',
+);
 
 // Pré-visualizações dos cartões da seção: esquemas pequenos com caixas
 // coloridas, que cabem na faixa de 88 de altura do cartão.
@@ -45,8 +53,11 @@ final _kMoldura = BoxDecoration(border: Border.all(color: Colors.grey));
 final kLayoutDocs = <WidgetDoc>[
   WidgetDoc(
     name: 'Container',
-    description:
-        'A "caixa" do Flutter: junta tamanho, cor, borda, espaçamento e alinhamento.',
+    description: const Tr(
+      pt: 'A "caixa" do Flutter: junta tamanho, cor, borda, espaçamento e alinhamento.',
+      en: 'Flutter\'s "box": it combines size, color, border, spacing and alignment.',
+      es: 'La "caja" de Flutter: reúne tamaño, color, borde, espaciado y alineación.',
+    ),
     preview: Container(
       width: 96,
       height: 52,
@@ -60,26 +71,54 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Básico',
-        description: 'Tamanho, cor e um texto centralizado com alignment.',
+        title: _basico,
+        description: const Tr(
+          pt: 'Tamanho, cor e um texto centralizado com alignment.',
+          en: 'Size, color and a label centered with alignment.',
+          es: 'Tamaño, color y un texto centrado con alignment.',
+        ),
         sourcePath: '$_kPasta/container_basico.dart',
         builder: (_) => const ContainerBasico(),
       ),
       WidgetExample(
-        title: 'Bordas e cantos',
-        description: 'decoration com BoxDecoration: borda e cantos arredondados.',
+        title: const Tr(
+          pt: 'Bordas e cantos',
+          en: 'Borders and corners',
+          es: 'Bordes y esquinas',
+        ),
+        description: const Tr(
+          pt: 'decoration com BoxDecoration: borda e cantos arredondados.',
+          en: 'decoration with BoxDecoration: border and rounded corners.',
+          es: 'decoration con BoxDecoration: borde y esquinas redondeadas.',
+        ),
         sourcePath: '$_kPasta/container_bordas.dart',
         builder: (_) => const ContainerBordas(),
       ),
       WidgetExample(
-        title: 'Sombra e gradiente',
-        description: 'BoxDecoration também desenha gradientes e sombras.',
+        title: const Tr(
+          pt: 'Sombra e gradiente',
+          en: 'Shadow and gradient',
+          es: 'Sombra y degradado',
+        ),
+        description: const Tr(
+          pt: 'BoxDecoration também desenha gradientes e sombras.',
+          en: 'BoxDecoration also draws gradients and shadows.',
+          es: 'BoxDecoration también dibuja degradados y sombras.',
+        ),
         sourcePath: '$_kPasta/container_sombra_gradiente.dart',
         builder: (_) => const ContainerSombraGradiente(),
       ),
       WidgetExample(
-        title: 'Margem e padding',
-        description: 'margin é o espaço por fora; padding, por dentro.',
+        title: const Tr(
+          pt: 'Margem e padding',
+          en: 'Margin and padding',
+          es: 'Margen y padding',
+        ),
+        description: const Tr(
+          pt: 'margin é o espaço por fora; padding, por dentro.',
+          en: 'margin is the space outside; padding, the space inside.',
+          es: 'margin es el espacio por fuera; padding, por dentro.',
+        ),
         sourcePath: '$_kPasta/container_margem_padding.dart',
         builder: (_) => const ContainerMargemPadding(),
       ),
@@ -87,7 +126,11 @@ final kLayoutDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'Row',
-    description: 'Coloca os filhos lado a lado, na horizontal.',
+    description: const Tr(
+      pt: 'Coloca os filhos lado a lado, na horizontal.',
+      en: 'Places its children side by side, horizontally.',
+      es: 'Coloca a sus hijos uno al lado del otro, en horizontal.',
+    ),
     preview: Row(
       mainAxisSize: MainAxisSize.min,
       spacing: 8,
@@ -99,27 +142,46 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Básico',
-        description: 'Três caixas lado a lado.',
+        title: _basico,
+        description: const Tr(
+          pt: 'Três caixas lado a lado.',
+          en: 'Three boxes side by side.',
+          es: 'Tres cajas una al lado de la otra.',
+        ),
         sourcePath: '$_kPasta/row_basico.dart',
         builder: (_) => const RowBasico(),
       ),
       WidgetExample(
-        title: 'Alinhamento principal',
-        description:
-            'mainAxisAlignment distribui na horizontal. Toque nas opções.',
+        title: _alinhamentoPrincipal,
+        description: const Tr(
+          pt: 'mainAxisAlignment distribui na horizontal. Toque nas opções.',
+          en: 'mainAxisAlignment distributes horizontally. Tap the options.',
+          es: 'mainAxisAlignment distribuye en horizontal. Toca las opciones.',
+        ),
         sourcePath: '$_kPasta/row_alinhamento.dart',
         builder: (_) => const RowAlinhamento(),
       ),
       WidgetExample(
-        title: 'Alinhamento cruzado',
-        description: 'crossAxisAlignment alinha na vertical. Toque nas opções.',
+        title: const Tr(
+          pt: 'Alinhamento cruzado',
+          en: 'Cross axis alignment',
+          es: 'Alineación cruzada',
+        ),
+        description: const Tr(
+          pt: 'crossAxisAlignment alinha na vertical. Toque nas opções.',
+          en: 'crossAxisAlignment aligns vertically. Tap the options.',
+          es: 'crossAxisAlignment alinea en vertical. Toca las opciones.',
+        ),
         sourcePath: '$_kPasta/row_alinhamento_cruzado.dart',
         builder: (_) => const RowAlinhamentoCruzado(),
       ),
       WidgetExample(
-        title: 'Espaçamento',
-        description: 'spacing põe o mesmo espaço entre todos os filhos.',
+        title: const Tr(pt: 'Espaçamento', en: 'Spacing', es: 'Espaciado'),
+        description: const Tr(
+          pt: 'spacing põe o mesmo espaço entre todos os filhos.',
+          en: 'spacing puts the same gap between all children.',
+          es: 'spacing pone el mismo espacio entre todos los hijos.',
+        ),
         sourcePath: '$_kPasta/row_espacamento.dart',
         builder: (_) => const RowEspacamento(),
       ),
@@ -127,7 +189,11 @@ final kLayoutDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'Column',
-    description: 'Empilha os filhos de cima para baixo, na vertical.',
+    description: const Tr(
+      pt: 'Empilha os filhos de cima para baixo, na vertical.',
+      en: 'Stacks its children from top to bottom, vertically.',
+      es: 'Apila a sus hijos de arriba abajo, en vertical.',
+    ),
     preview: Column(
       mainAxisSize: MainAxisSize.min,
       spacing: 4,
@@ -139,20 +205,36 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Básico',
-        description: 'Três caixas empilhadas.',
+        title: _basico,
+        description: const Tr(
+          pt: 'Três caixas empilhadas.',
+          en: 'Three stacked boxes.',
+          es: 'Tres cajas apiladas.',
+        ),
         sourcePath: '$_kPasta/column_basico.dart',
         builder: (_) => const ColumnBasico(),
       ),
       WidgetExample(
-        title: 'Alinhamento principal',
-        description: 'mainAxisAlignment distribui na vertical. Toque nas opções.',
+        title: _alinhamentoPrincipal,
+        description: const Tr(
+          pt: 'mainAxisAlignment distribui na vertical. Toque nas opções.',
+          en: 'mainAxisAlignment distributes vertically. Tap the options.',
+          es: 'mainAxisAlignment distribuye en vertical. Toca las opciones.',
+        ),
         sourcePath: '$_kPasta/column_alinhamento.dart',
         builder: (_) => const ColumnAlinhamento(),
       ),
       WidgetExample(
-        title: 'Tamanho (mainAxisSize)',
-        description: 'max ocupa toda a altura; min, só o necessário.',
+        title: const Tr(
+          pt: 'Tamanho (mainAxisSize)',
+          en: 'Size (mainAxisSize)',
+          es: 'Tamaño (mainAxisSize)',
+        ),
+        description: const Tr(
+          pt: 'max ocupa toda a altura; min, só o necessário.',
+          en: 'max takes the full height; min, only what it needs.',
+          es: 'max ocupa toda la altura; min, solo lo necesario.',
+        ),
         sourcePath: '$_kPasta/column_tamanho.dart',
         builder: (_) => const ColumnTamanho(),
       ),
@@ -160,7 +242,11 @@ final kLayoutDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'Stack',
-    description: 'Sobrepõe os filhos, um em cima do outro, como camadas.',
+    description: const Tr(
+      pt: 'Sobrepõe os filhos, um em cima do outro, como camadas.',
+      en: 'Layers its children on top of each other.',
+      es: 'Superpone a sus hijos, uno encima del otro, como capas.',
+    ),
     preview: SizedBox(
       width: 64,
       height: 64,
@@ -174,21 +260,36 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Camadas',
-        description: 'O primeiro filho fica no fundo; os seguintes, por cima.',
+        title: const Tr(pt: 'Camadas', en: 'Layers', es: 'Capas'),
+        description: const Tr(
+          pt: 'O primeiro filho fica no fundo; os seguintes, por cima.',
+          en: 'The first child is at the back; the next ones go on top.',
+          es: 'El primer hijo queda al fondo; los siguientes, encima.',
+        ),
         sourcePath: '$_kPasta/stack_camadas.dart',
         builder: (_) => const StackCamadas(),
       ),
       WidgetExample(
-        title: 'Positioned',
-        description:
-            'Prende um filho a uma distância das bordas, como um selo de status.',
+        title: const Tr(pt: 'Positioned', en: 'Positioned', es: 'Positioned'),
+        description: const Tr(
+          pt: 'Prende um filho a uma distância das bordas, como um selo de status.',
+          en: 'Pins a child at a distance from the edges, like a status badge.',
+          es: 'Fija un hijo a cierta distancia de los bordes, como un indicador de estado.',
+        ),
         sourcePath: '$_kPasta/stack_positioned.dart',
         builder: (_) => const StackPositioned(),
       ),
       WidgetExample(
-        title: 'Texto sobre fundo',
-        description: 'Uma faixa de texto por cima de uma imagem.',
+        title: const Tr(
+          pt: 'Texto sobre fundo',
+          en: 'Text over a background',
+          es: 'Texto sobre fondo',
+        ),
+        description: const Tr(
+          pt: 'Uma faixa de texto por cima de uma imagem.',
+          en: 'A strip of text on top of an image.',
+          es: 'Una franja de texto encima de una imagen.',
+        ),
         sourcePath: '$_kPasta/stack_texto_sobre_fundo.dart',
         builder: (_) => const StackTextoSobreFundo(),
       ),
@@ -196,7 +297,11 @@ final kLayoutDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'Expanded',
-    description: 'Faz um filho de Row ou Column ocupar o espaço que sobra.',
+    description: const Tr(
+      pt: 'Faz um filho de Row ou Column ocupar o espaço que sobra.',
+      en: 'Makes a Row or Column child fill the remaining space.',
+      es: 'Hace que un hijo de Row o Column ocupe el espacio que sobra.',
+    ),
     preview: SizedBox(
       width: 200,
       child: Row(
@@ -209,26 +314,54 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Ocupar o resto',
-        description: 'O filho com Expanded fica com todo o espaço livre.',
+        title: const Tr(pt: 'Ocupar o resto', en: 'Fill the rest', es: 'Ocupar el resto'),
+        description: const Tr(
+          pt: 'O filho com Expanded fica com todo o espaço livre.',
+          en: 'The child wrapped in Expanded takes all the free space.',
+          es: 'El hijo con Expanded se queda con todo el espacio libre.',
+        ),
         sourcePath: '$_kPasta/expanded_basico.dart',
         builder: (_) => const ExpandedBasico(),
       ),
       WidgetExample(
-        title: 'Proporções com flex',
-        description: 'flex divide o espaço em partes: 1, 2 e 1.',
+        title: const Tr(
+          pt: 'Proporções com flex',
+          en: 'Ratios with flex',
+          es: 'Proporciones con flex',
+        ),
+        description: const Tr(
+          pt: 'flex divide o espaço em partes: 1, 2 e 1.',
+          en: 'flex splits the space into parts: 1, 2 and 1.',
+          es: 'flex divide el espacio en partes: 1, 2 y 1.',
+        ),
         sourcePath: '$_kPasta/expanded_flex.dart',
         builder: (_) => const ExpandedFlex(),
       ),
       WidgetExample(
-        title: 'Dentro de uma Column',
-        description: 'Cabeçalho e rodapé fixos, conteúdo ocupando o meio.',
+        title: const Tr(
+          pt: 'Dentro de uma Column',
+          en: 'Inside a Column',
+          es: 'Dentro de una Column',
+        ),
+        description: const Tr(
+          pt: 'Cabeçalho e rodapé fixos, conteúdo ocupando o meio.',
+          en: 'Fixed header and footer, with the content filling the middle.',
+          es: 'Cabecera y pie fijos, con el contenido ocupando el medio.',
+        ),
         sourcePath: '$_kPasta/expanded_column.dart',
         builder: (_) => const ExpandedColumn(),
       ),
       WidgetExample(
-        title: 'Expanded × Flexible',
-        description: 'Expanded obriga a ocupar o espaço; Flexible só permite.',
+        title: const Tr(
+          pt: 'Expanded × Flexible',
+          en: 'Expanded × Flexible',
+          es: 'Expanded × Flexible',
+        ),
+        description: const Tr(
+          pt: 'Expanded obriga a ocupar o espaço; Flexible só permite.',
+          en: 'Expanded forces the child to fill the space; Flexible only allows it.',
+          es: 'Expanded obliga a ocupar el espacio; Flexible solo lo permite.',
+        ),
         sourcePath: '$_kPasta/expanded_flexible.dart',
         builder: (_) => const ExpandedFlexible(),
       ),
@@ -236,7 +369,11 @@ final kLayoutDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'Padding',
-    description: 'Adiciona espaço em volta de um widget.',
+    description: const Tr(
+      pt: 'Adiciona espaço em volta de um widget.',
+      en: 'Adds space around a widget.',
+      es: 'Añade espacio alrededor de un widget.',
+    ),
     preview: Container(
       color: Colors.indigo.shade100,
       padding: const EdgeInsets.all(12),
@@ -244,15 +381,30 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Com e sem padding',
-        description: 'O mesmo texto, encostado e com 16 de espaço.',
+        title: const Tr(
+          pt: 'Com e sem padding',
+          en: 'With and without padding',
+          es: 'Con y sin padding',
+        ),
+        description: const Tr(
+          pt: 'O mesmo texto, encostado e com 16 de espaço.',
+          en: 'The same text, touching the edges and with 16 of space.',
+          es: 'El mismo texto, pegado al borde y con 16 de espacio.',
+        ),
         sourcePath: '$_kPasta/padding_basico.dart',
         builder: (_) => const PaddingBasico(),
       ),
       WidgetExample(
-        title: 'Tipos de EdgeInsets',
-        description:
-            'all, symmetric e only: espaço igual, por eixo ou por lado.',
+        title: const Tr(
+          pt: 'Tipos de EdgeInsets',
+          en: 'Kinds of EdgeInsets',
+          es: 'Tipos de EdgeInsets',
+        ),
+        description: const Tr(
+          pt: 'all, symmetric e only: espaço igual, por eixo ou por lado.',
+          en: 'all, symmetric and only: equal space, per axis or per side.',
+          es: 'all, symmetric y only: espacio igual, por eje o por lado.',
+        ),
         sourcePath: '$_kPasta/padding_edge_insets.dart',
         builder: (_) => const PaddingEdgeInsets(),
       ),
@@ -260,7 +412,11 @@ final kLayoutDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'Center',
-    description: 'Centraliza o filho no espaço disponível.',
+    description: const Tr(
+      pt: 'Centraliza o filho no espaço disponível.',
+      en: 'Centers its child in the available space.',
+      es: 'Centra a su hijo en el espacio disponible.',
+    ),
     preview: Container(
       width: 120,
       height: 60,
@@ -269,14 +425,26 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Básico',
-        description: 'Coloca o filho no meio do espaço.',
+        title: _basico,
+        description: const Tr(
+          pt: 'Coloca o filho no meio do espaço.',
+          en: 'Puts the child in the middle of the space.',
+          es: 'Coloca al hijo en el medio del espacio.',
+        ),
         sourcePath: '$_kPasta/center_basico.dart',
         builder: (_) => const CenterBasico(),
       ),
       WidgetExample(
-        title: 'widthFactor e heightFactor',
-        description: 'O Center fica do tamanho do filho vezes o fator.',
+        title: const Tr(
+          pt: 'widthFactor e heightFactor',
+          en: 'widthFactor and heightFactor',
+          es: 'widthFactor y heightFactor',
+        ),
+        description: const Tr(
+          pt: 'O Center fica do tamanho do filho vezes o fator.',
+          en: "The Center becomes the child's size times the factor.",
+          es: 'El Center toma el tamaño del hijo multiplicado por el factor.',
+        ),
         sourcePath: '$_kPasta/center_fatores.dart',
         builder: (_) => const CenterFatores(),
       ),
@@ -284,7 +452,11 @@ final kLayoutDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'Align',
-    description: 'Posiciona o filho em qualquer ponto do espaço disponível.',
+    description: const Tr(
+      pt: 'Posiciona o filho em qualquer ponto do espaço disponível.',
+      en: 'Positions its child anywhere in the available space.',
+      es: 'Posiciona a su hijo en cualquier punto del espacio disponible.',
+    ),
     preview: Container(
       width: 120,
       height: 60,
@@ -297,14 +469,26 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Posições prontas',
-        description: 'As 9 posições de Alignment. Escolha na lista.',
+        title: const Tr(
+          pt: 'Posições prontas',
+          en: 'Preset positions',
+          es: 'Posiciones predefinidas',
+        ),
+        description: const Tr(
+          pt: 'As 9 posições de Alignment. Escolha na lista.',
+          en: 'The 9 Alignment positions. Pick one from the list.',
+          es: 'Las 9 posiciones de Alignment. Elige una en la lista.',
+        ),
         sourcePath: '$_kPasta/align_posicoes.dart',
         builder: (_) => const AlignPosicoes(),
       ),
       WidgetExample(
-        title: 'Coordenadas',
-        description: 'Alignment(x, y) de -1 a 1. Arraste os controles.',
+        title: const Tr(pt: 'Coordenadas', en: 'Coordinates', es: 'Coordenadas'),
+        description: const Tr(
+          pt: 'Alignment(x, y) de -1 a 1. Arraste os controles.',
+          en: 'Alignment(x, y) from -1 to 1. Drag the sliders.',
+          es: 'Alignment(x, y) de -1 a 1. Arrastra los controles.',
+        ),
         sourcePath: '$_kPasta/align_coordenadas.dart',
         builder: (_) => const AlignCoordenadas(),
       ),
@@ -312,7 +496,11 @@ final kLayoutDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'SizedBox',
-    description: 'Dá um tamanho fixo a um widget, ou cria um espaço vazio.',
+    description: const Tr(
+      pt: 'Dá um tamanho fixo a um widget, ou cria um espaço vazio.',
+      en: 'Gives a widget a fixed size, or creates empty space.',
+      es: 'Da un tamaño fijo a un widget o crea un espacio vacío.',
+    ),
     preview: Container(
       width: 120,
       height: 40,
@@ -325,14 +513,26 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Tamanho fixo',
-        description: 'Força um tamanho exato no filho.',
+        title: const Tr(pt: 'Tamanho fixo', en: 'Fixed size', es: 'Tamaño fijo'),
+        description: const Tr(
+          pt: 'Força um tamanho exato no filho.',
+          en: 'Forces an exact size on the child.',
+          es: 'Fuerza un tamaño exacto en el hijo.',
+        ),
         sourcePath: '$_kPasta/sizedbox_tamanho.dart',
         builder: (_) => const SizedBoxTamanho(),
       ),
       WidgetExample(
-        title: 'Espaço entre widgets',
-        description: 'Sem filho, vira um espaço vazio.',
+        title: const Tr(
+          pt: 'Espaço entre widgets',
+          en: 'Space between widgets',
+          es: 'Espacio entre widgets',
+        ),
+        description: const Tr(
+          pt: 'Sem filho, vira um espaço vazio.',
+          en: 'Without a child, it becomes empty space.',
+          es: 'Sin hijo, se convierte en un espacio vacío.',
+        ),
         sourcePath: '$_kPasta/sizedbox_espaco.dart',
         builder: (_) => const SizedBoxEspaco(),
       ),
@@ -340,8 +540,11 @@ final kLayoutDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'Wrap',
-    description:
-        'Como uma Row que quebra para a linha de baixo quando falta espaço.',
+    description: const Tr(
+      pt: 'Como uma Row que quebra para a linha de baixo quando falta espaço.',
+      en: 'Like a Row that wraps to the next line when it runs out of space.',
+      es: 'Como una Row que pasa a la línea de abajo cuando falta espacio.',
+    ),
     preview: SizedBox(
       width: 190,
       child: Wrap(
@@ -359,14 +562,22 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Quebra de linha',
-        description: 'Os itens que não cabem vão para a linha de baixo.',
+        title: const Tr(pt: 'Quebra de linha', en: 'Line wrapping', es: 'Salto de línea'),
+        description: const Tr(
+          pt: 'Os itens que não cabem vão para a linha de baixo.',
+          en: "Items that don't fit move to the next line.",
+          es: 'Los elementos que no caben pasan a la línea de abajo.',
+        ),
         sourcePath: '$_kPasta/wrap_basico.dart',
         builder: (_) => const WrapBasico(),
       ),
       WidgetExample(
-        title: 'Centralizado',
-        description: 'alignment centraliza os itens em cada linha.',
+        title: const Tr(pt: 'Centralizado', en: 'Centered', es: 'Centrado'),
+        description: const Tr(
+          pt: 'alignment centraliza os itens em cada linha.',
+          en: 'alignment centers the items on each line.',
+          es: 'alignment centra los elementos en cada línea.',
+        ),
         sourcePath: '$_kPasta/wrap_centralizado.dart',
         builder: (_) => const WrapCentralizado(),
       ),
@@ -374,7 +585,11 @@ final kLayoutDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'Divider',
-    description: 'Uma linha fina para separar conteúdos.',
+    description: const Tr(
+      pt: 'Uma linha fina para separar conteúdos.',
+      en: 'A thin line to separate content.',
+      es: 'Una línea fina para separar contenidos.',
+    ),
     preview: SizedBox(
       width: 180,
       child: Column(
@@ -390,14 +605,26 @@ final kLayoutDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Entre itens',
-        description: 'Separa os itens de uma lista.',
+        title: const Tr(pt: 'Entre itens', en: 'Between items', es: 'Entre elementos'),
+        description: const Tr(
+          pt: 'Separa os itens de uma lista.',
+          en: 'Separates the items of a list.',
+          es: 'Separa los elementos de una lista.',
+        ),
         sourcePath: '$_kPasta/divider_entre_itens.dart',
         builder: (_) => const DividerEntreItens(),
       ),
       WidgetExample(
-        title: 'Personalizado e vertical',
-        description: 'Espessura, recuo, cor e o VerticalDivider.',
+        title: const Tr(
+          pt: 'Personalizado e vertical',
+          en: 'Custom and vertical',
+          es: 'Personalizado y vertical',
+        ),
+        description: const Tr(
+          pt: 'Espessura, recuo, cor e o VerticalDivider.',
+          en: 'Thickness, indent, color and the VerticalDivider.',
+          es: 'Grosor, sangría, color y el VerticalDivider.',
+        ),
         sourcePath: '$_kPasta/divider_personalizado.dart',
         builder: (_) => const DividerPersonalizado(),
       ),

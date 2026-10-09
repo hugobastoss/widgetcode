@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../models.dart';
 
 const _kRepoBlobBase =
@@ -34,7 +35,9 @@ class _CodeScreenState extends State<CodeScreen> {
     if (!mounted) return;
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
-      ..showSnackBar(const SnackBar(content: Text('Código copiado.')));
+      ..showSnackBar(
+        SnackBar(content: Text(AppLocalizations.of(context).codeCopied)),
+      );
   }
 
   Future<void> _abrirNoGitHub() async {
@@ -48,13 +51,18 @@ class _CodeScreenState extends State<CodeScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cores = theme.colorScheme;
+    final textos = AppLocalizations.of(context);
+    // Os arquivos de exemplo são escritos em português; em outro idioma, a
+    // tela avisa antes do código.
+    final comentariosEmOutroIdioma =
+        Localizations.localeOf(context).languageCode != 'pt';
 
     return Scaffold(
       appBar: AppBar(
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.example.title),
+            Text(widget.example.title.of(context)),
             Text(
               widget.widgetName,
               style: theme.textTheme.bodySmall?.copyWith(
@@ -66,45 +74,73 @@ class _CodeScreenState extends State<CodeScreen> {
         ),
         actions: [
           IconButton(
-            tooltip: 'Copiar código',
+            tooltip: textos.copyCodeTooltip,
             icon: const Icon(Icons.copy_outlined),
             onPressed: _copiar,
           ),
           IconButton(
-            tooltip: 'Abrir no GitHub',
+            tooltip: textos.openOnGitHubTooltip,
             icon: const Icon(Icons.open_in_new),
             onPressed: _abrirNoGitHub,
           ),
         ],
       ),
       backgroundColor: cores.surfaceContainerLow,
-      body: FutureBuilder<String>(
-        future: _codigo,
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return const Center(
-              child: Text('Não foi possível carregar o código.'),
-            );
-          }
-          if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          return SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: SelectableText(
-                snapshot.data!,
-                style: TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: 13,
-                  height: 1.5,
-                  color: cores.onSurface,
-                ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (comentariosEmOutroIdioma)
+            Container(
+              color: cores.secondaryContainer,
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              child: Row(
+                spacing: 12,
+                children: [
+                  Icon(
+                    Icons.translate,
+                    size: 18,
+                    color: cores.onSecondaryContainer,
+                  ),
+                  Expanded(
+                    child: Text(
+                      textos.codeCommentsNote,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: cores.onSecondaryContainer,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          );
-        },
+          Expanded(
+            child: FutureBuilder<String>(
+              future: _codigo,
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return Center(child: Text(textos.codeLoadError));
+                }
+                if (!snapshot.hasData) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+                return SingleChildScrollView(
+                  padding: const EdgeInsets.all(16),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: SelectableText(
+                      snapshot.data!,
+                      style: TextStyle(
+                        fontFamily: 'monospace',
+                        fontSize: 13,
+                        height: 1.5,
+                        color: cores.onSurface,
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

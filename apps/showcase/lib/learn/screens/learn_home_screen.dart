@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
+import '../locale_controller.dart';
 import '../models.dart';
 import '../sections.dart';
 import '../theme_mode_controller.dart';
@@ -7,13 +9,19 @@ import 'section_screen.dart';
 
 /// Tela inicial: grade com todas as seções.
 class LearnHomeScreen extends StatelessWidget {
-  const LearnHomeScreen({super.key, required this.themeController});
+  const LearnHomeScreen({
+    super.key,
+    required this.themeController,
+    required this.localeController,
+  });
 
   final ThemeModeController themeController;
+  final LocaleController localeController;
 
   void _abrirSecao(BuildContext context, LearnSection secao) {
     if (secao.docs.isEmpty) {
-      _avisar(context, 'Seção "${secao.name}" em construção.');
+      final textos = AppLocalizations.of(context);
+      _avisar(context, textos.sectionUnderConstruction(secao.name.of(context)));
       return;
     }
     Navigator.of(context).push(
@@ -24,6 +32,7 @@ class LearnHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final textos = AppLocalizations.of(context);
     final totalWidgets = kLearnSections.fold<int>(
       0,
       (soma, secao) => soma + secao.plannedWidgets.length,
@@ -32,7 +41,10 @@ class LearnHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter Widgets Hub'),
-        actions: [_ThemeMenu(controller: themeController)],
+        actions: [
+          _LanguageMenu(controller: localeController),
+          _ThemeMenu(controller: themeController),
+        ],
       ),
       body: CustomScrollView(
         slivers: [
@@ -41,17 +53,17 @@ class LearnHomeScreen extends StatelessWidget {
             sliver: SliverList.list(
               children: [
                 Text(
-                  'Aprenda os widgets nativos do Flutter com exemplos que rodam de verdade.',
+                  textos.homeIntro,
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
                 ),
                 const SizedBox(height: 16),
-                const SearchBar(
-                  hintText: 'Buscar widget, ex.: ListView',
-                  leading: Icon(Icons.search),
-                  elevation: WidgetStatePropertyAll(0),
-                  padding: WidgetStatePropertyAll(
+                SearchBar(
+                  hintText: textos.searchHint,
+                  leading: const Icon(Icons.search),
+                  elevation: const WidgetStatePropertyAll(0),
+                  padding: const WidgetStatePropertyAll(
                     EdgeInsets.symmetric(horizontal: 16),
                   ),
                 ),
@@ -61,10 +73,13 @@ class LearnHomeScreen extends StatelessWidget {
                   textBaseline: TextBaseline.alphabetic,
                   children: [
                     Expanded(
-                      child: Text('Seções', style: theme.textTheme.titleMedium),
+                      child: Text(
+                        textos.sectionsTitle,
+                        style: theme.textTheme.titleMedium,
+                      ),
                     ),
                     Text(
-                      '${kLearnSections.length} seções · $totalWidgets widgets',
+                      textos.homeSummary(kLearnSections.length, totalWidgets),
                       style: theme.textTheme.bodySmall?.copyWith(
                         color: theme.colorScheme.onSurfaceVariant,
                       ),
@@ -134,7 +149,7 @@ class _SectionTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    section.name,
+                    section.name.of(context),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: theme.textTheme.titleSmall?.copyWith(
@@ -143,7 +158,9 @@ class _SectionTile extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '${section.plannedWidgets.length} widgets',
+                    AppLocalizations.of(
+                      context,
+                    ).widgetCount(section.plannedWidgets.length),
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: cores.onSurfaceVariant,
                     ),
@@ -165,30 +182,84 @@ class _ThemeMenu extends StatelessWidget {
 
   final ThemeModeController controller;
 
-  static const _opcoes = {
-    ThemeMode.light: ('Claro', Icons.light_mode_outlined),
-    ThemeMode.dark: ('Escuro', Icons.dark_mode_outlined),
-    ThemeMode.system: ('Seguir o sistema', Icons.brightness_auto_outlined),
+  static const _icones = {
+    ThemeMode.light: Icons.light_mode_outlined,
+    ThemeMode.dark: Icons.dark_mode_outlined,
+    ThemeMode.system: Icons.brightness_auto_outlined,
   };
 
   @override
   Widget build(BuildContext context) {
+    final textos = AppLocalizations.of(context);
+    final rotulos = {
+      ThemeMode.light: textos.themeLight,
+      ThemeMode.dark: textos.themeDark,
+      ThemeMode.system: textos.themeSystem,
+    };
+
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: controller,
       builder: (context, atual, _) => PopupMenuButton<ThemeMode>(
-        tooltip: 'Tema',
-        icon: Icon(_opcoes[atual]!.$2),
+        tooltip: textos.themeTooltip,
+        icon: Icon(_icones[atual]),
         initialValue: atual,
         onSelected: controller.select,
         itemBuilder: (context) => [
-          for (final opcao in _opcoes.entries)
+          for (final rotulo in rotulos.entries)
             CheckedPopupMenuItem(
-              value: opcao.key,
-              checked: opcao.key == atual,
-              child: Text(opcao.value.$1),
+              value: rotulo.key,
+              checked: rotulo.key == atual,
+              child: Text(rotulo.value),
             ),
         ],
       ),
+    );
+  }
+}
+
+/// Botão da AppBar para escolher o idioma. Os nomes dos idiomas ficam no
+/// próprio idioma, como é costume, para quem não lê o idioma atual.
+class _LanguageMenu extends StatelessWidget {
+  const _LanguageMenu({required this.controller});
+
+  final LocaleController controller;
+
+  // O PopupMenuButton trata o valor null como "fechou sem escolher", então
+  // "seguir o sistema" vira um código próprio.
+  static const _seguirSistema = 'system';
+  static const _nomes = {'pt': 'Português', 'en': 'English', 'es': 'Español'};
+
+  @override
+  Widget build(BuildContext context) {
+    final textos = AppLocalizations.of(context);
+
+    return ValueListenableBuilder<Locale?>(
+      valueListenable: controller,
+      builder: (context, atual, _) {
+        final codigoAtual = atual?.languageCode ?? _seguirSistema;
+        return PopupMenuButton<String>(
+          tooltip: textos.languageTooltip,
+          icon: const Icon(Icons.translate),
+          initialValue: codigoAtual,
+          onSelected: (codigo) => controller.select(
+            codigo == _seguirSistema ? null : Locale(codigo),
+          ),
+          itemBuilder: (context) => [
+            for (final idioma in LocaleController.supportedLocales)
+              CheckedPopupMenuItem(
+                value: idioma.languageCode,
+                checked: idioma.languageCode == codigoAtual,
+                child: Text(_nomes[idioma.languageCode]!),
+              ),
+            const PopupMenuDivider(),
+            CheckedPopupMenuItem(
+              value: _seguirSistema,
+              checked: codigoAtual == _seguirSistema,
+              child: Text(textos.languageSystem),
+            ),
+          ],
+        );
+      },
     );
   }
 }

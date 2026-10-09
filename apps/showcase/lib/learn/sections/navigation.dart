@@ -16,8 +16,11 @@ import '../examples/navigation/navigator_resultado.dart';
 import '../examples/navigation/tab_bar_rolavel.dart';
 import '../examples/navigation/tab_bar_view.dart';
 import '../models.dart';
+import '../tr.dart';
 
 const _kPasta = 'lib/learn/examples/navigation';
+
+const _basico = Tr(pt: 'Básico', en: 'Basic', es: 'Básico');
 
 Widget _bloco(Color cor, double largura, double altura, {double raio = 0}) =>
     Container(
@@ -55,7 +58,11 @@ Widget _telinha(ColorScheme cores, {bool comVoltar = false}) => Container(
 final kNavigationDocs = <WidgetDoc>[
   WidgetDoc(
     name: 'AppBar',
-    description: 'A barra do topo da tela: título, menu e ações.',
+    description: const Tr(
+      pt: 'A barra do topo da tela: título, menu e ações.',
+      en: 'The bar at the top of the screen: title, menu and actions.',
+      es: 'La barra superior de la pantalla: título, menú y acciones.',
+    ),
     preview: SizedBox(
       width: 240,
       height: 56,
@@ -68,20 +75,40 @@ final kNavigationDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Básico',
-        description: 'Um Scaffold com AppBar e título.',
+        title: _basico,
+        description: const Tr(
+          pt: 'Um Scaffold com AppBar e título.',
+          en: 'A Scaffold with an AppBar and a title.',
+          es: 'Un Scaffold con AppBar y título.',
+        ),
         sourcePath: '$_kPasta/app_bar_basico.dart',
         builder: (_) => const AppBarBasico(),
       ),
       WidgetExample(
-        title: 'leading e actions',
-        description: 'Menu à esquerda e botões de ação à direita.',
+        title: const Tr(
+          pt: 'leading e actions',
+          en: 'leading and actions',
+          es: 'leading y actions',
+        ),
+        description: const Tr(
+          pt: 'Menu à esquerda e botões de ação à direita.',
+          en: 'A menu on the left and action buttons on the right.',
+          es: 'Menú a la izquierda y botones de acción a la derecha.',
+        ),
         sourcePath: '$_kPasta/app_bar_acoes.dart',
         builder: (_) => const AppBarAcoes(),
       ),
       WidgetExample(
-        title: 'Cores e título no meio',
-        description: 'backgroundColor, foregroundColor e centerTitle.',
+        title: const Tr(
+          pt: 'Cores e título no meio',
+          en: 'Colors and centered title',
+          es: 'Colores y título centrado',
+        ),
+        description: const Tr(
+          pt: 'backgroundColor, foregroundColor e centerTitle.',
+          en: 'backgroundColor, foregroundColor and centerTitle.',
+          es: 'backgroundColor, foregroundColor y centerTitle.',
+        ),
         sourcePath: '$_kPasta/app_bar_cores.dart',
         builder: (_) => const AppBarCores(),
       ),
@@ -89,7 +116,11 @@ final kNavigationDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'NavigationBar',
-    description: 'A barra de abas embaixo da tela, para trocar de seção.',
+    description: const Tr(
+      pt: 'A barra de abas embaixo da tela, para trocar de seção.',
+      en: 'The tab bar at the bottom of the screen, to switch sections.',
+      es: 'La barra de pestañas en la parte inferior, para cambiar de sección.',
+    ),
     preview: SizedBox(
       width: 260,
       height: 80,
@@ -104,14 +135,22 @@ final kNavigationDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Básico',
-        description: 'Três abas que trocam o conteúdo da tela.',
+        title: _basico,
+        description: const Tr(
+          pt: 'Três abas que trocam o conteúdo da tela.',
+          en: 'Three tabs that switch the screen content.',
+          es: 'Tres pestañas que cambian el contenido de la pantalla.',
+        ),
         sourcePath: '$_kPasta/navigation_bar_basico.dart',
         builder: (_) => const NavigationBarBasico(),
       ),
       WidgetExample(
-        title: 'Com selos',
-        description: 'Badge nos ícones e texto só na aba escolhida.',
+        title: const Tr(pt: 'Com selos', en: 'With badges', es: 'Con insignias'),
+        description: const Tr(
+          pt: 'Badge nos ícones e texto só na aba escolhida.',
+          en: 'Badges on the icons and a label only on the selected tab.',
+          es: 'Badge en los íconos y texto solo en la pestaña elegida.',
+        ),
         sourcePath: '$_kPasta/navigation_bar_selos.dart',
         builder: (_) => const NavigationBarSelos(),
       ),
@@ -119,7 +158,11 @@ final kNavigationDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'NavigationRail',
-    description: 'A barra de navegação lateral, para tablets e telas largas.',
+    description: const Tr(
+      pt: 'A barra de navegação lateral, para tablets e telas largas.',
+      en: 'The side navigation bar, for tablets and wide screens.',
+      es: 'La barra de navegación lateral, para tablets y pantallas anchas.',
+    ),
     preview: Builder(
       builder: (context) {
         final cores = Theme.of(context).colorScheme;
@@ -147,14 +190,22 @@ final kNavigationDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Básico',
-        description: 'Destinos com ícone e texto ao lado do conteúdo.',
+        title: _basico,
+        description: const Tr(
+          pt: 'Destinos com ícone e texto ao lado do conteúdo.',
+          en: 'Destinations with an icon and a label next to the content.',
+          es: 'Destinos con ícono y texto al lado del contenido.',
+        ),
         sourcePath: '$_kPasta/navigation_rail_basico.dart',
         builder: (_) => const NavigationRailBasico(),
       ),
       WidgetExample(
-        title: 'Com FAB',
-        description: 'leading com um FAB e destinos no meio da barra.',
+        title: const Tr(pt: 'Com FAB', en: 'With a FAB', es: 'Con FAB'),
+        description: const Tr(
+          pt: 'leading com um FAB e destinos no meio da barra.',
+          en: 'leading with a FAB and destinations in the middle of the bar.',
+          es: 'leading con un FAB y destinos en el medio de la barra.',
+        ),
         sourcePath: '$_kPasta/navigation_rail_fab.dart',
         builder: (_) => const NavigationRailFab(),
       ),
@@ -162,7 +213,11 @@ final kNavigationDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'NavigationDrawer',
-    description: 'O menu lateral que abre pelo ☰ ou deslizando da borda.',
+    description: const Tr(
+      pt: 'O menu lateral que abre pelo ☰ ou deslizando da borda.',
+      en: 'The side menu that opens from ☰ or by swiping from the edge.',
+      es: 'El menú lateral que se abre con ☰ o deslizando desde el borde.',
+    ),
     preview: Builder(
       builder: (context) {
         final cores = Theme.of(context).colorScheme;
@@ -194,14 +249,26 @@ final kNavigationDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Menu lateral',
-        description: 'drawer no Scaffold e o ☰ automático na AppBar.',
+        title: const Tr(pt: 'Menu lateral', en: 'Side menu', es: 'Menú lateral'),
+        description: const Tr(
+          pt: 'drawer no Scaffold e o ☰ automático na AppBar.',
+          en: 'drawer in the Scaffold and the automatic ☰ in the AppBar.',
+          es: 'drawer en el Scaffold y el ☰ automático en la AppBar.',
+        ),
         sourcePath: '$_kPasta/navigation_drawer_basico.dart',
         builder: (_) => const NavigationDrawerBasico(),
       ),
       WidgetExample(
-        title: 'Abrir pelo código',
-        description: 'endDrawer e Scaffold.of(context) dentro de um Builder.',
+        title: const Tr(
+          pt: 'Abrir pelo código',
+          en: 'Open from code',
+          es: 'Abrir desde el código',
+        ),
+        description: const Tr(
+          pt: 'endDrawer e Scaffold.of(context) dentro de um Builder.',
+          en: 'endDrawer and Scaffold.of(context) inside a Builder.',
+          es: 'endDrawer y Scaffold.of(context) dentro de un Builder.',
+        ),
         sourcePath: '$_kPasta/navigation_drawer_codigo.dart',
         builder: (_) => const NavigationDrawerCodigo(),
       ),
@@ -209,7 +276,11 @@ final kNavigationDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'TabBar',
-    description: 'Abas no topo para alternar entre conteúdos da mesma tela.',
+    description: const Tr(
+      pt: 'Abas no topo para alternar entre conteúdos da mesma tela.',
+      en: 'Tabs at the top to switch between contents of the same screen.',
+      es: 'Pestañas arriba para alternar entre contenidos de la misma pantalla.',
+    ),
     preview: const DefaultTabController(
       length: 3,
       child: SizedBox(
@@ -225,14 +296,30 @@ final kNavigationDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'Com TabBarView',
-        description: 'Abas na AppBar e conteúdo que troca deslizando.',
+        title: const Tr(
+          pt: 'Com TabBarView',
+          en: 'With TabBarView',
+          es: 'Con TabBarView',
+        ),
+        description: const Tr(
+          pt: 'Abas na AppBar e conteúdo que troca deslizando.',
+          en: 'Tabs in the AppBar and content you can swipe through.',
+          es: 'Pestañas en la AppBar y contenido que cambia deslizando.',
+        ),
         sourcePath: '$_kPasta/tab_bar_view.dart',
         builder: (_) => const TabBarComView(),
       ),
       WidgetExample(
-        title: 'Rolável com ícones',
-        description: 'isScrollable para muitas abas, com ícone e texto.',
+        title: const Tr(
+          pt: 'Rolável com ícones',
+          en: 'Scrollable with icons',
+          es: 'Desplazable con íconos',
+        ),
+        description: const Tr(
+          pt: 'isScrollable para muitas abas, com ícone e texto.',
+          en: 'isScrollable for many tabs, with an icon and a label.',
+          es: 'isScrollable para muchas pestañas, con ícono y texto.',
+        ),
         sourcePath: '$_kPasta/tab_bar_rolavel.dart',
         builder: (_) => const TabBarRolavel(),
       ),
@@ -240,7 +327,11 @@ final kNavigationDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'BottomAppBar',
-    description: 'Uma barra de ações embaixo da tela, com espaço para o FAB.',
+    description: const Tr(
+      pt: 'Uma barra de ações embaixo da tela, com espaço para o FAB.',
+      en: 'An action bar at the bottom of the screen, with room for the FAB.',
+      es: 'Una barra de acciones en la parte inferior, con espacio para el FAB.',
+    ),
     preview: Builder(
       builder: (context) {
         final cores = Theme.of(context).colorScheme;
@@ -271,14 +362,30 @@ final kNavigationDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'FAB dentro da barra',
-        description: 'floatingActionButtonLocation.endContained.',
+        title: const Tr(
+          pt: 'FAB dentro da barra',
+          en: 'FAB inside the bar',
+          es: 'FAB dentro de la barra',
+        ),
+        description: const Tr(
+          pt: 'floatingActionButtonLocation.endContained.',
+          en: 'floatingActionButtonLocation.endContained.',
+          es: 'floatingActionButtonLocation.endContained.',
+        ),
         sourcePath: '$_kPasta/bottom_app_bar_fab.dart',
         builder: (_) => const BottomAppBarFab(),
       ),
       WidgetExample(
-        title: 'FAB encaixado no meio',
-        description: 'centerDocked com o recorte CircularNotchedRectangle.',
+        title: const Tr(
+          pt: 'FAB encaixado no meio',
+          en: 'FAB docked in the middle',
+          es: 'FAB encajado en el medio',
+        ),
+        description: const Tr(
+          pt: 'centerDocked com o recorte CircularNotchedRectangle.',
+          en: 'centerDocked with the CircularNotchedRectangle notch.',
+          es: 'centerDocked con el recorte CircularNotchedRectangle.',
+        ),
         sourcePath: '$_kPasta/bottom_app_bar_entalhe.dart',
         builder: (_) => const BottomAppBarEntalhe(),
       ),
@@ -286,7 +393,11 @@ final kNavigationDocs = <WidgetDoc>[
   ),
   WidgetDoc(
     name: 'Navigator',
-    description: 'Troca de tela: abre uma nova por cima e volta para a anterior.',
+    description: const Tr(
+      pt: 'Troca de tela: abre uma nova por cima e volta para a anterior.',
+      en: 'Switching screens: opens a new one on top and goes back to the previous one.',
+      es: 'Cambio de pantalla: abre una nueva encima y vuelve a la anterior.',
+    ),
     preview: Builder(
       builder: (context) {
         final cores = Theme.of(context).colorScheme;
@@ -303,14 +414,26 @@ final kNavigationDocs = <WidgetDoc>[
     ),
     examples: [
       WidgetExample(
-        title: 'push e pop',
-        description: 'Abre uma tela nova e volta para esta.',
+        title: const Tr(pt: 'push e pop', en: 'push and pop', es: 'push y pop'),
+        description: const Tr(
+          pt: 'Abre uma tela nova e volta para esta.',
+          en: 'Opens a new screen and comes back to this one.',
+          es: 'Abre una pantalla nueva y vuelve a esta.',
+        ),
         sourcePath: '$_kPasta/navigator_push_pop.dart',
         builder: (_) => const NavigatorPushPop(),
       ),
       WidgetExample(
-        title: 'Recebendo um valor',
-        description: 'A outra tela devolve a escolha no pop.',
+        title: const Tr(
+          pt: 'Recebendo um valor',
+          en: 'Receiving a value',
+          es: 'Recibiendo un valor',
+        ),
+        description: const Tr(
+          pt: 'A outra tela devolve a escolha no pop.',
+          en: 'The other screen returns the choice in pop.',
+          es: 'La otra pantalla devuelve la elección en el pop.',
+        ),
         sourcePath: '$_kPasta/navigator_resultado.dart',
         builder: (_) => const NavigatorResultado(),
       ),

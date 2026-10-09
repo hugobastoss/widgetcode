@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../models.dart';
 import 'code_screen.dart';
 
@@ -20,14 +21,14 @@ class WidgetScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
         children: [
           Text(
-            doc.description,
+            doc.description.of(context),
             style: theme.textTheme.bodyLarge?.copyWith(
               color: theme.colorScheme.onSurfaceVariant,
             ),
           ),
           const SizedBox(height: 24),
           Text(
-            'Exemplos (${doc.examples.length})',
+            AppLocalizations.of(context).examplesHeader(doc.examples.length),
             style: theme.textTheme.titleMedium,
           ),
           const SizedBox(height: 12),
@@ -78,7 +79,7 @@ class _ExampleCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '$number · ${example.title}',
+                  '$number · ${example.title.of(context)}',
                   style: theme.textTheme.titleSmall?.copyWith(
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
@@ -86,7 +87,7 @@ class _ExampleCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  example.description,
+                  example.description.of(context),
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: cores.onSurfaceVariant,
                   ),
@@ -102,7 +103,7 @@ class _ExampleCard extends StatelessWidget {
               child: TextButton.icon(
                 onPressed: onShowCode,
                 icon: const Icon(Icons.code),
-                label: const Text('Código'),
+                label: Text(AppLocalizations.of(context).codeButton),
               ),
             ),
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_widgets_hub_showcase/learn/locale_controller.dart';
 import 'package:flutter_widgets_hub_showcase/learn/models.dart';
 import 'package:flutter_widgets_hub_showcase/learn/screens/widget_screen.dart';
 import 'package:flutter_widgets_hub_showcase/learn/sections.dart';
@@ -8,6 +9,15 @@ import 'package:flutter_widgets_hub_showcase/learn/theme_mode_controller.dart';
 import 'package:flutter_widgets_hub_showcase/main.dart';
 import 'package:flutter_widgets_hub_showcase/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+/// O app em português — os testes procuram os textos em pt —, salvo quando
+/// o teste escolhe outro idioma ou tema.
+ShowcaseApp _app({ThemeModeController? tema, LocaleController? idioma}) {
+  return ShowcaseApp(
+    themeController: tema ?? ThemeModeController.inMemory(),
+    localeController: idioma ?? LocaleController.inMemory(const Locale('pt')),
+  );
+}
 
 void main() {
   // O rootBundle guarda em cache o Future de cada asset lido, preso à zona
@@ -18,9 +28,7 @@ void main() {
   testWidgets(
     'navega Início -> Botões -> ElevatedButton -> código do exemplo',
     (tester) async {
-      await tester.pumpWidget(
-        ShowcaseApp(themeController: ThemeModeController.inMemory()),
-      );
+      await tester.pumpWidget(_app());
 
       expect(find.text('Flutter Widgets Hub'), findsOneWidget);
       expect(find.text('12 seções · 79 widgets'), findsOneWidget);
@@ -52,7 +60,7 @@ void main() {
 
   testWidgets('o menu de tema troca o app para claro e escuro', (tester) async {
     final tema = ThemeModeController.inMemory();
-    await tester.pumpWidget(ShowcaseApp(themeController: tema));
+    await tester.pumpWidget(_app(tema: tema));
 
     ThemeMode modoDoApp() =>
         tester.widget<MaterialApp>(find.byType(MaterialApp)).themeMode!;
@@ -84,10 +92,72 @@ void main() {
     expect(proximaAbertura.value, ThemeMode.light);
   });
 
-  testWidgets('a seção Layout abre com seus 11 widgets', (tester) async {
-    await tester.pumpWidget(
-      ShowcaseApp(themeController: ThemeModeController.inMemory()),
+  testWidgets('o menu de idioma troca o app entre pt, en e es', (tester) async {
+    // Celular pequeno: textos em en/es têm outros tamanhos e não podem
+    // estourar a largura.
+    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.devicePixelRatio = 3;
+    addTearDown(tester.view.reset);
+
+    final idioma = LocaleController.inMemory(const Locale('pt'));
+    await tester.pumpWidget(_app(idioma: idioma));
+
+    expect(find.text('Seções'), findsOneWidget);
+    expect(find.text('Botões'), findsOneWidget);
+
+    Future<void> escolher(String nome) async {
+      await tester.tap(find.byType(PopupMenuButton<String>));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(nome));
+      await tester.pumpAndSettle();
+    }
+
+    await escolher('English');
+    expect(idioma.value, const Locale('en'));
+    expect(find.text('Sections'), findsOneWidget);
+    expect(find.text('Buttons'), findsOneWidget);
+    expect(find.text('12 sections · 79 widgets'), findsOneWidget);
+
+    await escolher('Español');
+    expect(find.text('Secciones'), findsOneWidget);
+    expect(find.text('Botones'), findsOneWidget);
+
+    // O conteúdo também troca: a descrição do ElevatedButton em espanhol.
+    await tester.tap(find.text('Botones'));
+    await tester.pumpAndSettle();
+    expect(
+      find.text(
+        'Botón con sombra, para destacar la acción sobre fondos de color o con imagen.',
+      ),
+      findsOneWidget,
     );
+  });
+
+  test('a escolha de idioma fica salva para a próxima abertura', () async {
+    SharedPreferences.setMockInitialValues({});
+
+    final primeiraVez = await LocaleController.load();
+    expect(primeiraVez.value, isNull); // segue o sistema
+
+    await primeiraVez.select(const Locale('es'));
+    expect((await LocaleController.load()).value, const Locale('es'));
+
+    await primeiraVez.select(null);
+    expect((await LocaleController.load()).value, isNull);
+  });
+
+  test('idioma do sistema sem tradução cai no inglês', () {
+    expect(LocaleController.resolve([const Locale('fr')]), const Locale('en'));
+    expect(
+      LocaleController.resolve([const Locale('fr'), const Locale('es', 'MX')]),
+      const Locale('es'),
+    );
+    expect(LocaleController.resolve([const Locale('pt', 'BR')]), const Locale('pt'));
+    expect(LocaleController.resolve(null), const Locale('en'));
+  });
+
+  testWidgets('a seção Layout abre com seus 11 widgets', (tester) async {
+    await tester.pumpWidget(_app());
 
     await tester.tap(find.text('Layout'));
     await tester.pumpAndSettle();
@@ -131,11 +201,12 @@ void main() {
           );
           final erroPreview = tester.takeException();
           if (erroPreview != null) {
-            falhas.add('${secao.name} / ${doc.name} (prévia): $erroPreview');
+            falhas.add('${secao.name.pt} / ${doc.name} (prévia): $erroPreview');
           }
 
           for (final exemplo in doc.examples) {
-            final rotulo = '${secao.name} / ${doc.name} / ${exemplo.title}';
+            final rotulo =
+                '${secao.name.pt} / ${doc.name} / ${exemplo.title.pt}';
             if (!caminhos.add(exemplo.sourcePath)) {
               falhas.add('$rotulo: repete o arquivo ${exemplo.sourcePath}');
             }

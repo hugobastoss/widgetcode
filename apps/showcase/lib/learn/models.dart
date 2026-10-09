@@ -1,16 +1,18 @@
 import 'package:flutter/widgets.dart';
 
+import 'tr.dart';
+
 /// Uma seção da tela inicial (ex.: Botões).
 class LearnSection {
   const LearnSection({
     required this.name,
     required this.icon,
     required this.plannedWidgets,
-    this.intro = '',
+    required this.intro,
     this.docs = const [],
   });
 
-  final String name;
+  final Tr name;
   final IconData icon;
 
   /// Widgets nativos planejados pra seção — a contagem da tela inicial sai
@@ -18,7 +20,7 @@ class LearnSection {
   final List<String> plannedWidgets;
 
   /// Texto curto no topo da tela da seção.
-  final String intro;
+  final Tr intro;
 
   /// Widgets com página pronta. Vazio = seção ainda em construção.
   final List<WidgetDoc> docs;
@@ -33,8 +35,9 @@ class WidgetDoc {
     required this.examples,
   });
 
+  /// O nome da classe do Flutter (ex.: ElevatedButton) — não se traduz.
   final String name;
-  final String description;
+  final Tr description;
 
   /// O widget real, desenhado no cartão da tela da seção.
   final Widget preview;
@@ -54,8 +57,8 @@ class WidgetExample {
     this.usesHero = false,
   });
 
-  final String title;
-  final String description;
+  final Tr title;
+  final Tr description;
 
   /// Caminho do arquivo, relativo a `apps/showcase/`. É também o asset que
   /// a tela de código carrega (ver `flutter: assets:` no pubspec.yaml).

@@ -1,0 +1,41 @@
+{
+  "@@locale": "pt",
+  "homeIntro": "Aprenda os widgets nativos do Flutter com exemplos que rodam de verdade.",
+  "searchHint": "Buscar widget, ex.: ListView",
+  "sectionsTitle": "Seções",
+  "homeSummary": "{sections} seções · {widgets} widgets",
+  "@homeSummary": {
+    "placeholders": {
+      "sections": {"type": "int"},
+      "widgets": {"type": "int"}
+    }
+  },
+  "widgetCount": "{count, plural, =1{1 widget} other{{count} widgets}}",
+  "@widgetCount": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "exampleCount": "{count, plural, =1{1 exemplo} other{{count} exemplos}}",
+  "@exampleCount": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "examplesHeader": "Exemplos ({count})",
+  "@examplesHeader": {
+    "placeholders": {"count": {"type": "int"}}
+  },
+  "sectionUnderConstruction": "Seção \"{name}\" em construção.",
+  "@sectionUnderConstruction": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "codeButton": "Código",
+  "copyCodeTooltip": "Copiar código",
+  "openOnGitHubTooltip": "Abrir no GitHub",
+  "codeCopied": "Código copiado.",
+  "codeLoadError": "Não foi possível carregar o código.",
+  "codeCommentsNote": "Os comentários do código estão em português.",
+  "themeTooltip": "Tema",
+  "themeLight": "Claro",
+  "themeDark": "Escuro",
+  "themeSystem": "Seguir o sistema",
+  "languageTooltip": "Idioma",
+  "languageSystem": "Seguir o sistema"
+}

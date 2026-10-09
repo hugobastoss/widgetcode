@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../models.dart';
 import 'widget_screen.dart';
 
@@ -18,13 +19,13 @@ class SectionScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(section.name),
+        title: Text(section.name.of(context)),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16),
             child: Center(
               child: Text(
-                '${docs.length} widgets',
+                AppLocalizations.of(context).widgetCount(docs.length),
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: theme.colorScheme.onSurfaceVariant,
                 ),
@@ -40,7 +41,7 @@ class SectionScreen extends StatelessWidget {
         itemBuilder: (context, i) {
           if (i == 0) {
             return Text(
-              section.intro,
+              section.intro.of(context),
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
               ),
@@ -120,7 +121,7 @@ class _WidgetCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    doc.description,
+                    doc.description.of(context),
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: cores.onSurfaceVariant,
                     ),
@@ -138,7 +139,9 @@ class _WidgetCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
-                          '${doc.examples.length} exemplos',
+                          AppLocalizations.of(
+                            context,
+                          ).exampleCount(doc.examples.length),
                           style: theme.textTheme.labelSmall?.copyWith(
                             color: cores.onSecondaryContainer,
                             fontWeight: FontWeight.w600,
@@ -148,7 +151,9 @@ class _WidgetCard extends StatelessWidget {
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
-                          doc.examples.map((e) => e.title).join(' · '),
+                          doc.examples
+                              .map((e) => e.title.of(context))
+                              .join(' · '),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: theme.textTheme.bodySmall?.copyWith(

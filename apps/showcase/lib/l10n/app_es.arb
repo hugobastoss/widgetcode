@@ -1,0 +1,23 @@
+{
+  "@@locale": "es",
+  "homeIntro": "Aprende los widgets nativos de Flutter con ejemplos que funcionan de verdad.",
+  "searchHint": "Buscar widget, p. ej.: ListView",
+  "sectionsTitle": "Secciones",
+  "homeSummary": "{sections} secciones · {widgets} widgets",
+  "widgetCount": "{count, plural, =1{1 widget} other{{count} widgets}}",
+  "exampleCount": "{count, plural, =1{1 ejemplo} other{{count} ejemplos}}",
+  "examplesHeader": "Ejemplos ({count})",
+  "sectionUnderConstruction": "La sección \"{name}\" está en construcción.",
+  "codeButton": "Código",
+  "copyCodeTooltip": "Copiar código",
+  "openOnGitHubTooltip": "Abrir en GitHub",
+  "codeCopied": "Código copiado.",
+  "codeLoadError": "No se pudo cargar el código.",
+  "codeCommentsNote": "Los comentarios del código están en portugués.",
+  "themeTooltip": "Tema",
+  "themeLight": "Claro",
+  "themeDark": "Oscuro",
+  "themeSystem": "Seguir el sistema",
+  "languageTooltip": "Idioma",
+  "languageSystem": "Seguir el sistema"
+}

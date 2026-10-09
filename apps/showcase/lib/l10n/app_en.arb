@@ -1,0 +1,23 @@
+{
+  "@@locale": "en",
+  "homeIntro": "Learn Flutter's native widgets with examples that actually run.",
+  "searchHint": "Search widgets, e.g. ListView",
+  "sectionsTitle": "Sections",
+  "homeSummary": "{sections} sections · {widgets} widgets",
+  "widgetCount": "{count, plural, =1{1 widget} other{{count} widgets}}",
+  "exampleCount": "{count, plural, =1{1 example} other{{count} examples}}",
+  "examplesHeader": "Examples ({count})",
+  "sectionUnderConstruction": "The \"{name}\" section is under construction.",
+  "codeButton": "Code",
+  "copyCodeTooltip": "Copy code",
+  "openOnGitHubTooltip": "Open on GitHub",
+  "codeCopied": "Code copied.",
+  "codeLoadError": "Could not load the code.",
+  "codeCommentsNote": "Code comments are in Portuguese.",
+  "themeTooltip": "Theme",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "themeSystem": "Follow system",
+  "languageTooltip": "Language",
+  "languageSystem": "Follow system"
+}
