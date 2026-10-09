@@ -19,6 +19,7 @@ import 'tr.dart';
 /// abrem; as demais mostram "em construção".
 final kLearnSections = <LearnSection>[
   LearnSection(
+    id: 'layout',
     name: const Tr(pt: 'Layout', en: 'Layout', es: 'Layout'),
     icon: Icons.dashboard_outlined,
     plannedWidgets: [for (final doc in kLayoutDocs) doc.name],
@@ -30,6 +31,7 @@ final kLearnSections = <LearnSection>[
     docs: kLayoutDocs,
   ),
   LearnSection(
+    id: 'text_images',
     name: const Tr(pt: 'Texto e imagens', en: 'Text & images', es: 'Texto e imágenes'),
     icon: Icons.text_fields,
     plannedWidgets: [for (final doc in kTextImagesDocs) doc.name],
@@ -41,6 +43,7 @@ final kLearnSections = <LearnSection>[
     docs: kTextImagesDocs,
   ),
   LearnSection(
+    id: 'buttons',
     name: const Tr(pt: 'Botões', en: 'Buttons', es: 'Botones'),
     icon: Icons.smart_button_outlined,
     plannedWidgets: [for (final doc in kButtonDocs) doc.name],
@@ -52,6 +55,7 @@ final kLearnSections = <LearnSection>[
     docs: kButtonDocs,
   ),
   LearnSection(
+    id: 'forms',
     name: const Tr(pt: 'Formulários', en: 'Forms', es: 'Formularios'),
     icon: Icons.input,
     plannedWidgets: [for (final doc in kFormsDocs) doc.name],
@@ -63,6 +67,7 @@ final kLearnSections = <LearnSection>[
     docs: kFormsDocs,
   ),
   LearnSection(
+    id: 'selection',
     name: const Tr(pt: 'Seleção', en: 'Selection', es: 'Selección'),
     icon: Icons.check_box_outlined,
     plannedWidgets: [for (final doc in kSelectionDocs) doc.name],
@@ -74,6 +79,7 @@ final kLearnSections = <LearnSection>[
     docs: kSelectionDocs,
   ),
   LearnSection(
+    id: 'lists',
     name: const Tr(pt: 'Listas e rolagem', en: 'Lists & scrolling', es: 'Listas y scroll'),
     icon: Icons.list,
     plannedWidgets: [for (final doc in kListsDocs) doc.name],
@@ -85,6 +91,7 @@ final kLearnSections = <LearnSection>[
     docs: kListsDocs,
   ),
   LearnSection(
+    id: 'navigation',
     name: const Tr(pt: 'Navegação', en: 'Navigation', es: 'Navegación'),
     icon: Icons.explore_outlined,
     plannedWidgets: [for (final doc in kNavigationDocs) doc.name],
@@ -96,6 +103,7 @@ final kLearnSections = <LearnSection>[
     docs: kNavigationDocs,
   ),
   LearnSection(
+    id: 'feedback',
     name: const Tr(pt: 'Diálogos e avisos', en: 'Dialogs & feedback', es: 'Diálogos y avisos'),
     icon: Icons.chat_bubble_outline,
     plannedWidgets: [for (final doc in kFeedbackDocs) doc.name],
@@ -107,6 +115,7 @@ final kLearnSections = <LearnSection>[
     docs: kFeedbackDocs,
   ),
   LearnSection(
+    id: 'cards',
     name: const Tr(pt: 'Cartões e painéis', en: 'Cards & panels', es: 'Tarjetas y paneles'),
     icon: Icons.style_outlined,
     plannedWidgets: [for (final doc in kCardsDocs) doc.name],
@@ -118,6 +127,7 @@ final kLearnSections = <LearnSection>[
     docs: kCardsDocs,
   ),
   LearnSection(
+    id: 'animations',
     name: const Tr(pt: 'Animações', en: 'Animations', es: 'Animaciones'),
     icon: Icons.animation,
     plannedWidgets: [for (final doc in kAnimationsDocs) doc.name],
@@ -129,6 +139,7 @@ final kLearnSections = <LearnSection>[
     docs: kAnimationsDocs,
   ),
   LearnSection(
+    id: 'gestures',
     name: const Tr(pt: 'Gestos', en: 'Gestures', es: 'Gestos'),
     icon: Icons.touch_app_outlined,
     plannedWidgets: [for (final doc in kGesturesDocs) doc.name],
@@ -140,6 +151,7 @@ final kLearnSections = <LearnSection>[
     docs: kGesturesDocs,
   ),
   LearnSection(
+    id: 'cupertino',
     name: const Tr(pt: 'Estilo iOS', en: 'iOS style', es: 'Estilo iOS'),
     icon: Icons.phone_iphone,
     plannedWidgets: [for (final doc in kCupertinoDocs) doc.name],

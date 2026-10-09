@@ -5,6 +5,7 @@ import 'tr.dart';
 /// Uma seção da tela inicial (ex.: Botões).
 class LearnSection {
   const LearnSection({
+    required this.id,
     required this.name,
     required this.icon,
     required this.plannedWidgets,
@@ -12,6 +13,9 @@ class LearnSection {
     this.docs = const [],
   });
 
+  /// Igual ao nome da pasta dos exemplos da seção (ex.: buttons). Aparece no
+  /// manifest/widgets.json.
+  final String id;
   final Tr name;
   final IconData icon;
 
@@ -61,8 +65,15 @@ class WidgetExample {
   final Tr description;
 
   /// Caminho do arquivo, relativo a `apps/showcase/`. É também o asset que
-  /// a tela de código carrega (ver `flutter: assets:` no pubspec.yaml).
+  /// o painel de código carrega (ver `flutter: assets:` no pubspec.yaml).
   final String sourcePath;
+
+  /// Identificador do exemplo, tirado do caminho: `<seção>/<arquivo>` (ex.:
+  /// buttons/elevated_button_carregando). É o que o dev cita para a IA e a
+  /// chave do exemplo no manifest/widgets.json.
+  String get id => sourcePath
+      .replaceFirst('lib/learn/examples/', '')
+      .replaceFirst(RegExp(r'\.dart$'), '');
 
   final WidgetBuilder builder;
 
