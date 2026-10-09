@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// ## Propósito
 /// Página centralizada com ícone, título, corpo de texto e um botão de
-/// ação de largura cheia — generalização da página de onboarding, mas
+/// ação de largura cheia: generalização da página de onboarding, mas
 /// igualmente útil pra estado vazio, tela de erro ou um cartão de
 /// "ative o recurso X". Inclui um botão secundário opcional de texto
 /// ([secondaryLabel]) abaixo do principal, pra ações como "pular"/"agora
@@ -25,7 +25,7 @@ import 'package:flutter/material.dart';
 /// Nenhuma. Usa só `Theme.of(context)` (colorScheme, textTheme).
 ///
 /// ## Última verificação
-/// 2026-10-08 — contra flutterwidgetshub main.
+/// 2026-10-08, contra flutterwidgetshub main.
 class HubFeaturePage extends StatelessWidget {
   const HubFeaturePage({
     super.key,

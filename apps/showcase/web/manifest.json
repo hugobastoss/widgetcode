@@ -1,11 +1,11 @@
 {
-    "name": "flutter_widgets_hub_showcase",
-    "short_name": "flutter_widgets_hub_showcase",
+    "name": "WidgetCode: Widgets for Flutter",
+    "short_name": "WidgetCode",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#0169B8",
+    "theme_color": "#0169B8",
+    "description": "Examples of Flutter's native widgets running for real, each with its source code.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

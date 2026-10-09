@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 /// ## Propósito
-/// Linha de lista de dados (vendas, contatos, pedidos — qualquer coisa
-/// repetida e rolável). Deliberadamente **não** é o widget `Card` — sem
+/// Linha de lista de dados (vendas, contatos, pedidos: qualquer coisa
+/// repetida e rolável). Deliberadamente **não** é o widget `Card`: sem
 /// elevação, uma superfície plana com borda fina, pra parecer mais densa e
 /// tabular do que uma linha de configuração (ver [HubSettingsGroupedCard]
 /// pra esse outro caso).
@@ -22,7 +22,7 @@ import 'package:flutter/material.dart';
 /// Nenhuma. Usa só `Theme.of(context)` (colorScheme).
 ///
 /// ## Última verificação
-/// 2026-10-08 — contra flutterwidgetshub main.
+/// 2026-10-08, contra flutterwidgetshub main.
 class HubDataListRow extends StatelessWidget {
   const HubDataListRow({
     super.key,

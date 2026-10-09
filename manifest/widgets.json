@@ -1,112 +1,4142 @@
 {
-  "widgets": [
+  "schemaVersion": 2,
+  "generatedBy": "apps/showcase/test/manifest_test.dart (não edite à mão; veja o comando de atualização no topo desse arquivo).",
+  "repository": "https://github.com/hugobastoss/widgetcode",
+  "rawBaseUrl": "https://raw.githubusercontent.com/hugobastoss/widgetcode/main/",
+  "totals": {
+    "sections": 12,
+    "widgets": 79,
+    "examples": 210
+  },
+  "sections": [
     {
-      "id": "primary-button",
-      "name": "Primary Button",
-      "category": "buttons",
-      "filePath": "packages/flutter_widgets_hub/lib/src/buttons/primary_button.dart",
-      "exportedSymbols": ["HubPrimaryButton"],
-      "description": "Botão primário de largura cheia com estado de carregamento incorporado (troca o rótulo por um indicador de progresso).",
-      "selfContained": true,
-      "requiredPackages": [],
-      "showcaseRoute": "/buttons/primary-button",
-      "lastVerified": "2026-10-08"
+      "id": "layout",
+      "name": {
+        "pt": "Layout",
+        "en": "Layout",
+        "es": "Layout"
+      },
+      "widgets": [
+        {
+          "name": "Container",
+          "description": {
+            "pt": "A \"caixa\" do Flutter: junta tamanho, cor, borda, espaçamento e alinhamento.",
+            "en": "Flutter's \"box\": it combines size, color, border, spacing and alignment.",
+            "es": "La \"caja\" de Flutter: reúne tamaño, color, borde, espaciado y alineación."
+          },
+          "examples": [
+            {
+              "id": "layout/container_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Tamanho, cor e um texto centralizado com alignment.",
+                "en": "Size, color and a label centered with alignment.",
+                "es": "Tamaño, color y un texto centrado con alignment."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/container_basico.dart",
+              "className": "ContainerBasico"
+            },
+            {
+              "id": "layout/container_bordas",
+              "title": {
+                "pt": "Bordas e cantos",
+                "en": "Borders and corners",
+                "es": "Bordes y esquinas"
+              },
+              "description": {
+                "pt": "decoration com BoxDecoration: borda e cantos arredondados.",
+                "en": "decoration with BoxDecoration: border and rounded corners.",
+                "es": "decoration con BoxDecoration: borde y esquinas redondeadas."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/container_bordas.dart",
+              "className": "ContainerBordas"
+            },
+            {
+              "id": "layout/container_sombra_gradiente",
+              "title": {
+                "pt": "Sombra e gradiente",
+                "en": "Shadow and gradient",
+                "es": "Sombra y degradado"
+              },
+              "description": {
+                "pt": "BoxDecoration também desenha gradientes e sombras.",
+                "en": "BoxDecoration also draws gradients and shadows.",
+                "es": "BoxDecoration también dibuja degradados y sombras."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/container_sombra_gradiente.dart",
+              "className": "ContainerSombraGradiente"
+            },
+            {
+              "id": "layout/container_margem_padding",
+              "title": {
+                "pt": "Margem e padding",
+                "en": "Margin and padding",
+                "es": "Margen y padding"
+              },
+              "description": {
+                "pt": "margin é o espaço por fora; padding, por dentro.",
+                "en": "margin is the space outside; padding, the space inside.",
+                "es": "margin es el espacio por fuera; padding, por dentro."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/container_margem_padding.dart",
+              "className": "ContainerMargemPadding"
+            }
+          ]
+        },
+        {
+          "name": "Row",
+          "description": {
+            "pt": "Coloca os filhos lado a lado, na horizontal.",
+            "en": "Places its children side by side, horizontally.",
+            "es": "Coloca a sus hijos uno al lado del otro, en horizontal."
+          },
+          "examples": [
+            {
+              "id": "layout/row_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Três caixas lado a lado.",
+                "en": "Three boxes side by side.",
+                "es": "Tres cajas una al lado de la otra."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/row_basico.dart",
+              "className": "RowBasico"
+            },
+            {
+              "id": "layout/row_alinhamento",
+              "title": {
+                "pt": "Alinhamento principal",
+                "en": "Main axis alignment",
+                "es": "Alineación principal"
+              },
+              "description": {
+                "pt": "mainAxisAlignment distribui na horizontal. Toque nas opções.",
+                "en": "mainAxisAlignment distributes horizontally. Tap the options.",
+                "es": "mainAxisAlignment distribuye en horizontal. Toca las opciones."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/row_alinhamento.dart",
+              "className": "RowAlinhamento"
+            },
+            {
+              "id": "layout/row_alinhamento_cruzado",
+              "title": {
+                "pt": "Alinhamento cruzado",
+                "en": "Cross axis alignment",
+                "es": "Alineación cruzada"
+              },
+              "description": {
+                "pt": "crossAxisAlignment alinha na vertical. Toque nas opções.",
+                "en": "crossAxisAlignment aligns vertically. Tap the options.",
+                "es": "crossAxisAlignment alinea en vertical. Toca las opciones."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/row_alinhamento_cruzado.dart",
+              "className": "RowAlinhamentoCruzado"
+            },
+            {
+              "id": "layout/row_espacamento",
+              "title": {
+                "pt": "Espaçamento",
+                "en": "Spacing",
+                "es": "Espaciado"
+              },
+              "description": {
+                "pt": "spacing põe o mesmo espaço entre todos os filhos.",
+                "en": "spacing puts the same gap between all children.",
+                "es": "spacing pone el mismo espacio entre todos los hijos."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/row_espacamento.dart",
+              "className": "RowEspacamento"
+            }
+          ]
+        },
+        {
+          "name": "Column",
+          "description": {
+            "pt": "Empilha os filhos de cima para baixo, na vertical.",
+            "en": "Stacks its children from top to bottom, vertically.",
+            "es": "Apila a sus hijos de arriba abajo, en vertical."
+          },
+          "examples": [
+            {
+              "id": "layout/column_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Três caixas empilhadas.",
+                "en": "Three stacked boxes.",
+                "es": "Tres cajas apiladas."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/column_basico.dart",
+              "className": "ColumnBasico"
+            },
+            {
+              "id": "layout/column_alinhamento",
+              "title": {
+                "pt": "Alinhamento principal",
+                "en": "Main axis alignment",
+                "es": "Alineación principal"
+              },
+              "description": {
+                "pt": "mainAxisAlignment distribui na vertical. Toque nas opções.",
+                "en": "mainAxisAlignment distributes vertically. Tap the options.",
+                "es": "mainAxisAlignment distribuye en vertical. Toca las opciones."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/column_alinhamento.dart",
+              "className": "ColumnAlinhamento"
+            },
+            {
+              "id": "layout/column_tamanho",
+              "title": {
+                "pt": "Tamanho (mainAxisSize)",
+                "en": "Size (mainAxisSize)",
+                "es": "Tamaño (mainAxisSize)"
+              },
+              "description": {
+                "pt": "max ocupa toda a altura; min, só o necessário.",
+                "en": "max takes the full height; min, only what it needs.",
+                "es": "max ocupa toda la altura; min, solo lo necesario."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/column_tamanho.dart",
+              "className": "ColumnTamanho"
+            }
+          ]
+        },
+        {
+          "name": "Stack",
+          "description": {
+            "pt": "Sobrepõe os filhos, um em cima do outro, como camadas.",
+            "en": "Layers its children on top of each other.",
+            "es": "Superpone a sus hijos, uno encima del otro, como capas."
+          },
+          "examples": [
+            {
+              "id": "layout/stack_camadas",
+              "title": {
+                "pt": "Camadas",
+                "en": "Layers",
+                "es": "Capas"
+              },
+              "description": {
+                "pt": "O primeiro filho fica no fundo; os seguintes, por cima.",
+                "en": "The first child is at the back; the next ones go on top.",
+                "es": "El primer hijo queda al fondo; los siguientes, encima."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/stack_camadas.dart",
+              "className": "StackCamadas"
+            },
+            {
+              "id": "layout/stack_positioned",
+              "title": {
+                "pt": "Positioned",
+                "en": "Positioned",
+                "es": "Positioned"
+              },
+              "description": {
+                "pt": "Prende um filho a uma distância das bordas, como um selo de status.",
+                "en": "Pins a child at a distance from the edges, like a status badge.",
+                "es": "Fija un hijo a cierta distancia de los bordes, como un indicador de estado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/stack_positioned.dart",
+              "className": "StackPositioned"
+            },
+            {
+              "id": "layout/stack_texto_sobre_fundo",
+              "title": {
+                "pt": "Texto sobre fundo",
+                "en": "Text over a background",
+                "es": "Texto sobre fondo"
+              },
+              "description": {
+                "pt": "Uma faixa de texto por cima de uma imagem.",
+                "en": "A strip of text on top of an image.",
+                "es": "Una franja de texto encima de una imagen."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/stack_texto_sobre_fundo.dart",
+              "className": "StackTextoSobreFundo"
+            }
+          ]
+        },
+        {
+          "name": "Expanded",
+          "description": {
+            "pt": "Faz um filho de Row ou Column ocupar o espaço que sobra.",
+            "en": "Makes a Row or Column child fill the remaining space.",
+            "es": "Hace que un hijo de Row o Column ocupe el espacio que sobra."
+          },
+          "examples": [
+            {
+              "id": "layout/expanded_basico",
+              "title": {
+                "pt": "Ocupar o resto",
+                "en": "Fill the rest",
+                "es": "Ocupar el resto"
+              },
+              "description": {
+                "pt": "O filho com Expanded fica com todo o espaço livre.",
+                "en": "The child wrapped in Expanded takes all the free space.",
+                "es": "El hijo con Expanded se queda con todo el espacio libre."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/expanded_basico.dart",
+              "className": "ExpandedBasico"
+            },
+            {
+              "id": "layout/expanded_flex",
+              "title": {
+                "pt": "Proporções com flex",
+                "en": "Ratios with flex",
+                "es": "Proporciones con flex"
+              },
+              "description": {
+                "pt": "flex divide o espaço em partes: 1, 2 e 1.",
+                "en": "flex splits the space into parts: 1, 2 and 1.",
+                "es": "flex divide el espacio en partes: 1, 2 y 1."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/expanded_flex.dart",
+              "className": "ExpandedFlex"
+            },
+            {
+              "id": "layout/expanded_column",
+              "title": {
+                "pt": "Dentro de uma Column",
+                "en": "Inside a Column",
+                "es": "Dentro de una Column"
+              },
+              "description": {
+                "pt": "Cabeçalho e rodapé fixos, conteúdo ocupando o meio.",
+                "en": "Fixed header and footer, with the content filling the middle.",
+                "es": "Cabecera y pie fijos, con el contenido ocupando el medio."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/expanded_column.dart",
+              "className": "ExpandedColumn"
+            },
+            {
+              "id": "layout/expanded_flexible",
+              "title": {
+                "pt": "Expanded × Flexible",
+                "en": "Expanded × Flexible",
+                "es": "Expanded × Flexible"
+              },
+              "description": {
+                "pt": "Expanded obriga a ocupar o espaço; Flexible só permite.",
+                "en": "Expanded forces the child to fill the space; Flexible only allows it.",
+                "es": "Expanded obliga a ocupar el espacio; Flexible solo lo permite."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/expanded_flexible.dart",
+              "className": "ExpandedFlexible"
+            }
+          ]
+        },
+        {
+          "name": "Padding",
+          "description": {
+            "pt": "Adiciona espaço em volta de um widget.",
+            "en": "Adds space around a widget.",
+            "es": "Añade espacio alrededor de un widget."
+          },
+          "examples": [
+            {
+              "id": "layout/padding_basico",
+              "title": {
+                "pt": "Com e sem padding",
+                "en": "With and without padding",
+                "es": "Con y sin padding"
+              },
+              "description": {
+                "pt": "O mesmo texto, encostado e com 16 de espaço.",
+                "en": "The same text, touching the edges and with 16 of space.",
+                "es": "El mismo texto, pegado al borde y con 16 de espacio."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/padding_basico.dart",
+              "className": "PaddingBasico"
+            },
+            {
+              "id": "layout/padding_edge_insets",
+              "title": {
+                "pt": "Tipos de EdgeInsets",
+                "en": "Kinds of EdgeInsets",
+                "es": "Tipos de EdgeInsets"
+              },
+              "description": {
+                "pt": "all, symmetric e only: espaço igual, por eixo ou por lado.",
+                "en": "all, symmetric and only: equal space, per axis or per side.",
+                "es": "all, symmetric y only: espacio igual, por eje o por lado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/padding_edge_insets.dart",
+              "className": "PaddingEdgeInsets"
+            }
+          ]
+        },
+        {
+          "name": "Center",
+          "description": {
+            "pt": "Centraliza o filho no espaço disponível.",
+            "en": "Centers its child in the available space.",
+            "es": "Centra a su hijo en el espacio disponible."
+          },
+          "examples": [
+            {
+              "id": "layout/center_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Coloca o filho no meio do espaço.",
+                "en": "Puts the child in the middle of the space.",
+                "es": "Coloca al hijo en el medio del espacio."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/center_basico.dart",
+              "className": "CenterBasico"
+            },
+            {
+              "id": "layout/center_fatores",
+              "title": {
+                "pt": "widthFactor e heightFactor",
+                "en": "widthFactor and heightFactor",
+                "es": "widthFactor y heightFactor"
+              },
+              "description": {
+                "pt": "O Center fica do tamanho do filho vezes o fator.",
+                "en": "The Center becomes the child's size times the factor.",
+                "es": "El Center toma el tamaño del hijo multiplicado por el factor."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/center_fatores.dart",
+              "className": "CenterFatores"
+            }
+          ]
+        },
+        {
+          "name": "Align",
+          "description": {
+            "pt": "Posiciona o filho em qualquer ponto do espaço disponível.",
+            "en": "Positions its child anywhere in the available space.",
+            "es": "Posiciona a su hijo en cualquier punto del espacio disponible."
+          },
+          "examples": [
+            {
+              "id": "layout/align_posicoes",
+              "title": {
+                "pt": "Posições prontas",
+                "en": "Preset positions",
+                "es": "Posiciones predefinidas"
+              },
+              "description": {
+                "pt": "As 9 posições de Alignment. Escolha na lista.",
+                "en": "The 9 Alignment positions. Pick one from the list.",
+                "es": "Las 9 posiciones de Alignment. Elige una en la lista."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/align_posicoes.dart",
+              "className": "AlignPosicoes"
+            },
+            {
+              "id": "layout/align_coordenadas",
+              "title": {
+                "pt": "Coordenadas",
+                "en": "Coordinates",
+                "es": "Coordenadas"
+              },
+              "description": {
+                "pt": "Alignment(x, y) de -1 a 1. Arraste os controles.",
+                "en": "Alignment(x, y) from -1 to 1. Drag the sliders.",
+                "es": "Alignment(x, y) de -1 a 1. Arrastra los controles."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/align_coordenadas.dart",
+              "className": "AlignCoordenadas"
+            }
+          ]
+        },
+        {
+          "name": "SizedBox",
+          "description": {
+            "pt": "Dá um tamanho fixo a um widget, ou cria um espaço vazio.",
+            "en": "Gives a widget a fixed size, or creates empty space.",
+            "es": "Da un tamaño fijo a un widget o crea un espacio vacío."
+          },
+          "examples": [
+            {
+              "id": "layout/sizedbox_tamanho",
+              "title": {
+                "pt": "Tamanho fixo",
+                "en": "Fixed size",
+                "es": "Tamaño fijo"
+              },
+              "description": {
+                "pt": "Força um tamanho exato no filho.",
+                "en": "Forces an exact size on the child.",
+                "es": "Fuerza un tamaño exacto en el hijo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/sizedbox_tamanho.dart",
+              "className": "SizedBoxTamanho"
+            },
+            {
+              "id": "layout/sizedbox_espaco",
+              "title": {
+                "pt": "Espaço entre widgets",
+                "en": "Space between widgets",
+                "es": "Espacio entre widgets"
+              },
+              "description": {
+                "pt": "Sem filho, vira um espaço vazio.",
+                "en": "Without a child, it becomes empty space.",
+                "es": "Sin hijo, se convierte en un espacio vacío."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/sizedbox_espaco.dart",
+              "className": "SizedBoxEspaco"
+            }
+          ]
+        },
+        {
+          "name": "Wrap",
+          "description": {
+            "pt": "Como uma Row que quebra para a linha de baixo quando falta espaço.",
+            "en": "Like a Row that wraps to the next line when it runs out of space.",
+            "es": "Como una Row que pasa a la línea de abajo cuando falta espacio."
+          },
+          "examples": [
+            {
+              "id": "layout/wrap_basico",
+              "title": {
+                "pt": "Quebra de linha",
+                "en": "Line wrapping",
+                "es": "Salto de línea"
+              },
+              "description": {
+                "pt": "Os itens que não cabem vão para a linha de baixo.",
+                "en": "Items that don't fit move to the next line.",
+                "es": "Los elementos que no caben pasan a la línea de abajo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/wrap_basico.dart",
+              "className": "WrapBasico"
+            },
+            {
+              "id": "layout/wrap_centralizado",
+              "title": {
+                "pt": "Centralizado",
+                "en": "Centered",
+                "es": "Centrado"
+              },
+              "description": {
+                "pt": "alignment centraliza os itens em cada linha.",
+                "en": "alignment centers the items on each line.",
+                "es": "alignment centra los elementos en cada línea."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/wrap_centralizado.dart",
+              "className": "WrapCentralizado"
+            }
+          ]
+        },
+        {
+          "name": "Divider",
+          "description": {
+            "pt": "Uma linha fina para separar conteúdos.",
+            "en": "A thin line to separate content.",
+            "es": "Una línea fina para separar contenidos."
+          },
+          "examples": [
+            {
+              "id": "layout/divider_entre_itens",
+              "title": {
+                "pt": "Entre itens",
+                "en": "Between items",
+                "es": "Entre elementos"
+              },
+              "description": {
+                "pt": "Separa os itens de uma lista.",
+                "en": "Separates the items of a list.",
+                "es": "Separa los elementos de una lista."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/divider_entre_itens.dart",
+              "className": "DividerEntreItens"
+            },
+            {
+              "id": "layout/divider_personalizado",
+              "title": {
+                "pt": "Personalizado e vertical",
+                "en": "Custom and vertical",
+                "es": "Personalizado y vertical"
+              },
+              "description": {
+                "pt": "Espessura, recuo, cor e o VerticalDivider.",
+                "en": "Thickness, indent, color and the VerticalDivider.",
+                "es": "Grosor, sangría, color y el VerticalDivider."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/layout/divider_personalizado.dart",
+              "className": "DividerPersonalizado"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "confirmation-dialog",
-      "name": "Confirmation Dialog",
-      "category": "dialogs",
-      "filePath": "packages/flutter_widgets_hub/lib/src/dialogs/confirmation_dialog.dart",
-      "exportedSymbols": ["HubConfirmationDialog"],
-      "description": "Diálogo de confirmação com ícone centralizado, botão primário de largura cheia (vermelho quando destrutivo) e Cancelar abaixo.",
-      "selfContained": true,
-      "requiredPackages": [],
-      "showcaseRoute": "/dialogs/confirmation-dialog",
-      "lastVerified": "2026-10-08"
+      "id": "text_images",
+      "name": {
+        "pt": "Texto e imagens",
+        "en": "Text & images",
+        "es": "Texto e imágenes"
+      },
+      "widgets": [
+        {
+          "name": "Text",
+          "description": {
+            "pt": "Mostra um texto na tela, com o estilo que você quiser.",
+            "en": "Shows text on screen, in any style you want.",
+            "es": "Muestra un texto en la pantalla, con el estilo que quieras."
+          },
+          "examples": [
+            {
+              "id": "text_images/text_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Só o texto, com o estilo padrão do tema.",
+                "en": "Just the text, with the theme's default style.",
+                "es": "Solo el texto, con el estilo predeterminado del tema."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/text_basico.dart",
+              "className": "TextBasico"
+            },
+            {
+              "id": "text_images/text_estilo",
+              "title": {
+                "pt": "Estilo",
+                "en": "Style",
+                "es": "Estilo"
+              },
+              "description": {
+                "pt": "TextStyle: tamanho, peso, cor, itálico, sublinhado.",
+                "en": "TextStyle: size, weight, color, italic, underline.",
+                "es": "TextStyle: tamaño, grosor, color, cursiva, subrayado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/text_estilo.dart",
+              "className": "TextEstilo"
+            },
+            {
+              "id": "text_images/text_tema",
+              "title": {
+                "pt": "Estilos do tema",
+                "en": "Theme styles",
+                "es": "Estilos del tema"
+              },
+              "description": {
+                "pt": "Os tamanhos prontos do textTheme, em vez de números soltos.",
+                "en": "The ready-made textTheme sizes, instead of loose numbers.",
+                "es": "Los tamaños predefinidos del textTheme, en lugar de números sueltos."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/text_tema.dart",
+              "className": "TextTema"
+            },
+            {
+              "id": "text_images/text_longo",
+              "title": {
+                "pt": "Texto longo",
+                "en": "Long text",
+                "es": "Texto largo"
+              },
+              "description": {
+                "pt": "maxLines e overflow cortam com \"...\". Toque em Ver mais.",
+                "en": "maxLines and overflow cut it off with \"...\". Tap the button to expand.",
+                "es": "maxLines y overflow lo cortan con \"...\". Toca el botón para expandir."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/text_longo.dart",
+              "className": "TextLongo"
+            }
+          ]
+        },
+        {
+          "name": "RichText",
+          "description": {
+            "pt": "Um texto com partes de estilos diferentes.",
+            "en": "Text with parts in different styles.",
+            "es": "Un texto con partes de estilos diferentes."
+          },
+          "examples": [
+            {
+              "id": "text_images/rich_text_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Uma árvore de TextSpan, cada pedaço com seu estilo.",
+                "en": "A tree of TextSpans, each piece with its own style.",
+                "es": "Un árbol de TextSpan, cada parte con su estilo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/rich_text_basico.dart",
+              "className": "RichTextBasico"
+            },
+            {
+              "id": "text_images/rich_text_text_rich",
+              "title": {
+                "pt": "Text.rich",
+                "en": "Text.rich",
+                "es": "Text.rich"
+              },
+              "description": {
+                "pt": "O atalho recomendado, que já herda o estilo do app.",
+                "en": "The recommended shortcut, which already inherits the app's style.",
+                "es": "El atajo recomendado, que ya hereda el estilo de la app."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/rich_text_text_rich.dart",
+              "className": "RichTextTextRich"
+            },
+            {
+              "id": "text_images/rich_text_icone",
+              "title": {
+                "pt": "Ícone no texto",
+                "en": "Icon in text",
+                "es": "Ícono en el texto"
+              },
+              "description": {
+                "pt": "WidgetSpan coloca um widget no meio da frase.",
+                "en": "WidgetSpan puts a widget in the middle of a sentence.",
+                "es": "WidgetSpan coloca un widget en medio de la frase."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/rich_text_icone.dart",
+              "className": "RichTextIcone"
+            }
+          ]
+        },
+        {
+          "name": "SelectableText",
+          "description": {
+            "pt": "Um texto que a pessoa pode selecionar e copiar.",
+            "en": "Text that people can select and copy.",
+            "es": "Un texto que se puede seleccionar y copiar."
+          },
+          "examples": [
+            {
+              "id": "text_images/selectable_text_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Toque e segure para selecionar e copiar.",
+                "en": "Touch and hold to select and copy.",
+                "es": "Mantén pulsado para seleccionar y copiar."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/selectable_text_basico.dart",
+              "className": "SelectableTextBasico"
+            },
+            {
+              "id": "text_images/selectable_text_area",
+              "title": {
+                "pt": "SelectionArea",
+                "en": "SelectionArea",
+                "es": "SelectionArea"
+              },
+              "description": {
+                "pt": "Deixa vários textos selecionáveis de uma vez.",
+                "en": "Makes several texts selectable at once.",
+                "es": "Hace que varios textos se puedan seleccionar a la vez."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/selectable_text_area.dart",
+              "className": "SelectableTextArea"
+            }
+          ]
+        },
+        {
+          "name": "Icon",
+          "description": {
+            "pt": "Desenha um ícone do Material Design, com tamanho e cor.",
+            "en": "Draws a Material Design icon, with a size and a color.",
+            "es": "Dibuja un ícono de Material Design, con tamaño y color."
+          },
+          "examples": [
+            {
+              "id": "text_images/icon_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Ícones da classe Icons, no tamanho padrão.",
+                "en": "Icons from the Icons class, at the default size.",
+                "es": "Íconos de la clase Icons, en el tamaño predeterminado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/icon_basico.dart",
+              "className": "IconBasico"
+            },
+            {
+              "id": "text_images/icon_tamanho_cor",
+              "title": {
+                "pt": "Tamanho e cor",
+                "en": "Size and color",
+                "es": "Tamaño y color"
+              },
+              "description": {
+                "pt": "size e color mudam o tamanho e a cor.",
+                "en": "size and color change the size and the color.",
+                "es": "size y color cambian el tamaño y el color."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/icon_tamanho_cor.dart",
+              "className": "IconTamanhoCor"
+            },
+            {
+              "id": "text_images/icon_variantes",
+              "title": {
+                "pt": "Variantes",
+                "en": "Variants",
+                "es": "Variantes"
+              },
+              "description": {
+                "pt": "O mesmo ícone em padrão, outlined, rounded e sharp.",
+                "en": "The same icon as default, outlined, rounded and sharp.",
+                "es": "El mismo ícono en estándar, outlined, rounded y sharp."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/icon_variantes.dart",
+              "className": "IconVariantes"
+            }
+          ]
+        },
+        {
+          "name": "Image",
+          "description": {
+            "pt": "Mostra uma imagem do próprio app (asset) ou da internet.",
+            "en": "Shows an image bundled with the app (asset) or from the internet.",
+            "es": "Muestra una imagen de la propia app (asset) o de internet."
+          },
+          "examples": [
+            {
+              "id": "text_images/image_asset",
+              "title": {
+                "pt": "Do app (asset)",
+                "en": "From the app (asset)",
+                "es": "De la app (asset)"
+              },
+              "description": {
+                "pt": "Image.asset com um arquivo declarado no pubspec.yaml.",
+                "en": "Image.asset with a file declared in pubspec.yaml.",
+                "es": "Image.asset con un archivo declarado en pubspec.yaml."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/image_asset.dart",
+              "className": "ImageAsset",
+              "requires": [
+                {
+                  "type": "asset",
+                  "path": "assets/images/paisagem.png",
+                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                }
+              ]
+            },
+            {
+              "id": "text_images/image_network",
+              "title": {
+                "pt": "Da internet",
+                "en": "From the internet",
+                "es": "De internet"
+              },
+              "description": {
+                "pt": "Image.network, com telas de carregando e de erro.",
+                "en": "Image.network, with loading and error placeholders.",
+                "es": "Image.network, con pantallas de carga y de error."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/image_network.dart",
+              "className": "ImageNetwork",
+              "requires": [
+                {
+                  "type": "androidPermission",
+                  "name": "android.permission.INTERNET"
+                }
+              ]
+            },
+            {
+              "id": "text_images/image_fit",
+              "title": {
+                "pt": "Ajuste (fit)",
+                "en": "Fit",
+                "es": "Ajuste (fit)"
+              },
+              "description": {
+                "pt": "BoxFit decide como a imagem cabe na caixa. Toque nas opções.",
+                "en": "BoxFit decides how the image fits the box. Tap the options.",
+                "es": "BoxFit decide cómo cabe la imagen en la caja. Toca las opciones."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/image_fit.dart",
+              "className": "ImageFit",
+              "requires": [
+                {
+                  "type": "asset",
+                  "path": "assets/images/paisagem.png",
+                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                }
+              ]
+            },
+            {
+              "id": "text_images/image_cantos",
+              "title": {
+                "pt": "Cantos arredondados",
+                "en": "Rounded corners",
+                "es": "Esquinas redondeadas"
+              },
+              "description": {
+                "pt": "ClipRRect recorta a imagem com cantos redondos.",
+                "en": "ClipRRect clips the image with rounded corners.",
+                "es": "ClipRRect recorta la imagen con esquinas redondeadas."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/image_cantos.dart",
+              "className": "ImageCantos",
+              "requires": [
+                {
+                  "type": "asset",
+                  "path": "assets/images/paisagem.png",
+                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "CircleAvatar",
+          "description": {
+            "pt": "Um círculo com foto, iniciais ou ícone, para representar uma pessoa.",
+            "en": "A circle with a photo, initials or an icon, to represent a person.",
+            "es": "Un círculo con foto, iniciales o ícono, para representar a una persona."
+          },
+          "examples": [
+            {
+              "id": "text_images/circle_avatar_iniciais",
+              "title": {
+                "pt": "Iniciais e ícone",
+                "en": "Initials and icon",
+                "es": "Iniciales e ícono"
+              },
+              "description": {
+                "pt": "Um Text ou Icon como child.",
+                "en": "A Text or an Icon as the child.",
+                "es": "Un Text o un Icon como child."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/circle_avatar_iniciais.dart",
+              "className": "CircleAvatarIniciais"
+            },
+            {
+              "id": "text_images/circle_avatar_imagem",
+              "title": {
+                "pt": "Com imagem",
+                "en": "With an image",
+                "es": "Con imagen"
+              },
+              "description": {
+                "pt": "backgroundImage recorta a imagem em círculo.",
+                "en": "backgroundImage crops the image into a circle.",
+                "es": "backgroundImage recorta la imagen en círculo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/circle_avatar_imagem.dart",
+              "className": "CircleAvatarImagem",
+              "requires": [
+                {
+                  "type": "asset",
+                  "path": "assets/images/paisagem.png",
+                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                }
+              ]
+            },
+            {
+              "id": "text_images/circle_avatar_tamanhos",
+              "title": {
+                "pt": "Tamanhos e cores",
+                "en": "Sizes and colors",
+                "es": "Tamaños y colores"
+              },
+              "description": {
+                "pt": "radius, backgroundColor e foregroundColor.",
+                "en": "radius, backgroundColor and foregroundColor.",
+                "es": "radius, backgroundColor y foregroundColor."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/circle_avatar_tamanhos.dart",
+              "className": "CircleAvatarTamanhos"
+            }
+          ]
+        },
+        {
+          "name": "Badge",
+          "description": {
+            "pt": "Um selo sobre um ícone, para avisos ou contagens.",
+            "en": "A badge on an icon, for alerts or counts.",
+            "es": "Una insignia sobre un ícono, para avisos o contadores."
+          },
+          "examples": [
+            {
+              "id": "text_images/badge_ponto",
+              "title": {
+                "pt": "Ponto",
+                "en": "Dot",
+                "es": "Punto"
+              },
+              "description": {
+                "pt": "Sem label: só um ponto indicando novidade.",
+                "en": "No label: just a dot to signal something new.",
+                "es": "Sin label: solo un punto que indica una novedad."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/badge_ponto.dart",
+              "className": "BadgePonto"
+            },
+            {
+              "id": "text_images/badge_numero",
+              "title": {
+                "pt": "Com número",
+                "en": "With a number",
+                "es": "Con número"
+              },
+              "description": {
+                "pt": "label com um texto, ou Badge.count com limite de 99+.",
+                "en": "label with a text, or Badge.count with a 99+ cap.",
+                "es": "label con un texto, o Badge.count con límite de 99+."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/badge_numero.dart",
+              "className": "BadgeNumero"
+            },
+            {
+              "id": "text_images/badge_contador",
+              "title": {
+                "pt": "Contador",
+                "en": "Counter",
+                "es": "Contador"
+              },
+              "description": {
+                "pt": "isLabelVisible esconde o selo quando a contagem é zero.",
+                "en": "isLabelVisible hides the badge when the count is zero.",
+                "es": "isLabelVisible oculta la insignia cuando el contador es cero."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/text_images/badge_contador.dart",
+              "className": "BadgeContador"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "primary-fab",
-      "name": "Primary FAB + Extended FAB",
-      "category": "navigation",
-      "filePath": "packages/flutter_widgets_hub/lib/src/navigation/primary_fab.dart",
-      "exportedSymbols": ["HubPrimaryFab", "HubExtendedFab"],
-      "description": "FAB circular principal de uma aba (HubPrimaryFab) e a variante deliberada com rótulo de texto pra ações secundárias/contextuais (HubExtendedFab).",
-      "selfContained": true,
-      "requiredPackages": [],
-      "showcaseRoute": "/navigation/primary-fab",
-      "lastVerified": "2026-10-08"
+      "id": "buttons",
+      "name": {
+        "pt": "Botões",
+        "en": "Buttons",
+        "es": "Botones"
+      },
+      "widgets": [
+        {
+          "name": "ElevatedButton",
+          "description": {
+            "pt": "Botão com sombra, para destacar a ação sobre fundos coloridos ou com imagem.",
+            "en": "A button with a shadow, to make the action stand out over colored or image backgrounds.",
+            "es": "Botón con sombra, para destacar la acción sobre fondos de color o con imagen."
+          },
+          "examples": [
+            {
+              "id": "buttons/elevated_button_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "O mínimo: um texto e a função chamada no toque.",
+                "en": "The minimum: a label and the function called on tap.",
+                "es": "Lo mínimo: un texto y la función que se llama al tocar."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/elevated_button_basico.dart",
+              "className": "ElevatedButtonBasico"
+            },
+            {
+              "id": "buttons/elevated_button_com_icone",
+              "title": {
+                "pt": "Com ícone",
+                "en": "With icon",
+                "es": "Con ícono"
+              },
+              "description": {
+                "pt": "O construtor .icon põe um ícone antes do texto.",
+                "en": "The .icon constructor puts an icon before the label.",
+                "es": "El constructor .icon pone un ícono antes del texto."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/elevated_button_com_icone.dart",
+              "className": "ElevatedButtonComIcone"
+            },
+            {
+              "id": "buttons/elevated_button_carregando",
+              "title": {
+                "pt": "Carregando",
+                "en": "Loading",
+                "es": "Cargando"
+              },
+              "description": {
+                "pt": "Troca o texto por um indicador enquanto a ação roda e bloqueia novos toques.",
+                "en": "Swaps the label for a spinner while the action runs and blocks new taps.",
+                "es": "Cambia el texto por un indicador mientras la acción se ejecuta y bloquea nuevos toques."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/elevated_button_carregando.dart",
+              "className": "ElevatedButtonCarregando"
+            },
+            {
+              "id": "buttons/elevated_button_desabilitado",
+              "title": {
+                "pt": "Desabilitado",
+                "en": "Disabled",
+                "es": "Deshabilitado"
+              },
+              "description": {
+                "pt": "Com onPressed: null o botão fica desabilitado. Use a chave para alternar.",
+                "en": "With onPressed: null the button is disabled. Use the switch to toggle it.",
+                "es": "Con onPressed: null el botón queda deshabilitado. Usa el interruptor para alternarlo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/elevated_button_desabilitado.dart",
+              "className": "ElevatedButtonDesabilitado"
+            },
+            {
+              "id": "buttons/elevated_button_cores",
+              "title": {
+                "pt": "Cores personalizadas",
+                "en": "Custom colors",
+                "es": "Colores personalizados"
+              },
+              "description": {
+                "pt": "styleFrom muda cor, sombra, espaçamento e formato.",
+                "en": "styleFrom changes color, shadow, padding and shape.",
+                "es": "styleFrom cambia el color, la sombra, el espaciado y la forma."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/elevated_button_cores.dart",
+              "className": "ElevatedButtonCores"
+            }
+          ]
+        },
+        {
+          "name": "FilledButton",
+          "description": {
+            "pt": "Preenchido com a cor principal. Ideal para a ação mais importante da tela.",
+            "en": "Filled with the primary color. Ideal for the most important action on the screen.",
+            "es": "Relleno con el color principal. Ideal para la acción más importante de la pantalla."
+          },
+          "examples": [
+            {
+              "id": "buttons/filled_button_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "A ação principal da tela, na cor primária do tema.",
+                "en": "The main action on the screen, in the theme's primary color.",
+                "es": "La acción principal de la pantalla, en el color primario del tema."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/filled_button_basico.dart",
+              "className": "FilledButtonBasico"
+            },
+            {
+              "id": "buttons/filled_button_tonal",
+              "title": {
+                "pt": "Tonal",
+                "en": "Tonal",
+                "es": "Tonal"
+              },
+              "description": {
+                "pt": "A versão .tonal, mais suave, junto da padrão para comparar.",
+                "en": "The softer .tonal version, next to the default one for comparison.",
+                "es": "La versión .tonal, más suave, junto a la estándar para comparar."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/filled_button_tonal.dart",
+              "className": "FilledButtonTonal"
+            },
+            {
+              "id": "buttons/filled_button_com_icone",
+              "title": {
+                "pt": "Com ícone",
+                "en": "With icon",
+                "es": "Con ícono"
+              },
+              "description": {
+                "pt": "O construtor .icon com ícone e texto.",
+                "en": "The .icon constructor with an icon and a label.",
+                "es": "El constructor .icon con ícono y texto."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/filled_button_com_icone.dart",
+              "className": "FilledButtonComIcone"
+            },
+            {
+              "id": "buttons/filled_button_largura_total",
+              "title": {
+                "pt": "Largura total",
+                "en": "Full width",
+                "es": "Ancho completo"
+              },
+              "description": {
+                "pt": "Dentro de um SizedBox com largura infinita, ocupa a linha toda.",
+                "en": "Inside a SizedBox with infinite width, it fills the whole row.",
+                "es": "Dentro de un SizedBox con ancho infinito, ocupa toda la fila."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/filled_button_largura_total.dart",
+              "className": "FilledButtonLarguraTotal"
+            }
+          ]
+        },
+        {
+          "name": "OutlinedButton",
+          "description": {
+            "pt": "Só com borda. Bom para ações secundárias, como Cancelar ou Voltar.",
+            "en": "Border only. Good for secondary actions, like Cancel or Back.",
+            "es": "Solo con borde. Bueno para acciones secundarias, como Cancelar o Volver."
+          },
+          "examples": [
+            {
+              "id": "buttons/outlined_button_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Só a borda, sem preenchimento.",
+                "en": "Just the border, no fill.",
+                "es": "Solo el borde, sin relleno."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/outlined_button_basico.dart",
+              "className": "OutlinedButtonBasico"
+            },
+            {
+              "id": "buttons/outlined_button_com_icone",
+              "title": {
+                "pt": "Com ícone",
+                "en": "With icon",
+                "es": "Con ícono"
+              },
+              "description": {
+                "pt": "O construtor .icon com ícone e texto.",
+                "en": "The .icon constructor with an icon and a label.",
+                "es": "El constructor .icon con ícono y texto."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/outlined_button_com_icone.dart",
+              "className": "OutlinedButtonComIcone"
+            },
+            {
+              "id": "buttons/outlined_button_borda",
+              "title": {
+                "pt": "Borda personalizada",
+                "en": "Custom border",
+                "es": "Borde personalizado"
+              },
+              "description": {
+                "pt": "styleFrom com side muda a cor e a espessura da borda.",
+                "en": "styleFrom with side changes the border color and width.",
+                "es": "styleFrom con side cambia el color y el grosor del borde."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/outlined_button_borda.dart",
+              "className": "OutlinedButtonBorda"
+            },
+            {
+              "id": "buttons/outlined_button_destrutivo",
+              "title": {
+                "pt": "Destrutivo",
+                "en": "Destructive",
+                "es": "Destructivo"
+              },
+              "description": {
+                "pt": "Usa a cor de erro do tema para sinalizar uma ação perigosa.",
+                "en": "Uses the theme's error color to flag a dangerous action.",
+                "es": "Usa el color de error del tema para señalar una acción peligrosa."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/outlined_button_destrutivo.dart",
+              "className": "OutlinedButtonDestrutivo"
+            }
+          ]
+        },
+        {
+          "name": "TextButton",
+          "description": {
+            "pt": "Só com texto. Para ações discretas, como em diálogos e cartões.",
+            "en": "Text only. For low-emphasis actions, like in dialogs and cards.",
+            "es": "Solo texto. Para acciones discretas, como en diálogos y tarjetas."
+          },
+          "examples": [
+            {
+              "id": "buttons/text_button_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Só o texto. O fundo aparece ao tocar.",
+                "en": "Just the label. The background shows up on tap.",
+                "es": "Solo el texto. El fondo aparece al tocar."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/text_button_basico.dart",
+              "className": "TextButtonBasico"
+            },
+            {
+              "id": "buttons/text_button_com_icone",
+              "title": {
+                "pt": "Com ícone",
+                "en": "With icon",
+                "es": "Con ícono"
+              },
+              "description": {
+                "pt": "O construtor .icon com ícone e texto.",
+                "en": "The .icon constructor with an icon and a label.",
+                "es": "El constructor .icon con ícono y texto."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/text_button_com_icone.dart",
+              "className": "TextButtonComIcone"
+            },
+            {
+              "id": "buttons/text_button_dialogo",
+              "title": {
+                "pt": "Em um diálogo",
+                "en": "In a dialog",
+                "es": "En un diálogo"
+              },
+              "description": {
+                "pt": "O uso mais comum: as ações de um AlertDialog.",
+                "en": "The most common use: the actions of an AlertDialog.",
+                "es": "El uso más común: las acciones de un AlertDialog."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/text_button_dialogo.dart",
+              "className": "TextButtonDialogo"
+            }
+          ]
+        },
+        {
+          "name": "IconButton",
+          "description": {
+            "pt": "Só com ícone, para ações compactas como favoritar ou compartilhar.",
+            "en": "Icon only, for compact actions like favorite or share.",
+            "es": "Solo con ícono, para acciones compactas como marcar favorito o compartir."
+          },
+          "examples": [
+            {
+              "id": "buttons/icon_button_padrao",
+              "title": {
+                "pt": "Padrão",
+                "en": "Default",
+                "es": "Estándar"
+              },
+              "description": {
+                "pt": "Um ícone tocável, com tooltip para acessibilidade.",
+                "en": "A tappable icon, with a tooltip for accessibility.",
+                "es": "Un ícono que se puede tocar, con tooltip para accesibilidad."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/icon_button_padrao.dart",
+              "className": "IconButtonPadrao"
+            },
+            {
+              "id": "buttons/icon_button_variantes",
+              "title": {
+                "pt": "Variantes de estilo",
+                "en": "Style variants",
+                "es": "Variantes de estilo"
+              },
+              "description": {
+                "pt": "Padrão, .filled, .filledTonal e .outlined lado a lado.",
+                "en": "Default, .filled, .filledTonal and .outlined side by side.",
+                "es": "Estándar, .filled, .filledTonal y .outlined uno al lado del otro."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/icon_button_variantes.dart",
+              "className": "IconButtonVariantes"
+            },
+            {
+              "id": "buttons/icon_button_alternavel",
+              "title": {
+                "pt": "Alternável",
+                "en": "Toggleable",
+                "es": "Alternable"
+              },
+              "description": {
+                "pt": "isSelected alterna entre dois ícones, como em favoritar.",
+                "en": "isSelected switches between two icons, like a favorite button.",
+                "es": "isSelected alterna entre dos íconos, como al marcar favorito."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/icon_button_alternavel.dart",
+              "className": "IconButtonAlternavel"
+            },
+            {
+              "id": "buttons/icon_button_tamanho_cor",
+              "title": {
+                "pt": "Tamanho e cor",
+                "en": "Size and color",
+                "es": "Tamaño y color"
+              },
+              "description": {
+                "pt": "iconSize e color mudam o tamanho e a cor do ícone.",
+                "en": "iconSize and color change the size and color of the icon.",
+                "es": "iconSize y color cambian el tamaño y el color del ícono."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/icon_button_tamanho_cor.dart",
+              "className": "IconButtonTamanhoCor"
+            }
+          ]
+        },
+        {
+          "name": "FloatingActionButton",
+          "description": {
+            "pt": "Flutua sobre a tela, para a ação principal, como criar um item novo.",
+            "en": "Floats over the screen, for the main action, like creating a new item.",
+            "es": "Flota sobre la pantalla, para la acción principal, como crear un elemento nuevo."
+          },
+          "examples": [
+            {
+              "id": "buttons/fab_padrao",
+              "title": {
+                "pt": "Padrão",
+                "en": "Default",
+                "es": "Estándar"
+              },
+              "description": {
+                "pt": "O tamanho normal. Costuma ir no floatingActionButton do Scaffold.",
+                "en": "The regular size. It usually goes in the Scaffold's floatingActionButton.",
+                "es": "El tamaño normal. Suele ir en el floatingActionButton del Scaffold."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/fab_padrao.dart",
+              "className": "FabPadrao"
+            },
+            {
+              "id": "buttons/fab_pequeno",
+              "title": {
+                "pt": "Pequeno",
+                "en": "Small",
+                "es": "Pequeño"
+              },
+              "description": {
+                "pt": ".small, para telas com pouco espaço.",
+                "en": ".small, for screens with little room.",
+                "es": ".small, para pantallas con poco espacio."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/fab_pequeno.dart",
+              "className": "FabPequeno"
+            },
+            {
+              "id": "buttons/fab_grande",
+              "title": {
+                "pt": "Grande",
+                "en": "Large",
+                "es": "Grande"
+              },
+              "description": {
+                "pt": ".large, para dar mais destaque à ação.",
+                "en": ".large, to give the action more emphasis.",
+                "es": ".large, para dar más protagonismo a la acción."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/fab_grande.dart",
+              "className": "FabGrande"
+            },
+            {
+              "id": "buttons/fab_estendido",
+              "title": {
+                "pt": "Estendido",
+                "en": "Extended",
+                "es": "Extendido"
+              },
+              "description": {
+                "pt": ".extended, com ícone e texto.",
+                "en": ".extended, with an icon and a label.",
+                "es": ".extended, con ícono y texto."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/fab_estendido.dart",
+              "className": "FabEstendido"
+            }
+          ]
+        },
+        {
+          "name": "SegmentedButton",
+          "description": {
+            "pt": "Opções lado a lado no mesmo grupo. Permite escolher uma ou várias.",
+            "en": "Options side by side in one group. Lets you pick one or several.",
+            "es": "Opciones una al lado de la otra en un mismo grupo. Permite elegir una o varias."
+          },
+          "examples": [
+            {
+              "id": "buttons/segmented_button_unica",
+              "title": {
+                "pt": "Seleção única",
+                "en": "Single selection",
+                "es": "Selección única"
+              },
+              "description": {
+                "pt": "Só um segmento marcado por vez.",
+                "en": "Only one segment selected at a time.",
+                "es": "Solo un segmento marcado a la vez."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/segmented_button_unica.dart",
+              "className": "SegmentedButtonUnica"
+            },
+            {
+              "id": "buttons/segmented_button_multipla",
+              "title": {
+                "pt": "Seleção múltipla",
+                "en": "Multiple selection",
+                "es": "Selección múltiple"
+              },
+              "description": {
+                "pt": "multiSelectionEnabled permite marcar vários.",
+                "en": "multiSelectionEnabled lets you select several.",
+                "es": "multiSelectionEnabled permite marcar varios."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/segmented_button_multipla.dart",
+              "className": "SegmentedButtonMultipla"
+            },
+            {
+              "id": "buttons/segmented_button_icones",
+              "title": {
+                "pt": "Com ícones",
+                "en": "With icons",
+                "es": "Con íconos"
+              },
+              "description": {
+                "pt": "Segmentos só com ícone, cada um com seu tooltip.",
+                "en": "Icon-only segments, each with its own tooltip.",
+                "es": "Segmentos solo con ícono, cada uno con su tooltip."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/buttons/segmented_button_icones.dart",
+              "className": "SegmentedButtonIcones"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "settings-section-label",
-      "name": "Settings Section Label",
-      "category": "settings",
-      "filePath": "packages/flutter_widgets_hub/lib/src/settings/settings_section_label.dart",
-      "exportedSymbols": ["HubSettingsSectionLabel", "HubSectionLabelVariant"],
-      "description": "Rótulo de seção em caixa alta pra telas de Configurações, com duas variantes de estilo (bold/muted).",
-      "selfContained": true,
-      "requiredPackages": [],
-      "showcaseRoute": "/settings/settings-section-label",
-      "lastVerified": "2026-10-08"
+      "id": "forms",
+      "name": {
+        "pt": "Formulários",
+        "en": "Forms",
+        "es": "Formularios"
+      },
+      "widgets": [
+        {
+          "name": "TextField",
+          "description": {
+            "pt": "O campo de texto: onde a pessoa digita.",
+            "en": "The text field: where people type.",
+            "es": "El campo de texto: donde la persona escribe."
+          },
+          "examples": [
+            {
+              "id": "forms/text_field_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Um campo com rótulo.",
+                "en": "A field with a label.",
+                "es": "Un campo con etiqueta."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_basico.dart",
+              "className": "TextFieldBasico"
+            },
+            {
+              "id": "forms/text_field_decoracao",
+              "title": {
+                "pt": "Decoração",
+                "en": "Decoration",
+                "es": "Decoración"
+              },
+              "description": {
+                "pt": "InputDecoration: dica, ajuda, ícones, prefixo e borda.",
+                "en": "InputDecoration: hint, helper text, icons, prefix and border.",
+                "es": "InputDecoration: pista, ayuda, íconos, prefijo y borde."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_decoracao.dart",
+              "className": "TextFieldDecoracao"
+            },
+            {
+              "id": "forms/text_field_teclados",
+              "title": {
+                "pt": "Tipos de teclado",
+                "en": "Keyboard types",
+                "es": "Tipos de teclado"
+              },
+              "description": {
+                "pt": "keyboardType e textInputAction para e-mail, número e telefone.",
+                "en": "keyboardType and textInputAction for email, number and phone.",
+                "es": "keyboardType y textInputAction para correo, número y teléfono."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_teclados.dart",
+              "className": "TextFieldTeclados"
+            },
+            {
+              "id": "forms/text_field_senha",
+              "title": {
+                "pt": "Senha",
+                "en": "Password",
+                "es": "Contraseña"
+              },
+              "description": {
+                "pt": "obscureText e um botão para mostrar ou esconder.",
+                "en": "obscureText and a button to show or hide it.",
+                "es": "obscureText y un botón para mostrarla u ocultarla."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_senha.dart",
+              "className": "TextFieldSenha"
+            },
+            {
+              "id": "forms/text_field_controller",
+              "title": {
+                "pt": "Ler o que foi digitado",
+                "en": "Reading the input",
+                "es": "Leer lo que se escribió"
+              },
+              "description": {
+                "pt": "TextEditingController e onChanged, com botão de limpar.",
+                "en": "TextEditingController and onChanged, with a clear button.",
+                "es": "TextEditingController y onChanged, con un botón para borrar."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_controller.dart",
+              "className": "TextFieldController"
+            },
+            {
+              "id": "forms/text_field_linhas",
+              "title": {
+                "pt": "Várias linhas e limite",
+                "en": "Multiple lines and a limit",
+                "es": "Varias líneas y límite"
+              },
+              "description": {
+                "pt": "minLines, maxLines e maxLength com contador.",
+                "en": "minLines, maxLines and maxLength with a counter.",
+                "es": "minLines, maxLines y maxLength con contador."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_linhas.dart",
+              "className": "TextFieldLinhas"
+            }
+          ]
+        },
+        {
+          "name": "TextFormField",
+          "description": {
+            "pt": "Um TextField com validação, feito para usar dentro de um Form.",
+            "en": "A TextField with validation, made to be used inside a Form.",
+            "es": "Un TextField con validación, pensado para usarse dentro de un Form."
+          },
+          "examples": [
+            {
+              "id": "forms/text_form_field_validacao",
+              "title": {
+                "pt": "Validação",
+                "en": "Validation",
+                "es": "Validación"
+              },
+              "description": {
+                "pt": "validator mostra o erro enquanto a pessoa digita.",
+                "en": "validator shows the error as the person types.",
+                "es": "validator muestra el error mientras la persona escribe."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/text_form_field_validacao.dart",
+              "className": "TextFormFieldValidacao"
+            },
+            {
+              "id": "forms/text_form_field_formatadores",
+              "title": {
+                "pt": "Só números",
+                "en": "Numbers only",
+                "es": "Solo números"
+              },
+              "description": {
+                "pt": "inputFormatters bloqueiam letras e limitam o tamanho.",
+                "en": "inputFormatters block letters and limit the length.",
+                "es": "inputFormatters bloquean letras y limitan el tamaño."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/text_form_field_formatadores.dart",
+              "className": "TextFormFieldFormatadores"
+            }
+          ]
+        },
+        {
+          "name": "Form",
+          "description": {
+            "pt": "Agrupa campos para validar, salvar e limpar todos de uma vez.",
+            "en": "Groups fields to validate, save and reset them all at once.",
+            "es": "Agrupa campos para validar, guardar y limpiar todos a la vez."
+          },
+          "examples": [
+            {
+              "id": "forms/form_validar",
+              "title": {
+                "pt": "Validar ao enviar",
+                "en": "Validate on submit",
+                "es": "Validar al enviar"
+              },
+              "description": {
+                "pt": "validate() confere todos os campos de uma vez.",
+                "en": "validate() checks every field at once.",
+                "es": "validate() revisa todos los campos a la vez."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/form_validar.dart",
+              "className": "FormValidar"
+            },
+            {
+              "id": "forms/form_salvar",
+              "title": {
+                "pt": "Salvar e restaurar",
+                "en": "Save and reset",
+                "es": "Guardar y restaurar"
+              },
+              "description": {
+                "pt": "save() chama os onSaved; reset() volta ao valor inicial.",
+                "en": "save() calls each onSaved; reset() goes back to the initial values.",
+                "es": "save() llama a los onSaved; reset() vuelve al valor inicial."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/form_salvar.dart",
+              "className": "FormSalvar"
+            }
+          ]
+        },
+        {
+          "name": "SearchBar",
+          "description": {
+            "pt": "A barra de busca do Material 3.",
+            "en": "The Material 3 search bar.",
+            "es": "La barra de búsqueda de Material 3."
+          },
+          "examples": [
+            {
+              "id": "forms/search_bar_filtro",
+              "title": {
+                "pt": "Filtrando uma lista",
+                "en": "Filtering a list",
+                "es": "Filtrando una lista"
+              },
+              "description": {
+                "pt": "onChanged filtra as frutas a cada letra digitada.",
+                "en": "onChanged filters the fruits with every letter typed.",
+                "es": "onChanged filtra las frutas con cada letra escrita."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/search_bar_filtro.dart",
+              "className": "SearchBarFiltro"
+            },
+            {
+              "id": "forms/search_bar_sugestoes",
+              "title": {
+                "pt": "Com sugestões",
+                "en": "With suggestions",
+                "es": "Con sugerencias"
+              },
+              "description": {
+                "pt": "SearchAnchor.bar abre uma tela de busca com sugestões.",
+                "en": "SearchAnchor.bar opens a search view with suggestions.",
+                "es": "SearchAnchor.bar abre una pantalla de búsqueda con sugerencias."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/search_bar_sugestoes.dart",
+              "className": "SearchBarSugestoes"
+            }
+          ]
+        },
+        {
+          "name": "DropdownMenu",
+          "description": {
+            "pt": "Um campo que abre uma lista de opções para escolher.",
+            "en": "A field that opens a list of options to choose from.",
+            "es": "Un campo que abre una lista de opciones para elegir."
+          },
+          "examples": [
+            {
+              "id": "forms/dropdown_menu_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Opções com valor e rótulo, e onSelected.",
+                "en": "Options with a value and a label, plus onSelected.",
+                "es": "Opciones con valor y etiqueta, y onSelected."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/dropdown_menu_basico.dart",
+              "className": "DropdownMenuBasico"
+            },
+            {
+              "id": "forms/dropdown_menu_filtro",
+              "title": {
+                "pt": "Com filtro",
+                "en": "With a filter",
+                "es": "Con filtro"
+              },
+              "description": {
+                "pt": "enableFilter: digite para encontrar a opção.",
+                "en": "enableFilter: type to find the option.",
+                "es": "enableFilter: escribe para encontrar la opción."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/dropdown_menu_filtro.dart",
+              "className": "DropdownMenuFiltro"
+            },
+            {
+              "id": "forms/dropdown_menu_icones",
+              "title": {
+                "pt": "Valor inicial e ícones",
+                "en": "Initial value and icons",
+                "es": "Valor inicial e íconos"
+              },
+              "description": {
+                "pt": "initialSelection, leadingIcon e um enum como valor.",
+                "en": "initialSelection, leadingIcon and an enum as the value.",
+                "es": "initialSelection, leadingIcon y un enum como valor."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/dropdown_menu_icones.dart",
+              "className": "DropdownMenuIcones"
+            }
+          ]
+        },
+        {
+          "name": "Autocomplete",
+          "description": {
+            "pt": "Um campo que sugere opções enquanto a pessoa digita.",
+            "en": "A field that suggests options as the person types.",
+            "es": "Un campo que sugiere opciones mientras la persona escribe."
+          },
+          "examples": [
+            {
+              "id": "forms/autocomplete_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Digite o começo de uma capital, como \"Be\".",
+                "en": "Type the start of a Brazilian state capital, like \"Be\".",
+                "es": "Escribe el comienzo de una capital brasileña, como \"Be\"."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/autocomplete_basico.dart",
+              "className": "AutocompleteBasico"
+            },
+            {
+              "id": "forms/autocomplete_objetos",
+              "title": {
+                "pt": "Com objetos",
+                "en": "With objects",
+                "es": "Con objetos"
+              },
+              "description": {
+                "pt": "Opções que são objetos, com campo personalizado.",
+                "en": "Options that are objects, with a custom field.",
+                "es": "Opciones que son objetos, con un campo personalizado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/forms/autocomplete_objetos.dart",
+              "className": "AutocompleteObjetos"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "settings-grouped-card",
-      "name": "Settings Grouped Card",
-      "category": "settings",
-      "filePath": "packages/flutter_widgets_hub/lib/src/settings/settings_grouped_card.dart",
-      "exportedSymbols": ["HubSettingsGroupedCard", "HubGroupedCardVariant"],
-      "description": "Agrupa ListTiles numa tela de Configurações, com divisor entre eles e duas variantes de fundo (Card real ou Container com borda).",
-      "selfContained": true,
-      "requiredPackages": [],
-      "showcaseRoute": "/settings/settings-grouped-card",
-      "lastVerified": "2026-10-08"
+      "id": "selection",
+      "name": {
+        "pt": "Seleção",
+        "en": "Selection",
+        "es": "Selección"
+      },
+      "widgets": [
+        {
+          "name": "Checkbox",
+          "description": {
+            "pt": "Uma caixa de marcar: sim ou não, para cada opção.",
+            "en": "A check box: yes or no, for each option.",
+            "es": "Una casilla de verificación: sí o no, para cada opción."
+          },
+          "examples": [
+            {
+              "id": "selection/checkbox_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "value e onChanged, com o valor guardado no State.",
+                "en": "value and onChanged, with the value kept in the State.",
+                "es": "value y onChanged, con el valor guardado en el State."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/checkbox_basico.dart",
+              "className": "CheckboxBasico"
+            },
+            {
+              "id": "selection/checkbox_list_tile",
+              "title": {
+                "pt": "CheckboxListTile",
+                "en": "CheckboxListTile",
+                "es": "CheckboxListTile"
+              },
+              "description": {
+                "pt": "Checkbox e texto numa linha toda tocável.",
+                "en": "A checkbox and text in a fully tappable row.",
+                "es": "Checkbox y texto en una fila que se puede tocar entera."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/checkbox_list_tile.dart",
+              "className": "CheckboxListTileExemplo"
+            },
+            {
+              "id": "selection/checkbox_tres_estados",
+              "title": {
+                "pt": "Selecionar tudo",
+                "en": "Select all",
+                "es": "Seleccionar todo"
+              },
+              "description": {
+                "pt": "tristate: marcado, desmarcado ou \"alguns\" (null).",
+                "en": "tristate: checked, unchecked or \"some\" (null).",
+                "es": "tristate: marcado, desmarcado o \"algunos\" (null)."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/checkbox_tres_estados.dart",
+              "className": "CheckboxTresEstados"
+            }
+          ]
+        },
+        {
+          "name": "Radio",
+          "description": {
+            "pt": "Escolha de uma única opção entre várias.",
+            "en": "Choose a single option among several.",
+            "es": "Elección de una única opción entre varias."
+          },
+          "examples": [
+            {
+              "id": "selection/radio_grupo",
+              "title": {
+                "pt": "RadioGroup",
+                "en": "RadioGroup",
+                "es": "RadioGroup"
+              },
+              "description": {
+                "pt": "O jeito atual: o grupo guarda a escolha, cada Radio só o valor.",
+                "en": "The current way: the group holds the choice, each Radio only its value.",
+                "es": "La forma actual: el grupo guarda la elección, cada Radio solo su valor."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/radio_grupo.dart",
+              "className": "RadioGrupo"
+            },
+            {
+              "id": "selection/radio_list_tile",
+              "title": {
+                "pt": "RadioListTile",
+                "en": "RadioListTile",
+                "es": "RadioListTile"
+              },
+              "description": {
+                "pt": "Cada opção numa linha tocável, com subtítulo.",
+                "en": "Each option in a tappable row, with a subtitle.",
+                "es": "Cada opción en una fila que se puede tocar, con subtítulo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/radio_list_tile.dart",
+              "className": "RadioListTileExemplo"
+            }
+          ]
+        },
+        {
+          "name": "Switch",
+          "description": {
+            "pt": "Liga e desliga algo na hora, como nas Configurações.",
+            "en": "Turns something on and off instantly, like in Settings.",
+            "es": "Activa y desactiva algo al instante, como en Ajustes."
+          },
+          "examples": [
+            {
+              "id": "selection/switch_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Liga e desliga, mostrando o estado ao lado.",
+                "en": "Turns on and off, showing the state next to it.",
+                "es": "Activa y desactiva, mostrando el estado al lado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/switch_basico.dart",
+              "className": "SwitchBasico"
+            },
+            {
+              "id": "selection/switch_list_tile",
+              "title": {
+                "pt": "SwitchListTile",
+                "en": "SwitchListTile",
+                "es": "SwitchListTile"
+              },
+              "description": {
+                "pt": "O formato clássico das telas de Configurações.",
+                "en": "The classic format of Settings screens.",
+                "es": "El formato clásico de las pantallas de Ajustes."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/switch_list_tile.dart",
+              "className": "SwitchListTileExemplo"
+            },
+            {
+              "id": "selection/switch_icone",
+              "title": {
+                "pt": "Com ícone",
+                "en": "With icon",
+                "es": "Con ícono"
+              },
+              "description": {
+                "pt": "thumbIcon muda o ícone da bolinha conforme o estado.",
+                "en": "thumbIcon changes the thumb icon according to the state.",
+                "es": "thumbIcon cambia el ícono del botón según el estado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/switch_icone.dart",
+              "className": "SwitchIcone"
+            }
+          ]
+        },
+        {
+          "name": "Slider",
+          "description": {
+            "pt": "Escolhe um valor arrastando, dentro de uma faixa.",
+            "en": "Picks a value by dragging, within a range.",
+            "es": "Elige un valor arrastrando, dentro de un rango."
+          },
+          "examples": [
+            {
+              "id": "selection/slider_continuo",
+              "title": {
+                "pt": "Contínuo",
+                "en": "Continuous",
+                "es": "Continuo"
+              },
+              "description": {
+                "pt": "Qualquer valor de 0 a 1, como um volume.",
+                "en": "Any value from 0 to 1, like a volume.",
+                "es": "Cualquier valor de 0 a 1, como un volumen."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/slider_continuo.dart",
+              "className": "SliderContinuo"
+            },
+            {
+              "id": "selection/slider_divisoes",
+              "title": {
+                "pt": "Divisões e rótulo",
+                "en": "Divisions and label",
+                "es": "Divisiones y etiqueta"
+              },
+              "description": {
+                "pt": "divisions faz pular de 1 em 1; label mostra o valor.",
+                "en": "divisions makes it step 1 by 1; label shows the value.",
+                "es": "divisions hace que avance de 1 en 1; label muestra el valor."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/slider_divisoes.dart",
+              "className": "SliderDivisoes"
+            },
+            {
+              "id": "selection/slider_cores",
+              "title": {
+                "pt": "Cores",
+                "en": "Colors",
+                "es": "Colores"
+              },
+              "description": {
+                "pt": "activeColor, inactiveColor e thumbColor.",
+                "en": "activeColor, inactiveColor and thumbColor.",
+                "es": "activeColor, inactiveColor y thumbColor."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/slider_cores.dart",
+              "className": "SliderCores"
+            }
+          ]
+        },
+        {
+          "name": "RangeSlider",
+          "description": {
+            "pt": "Um Slider com duas bolinhas, para escolher uma faixa.",
+            "en": "A Slider with two thumbs, to pick a range.",
+            "es": "Un Slider con dos controles, para elegir un rango."
+          },
+          "examples": [
+            {
+              "id": "selection/range_slider_preco",
+              "title": {
+                "pt": "Faixa de preço",
+                "en": "Price range",
+                "es": "Rango de precio"
+              },
+              "description": {
+                "pt": "RangeValues, divisões e um rótulo em cada ponta.",
+                "en": "RangeValues, divisions and a label at each end.",
+                "es": "RangeValues, divisiones y una etiqueta en cada extremo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/range_slider_preco.dart",
+              "className": "RangeSliderPreco"
+            },
+            {
+              "id": "selection/range_slider_ao_soltar",
+              "title": {
+                "pt": "Ao soltar",
+                "en": "On release",
+                "es": "Al soltar"
+              },
+              "description": {
+                "pt": "onChangeEnd só roda quando a pessoa solta o dedo.",
+                "en": "onChangeEnd only runs when the finger is lifted.",
+                "es": "onChangeEnd solo se ejecuta cuando la persona suelta el dedo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/range_slider_ao_soltar.dart",
+              "className": "RangeSliderAoSoltar"
+            }
+          ]
+        },
+        {
+          "name": "FilterChip",
+          "description": {
+            "pt": "Etiquetas de filtro: dá para marcar várias ao mesmo tempo.",
+            "en": "Filter chips: you can select several at once.",
+            "es": "Etiquetas de filtro: se pueden marcar varias a la vez."
+          },
+          "examples": [
+            {
+              "id": "selection/filter_chip_filtros",
+              "title": {
+                "pt": "Filtros",
+                "en": "Filters",
+                "es": "Filtros"
+              },
+              "description": {
+                "pt": "Um Set guarda as etiquetas marcadas.",
+                "en": "A Set holds the selected chips.",
+                "es": "Un Set guarda las etiquetas marcadas."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/filter_chip_filtros.dart",
+              "className": "FilterChipFiltros"
+            },
+            {
+              "id": "selection/filter_chip_icones",
+              "title": {
+                "pt": "Com ícones",
+                "en": "With icons",
+                "es": "Con íconos"
+              },
+              "description": {
+                "pt": "avatar com um ícone e sem o ✓ (showCheckmark).",
+                "en": "avatar with an icon and no ✓ (showCheckmark).",
+                "es": "avatar con un ícono y sin el ✓ (showCheckmark)."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/filter_chip_icones.dart",
+              "className": "FilterChipIcones"
+            }
+          ]
+        },
+        {
+          "name": "ChoiceChip",
+          "description": {
+            "pt": "Etiquetas de escolha: só uma marcada por vez.",
+            "en": "Choice chips: only one selected at a time.",
+            "es": "Etiquetas de elección: solo una marcada a la vez."
+          },
+          "examples": [
+            {
+              "id": "selection/choice_chip_opcional",
+              "title": {
+                "pt": "Opcional",
+                "en": "Optional",
+                "es": "Opcional"
+              },
+              "description": {
+                "pt": "Tocar na escolhida desmarca: pode ficar sem nenhuma.",
+                "en": "Tapping the selected one clears it: there can be none.",
+                "es": "Tocar la elegida la desmarca: puede quedar sin ninguna."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/choice_chip_opcional.dart",
+              "className": "ChoiceChipOpcional"
+            },
+            {
+              "id": "selection/choice_chip_obrigatorio",
+              "title": {
+                "pt": "Sempre uma escolhida",
+                "en": "Always one selected",
+                "es": "Siempre una elegida"
+              },
+              "description": {
+                "pt": "Ignorando o bool, nunca fica sem opção.",
+                "en": "By ignoring the bool, there is always one selected.",
+                "es": "Ignorando el bool, nunca queda sin opción."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/selection/choice_chip_obrigatorio.dart",
+              "className": "ChoiceChipObrigatorio"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "data-list-row",
-      "name": "Data List Row",
-      "category": "lists",
-      "filePath": "packages/flutter_widgets_hub/lib/src/lists/data_list_row.dart",
-      "exportedSymbols": ["HubDataListRow"],
-      "description": "Linha de lista de dados, deliberadamente sem elevação (não é um Card) — superfície plana com borda fina, mais densa/tabular.",
-      "selfContained": true,
-      "requiredPackages": [],
-      "showcaseRoute": "/lists/data-list-row",
-      "lastVerified": "2026-10-08"
+      "id": "lists",
+      "name": {
+        "pt": "Listas e rolagem",
+        "en": "Lists & scrolling",
+        "es": "Listas y scroll"
+      },
+      "widgets": [
+        {
+          "name": "ListView",
+          "description": {
+            "pt": "A lista com rolagem do Flutter: vertical ou horizontal, de qualquer tamanho.",
+            "en": "Flutter's scrolling list: vertical or horizontal, of any length.",
+            "es": "La lista con scroll de Flutter: vertical u horizontal, de cualquier tamaño."
+          },
+          "examples": [
+            {
+              "id": "lists/list_view_simples",
+              "title": {
+                "pt": "Lista simples",
+                "en": "Simple list",
+                "es": "Lista simple"
+              },
+              "description": {
+                "pt": "Itens fixos em children. Dentro de outra rolagem, precisa de altura.",
+                "en": "Fixed items in children. Inside another scroll view, it needs a height.",
+                "es": "Elementos fijos en children. Dentro de otro scroll, necesita una altura."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/list_view_simples.dart",
+              "className": "ListViewSimples"
+            },
+            {
+              "id": "lists/list_view_builder",
+              "title": {
+                "pt": "ListView.builder",
+                "en": "ListView.builder",
+                "es": "ListView.builder"
+              },
+              "description": {
+                "pt": "Cria só os itens visíveis: aguenta 1000 contatos.",
+                "en": "Builds only the visible items: it handles 1000 contacts.",
+                "es": "Crea solo los elementos visibles: aguanta 1000 contactos."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/list_view_builder.dart",
+              "className": "ListViewBuilder"
+            },
+            {
+              "id": "lists/list_view_separated",
+              "title": {
+                "pt": "ListView.separated",
+                "en": "ListView.separated",
+                "es": "ListView.separated"
+              },
+              "description": {
+                "pt": "Um separador entre cada item.",
+                "en": "A separator between each item.",
+                "es": "Un separador entre cada elemento."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/list_view_separated.dart",
+              "className": "ListViewSeparated"
+            },
+            {
+              "id": "lists/list_view_horizontal",
+              "title": {
+                "pt": "Horizontal",
+                "en": "Horizontal",
+                "es": "Horizontal"
+              },
+              "description": {
+                "pt": "scrollDirection: Axis.horizontal, com cards lado a lado.",
+                "en": "scrollDirection: Axis.horizontal, with cards side by side.",
+                "es": "scrollDirection: Axis.horizontal, con tarjetas una al lado de la otra."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/list_view_horizontal.dart",
+              "className": "ListViewHorizontal"
+            }
+          ]
+        },
+        {
+          "name": "GridView",
+          "description": {
+            "pt": "Uma grade com rolagem, em linhas e colunas.",
+            "en": "A scrolling grid of rows and columns.",
+            "es": "Una cuadrícula con scroll, en filas y columnas."
+          },
+          "examples": [
+            {
+              "id": "lists/grid_view_count",
+              "title": {
+                "pt": "GridView.count",
+                "en": "GridView.count",
+                "es": "GridView.count"
+              },
+              "description": {
+                "pt": "Um número fixo de colunas.",
+                "en": "A fixed number of columns.",
+                "es": "Un número fijo de columnas."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/grid_view_count.dart",
+              "className": "GridViewCount"
+            },
+            {
+              "id": "lists/grid_view_builder",
+              "title": {
+                "pt": "GridView.builder",
+                "en": "GridView.builder",
+                "es": "GridView.builder"
+              },
+              "description": {
+                "pt": "Itens sob demanda e proporção com childAspectRatio.",
+                "en": "Items on demand and proportions with childAspectRatio.",
+                "es": "Elementos bajo demanda y proporción con childAspectRatio."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/grid_view_builder.dart",
+              "className": "GridViewBuilder"
+            },
+            {
+              "id": "lists/grid_view_extent",
+              "title": {
+                "pt": "Largura máxima",
+                "en": "Maximum width",
+                "es": "Ancho máximo"
+              },
+              "description": {
+                "pt": "As colunas se ajustam ao tamanho da tela.",
+                "en": "The columns adapt to the screen size.",
+                "es": "Las columnas se ajustan al tamaño de la pantalla."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/grid_view_extent.dart",
+              "className": "GridViewExtent"
+            }
+          ]
+        },
+        {
+          "name": "ListTile",
+          "description": {
+            "pt": "A linha de lista pronta: título, subtítulo, ícone e ação.",
+            "en": "The ready-made list row: title, subtitle, icon and action.",
+            "es": "La fila de lista ya hecha: título, subtítulo, ícono y acción."
+          },
+          "examples": [
+            {
+              "id": "lists/list_tile_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Título e subtítulo.",
+                "en": "Title and subtitle.",
+                "es": "Título y subtítulo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/list_tile_basico.dart",
+              "className": "ListTileBasico"
+            },
+            {
+              "id": "lists/list_tile_leading_trailing",
+              "title": {
+                "pt": "leading e trailing",
+                "en": "leading and trailing",
+                "es": "leading y trailing"
+              },
+              "description": {
+                "pt": "Avatar antes e horário depois do texto.",
+                "en": "An avatar before the text and a time after it.",
+                "es": "Avatar antes y hora después del texto."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/list_tile_leading_trailing.dart",
+              "className": "ListTileLeadingTrailing"
+            },
+            {
+              "id": "lists/list_tile_selecao",
+              "title": {
+                "pt": "Seleção",
+                "en": "Selection",
+                "es": "Selección"
+              },
+              "description": {
+                "pt": "selected e onTap para escolher uma opção.",
+                "en": "selected and onTap to choose an option.",
+                "es": "selected y onTap para elegir una opción."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/list_tile_selecao.dart",
+              "className": "ListTileSelecao"
+            },
+            {
+              "id": "lists/list_tile_tres_linhas",
+              "title": {
+                "pt": "Três linhas",
+                "en": "Three lines",
+                "es": "Tres líneas"
+              },
+              "description": {
+                "pt": "isThreeLine para subtítulos longos.",
+                "en": "isThreeLine for long subtitles.",
+                "es": "isThreeLine para subtítulos largos."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/list_tile_tres_linhas.dart",
+              "className": "ListTileTresLinhas"
+            }
+          ]
+        },
+        {
+          "name": "SingleChildScrollView",
+          "description": {
+            "pt": "Faz um único conteúdo grande rolar, como uma Column que não cabe.",
+            "en": "Makes a single large child scroll, like a Column that doesn't fit.",
+            "es": "Hace que un único contenido grande se desplace, como una Column que no cabe."
+          },
+          "examples": [
+            {
+              "id": "lists/single_child_scroll_view_vertical",
+              "title": {
+                "pt": "Vertical",
+                "en": "Vertical",
+                "es": "Vertical"
+              },
+              "description": {
+                "pt": "Uma Column maior que o espaço, sem overflow.",
+                "en": "A Column taller than the space, with no overflow.",
+                "es": "Una Column más alta que el espacio, sin overflow."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/single_child_scroll_view_vertical.dart",
+              "className": "SingleChildScrollViewVertical"
+            },
+            {
+              "id": "lists/single_child_scroll_view_horizontal",
+              "title": {
+                "pt": "Horizontal",
+                "en": "Horizontal",
+                "es": "Horizontal"
+              },
+              "description": {
+                "pt": "Uma fileira de filtros que rola para o lado.",
+                "en": "A row of filters that scrolls sideways.",
+                "es": "Una fila de filtros que se desplaza hacia el lado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/single_child_scroll_view_horizontal.dart",
+              "className": "SingleChildScrollViewHorizontal"
+            }
+          ]
+        },
+        {
+          "name": "PageView",
+          "description": {
+            "pt": "Páginas que trocam deslizando para o lado, como um carrossel.",
+            "en": "Pages you switch by swiping sideways, like a carousel.",
+            "es": "Páginas que cambian deslizando hacia el lado, como un carrusel."
+          },
+          "examples": [
+            {
+              "id": "lists/page_view_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Deslize para trocar de página.",
+                "en": "Swipe to change pages.",
+                "es": "Desliza para cambiar de página."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/page_view_basico.dart",
+              "className": "PageViewBasico"
+            },
+            {
+              "id": "lists/page_view_indicador",
+              "title": {
+                "pt": "Com indicador",
+                "en": "With indicator",
+                "es": "Con indicador"
+              },
+              "description": {
+                "pt": "onPageChanged atualiza os pontinhos.",
+                "en": "onPageChanged updates the dots.",
+                "es": "onPageChanged actualiza los puntitos."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/page_view_indicador.dart",
+              "className": "PageViewIndicador"
+            },
+            {
+              "id": "lists/page_view_botoes",
+              "title": {
+                "pt": "Com botões",
+                "en": "With buttons",
+                "es": "Con botones"
+              },
+              "description": {
+                "pt": "PageController muda de página pelo código.",
+                "en": "PageController changes pages from code.",
+                "es": "PageController cambia de página desde el código."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/page_view_botoes.dart",
+              "className": "PageViewBotoes"
+            }
+          ]
+        },
+        {
+          "name": "CustomScrollView",
+          "description": {
+            "pt": "Junta listas, grades e cabeçalhos numa rolagem só.",
+            "en": "Combines lists, grids and headers in a single scroll.",
+            "es": "Une listas, cuadrículas y cabeceras en un solo scroll."
+          },
+          "examples": [
+            {
+              "id": "lists/custom_scroll_view_slivers",
+              "title": {
+                "pt": "Slivers",
+                "en": "Slivers",
+                "es": "Slivers"
+              },
+              "description": {
+                "pt": "Cabeçalho, grade e lista numa rolagem só.",
+                "en": "Header, grid and list in a single scroll.",
+                "es": "Cabecera, cuadrícula y lista en un solo scroll."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/custom_scroll_view_slivers.dart",
+              "className": "CustomScrollViewSlivers"
+            },
+            {
+              "id": "lists/custom_scroll_view_app_bar",
+              "title": {
+                "pt": "SliverAppBar",
+                "en": "SliverAppBar",
+                "es": "SliverAppBar"
+              },
+              "description": {
+                "pt": "Uma barra com imagem que encolhe ao rolar.",
+                "en": "A bar with an image that shrinks as you scroll.",
+                "es": "Una barra con imagen que se encoge al desplazarse."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/custom_scroll_view_app_bar.dart",
+              "className": "CustomScrollViewAppBar",
+              "requires": [
+                {
+                  "type": "asset",
+                  "path": "assets/images/paisagem.png",
+                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RefreshIndicator",
+          "description": {
+            "pt": "O \"puxe para atualizar\" no topo de uma lista.",
+            "en": "The \"pull to refresh\" at the top of a list.",
+            "es": "El \"desliza para actualizar\" en la parte superior de una lista."
+          },
+          "examples": [
+            {
+              "id": "lists/refresh_indicator_basico",
+              "title": {
+                "pt": "Puxe para atualizar",
+                "en": "Pull to refresh",
+                "es": "Desliza para actualizar"
+              },
+              "description": {
+                "pt": "Puxe a lista para baixo: chega uma mensagem nova.",
+                "en": "Pull the list down: a new message arrives.",
+                "es": "Desliza la lista hacia abajo: llega un mensaje nuevo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/refresh_indicator_basico.dart",
+              "className": "RefreshIndicatorBasico"
+            },
+            {
+              "id": "lists/refresh_indicator_vazio",
+              "title": {
+                "pt": "Lista vazia",
+                "en": "Empty list",
+                "es": "Lista vacía"
+              },
+              "description": {
+                "pt": "Como deixar puxar mesmo sem nenhum item.",
+                "en": "How to allow pulling even with no items.",
+                "es": "Cómo permitir deslizar incluso sin ningún elemento."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/refresh_indicator_vazio.dart",
+              "className": "RefreshIndicatorVazio"
+            }
+          ]
+        },
+        {
+          "name": "DataTable",
+          "description": {
+            "pt": "Uma tabela com colunas, linhas e ordenação.",
+            "en": "A table with columns, rows and sorting.",
+            "es": "Una tabla con columnas, filas y ordenación."
+          },
+          "examples": [
+            {
+              "id": "lists/data_table_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Colunas, linhas e células.",
+                "en": "Columns, rows and cells.",
+                "es": "Columnas, filas y celdas."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/data_table_basico.dart",
+              "className": "DataTableBasico"
+            },
+            {
+              "id": "lists/data_table_ordenacao",
+              "title": {
+                "pt": "Ordenação",
+                "en": "Sorting",
+                "es": "Ordenación"
+              },
+              "description": {
+                "pt": "Toque no cabeçalho de uma coluna para ordenar.",
+                "en": "Tap a column header to sort.",
+                "es": "Toca la cabecera de una columna para ordenar."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/lists/data_table_ordenacao.dart",
+              "className": "DataTableOrdenacao"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "appearance-selector",
-      "name": "Appearance Selector",
-      "category": "selectors",
-      "filePath": "packages/flutter_widgets_hub/lib/src/selectors/appearance_selector.dart",
-      "exportedSymbols": ["HubAppearanceSelector"],
-      "description": "Seletor claro/escuro/automático — 3 cards com amostra de cor e rótulo.",
-      "selfContained": true,
-      "requiredPackages": [],
-      "showcaseRoute": "/selectors/appearance-selector",
-      "lastVerified": "2026-10-08"
+      "id": "navigation",
+      "name": {
+        "pt": "Navegação",
+        "en": "Navigation",
+        "es": "Navegación"
+      },
+      "widgets": [
+        {
+          "name": "AppBar",
+          "description": {
+            "pt": "A barra do topo da tela: título, menu e ações.",
+            "en": "The bar at the top of the screen: title, menu and actions.",
+            "es": "La barra superior de la pantalla: título, menú y acciones."
+          },
+          "examples": [
+            {
+              "id": "navigation/app_bar_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Um Scaffold com AppBar e título.",
+                "en": "A Scaffold with an AppBar and a title.",
+                "es": "Un Scaffold con AppBar y título."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/app_bar_basico.dart",
+              "className": "AppBarBasico"
+            },
+            {
+              "id": "navigation/app_bar_acoes",
+              "title": {
+                "pt": "leading e actions",
+                "en": "leading and actions",
+                "es": "leading y actions"
+              },
+              "description": {
+                "pt": "Menu à esquerda e botões de ação à direita.",
+                "en": "A menu on the left and action buttons on the right.",
+                "es": "Menú a la izquierda y botones de acción a la derecha."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/app_bar_acoes.dart",
+              "className": "AppBarAcoes"
+            },
+            {
+              "id": "navigation/app_bar_cores",
+              "title": {
+                "pt": "Cores e título no meio",
+                "en": "Colors and centered title",
+                "es": "Colores y título centrado"
+              },
+              "description": {
+                "pt": "backgroundColor, foregroundColor e centerTitle.",
+                "en": "backgroundColor, foregroundColor and centerTitle.",
+                "es": "backgroundColor, foregroundColor y centerTitle."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/app_bar_cores.dart",
+              "className": "AppBarCores"
+            }
+          ]
+        },
+        {
+          "name": "NavigationBar",
+          "description": {
+            "pt": "A barra de abas embaixo da tela, para trocar de seção.",
+            "en": "The tab bar at the bottom of the screen, to switch sections.",
+            "es": "La barra de pestañas en la parte inferior, para cambiar de sección."
+          },
+          "examples": [
+            {
+              "id": "navigation/navigation_bar_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Três abas que trocam o conteúdo da tela.",
+                "en": "Three tabs that switch the screen content.",
+                "es": "Tres pestañas que cambian el contenido de la pantalla."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_bar_basico.dart",
+              "className": "NavigationBarBasico"
+            },
+            {
+              "id": "navigation/navigation_bar_selos",
+              "title": {
+                "pt": "Com selos",
+                "en": "With badges",
+                "es": "Con insignias"
+              },
+              "description": {
+                "pt": "Badge nos ícones e texto só na aba escolhida.",
+                "en": "Badges on the icons and a label only on the selected tab.",
+                "es": "Badge en los íconos y texto solo en la pestaña elegida."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_bar_selos.dart",
+              "className": "NavigationBarSelos"
+            }
+          ]
+        },
+        {
+          "name": "NavigationRail",
+          "description": {
+            "pt": "A barra de navegação lateral, para tablets e telas largas.",
+            "en": "The side navigation bar, for tablets and wide screens.",
+            "es": "La barra de navegación lateral, para tablets y pantallas anchas."
+          },
+          "examples": [
+            {
+              "id": "navigation/navigation_rail_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Destinos com ícone e texto ao lado do conteúdo.",
+                "en": "Destinations with an icon and a label next to the content.",
+                "es": "Destinos con ícono y texto al lado del contenido."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_rail_basico.dart",
+              "className": "NavigationRailBasico"
+            },
+            {
+              "id": "navigation/navigation_rail_fab",
+              "title": {
+                "pt": "Com FAB",
+                "en": "With a FAB",
+                "es": "Con FAB"
+              },
+              "description": {
+                "pt": "leading com um FAB e destinos no meio da barra.",
+                "en": "leading with a FAB and destinations in the middle of the bar.",
+                "es": "leading con un FAB y destinos en el medio de la barra."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_rail_fab.dart",
+              "className": "NavigationRailFab"
+            }
+          ]
+        },
+        {
+          "name": "NavigationDrawer",
+          "description": {
+            "pt": "O menu lateral que abre pelo ☰ ou deslizando da borda.",
+            "en": "The side menu that opens from ☰ or by swiping from the edge.",
+            "es": "El menú lateral que se abre con ☰ o deslizando desde el borde."
+          },
+          "examples": [
+            {
+              "id": "navigation/navigation_drawer_basico",
+              "title": {
+                "pt": "Menu lateral",
+                "en": "Side menu",
+                "es": "Menú lateral"
+              },
+              "description": {
+                "pt": "drawer no Scaffold e o ☰ automático na AppBar.",
+                "en": "drawer in the Scaffold and the automatic ☰ in the AppBar.",
+                "es": "drawer en el Scaffold y el ☰ automático en la AppBar."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_drawer_basico.dart",
+              "className": "NavigationDrawerBasico"
+            },
+            {
+              "id": "navigation/navigation_drawer_codigo",
+              "title": {
+                "pt": "Abrir pelo código",
+                "en": "Open from code",
+                "es": "Abrir desde el código"
+              },
+              "description": {
+                "pt": "endDrawer e Scaffold.of(context) dentro de um Builder.",
+                "en": "endDrawer and Scaffold.of(context) inside a Builder.",
+                "es": "endDrawer y Scaffold.of(context) dentro de un Builder."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_drawer_codigo.dart",
+              "className": "NavigationDrawerCodigo"
+            }
+          ]
+        },
+        {
+          "name": "TabBar",
+          "description": {
+            "pt": "Abas no topo para alternar entre conteúdos da mesma tela.",
+            "en": "Tabs at the top to switch between contents of the same screen.",
+            "es": "Pestañas arriba para alternar entre contenidos de la misma pantalla."
+          },
+          "examples": [
+            {
+              "id": "navigation/tab_bar_view",
+              "title": {
+                "pt": "Com TabBarView",
+                "en": "With TabBarView",
+                "es": "Con TabBarView"
+              },
+              "description": {
+                "pt": "Abas na AppBar e conteúdo que troca deslizando.",
+                "en": "Tabs in the AppBar and content you can swipe through.",
+                "es": "Pestañas en la AppBar y contenido que cambia deslizando."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/tab_bar_view.dart",
+              "className": "TabBarComView"
+            },
+            {
+              "id": "navigation/tab_bar_rolavel",
+              "title": {
+                "pt": "Rolável com ícones",
+                "en": "Scrollable with icons",
+                "es": "Desplazable con íconos"
+              },
+              "description": {
+                "pt": "isScrollable para muitas abas, com ícone e texto.",
+                "en": "isScrollable for many tabs, with an icon and a label.",
+                "es": "isScrollable para muchas pestañas, con ícono y texto."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/tab_bar_rolavel.dart",
+              "className": "TabBarRolavel"
+            }
+          ]
+        },
+        {
+          "name": "BottomAppBar",
+          "description": {
+            "pt": "Uma barra de ações embaixo da tela, com espaço para o FAB.",
+            "en": "An action bar at the bottom of the screen, with room for the FAB.",
+            "es": "Una barra de acciones en la parte inferior, con espacio para el FAB."
+          },
+          "examples": [
+            {
+              "id": "navigation/bottom_app_bar_fab",
+              "title": {
+                "pt": "FAB dentro da barra",
+                "en": "FAB inside the bar",
+                "es": "FAB dentro de la barra"
+              },
+              "description": {
+                "pt": "floatingActionButtonLocation.endContained.",
+                "en": "floatingActionButtonLocation.endContained.",
+                "es": "floatingActionButtonLocation.endContained."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/bottom_app_bar_fab.dart",
+              "className": "BottomAppBarFab"
+            },
+            {
+              "id": "navigation/bottom_app_bar_entalhe",
+              "title": {
+                "pt": "FAB encaixado no meio",
+                "en": "FAB docked in the middle",
+                "es": "FAB encajado en el medio"
+              },
+              "description": {
+                "pt": "centerDocked com o recorte CircularNotchedRectangle.",
+                "en": "centerDocked with the CircularNotchedRectangle notch.",
+                "es": "centerDocked con el recorte CircularNotchedRectangle."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/bottom_app_bar_entalhe.dart",
+              "className": "BottomAppBarEntalhe"
+            }
+          ]
+        },
+        {
+          "name": "Navigator",
+          "description": {
+            "pt": "Troca de tela: abre uma nova por cima e volta para a anterior.",
+            "en": "Switching screens: opens a new one on top and goes back to the previous one.",
+            "es": "Cambio de pantalla: abre una nueva encima y vuelve a la anterior."
+          },
+          "examples": [
+            {
+              "id": "navigation/navigator_push_pop",
+              "title": {
+                "pt": "push e pop",
+                "en": "push and pop",
+                "es": "push y pop"
+              },
+              "description": {
+                "pt": "Abre uma tela nova e volta para esta.",
+                "en": "Opens a new screen and comes back to this one.",
+                "es": "Abre una pantalla nueva y vuelve a esta."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/navigator_push_pop.dart",
+              "className": "NavigatorPushPop"
+            },
+            {
+              "id": "navigation/navigator_resultado",
+              "title": {
+                "pt": "Recebendo um valor",
+                "en": "Receiving a value",
+                "es": "Recibiendo un valor"
+              },
+              "description": {
+                "pt": "A outra tela devolve a escolha no pop.",
+                "en": "The other screen returns the choice in pop.",
+                "es": "La otra pantalla devuelve la elección en el pop."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/navigation/navigator_resultado.dart",
+              "className": "NavigatorResultado"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "language-selector",
-      "name": "Language Selector",
-      "category": "selectors",
-      "filePath": "packages/flutter_widgets_hub/lib/src/selectors/language_selector.dart",
-      "exportedSymbols": ["HubLanguageSelector", "HubLanguageOption"],
-      "description": "Lista de rádio agrupada pra escolher idioma, um idioma por linha.",
-      "selfContained": true,
-      "requiredPackages": [],
-      "showcaseRoute": "/selectors/language-selector",
-      "lastVerified": "2026-10-08"
+      "id": "feedback",
+      "name": {
+        "pt": "Diálogos e avisos",
+        "en": "Dialogs & feedback",
+        "es": "Diálogos y avisos"
+      },
+      "widgets": [
+        {
+          "name": "AlertDialog",
+          "description": {
+            "pt": "Uma janela por cima da tela que pede atenção ou confirmação.",
+            "en": "A window over the screen that asks for attention or confirmation.",
+            "es": "Una ventana sobre la pantalla que pide atención o confirmación."
+          },
+          "examples": [
+            {
+              "id": "feedback/alert_dialog_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "showDialog com título, texto e um botão OK.",
+                "en": "showDialog with a title, text and an OK button.",
+                "es": "showDialog con título, texto y un botón OK."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/alert_dialog_basico.dart",
+              "className": "AlertDialogBasico"
+            },
+            {
+              "id": "feedback/alert_dialog_resultado",
+              "title": {
+                "pt": "Confirmação com resposta",
+                "en": "Confirmation with an answer",
+                "es": "Confirmación con respuesta"
+              },
+              "description": {
+                "pt": "O valor do pop volta no await do showDialog.",
+                "en": "The value passed to pop comes back from the awaited showDialog.",
+                "es": "El valor del pop vuelve en el await del showDialog."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/alert_dialog_resultado.dart",
+              "className": "AlertDialogResultado"
+            },
+            {
+              "id": "feedback/alert_dialog_icone",
+              "title": {
+                "pt": "Com ícone e ação perigosa",
+                "en": "Icon and dangerous action",
+                "es": "Ícono y acción peligrosa"
+              },
+              "description": {
+                "pt": "icon no topo e o botão de excluir em destaque.",
+                "en": "icon at the top and the delete button highlighted.",
+                "es": "icon arriba y el botón de borrar destacado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/alert_dialog_icone.dart",
+              "className": "AlertDialogIcone"
+            },
+            {
+              "id": "feedback/alert_dialog_opcoes",
+              "title": {
+                "pt": "Escolher uma opção",
+                "en": "Choose an option",
+                "es": "Elegir una opción"
+              },
+              "description": {
+                "pt": "SimpleDialog: cada opção fecha e devolve seu valor.",
+                "en": "SimpleDialog: each option closes it and returns its value.",
+                "es": "SimpleDialog: cada opción lo cierra y devuelve su valor."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/alert_dialog_opcoes.dart",
+              "className": "AlertDialogOpcoes"
+            }
+          ]
+        },
+        {
+          "name": "SnackBar",
+          "description": {
+            "pt": "Um aviso rápido na parte de baixo da tela, que some sozinho.",
+            "en": "A quick message at the bottom of the screen that goes away on its own.",
+            "es": "Un aviso rápido en la parte inferior de la pantalla, que desaparece solo."
+          },
+          "examples": [
+            {
+              "id": "feedback/snack_bar_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "ScaffoldMessenger.showSnackBar com uma mensagem.",
+                "en": "ScaffoldMessenger.showSnackBar with a message.",
+                "es": "ScaffoldMessenger.showSnackBar con un mensaje."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/snack_bar_basico.dart",
+              "className": "SnackBarBasico"
+            },
+            {
+              "id": "feedback/snack_bar_desfazer",
+              "title": {
+                "pt": "Com Desfazer",
+                "en": "With Undo",
+                "es": "Con Deshacer"
+              },
+              "description": {
+                "pt": "SnackBarAction: um botão dentro do aviso.",
+                "en": "SnackBarAction: a button inside the message.",
+                "es": "SnackBarAction: un botón dentro del aviso."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/snack_bar_desfazer.dart",
+              "className": "SnackBarDesfazer"
+            },
+            {
+              "id": "feedback/snack_bar_flutuante",
+              "title": {
+                "pt": "Flutuante",
+                "en": "Floating",
+                "es": "Flotante"
+              },
+              "description": {
+                "pt": "Solta das bordas, com X para fechar e duração maior.",
+                "en": "Detached from the edges, with an X to close and a longer duration.",
+                "es": "Separada de los bordes, con X para cerrar y mayor duración."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/snack_bar_flutuante.dart",
+              "className": "SnackBarFlutuante"
+            }
+          ]
+        },
+        {
+          "name": "BottomSheet",
+          "description": {
+            "pt": "Um painel que sobe da parte de baixo da tela.",
+            "en": "A panel that slides up from the bottom of the screen.",
+            "es": "Un panel que sube desde la parte inferior de la pantalla."
+          },
+          "examples": [
+            {
+              "id": "feedback/bottom_sheet_basico",
+              "title": {
+                "pt": "Menu de opções",
+                "en": "Options menu",
+                "es": "Menú de opciones"
+              },
+              "description": {
+                "pt": "showModalBottomSheet com uma lista de ações.",
+                "en": "showModalBottomSheet with a list of actions.",
+                "es": "showModalBottomSheet con una lista de acciones."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/bottom_sheet_basico.dart",
+              "className": "BottomSheetBasico"
+            },
+            {
+              "id": "feedback/bottom_sheet_arrastavel",
+              "title": {
+                "pt": "Arrastável",
+                "en": "Draggable",
+                "es": "Arrastrable"
+              },
+              "description": {
+                "pt": "DraggableScrollableSheet: arraste o painel e role a lista.",
+                "en": "DraggableScrollableSheet: drag the panel and scroll the list.",
+                "es": "DraggableScrollableSheet: arrastra el panel y desplaza la lista."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/bottom_sheet_arrastavel.dart",
+              "className": "BottomSheetArrastavel"
+            },
+            {
+              "id": "feedback/bottom_sheet_teclado",
+              "title": {
+                "pt": "Com campo de texto",
+                "en": "With a text field",
+                "es": "Con campo de texto"
+              },
+              "description": {
+                "pt": "viewInsets faz o painel subir junto com o teclado.",
+                "en": "viewInsets makes the panel rise along with the keyboard.",
+                "es": "viewInsets hace que el panel suba junto con el teclado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/bottom_sheet_teclado.dart",
+              "className": "BottomSheetTeclado"
+            }
+          ]
+        },
+        {
+          "name": "Tooltip",
+          "description": {
+            "pt": "Uma dica curta que aparece ao tocar e segurar.",
+            "en": "A short hint that appears on touch and hold.",
+            "es": "Una pista corta que aparece al mantener pulsado."
+          },
+          "examples": [
+            {
+              "id": "feedback/tooltip_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Toque e segure o ícone para ver a dica.",
+                "en": "Touch and hold the icon to see the hint.",
+                "es": "Mantén pulsado el ícono para ver la pista."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/tooltip_basico.dart",
+              "className": "TooltipBasico"
+            },
+            {
+              "id": "feedback/tooltip_personalizado",
+              "title": {
+                "pt": "Personalizado",
+                "en": "Customized",
+                "es": "Personalizado"
+              },
+              "description": {
+                "pt": "Abre com um toque, em cima do ícone, com outras cores.",
+                "en": "Opens with a single tap, above the icon, in other colors.",
+                "es": "Se abre con un toque, encima del ícono, con otros colores."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/tooltip_personalizado.dart",
+              "className": "TooltipPersonalizado"
+            }
+          ]
+        },
+        {
+          "name": "MaterialBanner",
+          "description": {
+            "pt": "Um aviso importante que fica até a pessoa tomar uma ação.",
+            "en": "An important message that stays until the person acts on it.",
+            "es": "Un aviso importante que se queda hasta que la persona actúa."
+          },
+          "examples": [
+            {
+              "id": "feedback/material_banner_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Ícone, mensagem e uma ação para fechar.",
+                "en": "Icon, message and an action to dismiss it.",
+                "es": "Ícono, mensaje y una acción para cerrar."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/material_banner_basico.dart",
+              "className": "MaterialBannerBasico"
+            },
+            {
+              "id": "feedback/material_banner_acoes",
+              "title": {
+                "pt": "Com duas ações",
+                "en": "With two actions",
+                "es": "Con dos acciones"
+              },
+              "description": {
+                "pt": "Cores do tema e ações embaixo do texto.",
+                "en": "Theme colors and actions below the text.",
+                "es": "Colores del tema y acciones debajo del texto."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/material_banner_acoes.dart",
+              "className": "MaterialBannerAcoes"
+            }
+          ]
+        },
+        {
+          "name": "CircularProgressIndicator",
+          "description": {
+            "pt": "O círculo de \"carregando\", girando ou mostrando o progresso.",
+            "en": "The \"loading\" circle, spinning or showing progress.",
+            "es": "El círculo de \"cargando\", girando o mostrando el progreso."
+          },
+          "examples": [
+            {
+              "id": "feedback/circular_indeterminado",
+              "title": {
+                "pt": "Girando",
+                "en": "Spinning",
+                "es": "Girando"
+              },
+              "description": {
+                "pt": "Sem value: carregando sem saber quanto falta.",
+                "en": "No value: loading without knowing how much is left.",
+                "es": "Sin value: cargando sin saber cuánto falta."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/circular_indeterminado.dart",
+              "className": "CircularIndeterminado"
+            },
+            {
+              "id": "feedback/circular_determinado",
+              "title": {
+                "pt": "Com progresso",
+                "en": "With progress",
+                "es": "Con progreso"
+              },
+              "description": {
+                "pt": "value de 0 a 1 mostra quanto já foi feito.",
+                "en": "value from 0 to 1 shows how much is done.",
+                "es": "value de 0 a 1 muestra cuánto se ha hecho."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/circular_determinado.dart",
+              "className": "CircularDeterminado"
+            }
+          ]
+        },
+        {
+          "name": "LinearProgressIndicator",
+          "description": {
+            "pt": "A barra de progresso horizontal.",
+            "en": "The horizontal progress bar.",
+            "es": "La barra de progreso horizontal."
+          },
+          "examples": [
+            {
+              "id": "feedback/linear_indeterminado",
+              "title": {
+                "pt": "Correndo",
+                "en": "Running",
+                "es": "En marcha"
+              },
+              "description": {
+                "pt": "Sem value: a barra corre sem parar.",
+                "en": "No value: the bar keeps running.",
+                "es": "Sin value: la barra se mueve sin parar."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/linear_indeterminado.dart",
+              "className": "LinearIndeterminado"
+            },
+            {
+              "id": "feedback/linear_etapas",
+              "title": {
+                "pt": "Etapas",
+                "en": "Steps",
+                "es": "Etapas"
+              },
+              "description": {
+                "pt": "Progresso de um passo a passo, com altura e cantos.",
+                "en": "Progress through a step-by-step flow, with height and corners.",
+                "es": "Progreso de un paso a paso, con altura y esquinas."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/feedback/linear_etapas.dart",
+              "className": "LinearEtapas"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "feature-page",
-      "name": "Feature Page",
-      "category": "misc",
-      "filePath": "packages/flutter_widgets_hub/lib/src/misc/feature_page.dart",
-      "exportedSymbols": ["HubFeaturePage"],
-      "description": "Página centralizada com ícone, título, corpo e botão de ação — generalização da página de onboarding, útil também pra estado vazio ou tela de erro.",
-      "selfContained": true,
-      "requiredPackages": [],
-      "showcaseRoute": "/misc/feature-page",
-      "lastVerified": "2026-10-08"
+      "id": "cards",
+      "name": {
+        "pt": "Cartões e painéis",
+        "en": "Cards & panels",
+        "es": "Tarjetas y paneles"
+      },
+      "widgets": [
+        {
+          "name": "Card",
+          "description": {
+            "pt": "Uma superfície com cantos arredondados para agrupar conteúdo.",
+            "en": "A surface with rounded corners to group content.",
+            "es": "Una superficie con esquinas redondeadas para agrupar contenido."
+          },
+          "examples": [
+            {
+              "id": "cards/card_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Um Card com Padding e texto.",
+                "en": "A Card with Padding and text.",
+                "es": "Un Card con Padding y texto."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cards/card_basico.dart",
+              "className": "CardBasico"
+            },
+            {
+              "id": "cards/card_variantes",
+              "title": {
+                "pt": "Três estilos",
+                "en": "Three styles",
+                "es": "Tres estilos"
+              },
+              "description": {
+                "pt": "Card, Card.filled e Card.outlined.",
+                "en": "Card, Card.filled and Card.outlined.",
+                "es": "Card, Card.filled y Card.outlined."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cards/card_variantes.dart",
+              "className": "CardVariantes"
+            },
+            {
+              "id": "cards/card_completo",
+              "title": {
+                "pt": "Com imagem e ações",
+                "en": "With an image and actions",
+                "es": "Con imagen y acciones"
+              },
+              "description": {
+                "pt": "Imagem no topo, ListTile e botões no rodapé.",
+                "en": "An image at the top, a ListTile and buttons at the bottom.",
+                "es": "Imagen arriba, ListTile y botones al pie."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cards/card_completo.dart",
+              "className": "CardCompleto",
+              "requires": [
+                {
+                  "type": "asset",
+                  "path": "assets/images/paisagem.png",
+                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                }
+              ]
+            },
+            {
+              "id": "cards/card_tocavel",
+              "title": {
+                "pt": "Tocável",
+                "en": "Tappable",
+                "es": "Tocable"
+              },
+              "description": {
+                "pt": "InkWell dentro do Card, com clipBehavior.",
+                "en": "InkWell inside the Card, with clipBehavior.",
+                "es": "InkWell dentro del Card, con clipBehavior."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cards/card_tocavel.dart",
+              "className": "CardTocavel"
+            }
+          ]
+        },
+        {
+          "name": "ExpansionTile",
+          "description": {
+            "pt": "Uma linha que abre e fecha para mostrar mais conteúdo.",
+            "en": "A row that expands and collapses to show more content.",
+            "es": "Una fila que se abre y se cierra para mostrar más contenido."
+          },
+          "examples": [
+            {
+              "id": "cards/expansion_tile_basico",
+              "title": {
+                "pt": "Perguntas frequentes",
+                "en": "FAQ",
+                "es": "Preguntas frecuentes"
+              },
+              "description": {
+                "pt": "Toque numa pergunta para ver a resposta.",
+                "en": "Tap a question to see the answer.",
+                "es": "Toca una pregunta para ver la respuesta."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cards/expansion_tile_basico.dart",
+              "className": "ExpansionTileBasico"
+            },
+            {
+              "id": "cards/expansion_tile_aberto",
+              "title": {
+                "pt": "Começa aberto",
+                "en": "Starts expanded",
+                "es": "Empieza abierto"
+              },
+              "description": {
+                "pt": "initiallyExpanded, ícone e onExpansionChanged.",
+                "en": "initiallyExpanded, an icon and onExpansionChanged.",
+                "es": "initiallyExpanded, ícono y onExpansionChanged."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cards/expansion_tile_aberto.dart",
+              "className": "ExpansionTileAberto"
+            }
+          ]
+        },
+        {
+          "name": "ExpansionPanelList",
+          "description": {
+            "pt": "Uma lista de painéis que abrem e fecham, com divisórias.",
+            "en": "A list of panels that expand and collapse, with dividers.",
+            "es": "Una lista de paneles que se abren y cierran, con divisiones."
+          },
+          "examples": [
+            {
+              "id": "cards/expansion_panel_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "Você guarda o aberto/fechado de cada painel.",
+                "en": "You keep track of whether each panel is open.",
+                "es": "Tú guardas si cada panel está abierto o cerrado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cards/expansion_panel_basico.dart",
+              "className": "ExpansionPanelBasico"
+            },
+            {
+              "id": "cards/expansion_panel_radio",
+              "title": {
+                "pt": "Um aberto por vez",
+                "en": "One open at a time",
+                "es": "Uno abierto a la vez"
+              },
+              "description": {
+                "pt": "ExpansionPanelList.radio fecha os outros sozinho.",
+                "en": "ExpansionPanelList.radio closes the others by itself.",
+                "es": "ExpansionPanelList.radio cierra los demás por sí solo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cards/expansion_panel_radio.dart",
+              "className": "ExpansionPanelRadioExemplo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animations",
+      "name": {
+        "pt": "Animações",
+        "en": "Animations",
+        "es": "Animaciones"
+      },
+      "widgets": [
+        {
+          "name": "AnimatedContainer",
+          "description": {
+            "pt": "Um Container que anima sozinho quando seus valores mudam.",
+            "en": "A Container that animates on its own when its values change.",
+            "es": "Un Container que se anima solo cuando cambian sus valores."
+          },
+          "examples": [
+            {
+              "id": "animations/animated_container_basico",
+              "title": {
+                "pt": "Tamanho, cor e cantos",
+                "en": "Size, color and corners",
+                "es": "Tamaño, color y esquinas"
+              },
+              "description": {
+                "pt": "Mude os valores com setState e veja a transição.",
+                "en": "Change the values with setState and watch the transition.",
+                "es": "Cambia los valores con setState y mira la transición."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/animations/animated_container_basico.dart",
+              "className": "AnimatedContainerBasico"
+            },
+            {
+              "id": "animations/animated_container_curvas",
+              "title": {
+                "pt": "Curvas",
+                "en": "Curves",
+                "es": "Curvas"
+              },
+              "description": {
+                "pt": "A mesma animação com curvas diferentes.",
+                "en": "The same animation with different curves.",
+                "es": "La misma animación con curvas diferentes."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/animations/animated_container_curvas.dart",
+              "className": "AnimatedContainerCurvas"
+            }
+          ]
+        },
+        {
+          "name": "AnimatedOpacity",
+          "description": {
+            "pt": "Faz um widget aparecer e sumir suavemente.",
+            "en": "Makes a widget fade in and out smoothly.",
+            "es": "Hace que un widget aparezca y desaparezca suavemente."
+          },
+          "examples": [
+            {
+              "id": "animations/animated_opacity_basico",
+              "title": {
+                "pt": "Aparecer e sumir",
+                "en": "Fade in and out",
+                "es": "Aparecer y desaparecer"
+              },
+              "description": {
+                "pt": "opacity de 1 para 0 com uma duração.",
+                "en": "opacity from 1 to 0 over a duration.",
+                "es": "opacity de 1 a 0 con una duración."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/animations/animated_opacity_basico.dart",
+              "className": "AnimatedOpacityBasico"
+            },
+            {
+              "id": "animations/animated_opacity_espaco",
+              "title": {
+                "pt": "Sumir de verdade",
+                "en": "Really disappear",
+                "es": "Desaparecer de verdad"
+              },
+              "description": {
+                "pt": "Invisível ainda ocupa espaço: onEnd remove depois do fade.",
+                "en": "Invisible still takes up space: onEnd removes it after the fade.",
+                "es": "Invisible todavía ocupa espacio: onEnd lo quita después del fade."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/animations/animated_opacity_espaco.dart",
+              "className": "AnimatedOpacityEspaco"
+            }
+          ]
+        },
+        {
+          "name": "AnimatedSwitcher",
+          "description": {
+            "pt": "Anima a troca de um widget por outro.",
+            "en": "Animates swapping one widget for another.",
+            "es": "Anima el cambio de un widget por otro."
+          },
+          "examples": [
+            {
+              "id": "animations/animated_switcher_contador",
+              "title": {
+                "pt": "Contador",
+                "en": "Counter",
+                "es": "Contador"
+              },
+              "description": {
+                "pt": "Cada número novo entra com fade. A key faz a mágica.",
+                "en": "Each new number fades in. The key does the magic.",
+                "es": "Cada número nuevo entra con fade. La key hace la magia."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/animations/animated_switcher_contador.dart",
+              "className": "AnimatedSwitcherContador"
+            },
+            {
+              "id": "animations/animated_switcher_transicao",
+              "title": {
+                "pt": "Transição personalizada",
+                "en": "Custom transition",
+                "es": "Transición personalizada"
+              },
+              "description": {
+                "pt": "transitionBuilder com ScaleTransition no ícone.",
+                "en": "transitionBuilder with a ScaleTransition on the icon.",
+                "es": "transitionBuilder con ScaleTransition en el ícono."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/animations/animated_switcher_transicao.dart",
+              "className": "AnimatedSwitcherTransicao"
+            }
+          ]
+        },
+        {
+          "name": "Hero",
+          "description": {
+            "pt": "Um elemento que \"voa\" de uma tela para a outra.",
+            "en": "An element that \"flies\" from one screen to another.",
+            "es": "Un elemento que \"vuela\" de una pantalla a otra."
+          },
+          "examples": [
+            {
+              "id": "animations/hero_imagem",
+              "title": {
+                "pt": "Foto que abre",
+                "en": "Photo that opens",
+                "es": "Foto que se abre"
+              },
+              "description": {
+                "pt": "A mesma tag nas duas telas. Toque na foto.",
+                "en": "The same tag on both screens. Tap the photo.",
+                "es": "La misma tag en las dos pantallas. Toca la foto."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/animations/hero_imagem.dart",
+              "className": "HeroImagem",
+              "requires": [
+                {
+                  "type": "asset",
+                  "path": "assets/images/paisagem.png",
+                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                }
+              ]
+            },
+            {
+              "id": "animations/hero_perfil",
+              "title": {
+                "pt": "Avatar e nome",
+                "en": "Avatar and name",
+                "es": "Avatar y nombre"
+              },
+              "description": {
+                "pt": "Dois Heroes, e o Material que protege o texto no voo.",
+                "en": "Two Heroes, and the Material that protects the text in flight.",
+                "es": "Dos Heroes y el Material que protege el texto durante el vuelo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/animations/hero_perfil.dart",
+              "className": "HeroPerfil"
+            }
+          ]
+        },
+        {
+          "name": "TweenAnimationBuilder",
+          "description": {
+            "pt": "Anima qualquer valor (número, cor, tamanho) sem controller.",
+            "en": "Animates any value (number, color, size) without a controller.",
+            "es": "Anima cualquier valor (número, color, tamaño) sin controller."
+          },
+          "examples": [
+            {
+              "id": "animations/tween_numero",
+              "title": {
+                "pt": "Número que conta",
+                "en": "Counting number",
+                "es": "Número que cuenta"
+              },
+              "description": {
+                "pt": "O saldo sobe contando até o valor novo.",
+                "en": "The balance counts up to the new value.",
+                "es": "El saldo sube contando hasta el valor nuevo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/animations/tween_numero.dart",
+              "className": "TweenNumero"
+            },
+            {
+              "id": "animations/tween_cor",
+              "title": {
+                "pt": "Cor",
+                "en": "Color",
+                "es": "Color"
+              },
+              "description": {
+                "pt": "ColorTween: o coração muda de cor suavemente.",
+                "en": "ColorTween: the heart changes color smoothly.",
+                "es": "ColorTween: el corazón cambia de color suavemente."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/animations/tween_cor.dart",
+              "className": "TweenCor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gestures",
+      "name": {
+        "pt": "Gestos",
+        "en": "Gestures",
+        "es": "Gestos"
+      },
+      "widgets": [
+        {
+          "name": "GestureDetector",
+          "description": {
+            "pt": "Detecta toques, toques longos e arrastos em qualquer widget.",
+            "en": "Detects taps, long presses and drags on any widget.",
+            "es": "Detecta toques, pulsaciones largas y arrastres en cualquier widget."
+          },
+          "examples": [
+            {
+              "id": "gestures/gesture_detector_toques",
+              "title": {
+                "pt": "Tipos de toque",
+                "en": "Kinds of tap",
+                "es": "Tipos de toque"
+              },
+              "description": {
+                "pt": "onTap, onDoubleTap e onLongPress na mesma caixa.",
+                "en": "onTap, onDoubleTap and onLongPress on the same box.",
+                "es": "onTap, onDoubleTap y onLongPress en la misma caja."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/gesture_detector_toques.dart",
+              "className": "GestureDetectorToques"
+            },
+            {
+              "id": "gestures/gesture_detector_arrastar",
+              "title": {
+                "pt": "Arrastar",
+                "en": "Dragging",
+                "es": "Arrastrar"
+              },
+              "description": {
+                "pt": "onHorizontalDragUpdate move a bolinha pela trilha.",
+                "en": "onHorizontalDragUpdate moves the ball along the track.",
+                "es": "onHorizontalDragUpdate mueve la bolita por el riel."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/gesture_detector_arrastar.dart",
+              "className": "GestureDetectorArrastar"
+            },
+            {
+              "id": "gestures/gesture_detector_area",
+              "title": {
+                "pt": "Área de toque",
+                "en": "Hit area",
+                "es": "Área de toque"
+              },
+              "description": {
+                "pt": "Toque no espaço vazio de cada caixa: só a da direita conta.",
+                "en": "Tap the empty space in each box: only the right one counts.",
+                "es": "Toca el espacio vacío de cada caja: solo cuenta la de la derecha."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/gesture_detector_area.dart",
+              "className": "GestureDetectorArea"
+            }
+          ]
+        },
+        {
+          "name": "InkWell",
+          "description": {
+            "pt": "Deixa algo tocável com o efeito de onda do Material.",
+            "en": "Makes something tappable with the Material ripple effect.",
+            "es": "Hace que algo se pueda tocar con el efecto de onda de Material."
+          },
+          "examples": [
+            {
+              "id": "gestures/ink_well_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "onTap com a onda respeitando os cantos.",
+                "en": "onTap with the ripple respecting the corners.",
+                "es": "onTap con la onda respetando las esquinas."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/ink_well_basico.dart",
+              "className": "InkWellBasico"
+            },
+            {
+              "id": "gestures/ink_well_ink",
+              "title": {
+                "pt": "Fundo colorido: use Ink",
+                "en": "Colored background: use Ink",
+                "es": "Fondo de color: usa Ink"
+              },
+              "description": {
+                "pt": "Com Container a onda some; com Ink ela aparece.",
+                "en": "With Container the ripple disappears; with Ink it shows.",
+                "es": "Con Container la onda desaparece; con Ink se ve."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/ink_well_ink.dart",
+              "className": "InkWellInk"
+            },
+            {
+              "id": "gestures/ink_well_redondo",
+              "title": {
+                "pt": "Onda redonda",
+                "en": "Round ripple",
+                "es": "Onda redonda"
+              },
+              "description": {
+                "pt": "customBorder e splashColor num ícone.",
+                "en": "customBorder and splashColor on an icon.",
+                "es": "customBorder y splashColor en un ícono."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/ink_well_redondo.dart",
+              "className": "InkWellRedondo"
+            }
+          ]
+        },
+        {
+          "name": "Dismissible",
+          "description": {
+            "pt": "Arraste um item para o lado para apagá-lo.",
+            "en": "Swipe an item sideways to delete it.",
+            "es": "Desliza un elemento hacia el lado para borrarlo."
+          },
+          "examples": [
+            {
+              "id": "gestures/dismissible_apagar",
+              "title": {
+                "pt": "Arrastar para apagar",
+                "en": "Swipe to delete",
+                "es": "Deslizar para borrar"
+              },
+              "description": {
+                "pt": "key única, fundo vermelho e onDismissed.",
+                "en": "A unique key, a red background and onDismissed.",
+                "es": "key única, fondo rojo y onDismissed."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/dismissible_apagar.dart",
+              "className": "DismissibleApagar"
+            },
+            {
+              "id": "gestures/dismissible_confirmar",
+              "title": {
+                "pt": "Confirmar antes",
+                "en": "Confirm first",
+                "es": "Confirmar antes"
+              },
+              "description": {
+                "pt": "confirmDismiss pergunta antes de apagar.",
+                "en": "confirmDismiss asks before deleting.",
+                "es": "confirmDismiss pregunta antes de borrar."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/dismissible_confirmar.dart",
+              "className": "DismissibleConfirmar"
+            }
+          ]
+        },
+        {
+          "name": "Draggable",
+          "description": {
+            "pt": "Arrasta um widget e solta num DragTarget.",
+            "en": "Drag a widget and drop it on a DragTarget.",
+            "es": "Arrastra un widget y suéltalo en un DragTarget."
+          },
+          "examples": [
+            {
+              "id": "gestures/draggable_soltar",
+              "title": {
+                "pt": "Arrastar e soltar",
+                "en": "Drag and drop",
+                "es": "Arrastrar y soltar"
+              },
+              "description": {
+                "pt": "Draggable com data e um DragTarget que recebe a cor.",
+                "en": "Draggable with data and a DragTarget that receives the color.",
+                "es": "Draggable con data y un DragTarget que recibe el color."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/draggable_soltar.dart",
+              "className": "DraggableSoltar"
+            },
+            {
+              "id": "gestures/draggable_segurar",
+              "title": {
+                "pt": "Segurar para arrastar",
+                "en": "Hold to drag",
+                "es": "Mantener para arrastrar"
+              },
+              "description": {
+                "pt": "LongPressDraggable: não atrapalha a rolagem da página.",
+                "en": "LongPressDraggable: it doesn't get in the way of page scrolling.",
+                "es": "LongPressDraggable: no interfiere con el scroll de la página."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/draggable_segurar.dart",
+              "className": "DraggableSegurar"
+            }
+          ]
+        },
+        {
+          "name": "InteractiveViewer",
+          "description": {
+            "pt": "Zoom com dois dedos e arrasto, como numa foto ou mapa.",
+            "en": "Two-finger zoom and panning, like on a photo or a map.",
+            "es": "Zoom con dos dedos y arrastre, como en una foto o un mapa."
+          },
+          "examples": [
+            {
+              "id": "gestures/interactive_viewer_zoom",
+              "title": {
+                "pt": "Zoom numa imagem",
+                "en": "Zooming an image",
+                "es": "Zoom en una imagen"
+              },
+              "description": {
+                "pt": "minScale e maxScale limitam o zoom.",
+                "en": "minScale and maxScale limit the zoom.",
+                "es": "minScale y maxScale limitan el zoom."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/interactive_viewer_zoom.dart",
+              "className": "InteractiveViewerZoom",
+              "requires": [
+                {
+                  "type": "asset",
+                  "path": "assets/images/paisagem.png",
+                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                }
+              ]
+            },
+            {
+              "id": "gestures/interactive_viewer_reset",
+              "title": {
+                "pt": "Voltar ao normal",
+                "en": "Reset",
+                "es": "Restablecer"
+              },
+              "description": {
+                "pt": "TransformationController desfaz o zoom pelo código.",
+                "en": "TransformationController undoes the zoom from code.",
+                "es": "TransformationController deshace el zoom desde el código."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/gestures/interactive_viewer_reset.dart",
+              "className": "InteractiveViewerReset",
+              "requires": [
+                {
+                  "type": "asset",
+                  "path": "assets/images/paisagem.png",
+                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cupertino",
+      "name": {
+        "pt": "Estilo iOS",
+        "en": "iOS style",
+        "es": "Estilo iOS"
+      },
+      "widgets": [
+        {
+          "name": "CupertinoButton",
+          "description": {
+            "pt": "O botão no estilo iOS: só texto, tinted ou preenchido.",
+            "en": "The iOS-style button: text only, tinted or filled.",
+            "es": "El botón al estilo iOS: solo texto, tinted o relleno."
+          },
+          "examples": [
+            {
+              "id": "cupertino/cupertino_button_estilos",
+              "title": {
+                "pt": "Três estilos",
+                "en": "Three styles",
+                "es": "Tres estilos"
+              },
+              "description": {
+                "pt": "Padrão, .tinted e .filled.",
+                "en": "Default, .tinted and .filled.",
+                "es": "Estándar, .tinted y .filled."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_button_estilos.dart",
+              "className": "CupertinoButtonEstilos"
+            },
+            {
+              "id": "cupertino/cupertino_button_icone",
+              "title": {
+                "pt": "Com ícone e desabilitado",
+                "en": "With icon and disabled",
+                "es": "Con ícono y deshabilitado"
+              },
+              "description": {
+                "pt": "CupertinoIcons e onPressed: null.",
+                "en": "CupertinoIcons and onPressed: null.",
+                "es": "CupertinoIcons y onPressed: null."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_button_icone.dart",
+              "className": "CupertinoButtonIcone"
+            }
+          ]
+        },
+        {
+          "name": "CupertinoSwitch",
+          "description": {
+            "pt": "O switch do iPhone, e os widgets que se adaptam à plataforma.",
+            "en": "The iPhone switch, and widgets that adapt to the platform.",
+            "es": "El switch del iPhone y los widgets que se adaptan a la plataforma."
+          },
+          "examples": [
+            {
+              "id": "cupertino/cupertino_switch_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "value, onChanged e a cor de ligado.",
+                "en": "value, onChanged and the \"on\" color.",
+                "es": "value, onChanged y el color de encendido."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_switch_basico.dart",
+              "className": "CupertinoSwitchBasico"
+            },
+            {
+              "id": "cupertino/widgets_adaptativos",
+              "title": {
+                "pt": "Widgets adaptativos",
+                "en": "Adaptive widgets",
+                "es": "Widgets adaptativos"
+              },
+              "description": {
+                "pt": ".adaptive vira Cupertino no iPhone. Troque a plataforma.",
+                "en": ".adaptive becomes Cupertino on iPhone. Switch the platform.",
+                "es": ".adaptive se vuelve Cupertino en el iPhone. Cambia la plataforma."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/widgets_adaptativos.dart",
+              "className": "WidgetsAdaptativos"
+            }
+          ]
+        },
+        {
+          "name": "CupertinoNavigationBar",
+          "description": {
+            "pt": "A barra do topo no estilo iOS, com o título no meio.",
+            "en": "The iOS-style top bar, with the title in the middle.",
+            "es": "La barra superior al estilo iOS, con el título en el medio."
+          },
+          "examples": [
+            {
+              "id": "cupertino/cupertino_nav_bar_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "CupertinoPageScaffold com título e botão.",
+                "en": "CupertinoPageScaffold with a title and a button.",
+                "es": "CupertinoPageScaffold con título y botón."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_nav_bar_basico.dart",
+              "className": "CupertinoNavBarBasico"
+            },
+            {
+              "id": "cupertino/cupertino_nav_bar_titulo_grande",
+              "title": {
+                "pt": "Título grande",
+                "en": "Large title",
+                "es": "Título grande"
+              },
+              "description": {
+                "pt": "CupertinoSliverNavigationBar encolhe ao rolar.",
+                "en": "CupertinoSliverNavigationBar shrinks as you scroll.",
+                "es": "CupertinoSliverNavigationBar se encoge al desplazarse."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_nav_bar_titulo_grande.dart",
+              "className": "CupertinoNavBarTituloGrande"
+            }
+          ]
+        },
+        {
+          "name": "CupertinoAlertDialog",
+          "description": {
+            "pt": "O alerta do iPhone, e a lista de opções que sobe de baixo.",
+            "en": "The iPhone alert, and the list of options that slides up from the bottom.",
+            "es": "La alerta del iPhone y la lista de opciones que sube desde abajo."
+          },
+          "examples": [
+            {
+              "id": "cupertino/cupertino_alert_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "showCupertinoDialog com a ação recomendada em negrito.",
+                "en": "showCupertinoDialog with the recommended action in bold.",
+                "es": "showCupertinoDialog con la acción recomendada en negrita."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_alert_basico.dart",
+              "className": "CupertinoAlertBasico"
+            },
+            {
+              "id": "cupertino/cupertino_alert_destrutivo",
+              "title": {
+                "pt": "Ação destrutiva",
+                "en": "Destructive action",
+                "es": "Acción destructiva"
+              },
+              "description": {
+                "pt": "isDestructiveAction deixa a ação perigosa em vermelho.",
+                "en": "isDestructiveAction makes the dangerous action red.",
+                "es": "isDestructiveAction pone la acción peligrosa en rojo."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_alert_destrutivo.dart",
+              "className": "CupertinoAlertDestrutivo"
+            },
+            {
+              "id": "cupertino/cupertino_action_sheet",
+              "title": {
+                "pt": "CupertinoActionSheet",
+                "en": "CupertinoActionSheet",
+                "es": "CupertinoActionSheet"
+              },
+              "description": {
+                "pt": "Opções que sobem de baixo, com o Cancelar separado.",
+                "en": "Options that slide up from the bottom, with Cancel set apart.",
+                "es": "Opciones que suben desde abajo, con Cancelar separado."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_action_sheet.dart",
+              "className": "CupertinoActionSheetExemplo"
+            }
+          ]
+        },
+        {
+          "name": "CupertinoPicker",
+          "description": {
+            "pt": "A roleta do iPhone para escolher uma opção, data ou hora.",
+            "en": "The iPhone wheel for picking an option, a date or a time.",
+            "es": "La rueda del iPhone para elegir una opción, fecha u hora."
+          },
+          "examples": [
+            {
+              "id": "cupertino/cupertino_picker_lista",
+              "title": {
+                "pt": "Lista de opções",
+                "en": "List of options",
+                "es": "Lista de opciones"
+              },
+              "description": {
+                "pt": "itemExtent, controller inicial e onSelectedItemChanged.",
+                "en": "itemExtent, an initial controller and onSelectedItemChanged.",
+                "es": "itemExtent, controller inicial y onSelectedItemChanged."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_picker_lista.dart",
+              "className": "CupertinoPickerLista"
+            },
+            {
+              "id": "cupertino/cupertino_date_picker",
+              "title": {
+                "pt": "Hora (CupertinoDatePicker)",
+                "en": "Time (CupertinoDatePicker)",
+                "es": "Hora (CupertinoDatePicker)"
+              },
+              "description": {
+                "pt": "A roleta de horário, em formato 24h.",
+                "en": "The time wheel, in 24-hour format.",
+                "es": "La rueda de horario, en formato de 24 h."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_date_picker.dart",
+              "className": "CupertinoDatePickerExemplo"
+            }
+          ]
+        },
+        {
+          "name": "CupertinoSlider",
+          "description": {
+            "pt": "O slider no estilo iOS.",
+            "en": "The iOS-style slider.",
+            "es": "El slider al estilo iOS."
+          },
+          "examples": [
+            {
+              "id": "cupertino/cupertino_slider_basico",
+              "title": {
+                "pt": "Básico",
+                "en": "Basic",
+                "es": "Básico"
+              },
+              "description": {
+                "pt": "value, min, max e divisions, como no Slider.",
+                "en": "value, min, max and divisions, like the Slider.",
+                "es": "value, min, max y divisions, como en el Slider."
+              },
+              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_slider_basico.dart",
+              "className": "CupertinoSliderBasico"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

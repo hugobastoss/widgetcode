@@ -21,17 +21,12 @@ jobs:
       - name: Analyze (packages + showcase)
         run: flutter analyze
 
-      - name: Test flutter_widgets_hub
-        run: flutter test
-        working-directory: packages/flutter_widgets_hub
+      # O pacote packages/flutter_widgets_hub está inativo neste projeto (são
+      # widgets de design de outros apps): continua sendo analisado acima, mas
+      # não tem mais etapa de teste própria.
 
-      - name: Regenerate code snippets
-        run: dart run tool/generate_snippets.dart
-        working-directory: apps/showcase
-
-      - name: Fail if generated snippets drifted from source
-        run: git diff --exit-code -- apps/showcase/lib/catalog/generated_snippets.g.dart
-
+      # Inclui o teste que falha se manifest/widgets.json não bater com os
+      # exemplos cadastrados no app.
       - name: Test showcase app
         run: flutter test
         working-directory: apps/showcase

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Um idioma selecionável em [HubLanguageSelector] — [label] deve estar
+/// Um idioma selecionável em [HubLanguageSelector]. [label] deve estar
 /// escrito no próprio idioma que representa (convenção padrão de seletor
 /// de idioma: "English", "Español", não traduzido pro idioma atual).
 class HubLanguageOption {
@@ -11,7 +11,7 @@ class HubLanguageOption {
 }
 
 /// ## Propósito
-/// Lista de rádio agrupada pra escolher um idioma — um [HubLanguageOption]
+/// Lista de rádio agrupada pra escolher um idioma: um [HubLanguageOption]
 /// por linha, com um ícone de check no selecionado.
 ///
 /// ## Uso
@@ -31,7 +31,7 @@ class HubLanguageOption {
 /// Nenhuma. Usa só `Theme.of(context)` (colorScheme).
 ///
 /// ## Última verificação
-/// 2026-10-08 — contra flutterwidgetshub main.
+/// 2026-10-08, contra flutterwidgetshub main.
 class HubLanguageSelector extends StatelessWidget {
   const HubLanguageSelector({
     super.key,

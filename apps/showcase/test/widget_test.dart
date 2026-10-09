@@ -1,25 +1,615 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_widgets_hub_showcase/learn/favorites.dart';
+import 'package:flutter_widgets_hub_showcase/learn/links.dart';
+import 'package:flutter_widgets_hub_showcase/learn/locale_controller.dart';
+import 'package:flutter_widgets_hub_showcase/learn/models.dart';
+import 'package:flutter_widgets_hub_showcase/learn/screens/widget_screen.dart';
+import 'package:flutter_widgets_hub_showcase/learn/sections.dart';
+import 'package:flutter_widgets_hub_showcase/learn/theme_mode_controller.dart';
 import 'package:flutter_widgets_hub_showcase/main.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+/// O app em português (os testes procuram os textos em pt) e sem
+/// favoritos, salvo quando o teste escolhe outro idioma, tema ou favoritos.
+ShowcaseApp _app({
+  ThemeModeController? tema,
+  LocaleController? idioma,
+  FavoritesController? favoritos,
+}) {
+  return ShowcaseApp(
+    themeController: tema ?? ThemeModeController.inMemory(),
+    localeController: idioma ?? LocaleController.inMemory(const Locale('pt')),
+    favoritesController: favoritos ?? FavoritesController.inMemory(),
+  );
+}
 
 void main() {
+  // O rootBundle guarda em cache o Future de cada asset lido, preso à zona
+  // de relógio falso do teste que o criou. Reaproveitado num teste seguinte,
+  // ele nunca completa. Por isso, cada teste começa com o cache vazio.
+  setUp(rootBundle.clear);
+
+  // O app instalado, para a versão e os links da Play Store.
+  setUp(
+    () => PackageInfo.setMockInitialValues(
+      appName: 'WidgetCode',
+      packageName: 'com.exemplo.hub',
+      version: '0.1.0',
+      buildNumber: '1',
+      buildSignature: '',
+    ),
+  );
+
   testWidgets(
-    'navega Home -> categoria -> detalhe e renderiza a demo ao vivo',
+    'navega Início -> Botões -> ElevatedButton -> código do exemplo',
     (tester) async {
-      await tester.pumpWidget(const ShowcaseApp());
+      await tester.pumpWidget(_app());
 
-      expect(find.text('Flutter Widgets Hub'), findsOneWidget);
-      expect(find.text('Diálogos'), findsOneWidget);
+      expect(find.text('WidgetCode'), findsOneWidget);
+      expect(find.text('12 seções · 79 widgets'), findsOneWidget);
 
-      await tester.tap(find.text('Diálogos'));
+      await tester.tap(find.text('Botões'));
       await tester.pumpAndSettle();
+      expect(find.text('7 widgets'), findsOneWidget);
 
-      expect(find.text('Confirmation Dialog'), findsOneWidget);
-      await tester.tap(find.text('Confirmation Dialog'));
+      await tester.tap(find.text('ElevatedButton'));
       await tester.pumpAndSettle();
+      expect(find.text('Exemplos (5)'), findsOneWidget);
+      expect(find.text('1 · Básico'), findsOneWidget);
 
-      expect(find.text('Abrir diálogo'), findsOneWidget);
-      expect(find.text('Código-fonte'), findsOneWidget);
-      expect(find.textContaining('HubConfirmationDialog'), findsWidgets);
+      await tester.tap(find.text('Código').first);
+      await tester.pump(); // monta o CodeSheet, que começa a ler o asset
+      // A leitura do asset é I/O de verdade, que não avança no relógio falso
+      // do teste. Sem isto, o indicador de carregamento gira pra sempre e o
+      // pumpAndSettle nunca termina.
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 200)),
+      );
+      await tester.pumpAndSettle();
+      expect(find.textContaining('class ElevatedButtonBasico'), findsOneWidget);
+      // O código abre num painel por cima: a página do widget continua lá.
+      expect(find.byType(BottomSheet), findsOneWidget);
+      expect(find.text('Exemplos (5)'), findsOneWidget);
+
+      // O painel mostra o ID do exemplo e copia o pedido pronto para a IA.
+      expect(find.text('buttons/elevated_button_basico'), findsOneWidget);
+      String? copiado;
+      tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+        SystemChannels.platform,
+        (chamada) async {
+          if (chamada.method == 'Clipboard.setData') {
+            copiado = (chamada.arguments as Map)['text'] as String;
+          }
+          return null;
+        },
+      );
+      addTearDown(
+        () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+          SystemChannels.platform,
+          null,
+        ),
+      );
+      await tester.tap(find.text('Pedir para a IA'));
+      await tester.pump();
+      expect(
+        copiado,
+        'Traga o exemplo "buttons/elevated_button_basico" do WidgetCode '
+        '(github.com/hugobastoss/widgetcode) para o meu projeto.',
+      );
+      expect(find.text('Pedido copiado'), findsOneWidget);
+      // Deixa passar os 2 segundos em que o botão mostra o ✓.
+      await tester.pump(const Duration(seconds: 3));
+      expect(find.text('Pedir para a IA'), findsOneWidget);
+    },
+  );
+
+  testWidgets('as configurações trocam o app para claro e escuro', (
+    tester,
+  ) async {
+    final tema = ThemeModeController.inMemory();
+    await tester.pumpWidget(_app(tema: tema));
+
+    ThemeMode modoDoApp() =>
+        tester.widget<MaterialApp>(find.byType(MaterialApp)).themeMode!;
+    expect(modoDoApp(), ThemeMode.system);
+
+    await tester.tap(find.byTooltip('Configurações'));
+    await tester.pumpAndSettle();
+    expect(find.text('APARÊNCIA'), findsOneWidget);
+
+    await tester.tap(find.text('Claro'));
+    await tester.pumpAndSettle();
+    expect(tema.value, ThemeMode.light);
+    expect(modoDoApp(), ThemeMode.light);
+
+    await tester.tap(find.text('Escuro'));
+    await tester.pumpAndSettle();
+    expect(modoDoApp(), ThemeMode.dark);
+
+    await tester.tap(find.text('Automático'));
+    await tester.pumpAndSettle();
+    expect(modoDoApp(), ThemeMode.system);
+  });
+
+  test('a escolha de tema fica salva para a próxima abertura', () async {
+    SharedPreferences.setMockInitialValues({});
+
+    final primeiraVez = await ThemeModeController.load();
+    expect(primeiraVez.value, ThemeMode.system);
+
+    await primeiraVez.select(ThemeMode.light);
+
+    final proximaAbertura = await ThemeModeController.load();
+    expect(proximaAbertura.value, ThemeMode.light);
+  });
+
+  testWidgets('as configurações trocam o app entre pt, en e es', (
+    tester,
+  ) async {
+    // Celular pequeno: textos em en/es têm outros tamanhos e não podem
+    // estourar a largura.
+    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.devicePixelRatio = 3;
+    addTearDown(tester.view.reset);
+
+    final idioma = LocaleController.inMemory(const Locale('pt'));
+    await tester.pumpWidget(_app(idioma: idioma));
+
+    expect(find.text('Seções'), findsOneWidget);
+    expect(find.text('Botões'), findsOneWidget);
+
+    // Abre as configurações pelo ícone (a dica muda com o idioma), escolhe
+    // o idioma e volta para a tela inicial.
+    Future<void> escolher(String nome, {required String configuracoes}) async {
+      await tester.tap(find.byIcon(Icons.settings_outlined));
+      await tester.pumpAndSettle();
+      expect(find.text(configuracoes), findsNothing);
+      await tester.tap(find.text(nome));
+      await tester.pumpAndSettle();
+      // A tela continua aberta, já no idioma novo.
+      expect(find.text(configuracoes), findsOneWidget);
+      await tester.tap(find.byType(BackButton));
+      await tester.pumpAndSettle();
+    }
+
+    await escolher('English', configuracoes: 'Settings');
+    expect(idioma.value, const Locale('en'));
+    expect(find.text('Sections'), findsOneWidget);
+    expect(find.text('Buttons'), findsOneWidget);
+    expect(find.text('12 sections · 79 widgets'), findsOneWidget);
+
+    await escolher('Español', configuracoes: 'Configuración');
+    expect(find.text('Secciones'), findsOneWidget);
+    expect(find.text('Botones'), findsOneWidget);
+
+    // O conteúdo também troca: a descrição do ElevatedButton em espanhol.
+    // Na tela pequena, o bloco da seção fica abaixo da dobra: rola até ele.
+    await tester.ensureVisible(find.text('Botones'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Botones'));
+    await tester.pumpAndSettle();
+    expect(
+      find.text(
+        'Botón con sombra, para destacar la acción sobre fondos de color o con imagen.',
+      ),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('sem idioma escolhido, o ✓ fica no idioma do sistema', (
+    tester,
+  ) async {
+    // O "sistema" dos testes está em inglês (en_US).
+    final idioma = LocaleController.inMemory();
+    await tester.pumpWidget(_app(idioma: idioma));
+    await tester.tap(find.byTooltip('Settings'));
+    await tester.pumpAndSettle();
+
+    bool marcado(String nome) =>
+        tester.widget<ListTile>(find.widgetWithText(ListTile, nome)).selected;
+    expect(find.text('Follow system'), findsNothing);
+    expect(marcado('English'), isTrue);
+    expect(marcado('Português'), isFalse);
+
+    await tester.tap(find.text('Português'));
+    await tester.pumpAndSettle();
+    expect(idioma.value, const Locale('pt'));
+    expect(marcado('Português'), isTrue);
+    expect(marcado('English'), isFalse);
+  });
+
+  test('a escolha de idioma fica salva para a próxima abertura', () async {
+    SharedPreferences.setMockInitialValues({});
+
+    final primeiraVez = await LocaleController.load();
+    expect(primeiraVez.value, isNull); // segue o sistema
+
+    await primeiraVez.select(const Locale('es'));
+    expect((await LocaleController.load()).value, const Locale('es'));
+
+    await primeiraVez.select(null);
+    expect((await LocaleController.load()).value, isNull);
+  });
+
+  test('idioma do sistema sem tradução cai no inglês', () {
+    expect(LocaleController.resolve([const Locale('fr')]), const Locale('en'));
+    expect(
+      LocaleController.resolve([const Locale('fr'), const Locale('es', 'MX')]),
+      const Locale('es'),
+    );
+    expect(
+      LocaleController.resolve([const Locale('pt', 'BR')]),
+      const Locale('pt'),
+    );
+    expect(LocaleController.resolve(null), const Locale('en'));
+  });
+
+  testWidgets('o fim de cada tela fica acima da barra de gestos', (
+    tester,
+  ) async {
+    // Celular de 360 × 800 com barra de gestos de 48 embaixo (o Android
+    // desenha o app atrás dela: edge-to-edge).
+    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.devicePixelRatio = 3;
+    tester.view.padding = const FakeViewPadding(bottom: 144);
+    tester.view.viewPadding = const FakeViewPadding(bottom: 144);
+    addTearDown(tester.view.reset);
+    const limite = 800.0 - 48;
+
+    // Por padrão, a rolagem da própria tela: a primeira na árvore (exemplos
+    // podem ter listas próprias dentro, que vêm depois).
+    Future<void> rolarAteOFim([Finder? rolagem]) async {
+      await tester.drag(
+        rolagem ?? find.byType(Scrollable).first,
+        const Offset(0, -20000),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    void acimaDaBarra(Finder alvo) {
+      expect(
+        tester.getRect(alvo.last).bottom,
+        lessThanOrEqualTo(limite),
+        reason: '$alvo ficou embaixo da barra de gestos',
+      );
+    }
+
+    // O cartão inteiro, não só o texto dele (o texto fica no meio).
+    Finder cartaoCom(String texto) =>
+        find.ancestor(of: find.text(texto), matching: find.byType(Card)).first;
+
+    await tester.pumpWidget(_app());
+    await tester.tap(find.byTooltip('Configurações'));
+    await tester.pumpAndSettle();
+    await rolarAteOFim();
+    acimaDaBarra(find.text('Versão 0.1.0 (1)'));
+    await tester.tap(find.byType(BackButton));
+    await tester.pumpAndSettle();
+
+    await rolarAteOFim();
+    acimaDaBarra(cartaoCom('Estilo iOS'));
+
+    await tester.tap(find.text('Estilo iOS'));
+    await tester.pumpAndSettle();
+    await rolarAteOFim();
+    acimaDaBarra(cartaoCom('CupertinoSlider'));
+
+    // Uma página de widget longa (duas telas em miniatura), que rola. Depois
+    // de ir até o fim, o cartão dela saiu da lista: rola de volta até ele.
+    await tester.scrollUntilVisible(
+      find.text('CupertinoNavigationBar'),
+      -200,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('CupertinoNavigationBar'));
+    await tester.pumpAndSettle();
+    await rolarAteOFim();
+    acimaDaBarra(find.text('Código'));
+
+    // O painel de código: abre, expande até o topo e rola até o fim.
+    await tester.tap(find.text('Código').last);
+    await tester.pump();
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 200)),
+    );
+    await tester.pumpAndSettle();
+    // A rolagem vertical do painel (a última é a horizontal do código). O
+    // primeiro arrasto só expande o painel; o segundo rola o código.
+    final rolagemDoPainel = find.descendant(
+      of: find.byType(BottomSheet),
+      matching: find.byType(CustomScrollView),
+    );
+    await rolarAteOFim(rolagemDoPainel);
+    await rolarAteOFim(rolagemDoPainel);
+    acimaDaBarra(find.textContaining('class CupertinoNavBarTituloGrande'));
+  });
+
+  testWidgets('favoritar um exemplo e pedir todos os favoritos para a IA', (
+    tester,
+  ) async {
+    final favoritos = FavoritesController.inMemory();
+    await tester.pumpWidget(_app(favoritos: favoritos));
+
+    // A estrela da AppBar mostra quantos favoritos há. Sem nenhum, só a
+    // estrela.
+    Badge contador() => tester.widget<Badge>(
+      find.ancestor(
+        of: find.byIcon(Icons.star_outline),
+        matching: find.byType(Badge),
+      ),
+    );
+    expect(contador().isLabelVisible, isFalse);
+
+    await tester.tap(find.text('Botões'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('ElevatedButton'));
+    await tester.pumpAndSettle();
+
+    // A estrela do primeiro exemplo (Básico).
+    await tester.tap(find.byTooltip('Favoritar').first);
+    await tester.pump();
+    expect(favoritos.contains('buttons/elevated_button_basico'), isTrue);
+    expect(find.byTooltip('Remover dos favoritos'), findsOneWidget);
+
+    // Volta para a tela inicial: o atalho aparece com a contagem.
+    await tester.tap(find.byTooltip('Voltar'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byTooltip('Voltar'));
+    await tester.pumpAndSettle();
+    expect(contador().isLabelVisible, isTrue);
+    expect(
+      find.descendant(of: find.byType(Badge), matching: find.text('1')),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.byTooltip('Favoritos'));
+    await tester.pumpAndSettle();
+    expect(find.text('ElevatedButton · Básico'), findsOneWidget);
+    expect(find.text('Salvar'), findsOneWidget); // a demo roda aqui também
+
+    String? copiado;
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+      SystemChannels.platform,
+      (chamada) async {
+        if (chamada.method == 'Clipboard.setData') {
+          copiado = (chamada.arguments as Map)['text'] as String;
+        }
+        return null;
+      },
+    );
+    addTearDown(
+      () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+        SystemChannels.platform,
+        null,
+      ),
+    );
+    await tester.tap(find.text('Pedir todos para a IA'));
+    await tester.pump();
+    expect(
+      copiado,
+      'Traga estes exemplos do WidgetCode '
+      '(github.com/hugobastoss/widgetcode) para o meu projeto: '
+      '"buttons/elevated_button_basico".',
+    );
+    await tester.pump(const Duration(seconds: 3));
+
+    // Desfavoritar o último deixa a lista vazia.
+    await tester.tap(find.byTooltip('Remover dos favoritos'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('Nenhum favorito ainda'), findsOneWidget);
+  });
+
+  test('os favoritos ficam salvos para a próxima abertura', () async {
+    SharedPreferences.setMockInitialValues({});
+
+    final primeiraVez = await FavoritesController.load();
+    expect(primeiraVez.examples, isEmpty);
+
+    await primeiraVez.toggle('lists/page_view_botoes');
+    await primeiraVez.toggle('buttons/fab_grande');
+
+    final proximaAbertura = await FavoritesController.load();
+    // Na ordem do app (Botões vem antes de Listas), não na ordem do toque.
+    expect(
+      [for (final (_, exemplo) in proximaAbertura.examples) exemplo.id],
+      ['buttons/fab_grande', 'lists/page_view_botoes'],
+    );
+
+    await proximaAbertura.toggle('buttons/fab_grande');
+    expect(
+      [
+        for (final (_, exemplo) in (await FavoritesController.load()).examples)
+          exemplo.id,
+      ],
+      ['lists/page_view_botoes'],
+    );
+  });
+
+  testWidgets('configurações: compartilhar, sobre e opções ainda em breve', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.devicePixelRatio = 3;
+    addTearDown(tester.view.reset);
+
+    const canal = MethodChannel('dev.fluttercommunity.plus/share');
+    Map<Object?, Object?>? compartilhado;
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(canal, (
+      chamada,
+    ) async {
+      compartilhado = chamada.arguments as Map<Object?, Object?>;
+      return 'dev.fluttercommunity.plus/share/unavailable';
+    });
+    addTearDown(
+      () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+        canal,
+        null,
+      ),
+    );
+
+    await tester.pumpWidget(_app());
+    await tester.tap(find.byTooltip('Configurações'));
+    await tester.pumpAndSettle();
+
+    // Compartilhar manda o link da Play Store com o ID do app instalado.
+    await tester.scrollUntilVisible(find.text('Compartilhar o app'), 200);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Compartilhar o app'));
+    await tester.pumpAndSettle();
+    expect(
+      compartilhado?['text'],
+      endsWith('https://play.google.com/store/apps/details?id=com.exemplo.hub'),
+    );
+
+    // Termos e política aparecem, mas desativados, até ficarem prontos.
+    await tester.scrollUntilVisible(find.text('Sobre o app'), 200);
+    await tester.pumpAndSettle();
+    for (final opcao in ['Termos de uso', 'Política de privacidade']) {
+      expect(
+        tester.widget<ListTile>(find.widgetWithText(ListTile, opcao)).enabled,
+        isFalse,
+      );
+    }
+    expect(find.text('Em breve'), findsNWidgets(2));
+
+    await tester.tap(find.text('Sobre o app'));
+    await tester.pumpAndSettle();
+    expect(find.byType(AboutDialog), findsOneWidget);
+    expect(find.text('0.1.0 (1)'), findsOneWidget);
+    expect(
+      find.text('© 2026 HVCB App&Games\nCódigo aberto, licença MIT.'),
+      findsOneWidget,
+    );
+  });
+
+  test('os links das configurações', () {
+    expect(
+      playStoreAppUri('com.exemplo.hub').toString(),
+      'https://play.google.com/store/apps/details?id=com.exemplo.hub',
+    );
+    // O & do nome não pode cortar o parâmetro.
+    expect(playStoreDeveloperUri().queryParameters['id'], 'HVCB App&Games');
+    final suporte = newIssueUri('Dúvida:\n\n---\nversão 1');
+    expect(suporte.host, 'github.com');
+    expect(suporte.path, '/hugobastoss/widgetcode/issues/new');
+    expect(suporte.queryParameters['body'], 'Dúvida:\n\n---\nversão 1');
+  });
+
+  testWidgets('o robô da AppBar abre o "Como usar"', (tester) async {
+    await tester.pumpWidget(_app());
+
+    await tester.tap(find.byIcon(Icons.smart_toy_outlined));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Como usar'), findsOneWidget);
+    expect(
+      find.text('Dê à sua IA a referência do repositório'),
+      findsOneWidget,
+    );
+    expect(find.text('Cole o pedido na sua IA'), findsOneWidget);
+  });
+
+  testWidgets('a seção Layout abre com seus 11 widgets', (tester) async {
+    await tester.pumpWidget(_app());
+
+    await tester.tap(find.text('Layout'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('11 widgets'), findsOneWidget);
+    await tester.tap(find.text('Container'));
+    await tester.pumpAndSettle();
+    expect(find.text('Exemplos (4)'), findsOneWidget);
+  });
+
+  testWidgets(
+    'todo exemplo roda na área da demo de um celular de 360 de largura '
+    'e aponta pro próprio arquivo-fonte',
+    (tester) async {
+      // 1080 × 2400 físicos a 3x = 360 × 800 lógicos, um celular pequeno.
+      tester.view.physicalSize = const Size(1080, 2400);
+      tester.view.devicePixelRatio = 3;
+      addTearDown(tester.view.reset);
+
+      final secoesProntas = kLearnSections.where((s) => s.docs.isNotEmpty);
+      final caminhos = <String>{};
+      // Junta todas as falhas e reporta no fim, em vez de parar na primeira.
+      final falhas = <String>[];
+
+      for (final secao in secoesProntas) {
+        for (final doc in secao.docs) {
+          // A pré-visualização do cartão da seção: faixa de 88 de altura na
+          // largura do cartão (360 - 2 × 16 de margem - 2 de borda).
+          await tester.pumpWidget(
+            MaterialApp(
+              home: Scaffold(
+                body: Center(
+                  child: SizedBox(
+                    width: 326,
+                    height: 88,
+                    child: Center(child: doc.preview),
+                  ),
+                ),
+              ),
+            ),
+          );
+          final erroPreview = tester.takeException();
+          if (erroPreview != null) {
+            falhas.add('${secao.name.pt} / ${doc.name} (prévia): $erroPreview');
+          }
+
+          for (final exemplo in doc.examples) {
+            final rotulo =
+                '${secao.name.pt} / ${doc.name} / ${exemplo.title.pt}';
+            if (!caminhos.add(exemplo.sourcePath)) {
+              falhas.add('$rotulo: repete o arquivo ${exemplo.sourcePath}');
+            }
+
+            // Embrulha o builder pra descobrir qual classe o exemplo monta.
+            String? classe;
+            final espiao = WidgetExample(
+              title: exemplo.title,
+              description: exemplo.description,
+              sourcePath: exemplo.sourcePath,
+              builder: (context) {
+                final widget = exemplo.builder(context);
+                classe = widget.runtimeType.toString();
+                return widget;
+              },
+            );
+
+            await tester.pumpWidget(
+              MaterialApp(
+                home: Scaffold(
+                  body: ListView(
+                    // 16 do ListView da página + 1 da borda do cartão, pra
+                    // a demo ter a mesma largura que tem no app.
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 17,
+                      vertical: 16,
+                    ),
+                    children: [ExampleDemo(example: espiao)],
+                  ),
+                ),
+              ),
+            );
+            final erro = tester.takeException();
+            if (erro != null) falhas.add('$rotulo: $erro');
+
+            final codigo = await tester.runAsync(
+              () => rootBundle.loadString(exemplo.sourcePath),
+            );
+            if (codigo == null || !codigo.contains('class $classe ')) {
+              falhas.add('$rotulo: ${exemplo.sourcePath} não define $classe');
+            }
+          }
+        }
+      }
+
+      expect(falhas, isEmpty, reason: falhas.join('\n'));
     },
   );
 }

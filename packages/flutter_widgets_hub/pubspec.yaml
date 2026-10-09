@@ -1,6 +1,6 @@
 name: flutter_widgets_hub
 description: >
-  Catálogo de widgets Flutter autônomos e bem documentados — cada um usa só
+  Catálogo de widgets Flutter autônomos e bem documentados. Cada um usa só
   Theme.of(context) e parâmetros próprios, pensado pra ser portado com
   confiança, um arquivo por vez, para qualquer projeto.
 version: 0.1.0
