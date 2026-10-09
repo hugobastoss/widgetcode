@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'models.dart';
+import 'sections/animations.dart';
 import 'sections/buttons.dart';
 import 'sections/cards.dart';
 import 'sections/feedback.dart';
@@ -87,13 +88,13 @@ final kLearnSections = <LearnSection>[
         'Superfícies que agrupam conteúdo e painéis que abrem e fecham para mostrar mais.',
     docs: kCardsDocs,
   ),
-  const LearnSection(
+  LearnSection(
     name: 'Animações',
     icon: Icons.animation,
-    plannedWidgets: [
-      'AnimatedContainer', 'AnimatedOpacity', 'AnimatedSwitcher', 'Hero', //
-      'TweenAnimationBuilder',
-    ],
+    plannedWidgets: [for (final doc in kAnimationsDocs) doc.name],
+    intro:
+        'Animações prontas: mude um valor com setState e o Flutter faz a transição.',
+    docs: kAnimationsDocs,
   ),
   LearnSection(
     name: 'Gestos',
