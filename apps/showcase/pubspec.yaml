@@ -25,6 +25,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.4
 
 flutter:
   uses-material-design: true
@@ -49,3 +50,26 @@ flutter:
     - lib/learn/examples/cupertino/
     # Imagens usadas pelos próprios exemplos (Image.asset, AssetImage).
     - assets/images/
+    # Só o ícone pequeno do diálogo "Sobre"; o resto de assets/icon/ é a
+    # fonte dos ícones do app e não vai dentro dele.
+    - assets/icon/app_icon_about.png
+
+# Ícones do app (Android e web), gerados a partir de assets/icon/ com:
+#   dart run flutter_launcher_icons
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: assets/icon/app_icon.png
+  min_sdk_android: 21
+  # Ícone adaptativo (Android 8+): fundo azul liso e o símbolo por cima,
+  # recortado pelo formato que cada aparelho usa. O monocromático é o dos
+  # ícones temáticos (Android 13+).
+  adaptive_icon_background: "#0169B8"
+  adaptive_icon_foreground: assets/icon/app_icon_foreground.png
+  adaptive_icon_foreground_inset: 16
+  adaptive_icon_monochrome: assets/icon/app_icon_monochrome.png
+  web:
+    generate: true
+    image_path: assets/icon/app_icon.png
+    background_color: "#0169B8"
+    theme_color: "#0169B8"

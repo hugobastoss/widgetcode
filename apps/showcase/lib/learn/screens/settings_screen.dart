@@ -78,7 +78,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Future<void> _sobre() async {
     final textos = AppLocalizations.of(context);
-    final cores = Theme.of(context).colorScheme;
     final info = await _info;
     if (!mounted) return;
     // AboutDialog do próprio Material: nome, versão, ícone e o botão
@@ -87,14 +86,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
       context: context,
       applicationName: 'WidgetCode: Widgets for Flutter',
       applicationVersion: '${info.version} (${info.buildNumber})',
-      applicationIcon: Container(
-        width: 48,
-        height: 48,
-        decoration: BoxDecoration(
-          color: cores.primaryContainer,
-          borderRadius: BorderRadius.circular(12),
+      // O mesmo ícone da tela do celular.
+      applicationIcon: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: Image.asset(
+          'assets/icon/app_icon_about.png',
+          width: 48,
+          height: 48,
         ),
-        child: Icon(Icons.widgets_outlined, color: cores.primary),
       ),
       applicationLegalese: '© 2026 $kDeveloperName\n${textos.aboutLicense}',
       children: [

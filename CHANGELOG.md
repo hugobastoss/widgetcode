@@ -22,6 +22,8 @@ Flutter** (repositório `widgetcode`, skill `widgetcode`, app Android
   aplicativos e sobre. Termos de uso e política de privacidade ainda em
   breve.
 - Plataforma Android adicionada ao app.
+- Ícone do app: adaptativo no Android, com versão monocromática para os
+  ícones temáticos, também na versão web e no diálogo "Sobre".
 - O pacote `packages/flutter_widgets_hub` ficou inativo (componentes de
   design de outros apps).
 
