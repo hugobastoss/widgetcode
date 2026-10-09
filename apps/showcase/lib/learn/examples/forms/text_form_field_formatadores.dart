@@ -8,7 +8,7 @@ class TextFormFieldFormatadores extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: TextInputType.number,
-      // inputFormatters filtram o que pode ser digitado — mesmo colando
+      // inputFormatters filtram o que pode ser digitado, mesmo colando
       // um texto ou usando um teclado físico.
       inputFormatters: [
         FilteringTextInputFormatter.digitsOnly, // só dígitos

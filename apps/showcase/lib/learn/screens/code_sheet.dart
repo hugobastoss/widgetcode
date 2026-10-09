@@ -7,12 +7,12 @@ import '../models.dart';
 import 'system_padding.dart';
 
 const _kRepoBlobBase =
-    'https://github.com/hugobastoss/flutterwidgetshub/blob/main/apps/showcase/';
+    'https://github.com/hugobastoss/widgetcode/blob/main/apps/showcase/';
 
 /// Código-fonte de um exemplo, num painel que sobe de baixo por cima da
 /// página do widget: começa na metade da tela e pode ser arrastado até
 /// quase a tela toda. O texto vem do próprio arquivo do exemplo, empacotado
-/// como asset — é o mesmo arquivo que roda na demo.
+/// como asset: é o mesmo arquivo que roda na demo.
 class CodeSheet extends StatefulWidget {
   const CodeSheet({super.key, required this.widgetName, required this.example});
 
@@ -59,7 +59,7 @@ class _CodeSheetState extends State<CodeSheet> {
   Future<void> _copiarCodigo() async => _copiar(_Copiado.codigo, await _codigo);
 
   /// O pedido pronto para colar na IA de código: leva o ID do exemplo e o
-  /// endereço do repositório (que a skill flutter-widgets-hub entende).
+  /// endereço do repositório (que a skill widgetcode entende).
   Future<void> _copiarPedido() => _copiar(
     _Copiado.pedido,
     AppLocalizations.of(context).aiRequest(widget.example.id),
@@ -67,7 +67,7 @@ class _CodeSheetState extends State<CodeSheet> {
 
   Future<void> _abrirNoGitHub() async {
     // inAppBrowserView abre por cima do app (Custom Tabs no Android,
-    // SFSafariViewController no iOS) — a pessoa volta com o "X".
+    // SFSafariViewController no iOS), e a pessoa volta com o "X".
     final url = Uri.parse('$_kRepoBlobBase${widget.example.sourcePath}');
     await launchUrl(url, mode: LaunchMode.inAppBrowserView);
   }

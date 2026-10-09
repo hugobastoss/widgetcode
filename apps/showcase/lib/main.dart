@@ -6,7 +6,7 @@ import 'learn/locale_controller.dart';
 import 'learn/screens/learn_home_screen.dart';
 import 'learn/theme_mode_controller.dart';
 
-// Azul do Flutter — semente do esquema Material 3 do app.
+// Azul do Flutter: semente do esquema Material 3 do app.
 const _kCorSemente = Color(0xFF0175C2);
 
 Future<void> main() async {
@@ -47,7 +47,7 @@ class ShowcaseApp extends StatelessWidget {
       child: ListenableBuilder(
         listenable: Listenable.merge([themeController, localeController]),
         builder: (context, _) => MaterialApp(
-          title: 'Flutter Widgets Hub',
+          title: 'WidgetCode',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             useMaterial3: true,

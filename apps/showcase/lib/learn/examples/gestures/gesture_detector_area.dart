@@ -21,7 +21,7 @@ class _GestureDetectorAreaState extends State<GestureDetectorArea> {
             titulo: 'Padrão',
             toques: _toquesPadrao,
             // deferToChild (o padrão): só conta toques em cima do que foi
-            // desenhado — aqui, o texto. O espaço vazio não responde.
+            // desenhado (aqui, o texto). O espaço vazio não responde.
             comportamento: HitTestBehavior.deferToChild,
             onTap: () => setState(() => _toquesPadrao++),
           ),

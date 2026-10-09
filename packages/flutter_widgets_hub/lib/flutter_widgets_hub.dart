@@ -1,4 +1,4 @@
-/// Catálogo de widgets Flutter autônomos e bem documentados — ver
+/// Catálogo de widgets Flutter autônomos e bem documentados. Ver
 /// `manifest/widgets.json` na raiz do repositório pra um índice
 /// machine-readable de cada widget (arquivo, símbolos exportados,
 /// dependências).

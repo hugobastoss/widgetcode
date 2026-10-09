@@ -6,7 +6,7 @@ class ExpandedFlex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // flex define a proporção de cada um: 1 + 2 + 1 = 4 partes. O do meio
-    // fica com 2 das 4 partes — metade da largura.
+    // fica com 2 das 4 partes (metade da largura).
     return const Row(
       children: [
         Expanded(flex: 1, child: _Faixa(Colors.indigo, 'flex 1')),

@@ -23,7 +23,7 @@ class _RefreshIndicatorVazioState extends State<RefreshIndicatorVazio> {
       child: RefreshIndicator(
         onRefresh: _atualizar,
         // O RefreshIndicator precisa de algo que role como filho. Para a
-        // tela vazia, um ListView com a mensagem dentro — e não um Center
+        // tela vazia, um ListView com a mensagem dentro, e não um Center
         // sozinho, que não deixaria puxar.
         child: _pedidos.isEmpty
             ? ListView(

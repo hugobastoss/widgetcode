@@ -18,7 +18,7 @@ class _SegmentedButtonMultiplaState extends State<SegmentedButtonMultipla> {
     return SegmentedButton<Tamanho>(
       // Permite marcar vários segmentos ao mesmo tempo.
       multiSelectionEnabled: true,
-      // Permite desmarcar todos — por padrão, sempre fica um marcado.
+      // Permite desmarcar todos. Por padrão, sempre fica um marcado.
       emptySelectionAllowed: true,
       segments: const [
         ButtonSegment(value: Tamanho.p, label: Text('P')),

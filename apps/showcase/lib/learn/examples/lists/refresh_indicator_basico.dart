@@ -26,7 +26,7 @@ class _RefreshIndicatorBasicoState extends State<RefreshIndicatorBasico> {
       child: RefreshIndicator(
         onRefresh: _atualizar,
         child: ListView.builder(
-          // Com poucos itens a lista não rola — e sem rolar, não dá para
+          // Com poucos itens a lista não rola, e sem rolar não dá para
           // puxar. AlwaysScrollableScrollPhysics deixa puxar mesmo assim.
           physics: const AlwaysScrollableScrollPhysics(),
           itemCount: _mensagens.length,

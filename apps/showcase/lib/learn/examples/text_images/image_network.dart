@@ -21,7 +21,7 @@ class ImageNetwork extends StatelessWidget {
           child: Center(child: CircularProgressIndicator()),
         );
       },
-      // Mostrado se der erro — sem internet, por exemplo.
+      // Mostrado se der erro (sem internet, por exemplo).
       errorBuilder: (context, erro, pilha) {
         return const SizedBox(
           width: 240,

@@ -6,7 +6,7 @@ class InkWellBasico extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // InkWell é um GestureDetector com o efeito de "onda" do Material.
-    // Ele precisa de um Material acima para desenhar a onda — o Scaffold e
+    // Ele precisa de um Material acima para desenhar a onda. O Scaffold e
     // o Card já são um Material.
     return InkWell(
       onTap: () {},

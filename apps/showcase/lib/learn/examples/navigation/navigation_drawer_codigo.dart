@@ -27,7 +27,7 @@ class NavigationDrawerCodigo extends StatelessWidget {
         ),
         body: Center(
           // Scaffold.of(context) procura o Scaffold ACIMA do context. O
-          // context do build() está fora deste Scaffold — daria erro. O
+          // context do build() está fora deste Scaffold, então daria erro. O
           // Builder cria um context novo, já dentro dele.
           child: Builder(
             builder: (context) => FilledButton.tonal(

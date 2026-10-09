@@ -11,7 +11,7 @@ class _CheckboxTresEstadosState extends State<CheckboxTresEstados> {
   final _itens = {'Arroz': true, 'Feijão': false, 'Café': false};
 
   // O "Selecionar tudo" tem três estados: true (todos), false (nenhum) e
-  // null (alguns) — que aparece como um tracinho.
+  // null (alguns), que aparece como um tracinho.
   bool? get _todos {
     if (_itens.values.every((marcado) => marcado)) return true;
     if (_itens.values.every((marcado) => !marcado)) return false;

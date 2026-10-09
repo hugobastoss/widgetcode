@@ -16,8 +16,8 @@ class DividerPersonalizado extends StatelessWidget {
           color: Colors.indigo,
         ),
         SizedBox(height: 16),
-        // VerticalDivider precisa de uma altura definida — aqui, a do
-        // SizedBox em volta da Row.
+        // VerticalDivider precisa de uma altura definida (aqui, a do
+        // SizedBox em volta da Row).
         SizedBox(
           height: 40,
           child: Row(

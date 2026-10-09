@@ -23,7 +23,7 @@ class _RangeSliderAoSoltarState extends State<RangeSliderAoSoltar> {
           values: _arrastando,
           min: 18,
           max: 80,
-          // onChanged: a cada movimento — atualiza o que aparece na tela.
+          // onChanged: a cada movimento. Atualiza o que aparece na tela.
           onChanged: (valores) => setState(() => _arrastando = valores),
           // onChangeEnd: só quando a pessoa solta o dedo. Bom lugar para
           // algo demorado, como buscar num servidor, sem repetir a cada

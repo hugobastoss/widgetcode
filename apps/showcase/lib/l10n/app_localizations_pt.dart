@@ -90,7 +90,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String aiRequest(String id) {
-    return 'Traga o exemplo \"$id\" do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto.';
+    return 'Traga o exemplo \"$id\" do WidgetCode (github.com/hugobastoss/widgetcode) para o meu projeto.';
   }
 
   @override
@@ -105,7 +105,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get helpStep1Body =>
-      'Instale a skill flutter-widgets-hub no seu projeto (copie a pasta .claude/skills/flutter-widgets-hub do repositório para o seu projeto) ou apenas cite o endereço do repositório no pedido, se a sua IA acessa a internet.';
+      'Instale a skill widgetcode no seu projeto (copie a pasta .claude/skills/widgetcode do repositório para o seu projeto) ou apenas cite o endereço do repositório no pedido, se a sua IA acessa a internet.';
 
   @override
   String get helpStep2Title => 'Escolha o exemplo no app';
@@ -126,7 +126,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get helpManualBody =>
-      'Toque em Copiar código, crie um arquivo .dart na pasta lib do seu projeto, cole o código, importe esse arquivo na sua tela e use o widget — por exemplo, const ElevatedButtonBasico().';
+      'Toque em Copiar código, crie um arquivo .dart na pasta lib do seu projeto, cole o código, importe esse arquivo na sua tela e use o widget, por exemplo: const ElevatedButtonBasico().';
 
   @override
   String get helpOpenRepo => 'Abrir o repositório';
@@ -149,7 +149,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String aiRequestMany(String ids) {
-    return 'Traga estes exemplos do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto: $ids.';
+    return 'Traga estes exemplos do WidgetCode (github.com/hugobastoss/widgetcode) para o meu projeto: $ids.';
   }
 
   @override
@@ -178,7 +178,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String supportIssueBody(String version) {
-    return 'Descreva sua dúvida ou o problema:\n\n\n---\nFlutter Widgets Hub $version';
+    return 'Descreva sua dúvida ou o problema:\n\n\n---\nWidgetCode $version';
   }
 
   @override
@@ -186,7 +186,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String shareMessage(String link) {
-    return 'Conheça o Flutter Widgets Hub: exemplos dos widgets nativos do Flutter rodando de verdade, com o código de cada um. $link';
+    return 'Conheça o WidgetCode: exemplos dos widgets nativos do Flutter rodando de verdade, com o código de cada um. $link';
   }
 
   @override

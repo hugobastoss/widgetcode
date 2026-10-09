@@ -1,16 +1,18 @@
-# flutter_widgets_hub_showcase
+# WidgetCode: o app
 
-App de vitrine do [Flutter Widgets Hub](../../README.md) — renderiza cada
-widget do catálogo ao vivo, lado a lado com o código-fonte real.
+O app de vitrine do [WidgetCode](../../README.md): cada exemplo dos widgets
+nativos do Flutter roda ao vivo, com o código-fonte real atrás do botão
+"Código".
 
 ```bash
 flutter pub get
 flutter run
+flutter test
 ```
 
-Pra regenerar o painel de código-fonte depois de editar um widget em
-`packages/flutter_widgets_hub`:
+Depois de adicionar ou mudar um exemplo, atualize o
+[`manifest/widgets.json`](../../manifest/widgets.json):
 
 ```bash
-dart run tool/generate_snippets.dart
+flutter test --dart-define=UPDATE_MANIFEST=true test/manifest_test.dart
 ```

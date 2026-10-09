@@ -21,6 +21,6 @@ Uri playStoreDeveloperUri() => Uri.https(
 /// Nova issue no repositório, com o corpo já preenchido (suporte).
 Uri newIssueUri(String body) => Uri.https(
   'github.com',
-  '/hugobastoss/flutterwidgetshub/issues/new',
+  '/hugobastoss/widgetcode/issues/new',
   {'body': body},
 );

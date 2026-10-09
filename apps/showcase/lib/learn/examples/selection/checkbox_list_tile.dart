@@ -18,7 +18,7 @@ class _CheckboxListTileExemploState extends State<CheckboxListTileExemplo> {
       children: [
         for (final tarefa in _tarefas.keys)
           // CheckboxListTile junta checkbox + texto numa linha que é toda
-          // tocável — bem mais fácil de acertar com o dedo.
+          // tocável, bem mais fácil de acertar com o dedo.
           CheckboxListTile(
             title: Text(tarefa),
             value: _tarefas[tarefa],

@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class LocaleController extends ValueNotifier<Locale?> {
   LocaleController._(this._prefs, super.value);
 
-  /// Sem salvar nada — para testes.
+  /// Para testes: não salva nada.
   LocaleController.inMemory([super.value]) : _prefs = null;
 
   /// Os idiomas do app, na ordem do menu.

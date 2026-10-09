@@ -20,7 +20,7 @@ class _AnimatedSwitcherTransicaoState extends State<AnimatedSwitcherTransicao> {
       onPressed: () => setState(() => _tocando = !_tocando),
       icon: AnimatedSwitcher(
         duration: const Duration(milliseconds: 250),
-        // transitionBuilder troca o fade padrão por outra animação — aqui,
+        // transitionBuilder troca o fade padrão por outra animação. Aqui,
         // o ícone cresce do zero (ScaleTransition).
         transitionBuilder: (filho, animacao) =>
             ScaleTransition(scale: animacao, child: filho),

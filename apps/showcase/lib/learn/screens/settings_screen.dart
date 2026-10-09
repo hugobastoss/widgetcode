@@ -11,7 +11,7 @@ import '../theme_mode_controller.dart';
 import 'help_screen.dart';
 import 'system_padding.dart';
 
-const _kRepositorio = 'https://github.com/hugobastoss/flutterwidgetshub';
+const _kRepositorio = 'https://github.com/hugobastoss/widgetcode';
 
 /// Configurações: tema, idioma, ajuda, compartilhar e avaliar, e o sobre.
 /// Aberta pelo ícone de engrenagem da AppBar da tela inicial.
@@ -85,7 +85,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     // "Ver licenças", que lista as licenças dos pacotes usados no app.
     showAboutDialog(
       context: context,
-      applicationName: 'Flutter Widgets Hub',
+      applicationName: 'WidgetCode: Widgets for Flutter',
       applicationVersion: '${info.version} (${info.buildNumber})',
       applicationIcon: Container(
         width: 48,
@@ -269,7 +269,7 @@ class _Grupo extends StatelessWidget {
   }
 }
 
-/// Três amostras lado a lado — claro, escuro e automático —, com a escolhida
+/// Três amostras lado a lado (claro, escuro e automático), com a escolhida
 /// em destaque.
 class _SeletorDeTema extends StatelessWidget {
   const _SeletorDeTema({required this.controller});
@@ -389,7 +389,7 @@ class _OpcaoDeTema extends StatelessWidget {
 /// Os idiomas do app, com um ✓ no que está em uso. Os nomes ficam no
 /// próprio idioma, como é costume, para quem não lê o idioma atual.
 ///
-/// Sem escolha salva, o app segue o idioma do celular — e o ✓ fica nesse
+/// Sem escolha salva, o app segue o idioma do celular, e o ✓ fica nesse
 /// idioma. Tocar num idioma fixa o app nele.
 class _SeletorDeIdioma extends StatelessWidget {
   const _SeletorDeIdioma({required this.controller});

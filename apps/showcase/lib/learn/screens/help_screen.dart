@@ -4,11 +4,11 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../l10n/app_localizations.dart';
 import 'system_padding.dart';
 
-const _kRepositorio = 'https://github.com/hugobastoss/flutterwidgetshub';
+const _kRepositorio = 'https://github.com/hugobastoss/widgetcode';
 
 /// Explica como levar um exemplo do app para o projeto do dev: pela IA de
 /// código, que recebe a referência do repositório (a skill ou o endereço) e
-/// o pedido copiado no painel de código — ou à mão, copiando o código.
+/// o pedido copiado no painel de código, ou à mão, copiando o código.
 class HelpScreen extends StatelessWidget {
   const HelpScreen({super.key});
 

@@ -24,8 +24,8 @@ class _ExpansionTileAbertoState extends State<ExpansionTileAberto> {
       expandedCrossAxisAlignment: CrossAxisAlignment.start,
       childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       children: const [
-        Text(r'2× Café — R$ 37,80'),
-        Text(r'1× Pão de queijo — R$ 8,50'),
+        Text(r'2× Café: R$ 37,80'),
+        Text(r'1× Pão de queijo: R$ 8,50'),
       ],
     );
   }

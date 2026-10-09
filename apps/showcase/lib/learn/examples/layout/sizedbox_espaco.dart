@@ -9,7 +9,7 @@ class SizedBoxEspaco extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(width: 120, height: 40, color: Colors.indigo),
-        // Sem filho, o SizedBox vira só um espaço vazio — o jeito mais
+        // Sem filho, o SizedBox vira só um espaço vazio, o jeito mais
         // comum de separar dois widgets.
         const SizedBox(height: 32),
         Container(width: 120, height: 40, color: Colors.teal),

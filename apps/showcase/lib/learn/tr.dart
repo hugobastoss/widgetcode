@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 /// Um texto do conteúdo (seções, widgets, exemplos) nos três idiomas do
 /// app. Fica direto no cadastro de cada seção, com as três versões lado a
-/// lado — e o compilador acusa se faltar alguma.
+/// lado, e o compilador acusa se faltar alguma.
 ///
 /// Os textos fixos da interface (menus, botões) ficam nos arquivos .arb de
 /// lib/l10n.

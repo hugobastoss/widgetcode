@@ -12,7 +12,7 @@ class ElevatedButtonBasico extends StatelessWidget {
           const SnackBar(content: Text('Botão tocado!')),
         );
       },
-      // child é o conteúdo do botão — normalmente um Text.
+      // child é o conteúdo do botão, normalmente um Text.
       child: const Text('Salvar'),
     );
   }

@@ -33,7 +33,7 @@ class _DraggableSoltarState extends State<DraggableSoltar> {
               // O tipo entre <> é o tipo do dado que vai junto no arrasto.
               Draggable<Color>(
                 data: cor,
-                // Só começa a arrastar se o dedo for para o lado — assim
+                // Só começa a arrastar se o dedo for para o lado. Assim,
                 // não briga com a rolagem vertical da página.
                 affinity: Axis.horizontal,
                 feedback: _quadrado(cor, 56), // o que segue o dedo

@@ -32,8 +32,8 @@ class _DismissibleApagarState extends State<DismissibleApagar> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: const Icon(Icons.delete_outline, color: Colors.white),
             ),
-            // Depois de arrastado até o fim, o item TEM que sair da lista —
-            // senão o Flutter avisa com um erro.
+            // Depois de arrastado até o fim, o item TEM que sair da lista.
+            // Senão, o Flutter avisa com um erro.
             onDismissed: (direcao) {
               setState(() => _emails.remove(email));
               ScaffoldMessenger.of(context).showSnackBar(

@@ -19,7 +19,7 @@ class LearnSection {
   final Tr name;
   final IconData icon;
 
-  /// Widgets nativos planejados pra seção — a contagem da tela inicial sai
+  /// Widgets nativos planejados pra seção. A contagem da tela inicial sai
   /// daqui, mesmo antes de a seção ter conteúdo.
   final List<String> plannedWidgets;
 
@@ -39,7 +39,7 @@ class WidgetDoc {
     required this.examples,
   });
 
-  /// O nome da classe do Flutter (ex.: ElevatedButton) — não se traduz.
+  /// O nome da classe do Flutter (ex.: ElevatedButton). Não se traduz.
   final String name;
   final Tr description;
 
@@ -78,7 +78,7 @@ class WidgetExample {
   final WidgetBuilder builder;
 
   /// A área da demo desliga as animações Hero (vários FABs na mesma página
-  /// teriam a mesma hero tag). Exemplos que ensinam Hero religam com isto —
+  /// teriam a mesma hero tag). Exemplos que ensinam Hero religam com isto
   /// e precisam usar tags únicas no app.
   final bool usesHero;
 }

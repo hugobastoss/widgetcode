@@ -23,7 +23,7 @@ class _NavigationRailFabState extends State<NavigationRailFab> {
             onDestinationSelected: (indice) => setState(() => _aba = indice),
             // selected: só o destino escolhido mostra o texto.
             labelType: NavigationRailLabelType.selected,
-            // leading: o que vem antes dos destinos — costuma ser um FAB.
+            // leading: o que vem antes dos destinos (costuma ser um FAB).
             leading: FloatingActionButton.small(
               tooltip: 'Novo',
               onPressed: () {},

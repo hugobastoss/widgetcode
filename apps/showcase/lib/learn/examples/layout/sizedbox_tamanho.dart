@@ -5,7 +5,7 @@ class SizedBoxTamanho extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // SizedBox força um tamanho exato no filho — aqui, num botão que
+    // SizedBox força um tamanho exato no filho. Aqui, num botão que
     // normalmente teria só o tamanho do texto.
     return SizedBox(
       width: 200,

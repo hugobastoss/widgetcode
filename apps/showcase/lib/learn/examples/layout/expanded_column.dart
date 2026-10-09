@@ -5,7 +5,7 @@ class ExpandedColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Numa Column, o Expanded só funciona se a altura for limitada — senão
+    // Numa Column, o Expanded só funciona se a altura for limitada. Senão,
     // não existe "espaço que sobra" para dividir. Aqui quem limita é o
     // SizedBox; numa tela de verdade, normalmente é o Scaffold.
     return const SizedBox(

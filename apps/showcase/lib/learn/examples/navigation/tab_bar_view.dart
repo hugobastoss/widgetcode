@@ -10,7 +10,7 @@ class TabBarComView extends StatelessWidget {
       // DefaultTabController liga a TabBar à TabBarView: tocar numa aba
       // troca o conteúdo, e deslizar o conteúdo troca a aba.
       child: DefaultTabController(
-        // length: quantas abas — precisa bater com tabs e children.
+        // length: quantas abas. Precisa bater com tabs e children.
         length: 3,
         child: Scaffold(
           appBar: AppBar(

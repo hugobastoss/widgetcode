@@ -12,7 +12,7 @@ class StackTextoSobreFundo extends StatelessWidget {
         // expand: os filhos sem Positioned ocupam o Stack inteiro.
         fit: StackFit.expand,
         children: [
-          // O fundo — num app de verdade, seria uma Image.
+          // O fundo. Num app de verdade, seria uma Image.
           const DecoratedBox(
             decoration: BoxDecoration(
               gradient: LinearGradient(

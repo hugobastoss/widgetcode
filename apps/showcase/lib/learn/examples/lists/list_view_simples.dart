@@ -6,7 +6,7 @@ class ListViewSimples extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Uma lista dentro de outra área com rolagem (como esta página) precisa
-    // de uma altura definida — senão o Flutter mostra o erro "Vertical
+    // de uma altura definida. Senão, o Flutter mostra o erro "Vertical
     // viewport was given unbounded height". Numa tela comum, a lista vai
     // direto no body do Scaffold e não precisa disso.
     return SizedBox(

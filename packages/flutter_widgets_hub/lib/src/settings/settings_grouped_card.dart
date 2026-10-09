@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-/// Como [HubSettingsGroupedCard] desenha o fundo do grupo — as duas
+/// Como [HubSettingsGroupedCard] desenha o fundo do grupo: as duas
 /// variantes reais encontradas em apps de produção da família que originou
 /// este catálogo; nenhuma das duas é "a certa".
 enum HubGroupedCardVariant {
   /// O widget `Card` real do Material.
   card,
 
-  /// Um `Container` com borda fina e cantos arredondados, sem elevação —
+  /// Um `Container` com borda fina e cantos arredondados, sem elevação:
   /// visual mais "plano".
   bordered,
 }
 
 /// ## Propósito
 /// Agrupa linhas de configuração (tipicamente `ListTile`s) num cartão,
-/// separando-as com um divisor de 1px entre cada uma — o padrão clássico de
+/// separando-as com um divisor de 1px entre cada uma, o padrão clássico de
 /// tela de Configurações. Passe qualquer lista de widgets em [children];
 /// o divisor é inserido automaticamente entre eles, nunca depois do
 /// último.
@@ -34,7 +34,7 @@ enum HubGroupedCardVariant {
 /// padrão do Material.
 ///
 /// ## Última verificação
-/// 2026-10-08 — contra flutterwidgetshub main.
+/// 2026-10-08, contra flutterwidgetshub main.
 class HubSettingsGroupedCard extends StatelessWidget {
   const HubSettingsGroupedCard({
     super.key,

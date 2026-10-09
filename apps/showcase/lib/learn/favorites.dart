@@ -6,11 +6,11 @@ import 'sections.dart';
 
 /// Os exemplos favoritados, pelo ID (ex.: buttons/elevated_button_carregando),
 /// salvos no aparelho. É a lista de "exemplos que quero trazer para o meu
-/// app" — dá para pedir todos de uma vez para a IA.
+/// app". Dá para pedir todos de uma vez para a IA.
 class FavoritesController extends ChangeNotifier {
   FavoritesController._(this._prefs, this._ids);
 
-  /// Sem salvar nada — para testes.
+  /// Para testes: não salva nada.
   FavoritesController.inMemory([Iterable<String> ids = const []])
     : _prefs = null,
       _ids = {...ids};

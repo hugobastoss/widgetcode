@@ -1,4 +1,4 @@
-package com.hvcb.appgames.flutter_widgets_hub_showcase
+package com.hvcb.appgames.widgetcode
 
 import io.flutter.embedding.android.FlutterActivity
 

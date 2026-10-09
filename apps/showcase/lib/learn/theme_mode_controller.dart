@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ThemeModeController extends ValueNotifier<ThemeMode> {
   ThemeModeController._(this._prefs, super.value);
 
-  /// Sem salvar nada — para testes.
+  /// Para testes: não salva nada.
   ThemeModeController.inMemory([super.value = ThemeMode.system])
     : _prefs = null;
 

@@ -11,7 +11,7 @@ class ExpansionPanelRadioExemplo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // .radio: só um painel aberto por vez — abrir um fecha o outro. O
+    // .radio: só um painel aberto por vez: abrir um fecha o outro. O
     // próprio widget controla isso, sem precisar de setState.
     return ExpansionPanelList.radio(
       initialOpenPanelValue: 'Pro',

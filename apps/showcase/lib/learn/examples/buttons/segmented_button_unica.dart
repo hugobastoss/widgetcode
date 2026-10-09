@@ -14,7 +14,7 @@ class _SegmentedButtonUnicaState extends State<SegmentedButtonUnica> {
 
   @override
   Widget build(BuildContext context) {
-    // O tipo entre <> é o tipo do valor de cada segmento — aqui, um enum.
+    // O tipo entre <> é o tipo do valor de cada segmento (aqui, um enum).
     return SegmentedButton<Periodo>(
       segments: const [
         ButtonSegment(value: Periodo.dia, label: Text('Dia')),

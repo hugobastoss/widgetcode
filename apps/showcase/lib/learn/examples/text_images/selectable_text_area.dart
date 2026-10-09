@@ -5,7 +5,7 @@ class SelectableTextArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // SelectionArea torna selecionáveis TODOS os textos dentro dele — dá
+    // SelectionArea torna selecionáveis TODOS os textos dentro dele: dá
     // para arrastar a seleção de um Text para o outro.
     return const SelectionArea(
       child: Column(
@@ -17,7 +17,7 @@ class SelectableTextArea extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           Text('Rua das Flores, 123'),
-          Text('Centro — São Paulo, SP'),
+          Text('Centro, São Paulo, SP'),
           Text('CEP 01000-000'),
         ],
       ),

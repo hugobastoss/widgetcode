@@ -61,7 +61,7 @@ class ExampleCard extends StatelessWidget {
     required this.example,
   });
 
-  /// A linha de título — "1 · Básico" na página do widget,
+  /// A linha de título: "1 · Básico" na página do widget,
   /// "ElevatedButton · Básico" nos Favoritos.
   final String heading;
   final String widgetName;
@@ -145,9 +145,9 @@ class ExampleCard extends StatelessWidget {
 }
 
 /// Zera os espaços que o sistema reserva (barra de status, barra de gestos,
-/// teclado) para o filho. Telas em miniatura dentro de um cartão — um
-/// Scaffold com AppBar, uma NavigationBar — senão reservariam esses espaços
-/// como se ocupassem a tela inteira.
+/// teclado) para o filho. Telas em miniatura dentro de um cartão (um
+/// Scaffold com AppBar, uma NavigationBar) reservariam, sem isto, esses
+/// espaços como se ocupassem a tela inteira.
 class WithoutSystemInsets extends StatelessWidget {
   const WithoutSystemInsets({super.key, required this.child});
 
@@ -177,7 +177,7 @@ class WithoutSystemInsets extends StatelessWidget {
 
 /// A área onde a demo de um exemplo roda. Pública porque os testes
 /// renderizam cada exemplo nela, com as mesmas restrições de tamanho da
-/// página de verdade — um exemplo que estoura aqui estoura no aparelho.
+/// página de verdade: um exemplo que estoura aqui estoura no aparelho.
 class ExampleDemo extends StatelessWidget {
   const ExampleDemo({super.key, required this.example});
 
@@ -196,7 +196,7 @@ class ExampleDemo extends StatelessWidget {
       alignment: Alignment.center,
       // Material transparente por cima do fundo colorido: ListTile e InkWell
       // pintam fundo de seleção e efeito de toque no Material mais próximo,
-      // e sem este o mais próximo seria o do cartão — escondido pelo fundo.
+      // e sem este o mais próximo seria o do cartão, escondido pelo fundo.
       // Numa tela de verdade, quem faz esse papel é o Scaffold.
       child: Material(
         type: MaterialType.transparency,

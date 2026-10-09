@@ -23,11 +23,11 @@ import 'package:flutter/material.dart';
 ///
 /// ## Dependências de token de design
 /// Nenhuma. Usa só `Theme.of(context)` (colorScheme, textTheme) e
-/// componentes padrão do Material — seguro pra colar em qualquer projeto
+/// componentes padrão do Material, seguro pra colar em qualquer projeto
 /// sem nenhum arquivo extra.
 ///
 /// ## Última verificação
-/// 2026-10-08 — contra flutterwidgetshub main.
+/// 2026-10-08, contra flutterwidgetshub main.
 class HubConfirmationDialog extends StatelessWidget {
   const HubConfirmationDialog({
     super.key,
@@ -46,7 +46,7 @@ class HubConfirmationDialog extends StatelessWidget {
   final String cancelLabel;
 
   /// `true` pinta o ícone e o botão de confirmação na cor de erro do tema,
-  /// em vez da cor primária — use pra ações irreversíveis.
+  /// em vez da cor primária. Use pra ações irreversíveis.
   final bool isDestructive;
 
   /// Mostra o diálogo e devolve `true` se o usuário confirmou, `false` se

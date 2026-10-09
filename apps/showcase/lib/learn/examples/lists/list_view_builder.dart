@@ -8,7 +8,7 @@ class ListViewBuilder extends StatelessWidget {
     return SizedBox(
       height: 220,
       // .builder só cria os itens que aparecem na tela, conforme você
-      // rola. Por isso aguenta listas enormes — aqui, 1000 contatos.
+      // rola. Por isso aguenta listas enormes (aqui, 1000 contatos).
       child: ListView.builder(
         itemCount: 1000,
         itemBuilder: (context, indice) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// ## Propósito
 /// Botão primário de largura cheia, com um estado de carregamento
-/// incorporado — enquanto [isLoading] é `true`, o rótulo some e um
+/// incorporado: enquanto [isLoading] é `true`, o rótulo some e um
 /// indicador circular pequeno aparece no lugar, sem mudar o tamanho do
 /// botão nem desmontar o `onPressed` (ele só vira `null` durante o
 /// carregamento, impedindo toques duplicados).
@@ -18,11 +18,11 @@ import 'package:flutter/material.dart';
 ///
 /// ## Dependências de token de design
 /// Nenhuma. Usa só `Theme.of(context)` (estilo de `FilledButton` do tema
-/// atual) e parâmetros próprios — seguro pra colar em qualquer projeto sem
+/// atual) e parâmetros próprios, seguro pra colar em qualquer projeto sem
 /// nenhum arquivo extra.
 ///
 /// ## Última verificação
-/// 2026-10-08 — contra flutterwidgetshub main.
+/// 2026-10-08, contra flutterwidgetshub main.
 class HubPrimaryButton extends StatelessWidget {
   const HubPrimaryButton({
     super.key,
@@ -32,7 +32,7 @@ class HubPrimaryButton extends StatelessWidget {
     this.pillShaped = false,
   });
 
-  /// Texto do botão — some enquanto [isLoading] for `true`.
+  /// Texto do botão. Some enquanto [isLoading] for `true`.
   final String label;
 
   /// Chamado ao tocar. Passe `null` pra desabilitar o botão (ex: durante

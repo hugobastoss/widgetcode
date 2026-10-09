@@ -12,7 +12,7 @@ class InkWellInk extends StatelessWidget {
       spacing: 12,
       children: [
         // ERRADO: a onda é desenhada no Material lá embaixo, e a cor do
-        // Container fica por cima dela — a onda não aparece.
+        // Container fica por cima dela: a onda não aparece.
         Expanded(
           child: Container(
             height: 64,

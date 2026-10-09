@@ -1,4 +1,4 @@
-# Flutter Widgets Hub
+# WidgetCode: Widgets for Flutter
 
 Vitrine dos **widgets nativos do Flutter**: um app com 12 seções, 79 widgets
 e 210 exemplos rodando de verdade, cada um com o código-fonte real. O
@@ -12,15 +12,14 @@ qualquer um desses exemplos para o projeto dele. Licença MIT.
    português, inglês e espanhol, com tema claro e escuro.
 2. **O repositório e a skill são a documentação para a IA.**
    [`manifest/widgets.json`](manifest/widgets.json) indexa todos os
-   exemplos, e a skill [`flutter-widgets-hub`](.claude/skills/flutter-widgets-hub/SKILL.md)
+   exemplos, e a skill [`widgetcode`](.claude/skills/widgetcode/SKILL.md)
    lê esse índice para achar e trazer o exemplo pedido.
 3. **O dev liga os dois.** No painel de código de um exemplo, o botão
    **"Pedir para a IA"** copia um pedido pronto com o ID do exemplo. Basta
    colar na IA:
 
-   > Traga o exemplo "buttons/elevated_button_carregando" do Flutter
-   > Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu
-   > projeto.
+   > Traga o exemplo "buttons/elevated_button_carregando" do WidgetCode
+   > (github.com/hugobastoss/widgetcode) para o meu projeto.
 
    Para levar vários de uma vez, toque na estrela dos exemplos que quiser.
    Na tela **Favoritos**, o botão **"Pedir todos para a IA"** copia um só
@@ -29,16 +28,16 @@ qualquer um desses exemplos para o projeto dele. Licença MIT.
 ## Dando à sua IA a referência do repositório
 
 **Com a skill (Claude Code).** Copie a pasta
-[`.claude/skills/flutter-widgets-hub/`](.claude/skills/flutter-widgets-hub/)
+[`.claude/skills/widgetcode/`](.claude/skills/widgetcode/)
 para a pasta `.claude/skills/` do seu projeto. A partir daí, qualquer pedido
-que cite o Flutter Widgets Hub ou um ID de exemplo aciona a skill. Ela acha o
+que cite o WidgetCode ou um ID de exemplo aciona a skill. Ela acha o
 exemplo, copia o arquivo, troca o nome da classe e os textos de
 demonstração e configura o que o exemplo precisar, como a imagem no
 `pubspec.yaml` ou a permissão de internet do Android.
 
 **Sem a skill (qualquer IA com acesso à internet).** Inclua no pedido:
 
-> Leia https://raw.githubusercontent.com/hugobastoss/flutterwidgetshub/main/manifest/widgets.json,
+> Leia https://raw.githubusercontent.com/hugobastoss/widgetcode/main/manifest/widgets.json,
 > ache o exemplo `<id>` e traga o arquivo do campo `filePath` para o meu
 > projeto, configurando o que estiver em `requires`.
 
@@ -103,9 +102,9 @@ Para gerar o APK: `flutter build apk --release`.
 ## Estrutura
 
 ```
-flutterwidgetshub/
+widgetcode/
 ├── manifest/widgets.json                # índice dos exemplos para a IA (gerado)
-├── .claude/skills/flutter-widgets-hub/  # skill que traz um exemplo para outro projeto
+├── .claude/skills/widgetcode/  # skill que traz um exemplo para outro projeto
 ├── apps/showcase/                       # o app de vitrine
 │   ├── lib/learn/examples/<seção>/      # um arquivo por exemplo
 │   ├── lib/learn/sections/              # cadastro de cada seção, com textos em pt/en/es

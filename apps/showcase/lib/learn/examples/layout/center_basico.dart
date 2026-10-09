@@ -9,8 +9,8 @@ class CenterBasico extends StatelessWidget {
       width: 220,
       height: 120,
       color: Colors.grey.shade400,
-      // Center coloca o filho no meio do espaço que recebe — aqui, os
-      // 220 × 120 do Container.
+      // Center coloca o filho no meio do espaço que recebe (aqui, os
+      // 220 × 120 do Container).
       child: Center(
         child: Container(width: 48, height: 48, color: Colors.indigo),
       ),

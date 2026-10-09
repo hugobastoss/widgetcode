@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// ## Propósito
-/// O FAB "principal" de criação de uma tela — um só por app, circular,
+/// O FAB "principal" de criação de uma tela: um só por app, circular,
 /// sempre no centro inferior. Pensado pra ser a única ação de criação de
 /// destaque de uma aba (ex: "nova venda", "novo item"), não pra ações
 /// secundárias dentro de um fluxo já aberto (ver [HubExtendedFab] abaixo
@@ -17,11 +17,11 @@ import 'package:flutter/material.dart';
 /// ```
 ///
 /// ## Dependências de token de design
-/// Nenhuma. Usa só `Theme.of(context)` (cor/forma padrão do FAB) — seguro
+/// Nenhuma. Usa só `Theme.of(context)` (cor/forma padrão do FAB), seguro
 /// pra colar em qualquer projeto sem nenhum arquivo extra.
 ///
 /// ## Última verificação
-/// 2026-10-08 — contra flutterwidgetshub main.
+/// 2026-10-08, contra flutterwidgetshub main.
 class HubPrimaryFab extends StatelessWidget {
   const HubPrimaryFab({
     super.key,
@@ -52,7 +52,7 @@ class HubPrimaryFab extends StatelessWidget {
 /// Variante **deliberada**, não um substituto do [HubPrimaryFab]: um FAB
 /// com rótulo de texto, alinhado à direita (`endFloat`) em vez de
 /// centralizado. Use pra uma ação secundária/contextual dentro de um fluxo
-/// já aberto — ex: "adicionar item" dentro do detalhe de uma lista — onde
+/// já aberto (ex: "adicionar item" dentro do detalhe de uma lista), onde
 /// o rótulo ajuda a diferenciar essa ação da ação de criação principal da
 /// aba (que continua sendo um [HubPrimaryFab] centralizado em outra tela).
 ///
@@ -69,7 +69,7 @@ class HubPrimaryFab extends StatelessWidget {
 /// Nenhuma.
 ///
 /// ## Última verificação
-/// 2026-10-08 — contra flutterwidgetshub main.
+/// 2026-10-08, contra flutterwidgetshub main.
 class HubExtendedFab extends StatelessWidget {
   const HubExtendedFab({
     super.key,

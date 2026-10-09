@@ -15,7 +15,7 @@ class _RadioGrupoState extends State<RadioGrupo> {
   @override
   Widget build(BuildContext context) {
     // Desde o Flutter 3.32, quem guarda a opção escolhida e avisa a
-    // mudança é o RadioGroup — não mais cada Radio. Todos os Radio dentro
+    // mudança é o RadioGroup, não mais cada Radio. Todos os Radio dentro
     // dele fazem parte do mesmo grupo.
     return RadioGroup<Entrega>(
       groupValue: _entrega,

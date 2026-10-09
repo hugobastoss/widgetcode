@@ -47,13 +47,7 @@ class LearnHomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        // Com três ícones, o título não cabe inteiro num celular de 360 de
-        // largura: encolhe um pouco em vez de ser cortado com "…".
-        title: const FittedBox(
-          fit: BoxFit.scaleDown,
-          alignment: AlignmentDirectional.centerStart,
-          child: Text('Flutter Widgets Hub'),
-        ),
+        title: const Text('WidgetCode'),
         actions: [
           // Como levar um exemplo para o próprio app (pela IA).
           IconButton(

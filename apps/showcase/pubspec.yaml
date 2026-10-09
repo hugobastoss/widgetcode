@@ -1,7 +1,7 @@
 name: flutter_widgets_hub_showcase
 description: >
-  App de vitrine do flutterwidgetshub — exemplos dos widgets nativos do
-  Flutter rodando de verdade, com o código-fonte real de cada um.
+  WidgetCode: exemplos dos widgets nativos do Flutter rodando de verdade,
+  com o código-fonte real de cada um.
 version: 0.1.0
 publish_to: 'none'
 resolution: workspace
@@ -32,7 +32,7 @@ flutter:
   # da interface em pt, en e es). Configuração em l10n.yaml.
   generate: true
   # Os arquivos de exemplo também viram assets: a tela de código lê o
-  # próprio arquivo que roda na demo. Pastas de asset não são recursivas —
+  # próprio arquivo que roda na demo. Pastas de asset não são recursivas:
   # cada seção nova precisa da sua linha aqui.
   assets:
     - lib/learn/examples/buttons/

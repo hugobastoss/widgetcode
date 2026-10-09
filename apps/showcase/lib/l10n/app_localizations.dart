@@ -217,7 +217,7 @@ abstract class AppLocalizations {
   /// No description provided for @aiRequest.
   ///
   /// In pt, this message translates to:
-  /// **'Traga o exemplo \"{id}\" do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto.'**
+  /// **'Traga o exemplo \"{id}\" do WidgetCode (github.com/hugobastoss/widgetcode) para o meu projeto.'**
   String aiRequest(String id);
 
   /// No description provided for @helpTitle.
@@ -241,7 +241,7 @@ abstract class AppLocalizations {
   /// No description provided for @helpStep1Body.
   ///
   /// In pt, this message translates to:
-  /// **'Instale a skill flutter-widgets-hub no seu projeto (copie a pasta .claude/skills/flutter-widgets-hub do repositório para o seu projeto) ou apenas cite o endereço do repositório no pedido, se a sua IA acessa a internet.'**
+  /// **'Instale a skill widgetcode no seu projeto (copie a pasta .claude/skills/widgetcode do repositório para o seu projeto) ou apenas cite o endereço do repositório no pedido, se a sua IA acessa a internet.'**
   String get helpStep1Body;
 
   /// No description provided for @helpStep2Title.
@@ -277,7 +277,7 @@ abstract class AppLocalizations {
   /// No description provided for @helpManualBody.
   ///
   /// In pt, this message translates to:
-  /// **'Toque em Copiar código, crie um arquivo .dart na pasta lib do seu projeto, cole o código, importe esse arquivo na sua tela e use o widget — por exemplo, const ElevatedButtonBasico().'**
+  /// **'Toque em Copiar código, crie um arquivo .dart na pasta lib do seu projeto, cole o código, importe esse arquivo na sua tela e use o widget, por exemplo: const ElevatedButtonBasico().'**
   String get helpManualBody;
 
   /// No description provided for @helpOpenRepo.
@@ -319,7 +319,7 @@ abstract class AppLocalizations {
   /// No description provided for @aiRequestMany.
   ///
   /// In pt, this message translates to:
-  /// **'Traga estes exemplos do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto: {ids}.'**
+  /// **'Traga estes exemplos do WidgetCode (github.com/hugobastoss/widgetcode) para o meu projeto: {ids}.'**
   String aiRequestMany(String ids);
 
   /// No description provided for @settingsTitle.
@@ -373,7 +373,7 @@ abstract class AppLocalizations {
   /// No description provided for @supportIssueBody.
   ///
   /// In pt, this message translates to:
-  /// **'Descreva sua dúvida ou o problema:\n\n\n---\nFlutter Widgets Hub {version}'**
+  /// **'Descreva sua dúvida ou o problema:\n\n\n---\nWidgetCode {version}'**
   String supportIssueBody(String version);
 
   /// No description provided for @shareApp.
@@ -385,7 +385,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareMessage.
   ///
   /// In pt, this message translates to:
-  /// **'Conheça o Flutter Widgets Hub: exemplos dos widgets nativos do Flutter rodando de verdade, com o código de cada um. {link}'**
+  /// **'Conheça o WidgetCode: exemplos dos widgets nativos do Flutter rodando de verdade, com o código de cada um. {link}'**
   String shareMessage(String link);
 
   /// No description provided for @rateApp.

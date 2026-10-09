@@ -7,7 +7,7 @@ class InkWellRedondo extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
-      // customBorder dá o formato da onda — aqui, um círculo.
+      // customBorder dá o formato da onda (aqui, um círculo).
       customBorder: const CircleBorder(),
       // A cor da onda.
       splashColor: Colors.pink.withValues(alpha: 0.3),

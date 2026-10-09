@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "generatedBy": "apps/showcase/test/manifest_test.dart — não edite à mão; veja o comando de atualização no topo desse arquivo.",
-  "repository": "https://github.com/hugobastoss/flutterwidgetshub",
-  "rawBaseUrl": "https://raw.githubusercontent.com/hugobastoss/flutterwidgetshub/main/",
+  "generatedBy": "apps/showcase/test/manifest_test.dart (não edite à mão; veja o comando de atualização no topo desse arquivo).",
+  "repository": "https://github.com/hugobastoss/widgetcode",
+  "rawBaseUrl": "https://raw.githubusercontent.com/hugobastoss/widgetcode/main/",
   "totals": {
     "sections": 12,
     "widgets": 79,
@@ -3595,8 +3595,8 @@
         {
           "name": "TweenAnimationBuilder",
           "description": {
-            "pt": "Anima qualquer valor — número, cor, tamanho — sem controller.",
-            "en": "Animates any value — number, color, size — without a controller.",
+            "pt": "Anima qualquer valor (número, cor, tamanho) sem controller.",
+            "en": "Animates any value (number, color, size) without a controller.",
             "es": "Anima cualquier valor (número, color, tamaño) sin controller."
           },
           "examples": [

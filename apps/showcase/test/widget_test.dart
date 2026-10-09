@@ -12,7 +12,7 @@ import 'package:flutter_widgets_hub_showcase/main.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// O app em português — os testes procuram os textos em pt — e sem
+/// O app em português (os testes procuram os textos em pt) e sem
 /// favoritos, salvo quando o teste escolhe outro idioma, tema ou favoritos.
 ShowcaseApp _app({
   ThemeModeController? tema,
@@ -29,13 +29,13 @@ ShowcaseApp _app({
 void main() {
   // O rootBundle guarda em cache o Future de cada asset lido, preso à zona
   // de relógio falso do teste que o criou. Reaproveitado num teste seguinte,
-  // ele nunca completa — então cada teste começa com o cache vazio.
+  // ele nunca completa. Por isso, cada teste começa com o cache vazio.
   setUp(rootBundle.clear);
 
   // O app instalado, para a versão e os links da Play Store.
   setUp(
     () => PackageInfo.setMockInitialValues(
-      appName: 'Flutter Widgets Hub',
+      appName: 'WidgetCode',
       packageName: 'com.exemplo.hub',
       version: '0.1.0',
       buildNumber: '1',
@@ -48,7 +48,7 @@ void main() {
     (tester) async {
       await tester.pumpWidget(_app());
 
-      expect(find.text('Flutter Widgets Hub'), findsOneWidget);
+      expect(find.text('WidgetCode'), findsOneWidget);
       expect(find.text('12 seções · 79 widgets'), findsOneWidget);
 
       await tester.tap(find.text('Botões'));
@@ -63,7 +63,7 @@ void main() {
       await tester.tap(find.text('Código').first);
       await tester.pump(); // monta o CodeSheet, que começa a ler o asset
       // A leitura do asset é I/O de verdade, que não avança no relógio falso
-      // do teste — sem isto o indicador de carregamento gira pra sempre e o
+      // do teste. Sem isto, o indicador de carregamento gira pra sempre e o
       // pumpAndSettle nunca termina.
       await tester.runAsync(
         () => Future<void>.delayed(const Duration(milliseconds: 200)),
@@ -96,8 +96,8 @@ void main() {
       await tester.pump();
       expect(
         copiado,
-        'Traga o exemplo "buttons/elevated_button_basico" do Flutter Widgets '
-        'Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto.',
+        'Traga o exemplo "buttons/elevated_button_basico" do WidgetCode '
+        '(github.com/hugobastoss/widgetcode) para o meu projeto.',
       );
       expect(find.text('Pedido copiado'), findsOneWidget);
       // Deixa passar os 2 segundos em que o botão mostra o ✓.
@@ -334,7 +334,7 @@ void main() {
     final favoritos = FavoritesController.inMemory();
     await tester.pumpWidget(_app(favoritos: favoritos));
 
-    // A estrela da AppBar mostra quantos favoritos há — sem nenhum, só a
+    // A estrela da AppBar mostra quantos favoritos há. Sem nenhum, só a
     // estrela.
     Badge contador() => tester.widget<Badge>(
       find.ancestor(
@@ -391,8 +391,8 @@ void main() {
     await tester.pump();
     expect(
       copiado,
-      'Traga estes exemplos do Flutter Widgets Hub '
-      '(github.com/hugobastoss/flutterwidgetshub) para o meu projeto: '
+      'Traga estes exemplos do WidgetCode '
+      '(github.com/hugobastoss/widgetcode) para o meu projeto: '
       '"buttons/elevated_button_basico".',
     );
     await tester.pump(const Duration(seconds: 3));
@@ -495,7 +495,7 @@ void main() {
     expect(playStoreDeveloperUri().queryParameters['id'], 'HVCB App&Games');
     final suporte = newIssueUri('Dúvida:\n\n---\nversão 1');
     expect(suporte.host, 'github.com');
-    expect(suporte.path, '/hugobastoss/flutterwidgetshub/issues/new');
+    expect(suporte.path, '/hugobastoss/widgetcode/issues/new');
     expect(suporte.queryParameters['body'], 'Dúvida:\n\n---\nversão 1');
   });
 

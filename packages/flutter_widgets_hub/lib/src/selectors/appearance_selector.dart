@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// ## Propósito
-/// Seletor de aparência claro/escuro/automático — 3 cartões lado a lado,
+/// Seletor de aparência claro/escuro/automático: 3 cartões lado a lado,
 /// cada um com uma amostra de cor e um rótulo, destacando o selecionado
 /// com borda e fundo da cor primária do tema.
 ///
@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 /// do próprio Flutter.
 ///
 /// ## Última verificação
-/// 2026-10-08 — contra flutterwidgetshub main.
+/// 2026-10-08, contra flutterwidgetshub main.
 class HubAppearanceSelector extends StatelessWidget {
   const HubAppearanceSelector({
     super.key,

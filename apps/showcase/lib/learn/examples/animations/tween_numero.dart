@@ -16,7 +16,7 @@ class _TweenNumeroState extends State<TweenNumero> {
       mainAxisSize: MainAxisSize.min,
       spacing: 12,
       children: [
-        // TweenAnimationBuilder anima QUALQUER valor — aqui, um número.
+        // TweenAnimationBuilder anima QUALQUER valor (aqui, um número).
         // Quando o end muda, ele anima do valor atual até o novo. (O begin
         // só vale na primeira vez.)
         TweenAnimationBuilder<double>(

@@ -91,7 +91,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String aiRequest(String id) {
-    return 'Trae el ejemplo \"$id\" de Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) a mi proyecto.';
+    return 'Trae el ejemplo \"$id\" de WidgetCode (github.com/hugobastoss/widgetcode) a mi proyecto.';
   }
 
   @override
@@ -106,7 +106,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get helpStep1Body =>
-      'Instala la skill flutter-widgets-hub en tu proyecto (copia la carpeta .claude/skills/flutter-widgets-hub del repositorio a tu proyecto) o simplemente menciona la dirección del repositorio en tu pedido, si tu IA puede navegar por internet.';
+      'Instala la skill widgetcode en tu proyecto (copia la carpeta .claude/skills/widgetcode del repositorio a tu proyecto) o simplemente menciona la dirección del repositorio en tu pedido, si tu IA puede navegar por internet.';
 
   @override
   String get helpStep2Title => 'Elige el ejemplo en la app';
@@ -150,7 +150,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String aiRequestMany(String ids) {
-    return 'Trae estos ejemplos de Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) a mi proyecto: $ids.';
+    return 'Trae estos ejemplos de WidgetCode (github.com/hugobastoss/widgetcode) a mi proyecto: $ids.';
   }
 
   @override
@@ -179,7 +179,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String supportIssueBody(String version) {
-    return 'Describe tu duda o el problema:\n\n\n---\nFlutter Widgets Hub $version';
+    return 'Describe tu duda o el problema:\n\n\n---\nWidgetCode $version';
   }
 
   @override
@@ -187,7 +187,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String shareMessage(String link) {
-    return 'Conoce Flutter Widgets Hub: ejemplos de los widgets nativos de Flutter funcionando de verdad, con el código de cada uno. $link';
+    return 'Conoce WidgetCode: ejemplos de los widgets nativos de Flutter funcionando de verdad, con el código de cada uno. $link';
   }
 
   @override

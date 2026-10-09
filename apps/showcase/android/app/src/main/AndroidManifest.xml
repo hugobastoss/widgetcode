@@ -3,7 +3,7 @@
          permissão, só os builds de debug/profile conseguem. -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="flutter_widgets_hub_showcase"
+        android:label="WidgetCode"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

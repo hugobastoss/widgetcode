@@ -6,7 +6,7 @@ class LinearIndeterminado extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Sem value, a barra corre sem parar. Ocupa toda a largura disponível
-    // — aqui, a do SizedBox.
+    // (aqui, a do SizedBox).
     return const SizedBox(
       width: 220,
       child: LinearProgressIndicator(),

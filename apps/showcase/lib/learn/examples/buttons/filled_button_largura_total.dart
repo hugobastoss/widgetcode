@@ -5,7 +5,7 @@ class FilledButtonLarguraTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // width: double.infinity faz o SizedBox — e o botão dentro dele —
+    // width: double.infinity faz o SizedBox (e o botão dentro dele)
     // ocupar toda a largura disponível. Comum no fim de formulários.
     return SizedBox(
       width: double.infinity,

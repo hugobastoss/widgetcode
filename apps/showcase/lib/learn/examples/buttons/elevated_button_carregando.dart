@@ -26,7 +26,7 @@ class _ElevatedButtonCarregandoState extends State<ElevatedButtonCarregando> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      // onPressed: null desabilita o botão — assim ninguém toca duas vezes
+      // onPressed: null desabilita o botão. Assim, ninguém toca duas vezes
       // enquanto a primeira operação ainda está rodando.
       onPressed: _salvando ? null : _salvar,
       child: _salvando

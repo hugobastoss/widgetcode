@@ -9,7 +9,7 @@ class TextFormFieldValidacao extends StatelessWidget {
       keyboardType: TextInputType.emailAddress,
       // Valida enquanto a pessoa digita, a partir da primeira letra.
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      // validator devolve a mensagem de erro — ou null se estiver certo.
+      // validator devolve a mensagem de erro, ou null se estiver certo.
       validator: (valor) {
         if (valor == null || valor.isEmpty) return 'Campo obrigatório';
         if (!valor.contains('@')) return 'Falta o @ no e-mail';

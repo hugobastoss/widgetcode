@@ -1,5 +1,5 @@
-// Gera manifest/widgets.json — o índice que a IA (e a skill
-// flutter-widgets-hub) lê para achar e trazer um exemplo — a partir do
+// Gera manifest/widgets.json (o índice que a IA e a skill
+// widgetcode leem para achar e trazer um exemplo) a partir do
 // cadastro de seções do app, e falha se o arquivo estiver desatualizado.
 //
 // Depois de adicionar ou mudar um exemplo, atualize o manifest com:
@@ -18,7 +18,7 @@ import 'package:flutter_widgets_hub_showcase/learn/tr.dart';
 const _atualizar = bool.fromEnvironment('UPDATE_MANIFEST');
 const _caminhoDoManifest = '../../manifest/widgets.json';
 const _pastaDoApp = 'apps/showcase';
-const _repositorio = 'https://github.com/hugobastoss/flutterwidgetshub';
+const _repositorio = 'https://github.com/hugobastoss/widgetcode';
 
 Map<String, String> _traducoes(Tr texto) => {
   'pt': texto.pt,
@@ -41,10 +41,9 @@ String _classePublica(String codigo, String caminho) {
 /// O que o exemplo precisa além do próprio arquivo para funcionar noutro
 /// projeto, lido do código: imagens do app e acesso à internet.
 List<Map<String, String>> _requisitos(String codigo) {
-  final imagens = RegExp(r"'(assets/[^']+)'")
-      .allMatches(codigo)
-      .map((achado) => achado.group(1)!)
-      .toSet();
+  final imagens = RegExp(
+    r"'(assets/[^']+)'",
+  ).allMatches(codigo).map((achado) => achado.group(1)!).toSet();
   final usaInternet =
       codigo.contains('Image.network') || codigo.contains('NetworkImage(');
   return [
@@ -73,11 +72,11 @@ String _gerarManifest() {
   final manifest = {
     'schemaVersion': 2,
     'generatedBy':
-        'apps/showcase/test/manifest_test.dart — não edite à mão; veja o '
-        'comando de atualização no topo desse arquivo.',
+        'apps/showcase/test/manifest_test.dart (não edite à mão; veja o '
+        'comando de atualização no topo desse arquivo).',
     'repository': _repositorio,
     'rawBaseUrl':
-        'https://raw.githubusercontent.com/hugobastoss/flutterwidgetshub/main/',
+        'https://raw.githubusercontent.com/hugobastoss/widgetcode/main/',
     'totals': {
       'sections': kLearnSections.length,
       'widgets': widgets.length,
@@ -93,7 +92,9 @@ String _gerarManifest() {
               {
                 'name': doc.name,
                 'description': _traducoes(doc.description),
-                'examples': [for (final exemplo in doc.examples) _exemplo(exemplo)],
+                'examples': [
+                  for (final exemplo in doc.examples) _exemplo(exemplo),
+                ],
               },
           ],
         },
@@ -130,7 +131,11 @@ void main() {
     final ids = <String>{};
     for (final secao in kLearnSections) {
       for (final exemplo in secao.docs.expand((doc) => doc.examples)) {
-        expect(ids.add(exemplo.id), isTrue, reason: 'ID repetido: ${exemplo.id}');
+        expect(
+          ids.add(exemplo.id),
+          isTrue,
+          reason: 'ID repetido: ${exemplo.id}',
+        );
         expect(
           exemplo.id.startsWith('${secao.id}/'),
           isTrue,

@@ -213,8 +213,8 @@ final kAnimationsDocs = <WidgetDoc>[
   WidgetDoc(
     name: 'TweenAnimationBuilder',
     description: const Tr(
-      pt: 'Anima qualquer valor — número, cor, tamanho — sem controller.',
-      en: 'Animates any value — number, color, size — without a controller.',
+      pt: 'Anima qualquer valor (número, cor, tamanho) sem controller.',
+      en: 'Animates any value (number, color, size) without a controller.',
       es: 'Anima cualquier valor (número, color, tamaño) sin controller.',
     ),
     preview: Builder(

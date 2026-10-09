@@ -19,8 +19,8 @@ class _RowAlinhamentoState extends State<RowAlinhamento> {
         DecoratedBox(
           decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
           child: Row(
-            // mainAxisAlignment distribui os filhos no eixo principal — na
-            // Row, o horizontal.
+            // mainAxisAlignment distribui os filhos no eixo principal (na
+            // Row, o horizontal).
             mainAxisAlignment: _alinhamento,
             children: const [
               _Caixa(Colors.indigo),
