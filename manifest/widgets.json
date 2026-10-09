@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedBy": "apps/showcase/test/manifest_test.dart (não edite à mão; veja o comando de atualização no topo desse arquivo).",
+  "generatedBy": "examples/test/manifest_test.dart (não edite à mão; veja o comando de atualização no topo desse arquivo).",
   "repository": "https://github.com/hugobastoss/widgetcode",
   "rawBaseUrl": "https://raw.githubusercontent.com/hugobastoss/widgetcode/main/",
   "totals": {
@@ -37,7 +37,7 @@
                 "en": "Size, color and a label centered with alignment.",
                 "es": "Tamaño, color y un texto centrado con alignment."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/container_basico.dart",
+              "filePath": "examples/lib/layout/container_basico.dart",
               "className": "ContainerBasico"
             },
             {
@@ -52,7 +52,7 @@
                 "en": "decoration with BoxDecoration: border and rounded corners.",
                 "es": "decoration con BoxDecoration: borde y esquinas redondeadas."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/container_bordas.dart",
+              "filePath": "examples/lib/layout/container_bordas.dart",
               "className": "ContainerBordas"
             },
             {
@@ -67,7 +67,7 @@
                 "en": "BoxDecoration also draws gradients and shadows.",
                 "es": "BoxDecoration también dibuja degradados y sombras."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/container_sombra_gradiente.dart",
+              "filePath": "examples/lib/layout/container_sombra_gradiente.dart",
               "className": "ContainerSombraGradiente"
             },
             {
@@ -82,7 +82,7 @@
                 "en": "margin is the space outside; padding, the space inside.",
                 "es": "margin es el espacio por fuera; padding, por dentro."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/container_margem_padding.dart",
+              "filePath": "examples/lib/layout/container_margem_padding.dart",
               "className": "ContainerMargemPadding"
             }
           ]
@@ -107,7 +107,7 @@
                 "en": "Three boxes side by side.",
                 "es": "Tres cajas una al lado de la otra."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/row_basico.dart",
+              "filePath": "examples/lib/layout/row_basico.dart",
               "className": "RowBasico"
             },
             {
@@ -122,7 +122,7 @@
                 "en": "mainAxisAlignment distributes horizontally. Tap the options.",
                 "es": "mainAxisAlignment distribuye en horizontal. Toca las opciones."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/row_alinhamento.dart",
+              "filePath": "examples/lib/layout/row_alinhamento.dart",
               "className": "RowAlinhamento"
             },
             {
@@ -137,7 +137,7 @@
                 "en": "crossAxisAlignment aligns vertically. Tap the options.",
                 "es": "crossAxisAlignment alinea en vertical. Toca las opciones."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/row_alinhamento_cruzado.dart",
+              "filePath": "examples/lib/layout/row_alinhamento_cruzado.dart",
               "className": "RowAlinhamentoCruzado"
             },
             {
@@ -152,7 +152,7 @@
                 "en": "spacing puts the same gap between all children.",
                 "es": "spacing pone el mismo espacio entre todos los hijos."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/row_espacamento.dart",
+              "filePath": "examples/lib/layout/row_espacamento.dart",
               "className": "RowEspacamento"
             }
           ]
@@ -177,7 +177,7 @@
                 "en": "Three stacked boxes.",
                 "es": "Tres cajas apiladas."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/column_basico.dart",
+              "filePath": "examples/lib/layout/column_basico.dart",
               "className": "ColumnBasico"
             },
             {
@@ -192,7 +192,7 @@
                 "en": "mainAxisAlignment distributes vertically. Tap the options.",
                 "es": "mainAxisAlignment distribuye en vertical. Toca las opciones."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/column_alinhamento.dart",
+              "filePath": "examples/lib/layout/column_alinhamento.dart",
               "className": "ColumnAlinhamento"
             },
             {
@@ -207,7 +207,7 @@
                 "en": "max takes the full height; min, only what it needs.",
                 "es": "max ocupa toda la altura; min, solo lo necesario."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/column_tamanho.dart",
+              "filePath": "examples/lib/layout/column_tamanho.dart",
               "className": "ColumnTamanho"
             }
           ]
@@ -232,7 +232,7 @@
                 "en": "The first child is at the back; the next ones go on top.",
                 "es": "El primer hijo queda al fondo; los siguientes, encima."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/stack_camadas.dart",
+              "filePath": "examples/lib/layout/stack_camadas.dart",
               "className": "StackCamadas"
             },
             {
@@ -247,7 +247,7 @@
                 "en": "Pins a child at a distance from the edges, like a status badge.",
                 "es": "Fija un hijo a cierta distancia de los bordes, como un indicador de estado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/stack_positioned.dart",
+              "filePath": "examples/lib/layout/stack_positioned.dart",
               "className": "StackPositioned"
             },
             {
@@ -262,7 +262,7 @@
                 "en": "A strip of text on top of an image.",
                 "es": "Una franja de texto encima de una imagen."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/stack_texto_sobre_fundo.dart",
+              "filePath": "examples/lib/layout/stack_texto_sobre_fundo.dart",
               "className": "StackTextoSobreFundo"
             }
           ]
@@ -287,7 +287,7 @@
                 "en": "The child wrapped in Expanded takes all the free space.",
                 "es": "El hijo con Expanded se queda con todo el espacio libre."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/expanded_basico.dart",
+              "filePath": "examples/lib/layout/expanded_basico.dart",
               "className": "ExpandedBasico"
             },
             {
@@ -302,7 +302,7 @@
                 "en": "flex splits the space into parts: 1, 2 and 1.",
                 "es": "flex divide el espacio en partes: 1, 2 y 1."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/expanded_flex.dart",
+              "filePath": "examples/lib/layout/expanded_flex.dart",
               "className": "ExpandedFlex"
             },
             {
@@ -317,7 +317,7 @@
                 "en": "Fixed header and footer, with the content filling the middle.",
                 "es": "Cabecera y pie fijos, con el contenido ocupando el medio."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/expanded_column.dart",
+              "filePath": "examples/lib/layout/expanded_column.dart",
               "className": "ExpandedColumn"
             },
             {
@@ -332,7 +332,7 @@
                 "en": "Expanded forces the child to fill the space; Flexible only allows it.",
                 "es": "Expanded obliga a ocupar el espacio; Flexible solo lo permite."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/expanded_flexible.dart",
+              "filePath": "examples/lib/layout/expanded_flexible.dart",
               "className": "ExpandedFlexible"
             }
           ]
@@ -357,7 +357,7 @@
                 "en": "The same text, touching the edges and with 16 of space.",
                 "es": "El mismo texto, pegado al borde y con 16 de espacio."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/padding_basico.dart",
+              "filePath": "examples/lib/layout/padding_basico.dart",
               "className": "PaddingBasico"
             },
             {
@@ -372,7 +372,7 @@
                 "en": "all, symmetric and only: equal space, per axis or per side.",
                 "es": "all, symmetric y only: espacio igual, por eje o por lado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/padding_edge_insets.dart",
+              "filePath": "examples/lib/layout/padding_edge_insets.dart",
               "className": "PaddingEdgeInsets"
             }
           ]
@@ -397,7 +397,7 @@
                 "en": "Puts the child in the middle of the space.",
                 "es": "Coloca al hijo en el medio del espacio."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/center_basico.dart",
+              "filePath": "examples/lib/layout/center_basico.dart",
               "className": "CenterBasico"
             },
             {
@@ -412,7 +412,7 @@
                 "en": "The Center becomes the child's size times the factor.",
                 "es": "El Center toma el tamaño del hijo multiplicado por el factor."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/center_fatores.dart",
+              "filePath": "examples/lib/layout/center_fatores.dart",
               "className": "CenterFatores"
             }
           ]
@@ -437,7 +437,7 @@
                 "en": "The 9 Alignment positions. Pick one from the list.",
                 "es": "Las 9 posiciones de Alignment. Elige una en la lista."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/align_posicoes.dart",
+              "filePath": "examples/lib/layout/align_posicoes.dart",
               "className": "AlignPosicoes"
             },
             {
@@ -452,7 +452,7 @@
                 "en": "Alignment(x, y) from -1 to 1. Drag the sliders.",
                 "es": "Alignment(x, y) de -1 a 1. Arrastra los controles."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/align_coordenadas.dart",
+              "filePath": "examples/lib/layout/align_coordenadas.dart",
               "className": "AlignCoordenadas"
             }
           ]
@@ -477,7 +477,7 @@
                 "en": "Forces an exact size on the child.",
                 "es": "Fuerza un tamaño exacto en el hijo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/sizedbox_tamanho.dart",
+              "filePath": "examples/lib/layout/sizedbox_tamanho.dart",
               "className": "SizedBoxTamanho"
             },
             {
@@ -492,7 +492,7 @@
                 "en": "Without a child, it becomes empty space.",
                 "es": "Sin hijo, se convierte en un espacio vacío."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/sizedbox_espaco.dart",
+              "filePath": "examples/lib/layout/sizedbox_espaco.dart",
               "className": "SizedBoxEspaco"
             }
           ]
@@ -517,7 +517,7 @@
                 "en": "Items that don't fit move to the next line.",
                 "es": "Los elementos que no caben pasan a la línea de abajo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/wrap_basico.dart",
+              "filePath": "examples/lib/layout/wrap_basico.dart",
               "className": "WrapBasico"
             },
             {
@@ -532,7 +532,7 @@
                 "en": "alignment centers the items on each line.",
                 "es": "alignment centra los elementos en cada línea."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/wrap_centralizado.dart",
+              "filePath": "examples/lib/layout/wrap_centralizado.dart",
               "className": "WrapCentralizado"
             }
           ]
@@ -557,7 +557,7 @@
                 "en": "Separates the items of a list.",
                 "es": "Separa los elementos de una lista."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/divider_entre_itens.dart",
+              "filePath": "examples/lib/layout/divider_entre_itens.dart",
               "className": "DividerEntreItens"
             },
             {
@@ -572,7 +572,7 @@
                 "en": "Thickness, indent, color and the VerticalDivider.",
                 "es": "Grosor, sangría, color y el VerticalDivider."
               },
-              "filePath": "apps/showcase/lib/learn/examples/layout/divider_personalizado.dart",
+              "filePath": "examples/lib/layout/divider_personalizado.dart",
               "className": "DividerPersonalizado"
             }
           ]
@@ -607,7 +607,7 @@
                 "en": "Just the text, with the theme's default style.",
                 "es": "Solo el texto, con el estilo predeterminado del tema."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/text_basico.dart",
+              "filePath": "examples/lib/text_images/text_basico.dart",
               "className": "TextBasico"
             },
             {
@@ -622,7 +622,7 @@
                 "en": "TextStyle: size, weight, color, italic, underline.",
                 "es": "TextStyle: tamaño, grosor, color, cursiva, subrayado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/text_estilo.dart",
+              "filePath": "examples/lib/text_images/text_estilo.dart",
               "className": "TextEstilo"
             },
             {
@@ -637,7 +637,7 @@
                 "en": "The ready-made textTheme sizes, instead of loose numbers.",
                 "es": "Los tamaños predefinidos del textTheme, en lugar de números sueltos."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/text_tema.dart",
+              "filePath": "examples/lib/text_images/text_tema.dart",
               "className": "TextTema"
             },
             {
@@ -652,7 +652,7 @@
                 "en": "maxLines and overflow cut it off with \"...\". Tap the button to expand.",
                 "es": "maxLines y overflow lo cortan con \"...\". Toca el botón para expandir."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/text_longo.dart",
+              "filePath": "examples/lib/text_images/text_longo.dart",
               "className": "TextLongo"
             }
           ]
@@ -677,7 +677,7 @@
                 "en": "A tree of TextSpans, each piece with its own style.",
                 "es": "Un árbol de TextSpan, cada parte con su estilo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/rich_text_basico.dart",
+              "filePath": "examples/lib/text_images/rich_text_basico.dart",
               "className": "RichTextBasico"
             },
             {
@@ -692,7 +692,7 @@
                 "en": "The recommended shortcut, which already inherits the app's style.",
                 "es": "El atajo recomendado, que ya hereda el estilo de la app."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/rich_text_text_rich.dart",
+              "filePath": "examples/lib/text_images/rich_text_text_rich.dart",
               "className": "RichTextTextRich"
             },
             {
@@ -707,7 +707,7 @@
                 "en": "WidgetSpan puts a widget in the middle of a sentence.",
                 "es": "WidgetSpan coloca un widget en medio de la frase."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/rich_text_icone.dart",
+              "filePath": "examples/lib/text_images/rich_text_icone.dart",
               "className": "RichTextIcone"
             }
           ]
@@ -732,7 +732,7 @@
                 "en": "Touch and hold to select and copy.",
                 "es": "Mantén pulsado para seleccionar y copiar."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/selectable_text_basico.dart",
+              "filePath": "examples/lib/text_images/selectable_text_basico.dart",
               "className": "SelectableTextBasico"
             },
             {
@@ -747,7 +747,7 @@
                 "en": "Makes several texts selectable at once.",
                 "es": "Hace que varios textos se puedan seleccionar a la vez."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/selectable_text_area.dart",
+              "filePath": "examples/lib/text_images/selectable_text_area.dart",
               "className": "SelectableTextArea"
             }
           ]
@@ -772,7 +772,7 @@
                 "en": "Icons from the Icons class, at the default size.",
                 "es": "Íconos de la clase Icons, en el tamaño predeterminado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/icon_basico.dart",
+              "filePath": "examples/lib/text_images/icon_basico.dart",
               "className": "IconBasico"
             },
             {
@@ -787,7 +787,7 @@
                 "en": "size and color change the size and the color.",
                 "es": "size y color cambian el tamaño y el color."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/icon_tamanho_cor.dart",
+              "filePath": "examples/lib/text_images/icon_tamanho_cor.dart",
               "className": "IconTamanhoCor"
             },
             {
@@ -802,7 +802,7 @@
                 "en": "The same icon as default, outlined, rounded and sharp.",
                 "es": "El mismo ícono en estándar, outlined, rounded y sharp."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/icon_variantes.dart",
+              "filePath": "examples/lib/text_images/icon_variantes.dart",
               "className": "IconVariantes"
             }
           ]
@@ -827,13 +827,13 @@
                 "en": "Image.asset with a file declared in pubspec.yaml.",
                 "es": "Image.asset con un archivo declarado en pubspec.yaml."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/image_asset.dart",
+              "filePath": "examples/lib/text_images/image_asset.dart",
               "className": "ImageAsset",
               "requires": [
                 {
                   "type": "asset",
                   "path": "assets/images/paisagem.png",
-                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                  "filePath": "examples/assets/images/paisagem.png"
                 }
               ]
             },
@@ -849,7 +849,7 @@
                 "en": "Image.network, with loading and error placeholders.",
                 "es": "Image.network, con pantallas de carga y de error."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/image_network.dart",
+              "filePath": "examples/lib/text_images/image_network.dart",
               "className": "ImageNetwork",
               "requires": [
                 {
@@ -870,13 +870,13 @@
                 "en": "BoxFit decides how the image fits the box. Tap the options.",
                 "es": "BoxFit decide cómo cabe la imagen en la caja. Toca las opciones."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/image_fit.dart",
+              "filePath": "examples/lib/text_images/image_fit.dart",
               "className": "ImageFit",
               "requires": [
                 {
                   "type": "asset",
                   "path": "assets/images/paisagem.png",
-                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                  "filePath": "examples/assets/images/paisagem.png"
                 }
               ]
             },
@@ -892,13 +892,13 @@
                 "en": "ClipRRect clips the image with rounded corners.",
                 "es": "ClipRRect recorta la imagen con esquinas redondeadas."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/image_cantos.dart",
+              "filePath": "examples/lib/text_images/image_cantos.dart",
               "className": "ImageCantos",
               "requires": [
                 {
                   "type": "asset",
                   "path": "assets/images/paisagem.png",
-                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                  "filePath": "examples/assets/images/paisagem.png"
                 }
               ]
             }
@@ -924,7 +924,7 @@
                 "en": "A Text or an Icon as the child.",
                 "es": "Un Text o un Icon como child."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/circle_avatar_iniciais.dart",
+              "filePath": "examples/lib/text_images/circle_avatar_iniciais.dart",
               "className": "CircleAvatarIniciais"
             },
             {
@@ -939,13 +939,13 @@
                 "en": "backgroundImage crops the image into a circle.",
                 "es": "backgroundImage recorta la imagen en círculo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/circle_avatar_imagem.dart",
+              "filePath": "examples/lib/text_images/circle_avatar_imagem.dart",
               "className": "CircleAvatarImagem",
               "requires": [
                 {
                   "type": "asset",
                   "path": "assets/images/paisagem.png",
-                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                  "filePath": "examples/assets/images/paisagem.png"
                 }
               ]
             },
@@ -961,7 +961,7 @@
                 "en": "radius, backgroundColor and foregroundColor.",
                 "es": "radius, backgroundColor y foregroundColor."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/circle_avatar_tamanhos.dart",
+              "filePath": "examples/lib/text_images/circle_avatar_tamanhos.dart",
               "className": "CircleAvatarTamanhos"
             }
           ]
@@ -986,7 +986,7 @@
                 "en": "No label: just a dot to signal something new.",
                 "es": "Sin label: solo un punto que indica una novedad."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/badge_ponto.dart",
+              "filePath": "examples/lib/text_images/badge_ponto.dart",
               "className": "BadgePonto"
             },
             {
@@ -1001,7 +1001,7 @@
                 "en": "label with a text, or Badge.count with a 99+ cap.",
                 "es": "label con un texto, o Badge.count con límite de 99+."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/badge_numero.dart",
+              "filePath": "examples/lib/text_images/badge_numero.dart",
               "className": "BadgeNumero"
             },
             {
@@ -1016,7 +1016,7 @@
                 "en": "isLabelVisible hides the badge when the count is zero.",
                 "es": "isLabelVisible oculta la insignia cuando el contador es cero."
               },
-              "filePath": "apps/showcase/lib/learn/examples/text_images/badge_contador.dart",
+              "filePath": "examples/lib/text_images/badge_contador.dart",
               "className": "BadgeContador"
             }
           ]
@@ -1051,7 +1051,7 @@
                 "en": "The minimum: a label and the function called on tap.",
                 "es": "Lo mínimo: un texto y la función que se llama al tocar."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/elevated_button_basico.dart",
+              "filePath": "examples/lib/buttons/elevated_button_basico.dart",
               "className": "ElevatedButtonBasico"
             },
             {
@@ -1066,7 +1066,7 @@
                 "en": "The .icon constructor puts an icon before the label.",
                 "es": "El constructor .icon pone un ícono antes del texto."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/elevated_button_com_icone.dart",
+              "filePath": "examples/lib/buttons/elevated_button_com_icone.dart",
               "className": "ElevatedButtonComIcone"
             },
             {
@@ -1081,7 +1081,7 @@
                 "en": "Swaps the label for a spinner while the action runs and blocks new taps.",
                 "es": "Cambia el texto por un indicador mientras la acción se ejecuta y bloquea nuevos toques."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/elevated_button_carregando.dart",
+              "filePath": "examples/lib/buttons/elevated_button_carregando.dart",
               "className": "ElevatedButtonCarregando"
             },
             {
@@ -1096,7 +1096,7 @@
                 "en": "With onPressed: null the button is disabled. Use the switch to toggle it.",
                 "es": "Con onPressed: null el botón queda deshabilitado. Usa el interruptor para alternarlo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/elevated_button_desabilitado.dart",
+              "filePath": "examples/lib/buttons/elevated_button_desabilitado.dart",
               "className": "ElevatedButtonDesabilitado"
             },
             {
@@ -1111,7 +1111,7 @@
                 "en": "styleFrom changes color, shadow, padding and shape.",
                 "es": "styleFrom cambia el color, la sombra, el espaciado y la forma."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/elevated_button_cores.dart",
+              "filePath": "examples/lib/buttons/elevated_button_cores.dart",
               "className": "ElevatedButtonCores"
             }
           ]
@@ -1136,7 +1136,7 @@
                 "en": "The main action on the screen, in the theme's primary color.",
                 "es": "La acción principal de la pantalla, en el color primario del tema."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/filled_button_basico.dart",
+              "filePath": "examples/lib/buttons/filled_button_basico.dart",
               "className": "FilledButtonBasico"
             },
             {
@@ -1151,7 +1151,7 @@
                 "en": "The softer .tonal version, next to the default one for comparison.",
                 "es": "La versión .tonal, más suave, junto a la estándar para comparar."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/filled_button_tonal.dart",
+              "filePath": "examples/lib/buttons/filled_button_tonal.dart",
               "className": "FilledButtonTonal"
             },
             {
@@ -1166,7 +1166,7 @@
                 "en": "The .icon constructor with an icon and a label.",
                 "es": "El constructor .icon con ícono y texto."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/filled_button_com_icone.dart",
+              "filePath": "examples/lib/buttons/filled_button_com_icone.dart",
               "className": "FilledButtonComIcone"
             },
             {
@@ -1181,7 +1181,7 @@
                 "en": "Inside a SizedBox with infinite width, it fills the whole row.",
                 "es": "Dentro de un SizedBox con ancho infinito, ocupa toda la fila."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/filled_button_largura_total.dart",
+              "filePath": "examples/lib/buttons/filled_button_largura_total.dart",
               "className": "FilledButtonLarguraTotal"
             }
           ]
@@ -1206,7 +1206,7 @@
                 "en": "Just the border, no fill.",
                 "es": "Solo el borde, sin relleno."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/outlined_button_basico.dart",
+              "filePath": "examples/lib/buttons/outlined_button_basico.dart",
               "className": "OutlinedButtonBasico"
             },
             {
@@ -1221,7 +1221,7 @@
                 "en": "The .icon constructor with an icon and a label.",
                 "es": "El constructor .icon con ícono y texto."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/outlined_button_com_icone.dart",
+              "filePath": "examples/lib/buttons/outlined_button_com_icone.dart",
               "className": "OutlinedButtonComIcone"
             },
             {
@@ -1236,7 +1236,7 @@
                 "en": "styleFrom with side changes the border color and width.",
                 "es": "styleFrom con side cambia el color y el grosor del borde."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/outlined_button_borda.dart",
+              "filePath": "examples/lib/buttons/outlined_button_borda.dart",
               "className": "OutlinedButtonBorda"
             },
             {
@@ -1251,7 +1251,7 @@
                 "en": "Uses the theme's error color to flag a dangerous action.",
                 "es": "Usa el color de error del tema para señalar una acción peligrosa."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/outlined_button_destrutivo.dart",
+              "filePath": "examples/lib/buttons/outlined_button_destrutivo.dart",
               "className": "OutlinedButtonDestrutivo"
             }
           ]
@@ -1276,7 +1276,7 @@
                 "en": "Just the label. The background shows up on tap.",
                 "es": "Solo el texto. El fondo aparece al tocar."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/text_button_basico.dart",
+              "filePath": "examples/lib/buttons/text_button_basico.dart",
               "className": "TextButtonBasico"
             },
             {
@@ -1291,7 +1291,7 @@
                 "en": "The .icon constructor with an icon and a label.",
                 "es": "El constructor .icon con ícono y texto."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/text_button_com_icone.dart",
+              "filePath": "examples/lib/buttons/text_button_com_icone.dart",
               "className": "TextButtonComIcone"
             },
             {
@@ -1306,7 +1306,7 @@
                 "en": "The most common use: the actions of an AlertDialog.",
                 "es": "El uso más común: las acciones de un AlertDialog."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/text_button_dialogo.dart",
+              "filePath": "examples/lib/buttons/text_button_dialogo.dart",
               "className": "TextButtonDialogo"
             }
           ]
@@ -1331,7 +1331,7 @@
                 "en": "A tappable icon, with a tooltip for accessibility.",
                 "es": "Un ícono que se puede tocar, con tooltip para accesibilidad."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/icon_button_padrao.dart",
+              "filePath": "examples/lib/buttons/icon_button_padrao.dart",
               "className": "IconButtonPadrao"
             },
             {
@@ -1346,7 +1346,7 @@
                 "en": "Default, .filled, .filledTonal and .outlined side by side.",
                 "es": "Estándar, .filled, .filledTonal y .outlined uno al lado del otro."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/icon_button_variantes.dart",
+              "filePath": "examples/lib/buttons/icon_button_variantes.dart",
               "className": "IconButtonVariantes"
             },
             {
@@ -1361,7 +1361,7 @@
                 "en": "isSelected switches between two icons, like a favorite button.",
                 "es": "isSelected alterna entre dos íconos, como al marcar favorito."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/icon_button_alternavel.dart",
+              "filePath": "examples/lib/buttons/icon_button_alternavel.dart",
               "className": "IconButtonAlternavel"
             },
             {
@@ -1376,7 +1376,7 @@
                 "en": "iconSize and color change the size and color of the icon.",
                 "es": "iconSize y color cambian el tamaño y el color del ícono."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/icon_button_tamanho_cor.dart",
+              "filePath": "examples/lib/buttons/icon_button_tamanho_cor.dart",
               "className": "IconButtonTamanhoCor"
             }
           ]
@@ -1401,7 +1401,7 @@
                 "en": "The regular size. It usually goes in the Scaffold's floatingActionButton.",
                 "es": "El tamaño normal. Suele ir en el floatingActionButton del Scaffold."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/fab_padrao.dart",
+              "filePath": "examples/lib/buttons/fab_padrao.dart",
               "className": "FabPadrao"
             },
             {
@@ -1416,7 +1416,7 @@
                 "en": ".small, for screens with little room.",
                 "es": ".small, para pantallas con poco espacio."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/fab_pequeno.dart",
+              "filePath": "examples/lib/buttons/fab_pequeno.dart",
               "className": "FabPequeno"
             },
             {
@@ -1431,7 +1431,7 @@
                 "en": ".large, to give the action more emphasis.",
                 "es": ".large, para dar más protagonismo a la acción."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/fab_grande.dart",
+              "filePath": "examples/lib/buttons/fab_grande.dart",
               "className": "FabGrande"
             },
             {
@@ -1446,7 +1446,7 @@
                 "en": ".extended, with an icon and a label.",
                 "es": ".extended, con ícono y texto."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/fab_estendido.dart",
+              "filePath": "examples/lib/buttons/fab_estendido.dart",
               "className": "FabEstendido"
             }
           ]
@@ -1471,7 +1471,7 @@
                 "en": "Only one segment selected at a time.",
                 "es": "Solo un segmento marcado a la vez."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/segmented_button_unica.dart",
+              "filePath": "examples/lib/buttons/segmented_button_unica.dart",
               "className": "SegmentedButtonUnica"
             },
             {
@@ -1486,7 +1486,7 @@
                 "en": "multiSelectionEnabled lets you select several.",
                 "es": "multiSelectionEnabled permite marcar varios."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/segmented_button_multipla.dart",
+              "filePath": "examples/lib/buttons/segmented_button_multipla.dart",
               "className": "SegmentedButtonMultipla"
             },
             {
@@ -1501,7 +1501,7 @@
                 "en": "Icon-only segments, each with its own tooltip.",
                 "es": "Segmentos solo con ícono, cada uno con su tooltip."
               },
-              "filePath": "apps/showcase/lib/learn/examples/buttons/segmented_button_icones.dart",
+              "filePath": "examples/lib/buttons/segmented_button_icones.dart",
               "className": "SegmentedButtonIcones"
             }
           ]
@@ -1536,7 +1536,7 @@
                 "en": "A field with a label.",
                 "es": "Un campo con etiqueta."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_basico.dart",
+              "filePath": "examples/lib/forms/text_field_basico.dart",
               "className": "TextFieldBasico"
             },
             {
@@ -1551,7 +1551,7 @@
                 "en": "InputDecoration: hint, helper text, icons, prefix and border.",
                 "es": "InputDecoration: pista, ayuda, íconos, prefijo y borde."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_decoracao.dart",
+              "filePath": "examples/lib/forms/text_field_decoracao.dart",
               "className": "TextFieldDecoracao"
             },
             {
@@ -1566,7 +1566,7 @@
                 "en": "keyboardType and textInputAction for email, number and phone.",
                 "es": "keyboardType y textInputAction para correo, número y teléfono."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_teclados.dart",
+              "filePath": "examples/lib/forms/text_field_teclados.dart",
               "className": "TextFieldTeclados"
             },
             {
@@ -1581,7 +1581,7 @@
                 "en": "obscureText and a button to show or hide it.",
                 "es": "obscureText y un botón para mostrarla u ocultarla."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_senha.dart",
+              "filePath": "examples/lib/forms/text_field_senha.dart",
               "className": "TextFieldSenha"
             },
             {
@@ -1596,7 +1596,7 @@
                 "en": "TextEditingController and onChanged, with a clear button.",
                 "es": "TextEditingController y onChanged, con un botón para borrar."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_controller.dart",
+              "filePath": "examples/lib/forms/text_field_controller.dart",
               "className": "TextFieldController"
             },
             {
@@ -1611,7 +1611,7 @@
                 "en": "minLines, maxLines and maxLength with a counter.",
                 "es": "minLines, maxLines y maxLength con contador."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/text_field_linhas.dart",
+              "filePath": "examples/lib/forms/text_field_linhas.dart",
               "className": "TextFieldLinhas"
             }
           ]
@@ -1636,7 +1636,7 @@
                 "en": "validator shows the error as the person types.",
                 "es": "validator muestra el error mientras la persona escribe."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/text_form_field_validacao.dart",
+              "filePath": "examples/lib/forms/text_form_field_validacao.dart",
               "className": "TextFormFieldValidacao"
             },
             {
@@ -1651,7 +1651,7 @@
                 "en": "inputFormatters block letters and limit the length.",
                 "es": "inputFormatters bloquean letras y limitan el tamaño."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/text_form_field_formatadores.dart",
+              "filePath": "examples/lib/forms/text_form_field_formatadores.dart",
               "className": "TextFormFieldFormatadores"
             }
           ]
@@ -1676,7 +1676,7 @@
                 "en": "validate() checks every field at once.",
                 "es": "validate() revisa todos los campos a la vez."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/form_validar.dart",
+              "filePath": "examples/lib/forms/form_validar.dart",
               "className": "FormValidar"
             },
             {
@@ -1691,7 +1691,7 @@
                 "en": "save() calls each onSaved; reset() goes back to the initial values.",
                 "es": "save() llama a los onSaved; reset() vuelve al valor inicial."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/form_salvar.dart",
+              "filePath": "examples/lib/forms/form_salvar.dart",
               "className": "FormSalvar"
             }
           ]
@@ -1716,7 +1716,7 @@
                 "en": "onChanged filters the fruits with every letter typed.",
                 "es": "onChanged filtra las frutas con cada letra escrita."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/search_bar_filtro.dart",
+              "filePath": "examples/lib/forms/search_bar_filtro.dart",
               "className": "SearchBarFiltro"
             },
             {
@@ -1731,7 +1731,7 @@
                 "en": "SearchAnchor.bar opens a search view with suggestions.",
                 "es": "SearchAnchor.bar abre una pantalla de búsqueda con sugerencias."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/search_bar_sugestoes.dart",
+              "filePath": "examples/lib/forms/search_bar_sugestoes.dart",
               "className": "SearchBarSugestoes"
             }
           ]
@@ -1756,7 +1756,7 @@
                 "en": "Options with a value and a label, plus onSelected.",
                 "es": "Opciones con valor y etiqueta, y onSelected."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/dropdown_menu_basico.dart",
+              "filePath": "examples/lib/forms/dropdown_menu_basico.dart",
               "className": "DropdownMenuBasico"
             },
             {
@@ -1771,7 +1771,7 @@
                 "en": "enableFilter: type to find the option.",
                 "es": "enableFilter: escribe para encontrar la opción."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/dropdown_menu_filtro.dart",
+              "filePath": "examples/lib/forms/dropdown_menu_filtro.dart",
               "className": "DropdownMenuFiltro"
             },
             {
@@ -1786,7 +1786,7 @@
                 "en": "initialSelection, leadingIcon and an enum as the value.",
                 "es": "initialSelection, leadingIcon y un enum como valor."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/dropdown_menu_icones.dart",
+              "filePath": "examples/lib/forms/dropdown_menu_icones.dart",
               "className": "DropdownMenuIcones"
             }
           ]
@@ -1811,7 +1811,7 @@
                 "en": "Type the start of a Brazilian state capital, like \"Be\".",
                 "es": "Escribe el comienzo de una capital brasileña, como \"Be\"."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/autocomplete_basico.dart",
+              "filePath": "examples/lib/forms/autocomplete_basico.dart",
               "className": "AutocompleteBasico"
             },
             {
@@ -1826,7 +1826,7 @@
                 "en": "Options that are objects, with a custom field.",
                 "es": "Opciones que son objetos, con un campo personalizado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/forms/autocomplete_objetos.dart",
+              "filePath": "examples/lib/forms/autocomplete_objetos.dart",
               "className": "AutocompleteObjetos"
             }
           ]
@@ -1861,7 +1861,7 @@
                 "en": "value and onChanged, with the value kept in the State.",
                 "es": "value y onChanged, con el valor guardado en el State."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/checkbox_basico.dart",
+              "filePath": "examples/lib/selection/checkbox_basico.dart",
               "className": "CheckboxBasico"
             },
             {
@@ -1876,7 +1876,7 @@
                 "en": "A checkbox and text in a fully tappable row.",
                 "es": "Checkbox y texto en una fila que se puede tocar entera."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/checkbox_list_tile.dart",
+              "filePath": "examples/lib/selection/checkbox_list_tile.dart",
               "className": "CheckboxListTileExemplo"
             },
             {
@@ -1891,7 +1891,7 @@
                 "en": "tristate: checked, unchecked or \"some\" (null).",
                 "es": "tristate: marcado, desmarcado o \"algunos\" (null)."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/checkbox_tres_estados.dart",
+              "filePath": "examples/lib/selection/checkbox_tres_estados.dart",
               "className": "CheckboxTresEstados"
             }
           ]
@@ -1916,7 +1916,7 @@
                 "en": "The current way: the group holds the choice, each Radio only its value.",
                 "es": "La forma actual: el grupo guarda la elección, cada Radio solo su valor."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/radio_grupo.dart",
+              "filePath": "examples/lib/selection/radio_grupo.dart",
               "className": "RadioGrupo"
             },
             {
@@ -1931,7 +1931,7 @@
                 "en": "Each option in a tappable row, with a subtitle.",
                 "es": "Cada opción en una fila que se puede tocar, con subtítulo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/radio_list_tile.dart",
+              "filePath": "examples/lib/selection/radio_list_tile.dart",
               "className": "RadioListTileExemplo"
             }
           ]
@@ -1956,7 +1956,7 @@
                 "en": "Turns on and off, showing the state next to it.",
                 "es": "Activa y desactiva, mostrando el estado al lado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/switch_basico.dart",
+              "filePath": "examples/lib/selection/switch_basico.dart",
               "className": "SwitchBasico"
             },
             {
@@ -1971,7 +1971,7 @@
                 "en": "The classic format of Settings screens.",
                 "es": "El formato clásico de las pantallas de Ajustes."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/switch_list_tile.dart",
+              "filePath": "examples/lib/selection/switch_list_tile.dart",
               "className": "SwitchListTileExemplo"
             },
             {
@@ -1986,7 +1986,7 @@
                 "en": "thumbIcon changes the thumb icon according to the state.",
                 "es": "thumbIcon cambia el ícono del botón según el estado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/switch_icone.dart",
+              "filePath": "examples/lib/selection/switch_icone.dart",
               "className": "SwitchIcone"
             }
           ]
@@ -2011,7 +2011,7 @@
                 "en": "Any value from 0 to 1, like a volume.",
                 "es": "Cualquier valor de 0 a 1, como un volumen."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/slider_continuo.dart",
+              "filePath": "examples/lib/selection/slider_continuo.dart",
               "className": "SliderContinuo"
             },
             {
@@ -2026,7 +2026,7 @@
                 "en": "divisions makes it step 1 by 1; label shows the value.",
                 "es": "divisions hace que avance de 1 en 1; label muestra el valor."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/slider_divisoes.dart",
+              "filePath": "examples/lib/selection/slider_divisoes.dart",
               "className": "SliderDivisoes"
             },
             {
@@ -2041,7 +2041,7 @@
                 "en": "activeColor, inactiveColor and thumbColor.",
                 "es": "activeColor, inactiveColor y thumbColor."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/slider_cores.dart",
+              "filePath": "examples/lib/selection/slider_cores.dart",
               "className": "SliderCores"
             }
           ]
@@ -2066,7 +2066,7 @@
                 "en": "RangeValues, divisions and a label at each end.",
                 "es": "RangeValues, divisiones y una etiqueta en cada extremo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/range_slider_preco.dart",
+              "filePath": "examples/lib/selection/range_slider_preco.dart",
               "className": "RangeSliderPreco"
             },
             {
@@ -2081,7 +2081,7 @@
                 "en": "onChangeEnd only runs when the finger is lifted.",
                 "es": "onChangeEnd solo se ejecuta cuando la persona suelta el dedo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/range_slider_ao_soltar.dart",
+              "filePath": "examples/lib/selection/range_slider_ao_soltar.dart",
               "className": "RangeSliderAoSoltar"
             }
           ]
@@ -2106,7 +2106,7 @@
                 "en": "A Set holds the selected chips.",
                 "es": "Un Set guarda las etiquetas marcadas."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/filter_chip_filtros.dart",
+              "filePath": "examples/lib/selection/filter_chip_filtros.dart",
               "className": "FilterChipFiltros"
             },
             {
@@ -2121,7 +2121,7 @@
                 "en": "avatar with an icon and no ✓ (showCheckmark).",
                 "es": "avatar con un ícono y sin el ✓ (showCheckmark)."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/filter_chip_icones.dart",
+              "filePath": "examples/lib/selection/filter_chip_icones.dart",
               "className": "FilterChipIcones"
             }
           ]
@@ -2146,7 +2146,7 @@
                 "en": "Tapping the selected one clears it: there can be none.",
                 "es": "Tocar la elegida la desmarca: puede quedar sin ninguna."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/choice_chip_opcional.dart",
+              "filePath": "examples/lib/selection/choice_chip_opcional.dart",
               "className": "ChoiceChipOpcional"
             },
             {
@@ -2161,7 +2161,7 @@
                 "en": "By ignoring the bool, there is always one selected.",
                 "es": "Ignorando el bool, nunca queda sin opción."
               },
-              "filePath": "apps/showcase/lib/learn/examples/selection/choice_chip_obrigatorio.dart",
+              "filePath": "examples/lib/selection/choice_chip_obrigatorio.dart",
               "className": "ChoiceChipObrigatorio"
             }
           ]
@@ -2196,7 +2196,7 @@
                 "en": "Fixed items in children. Inside another scroll view, it needs a height.",
                 "es": "Elementos fijos en children. Dentro de otro scroll, necesita una altura."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/list_view_simples.dart",
+              "filePath": "examples/lib/lists/list_view_simples.dart",
               "className": "ListViewSimples"
             },
             {
@@ -2211,7 +2211,7 @@
                 "en": "Builds only the visible items: it handles 1000 contacts.",
                 "es": "Crea solo los elementos visibles: aguanta 1000 contactos."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/list_view_builder.dart",
+              "filePath": "examples/lib/lists/list_view_builder.dart",
               "className": "ListViewBuilder"
             },
             {
@@ -2226,7 +2226,7 @@
                 "en": "A separator between each item.",
                 "es": "Un separador entre cada elemento."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/list_view_separated.dart",
+              "filePath": "examples/lib/lists/list_view_separated.dart",
               "className": "ListViewSeparated"
             },
             {
@@ -2241,7 +2241,7 @@
                 "en": "scrollDirection: Axis.horizontal, with cards side by side.",
                 "es": "scrollDirection: Axis.horizontal, con tarjetas una al lado de la otra."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/list_view_horizontal.dart",
+              "filePath": "examples/lib/lists/list_view_horizontal.dart",
               "className": "ListViewHorizontal"
             }
           ]
@@ -2266,7 +2266,7 @@
                 "en": "A fixed number of columns.",
                 "es": "Un número fijo de columnas."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/grid_view_count.dart",
+              "filePath": "examples/lib/lists/grid_view_count.dart",
               "className": "GridViewCount"
             },
             {
@@ -2281,7 +2281,7 @@
                 "en": "Items on demand and proportions with childAspectRatio.",
                 "es": "Elementos bajo demanda y proporción con childAspectRatio."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/grid_view_builder.dart",
+              "filePath": "examples/lib/lists/grid_view_builder.dart",
               "className": "GridViewBuilder"
             },
             {
@@ -2296,7 +2296,7 @@
                 "en": "The columns adapt to the screen size.",
                 "es": "Las columnas se ajustan al tamaño de la pantalla."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/grid_view_extent.dart",
+              "filePath": "examples/lib/lists/grid_view_extent.dart",
               "className": "GridViewExtent"
             }
           ]
@@ -2321,7 +2321,7 @@
                 "en": "Title and subtitle.",
                 "es": "Título y subtítulo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/list_tile_basico.dart",
+              "filePath": "examples/lib/lists/list_tile_basico.dart",
               "className": "ListTileBasico"
             },
             {
@@ -2336,7 +2336,7 @@
                 "en": "An avatar before the text and a time after it.",
                 "es": "Avatar antes y hora después del texto."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/list_tile_leading_trailing.dart",
+              "filePath": "examples/lib/lists/list_tile_leading_trailing.dart",
               "className": "ListTileLeadingTrailing"
             },
             {
@@ -2351,7 +2351,7 @@
                 "en": "selected and onTap to choose an option.",
                 "es": "selected y onTap para elegir una opción."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/list_tile_selecao.dart",
+              "filePath": "examples/lib/lists/list_tile_selecao.dart",
               "className": "ListTileSelecao"
             },
             {
@@ -2366,7 +2366,7 @@
                 "en": "isThreeLine for long subtitles.",
                 "es": "isThreeLine para subtítulos largos."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/list_tile_tres_linhas.dart",
+              "filePath": "examples/lib/lists/list_tile_tres_linhas.dart",
               "className": "ListTileTresLinhas"
             }
           ]
@@ -2391,7 +2391,7 @@
                 "en": "A Column taller than the space, with no overflow.",
                 "es": "Una Column más alta que el espacio, sin overflow."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/single_child_scroll_view_vertical.dart",
+              "filePath": "examples/lib/lists/single_child_scroll_view_vertical.dart",
               "className": "SingleChildScrollViewVertical"
             },
             {
@@ -2406,7 +2406,7 @@
                 "en": "A row of filters that scrolls sideways.",
                 "es": "Una fila de filtros que se desplaza hacia el lado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/single_child_scroll_view_horizontal.dart",
+              "filePath": "examples/lib/lists/single_child_scroll_view_horizontal.dart",
               "className": "SingleChildScrollViewHorizontal"
             }
           ]
@@ -2431,7 +2431,7 @@
                 "en": "Swipe to change pages.",
                 "es": "Desliza para cambiar de página."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/page_view_basico.dart",
+              "filePath": "examples/lib/lists/page_view_basico.dart",
               "className": "PageViewBasico"
             },
             {
@@ -2446,7 +2446,7 @@
                 "en": "onPageChanged updates the dots.",
                 "es": "onPageChanged actualiza los puntitos."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/page_view_indicador.dart",
+              "filePath": "examples/lib/lists/page_view_indicador.dart",
               "className": "PageViewIndicador"
             },
             {
@@ -2461,7 +2461,7 @@
                 "en": "PageController changes pages from code.",
                 "es": "PageController cambia de página desde el código."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/page_view_botoes.dart",
+              "filePath": "examples/lib/lists/page_view_botoes.dart",
               "className": "PageViewBotoes"
             }
           ]
@@ -2486,7 +2486,7 @@
                 "en": "Header, grid and list in a single scroll.",
                 "es": "Cabecera, cuadrícula y lista en un solo scroll."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/custom_scroll_view_slivers.dart",
+              "filePath": "examples/lib/lists/custom_scroll_view_slivers.dart",
               "className": "CustomScrollViewSlivers"
             },
             {
@@ -2501,13 +2501,13 @@
                 "en": "A bar with an image that shrinks as you scroll.",
                 "es": "Una barra con imagen que se encoge al desplazarse."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/custom_scroll_view_app_bar.dart",
+              "filePath": "examples/lib/lists/custom_scroll_view_app_bar.dart",
               "className": "CustomScrollViewAppBar",
               "requires": [
                 {
                   "type": "asset",
                   "path": "assets/images/paisagem.png",
-                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                  "filePath": "examples/assets/images/paisagem.png"
                 }
               ]
             }
@@ -2533,7 +2533,7 @@
                 "en": "Pull the list down: a new message arrives.",
                 "es": "Desliza la lista hacia abajo: llega un mensaje nuevo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/refresh_indicator_basico.dart",
+              "filePath": "examples/lib/lists/refresh_indicator_basico.dart",
               "className": "RefreshIndicatorBasico"
             },
             {
@@ -2548,7 +2548,7 @@
                 "en": "How to allow pulling even with no items.",
                 "es": "Cómo permitir deslizar incluso sin ningún elemento."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/refresh_indicator_vazio.dart",
+              "filePath": "examples/lib/lists/refresh_indicator_vazio.dart",
               "className": "RefreshIndicatorVazio"
             }
           ]
@@ -2573,7 +2573,7 @@
                 "en": "Columns, rows and cells.",
                 "es": "Columnas, filas y celdas."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/data_table_basico.dart",
+              "filePath": "examples/lib/lists/data_table_basico.dart",
               "className": "DataTableBasico"
             },
             {
@@ -2588,7 +2588,7 @@
                 "en": "Tap a column header to sort.",
                 "es": "Toca la cabecera de una columna para ordenar."
               },
-              "filePath": "apps/showcase/lib/learn/examples/lists/data_table_ordenacao.dart",
+              "filePath": "examples/lib/lists/data_table_ordenacao.dart",
               "className": "DataTableOrdenacao"
             }
           ]
@@ -2623,7 +2623,7 @@
                 "en": "A Scaffold with an AppBar and a title.",
                 "es": "Un Scaffold con AppBar y título."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/app_bar_basico.dart",
+              "filePath": "examples/lib/navigation/app_bar_basico.dart",
               "className": "AppBarBasico"
             },
             {
@@ -2638,7 +2638,7 @@
                 "en": "A menu on the left and action buttons on the right.",
                 "es": "Menú a la izquierda y botones de acción a la derecha."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/app_bar_acoes.dart",
+              "filePath": "examples/lib/navigation/app_bar_acoes.dart",
               "className": "AppBarAcoes"
             },
             {
@@ -2653,7 +2653,7 @@
                 "en": "backgroundColor, foregroundColor and centerTitle.",
                 "es": "backgroundColor, foregroundColor y centerTitle."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/app_bar_cores.dart",
+              "filePath": "examples/lib/navigation/app_bar_cores.dart",
               "className": "AppBarCores"
             }
           ]
@@ -2678,7 +2678,7 @@
                 "en": "Three tabs that switch the screen content.",
                 "es": "Tres pestañas que cambian el contenido de la pantalla."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_bar_basico.dart",
+              "filePath": "examples/lib/navigation/navigation_bar_basico.dart",
               "className": "NavigationBarBasico"
             },
             {
@@ -2693,7 +2693,7 @@
                 "en": "Badges on the icons and a label only on the selected tab.",
                 "es": "Badge en los íconos y texto solo en la pestaña elegida."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_bar_selos.dart",
+              "filePath": "examples/lib/navigation/navigation_bar_selos.dart",
               "className": "NavigationBarSelos"
             }
           ]
@@ -2718,7 +2718,7 @@
                 "en": "Destinations with an icon and a label next to the content.",
                 "es": "Destinos con ícono y texto al lado del contenido."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_rail_basico.dart",
+              "filePath": "examples/lib/navigation/navigation_rail_basico.dart",
               "className": "NavigationRailBasico"
             },
             {
@@ -2733,7 +2733,7 @@
                 "en": "leading with a FAB and destinations in the middle of the bar.",
                 "es": "leading con un FAB y destinos en el medio de la barra."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_rail_fab.dart",
+              "filePath": "examples/lib/navigation/navigation_rail_fab.dart",
               "className": "NavigationRailFab"
             }
           ]
@@ -2758,7 +2758,7 @@
                 "en": "drawer in the Scaffold and the automatic ☰ in the AppBar.",
                 "es": "drawer en el Scaffold y el ☰ automático en la AppBar."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_drawer_basico.dart",
+              "filePath": "examples/lib/navigation/navigation_drawer_basico.dart",
               "className": "NavigationDrawerBasico"
             },
             {
@@ -2773,7 +2773,7 @@
                 "en": "endDrawer and Scaffold.of(context) inside a Builder.",
                 "es": "endDrawer y Scaffold.of(context) dentro de un Builder."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/navigation_drawer_codigo.dart",
+              "filePath": "examples/lib/navigation/navigation_drawer_codigo.dart",
               "className": "NavigationDrawerCodigo"
             }
           ]
@@ -2798,7 +2798,7 @@
                 "en": "Tabs in the AppBar and content you can swipe through.",
                 "es": "Pestañas en la AppBar y contenido que cambia deslizando."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/tab_bar_view.dart",
+              "filePath": "examples/lib/navigation/tab_bar_view.dart",
               "className": "TabBarComView"
             },
             {
@@ -2813,7 +2813,7 @@
                 "en": "isScrollable for many tabs, with an icon and a label.",
                 "es": "isScrollable para muchas pestañas, con ícono y texto."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/tab_bar_rolavel.dart",
+              "filePath": "examples/lib/navigation/tab_bar_rolavel.dart",
               "className": "TabBarRolavel"
             }
           ]
@@ -2838,7 +2838,7 @@
                 "en": "floatingActionButtonLocation.endContained.",
                 "es": "floatingActionButtonLocation.endContained."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/bottom_app_bar_fab.dart",
+              "filePath": "examples/lib/navigation/bottom_app_bar_fab.dart",
               "className": "BottomAppBarFab"
             },
             {
@@ -2853,7 +2853,7 @@
                 "en": "centerDocked with the CircularNotchedRectangle notch.",
                 "es": "centerDocked con el recorte CircularNotchedRectangle."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/bottom_app_bar_entalhe.dart",
+              "filePath": "examples/lib/navigation/bottom_app_bar_entalhe.dart",
               "className": "BottomAppBarEntalhe"
             }
           ]
@@ -2878,7 +2878,7 @@
                 "en": "Opens a new screen and comes back to this one.",
                 "es": "Abre una pantalla nueva y vuelve a esta."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/navigator_push_pop.dart",
+              "filePath": "examples/lib/navigation/navigator_push_pop.dart",
               "className": "NavigatorPushPop"
             },
             {
@@ -2893,7 +2893,7 @@
                 "en": "The other screen returns the choice in pop.",
                 "es": "La otra pantalla devuelve la elección en el pop."
               },
-              "filePath": "apps/showcase/lib/learn/examples/navigation/navigator_resultado.dart",
+              "filePath": "examples/lib/navigation/navigator_resultado.dart",
               "className": "NavigatorResultado"
             }
           ]
@@ -2928,7 +2928,7 @@
                 "en": "showDialog with a title, text and an OK button.",
                 "es": "showDialog con título, texto y un botón OK."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/alert_dialog_basico.dart",
+              "filePath": "examples/lib/feedback/alert_dialog_basico.dart",
               "className": "AlertDialogBasico"
             },
             {
@@ -2943,7 +2943,7 @@
                 "en": "The value passed to pop comes back from the awaited showDialog.",
                 "es": "El valor del pop vuelve en el await del showDialog."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/alert_dialog_resultado.dart",
+              "filePath": "examples/lib/feedback/alert_dialog_resultado.dart",
               "className": "AlertDialogResultado"
             },
             {
@@ -2958,7 +2958,7 @@
                 "en": "icon at the top and the delete button highlighted.",
                 "es": "icon arriba y el botón de borrar destacado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/alert_dialog_icone.dart",
+              "filePath": "examples/lib/feedback/alert_dialog_icone.dart",
               "className": "AlertDialogIcone"
             },
             {
@@ -2973,7 +2973,7 @@
                 "en": "SimpleDialog: each option closes it and returns its value.",
                 "es": "SimpleDialog: cada opción lo cierra y devuelve su valor."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/alert_dialog_opcoes.dart",
+              "filePath": "examples/lib/feedback/alert_dialog_opcoes.dart",
               "className": "AlertDialogOpcoes"
             }
           ]
@@ -2998,7 +2998,7 @@
                 "en": "ScaffoldMessenger.showSnackBar with a message.",
                 "es": "ScaffoldMessenger.showSnackBar con un mensaje."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/snack_bar_basico.dart",
+              "filePath": "examples/lib/feedback/snack_bar_basico.dart",
               "className": "SnackBarBasico"
             },
             {
@@ -3013,7 +3013,7 @@
                 "en": "SnackBarAction: a button inside the message.",
                 "es": "SnackBarAction: un botón dentro del aviso."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/snack_bar_desfazer.dart",
+              "filePath": "examples/lib/feedback/snack_bar_desfazer.dart",
               "className": "SnackBarDesfazer"
             },
             {
@@ -3028,7 +3028,7 @@
                 "en": "Detached from the edges, with an X to close and a longer duration.",
                 "es": "Separada de los bordes, con X para cerrar y mayor duración."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/snack_bar_flutuante.dart",
+              "filePath": "examples/lib/feedback/snack_bar_flutuante.dart",
               "className": "SnackBarFlutuante"
             }
           ]
@@ -3053,7 +3053,7 @@
                 "en": "showModalBottomSheet with a list of actions.",
                 "es": "showModalBottomSheet con una lista de acciones."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/bottom_sheet_basico.dart",
+              "filePath": "examples/lib/feedback/bottom_sheet_basico.dart",
               "className": "BottomSheetBasico"
             },
             {
@@ -3068,7 +3068,7 @@
                 "en": "DraggableScrollableSheet: drag the panel and scroll the list.",
                 "es": "DraggableScrollableSheet: arrastra el panel y desplaza la lista."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/bottom_sheet_arrastavel.dart",
+              "filePath": "examples/lib/feedback/bottom_sheet_arrastavel.dart",
               "className": "BottomSheetArrastavel"
             },
             {
@@ -3083,7 +3083,7 @@
                 "en": "viewInsets makes the panel rise along with the keyboard.",
                 "es": "viewInsets hace que el panel suba junto con el teclado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/bottom_sheet_teclado.dart",
+              "filePath": "examples/lib/feedback/bottom_sheet_teclado.dart",
               "className": "BottomSheetTeclado"
             }
           ]
@@ -3108,7 +3108,7 @@
                 "en": "Touch and hold the icon to see the hint.",
                 "es": "Mantén pulsado el ícono para ver la pista."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/tooltip_basico.dart",
+              "filePath": "examples/lib/feedback/tooltip_basico.dart",
               "className": "TooltipBasico"
             },
             {
@@ -3123,7 +3123,7 @@
                 "en": "Opens with a single tap, above the icon, in other colors.",
                 "es": "Se abre con un toque, encima del ícono, con otros colores."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/tooltip_personalizado.dart",
+              "filePath": "examples/lib/feedback/tooltip_personalizado.dart",
               "className": "TooltipPersonalizado"
             }
           ]
@@ -3148,7 +3148,7 @@
                 "en": "Icon, message and an action to dismiss it.",
                 "es": "Ícono, mensaje y una acción para cerrar."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/material_banner_basico.dart",
+              "filePath": "examples/lib/feedback/material_banner_basico.dart",
               "className": "MaterialBannerBasico"
             },
             {
@@ -3163,7 +3163,7 @@
                 "en": "Theme colors and actions below the text.",
                 "es": "Colores del tema y acciones debajo del texto."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/material_banner_acoes.dart",
+              "filePath": "examples/lib/feedback/material_banner_acoes.dart",
               "className": "MaterialBannerAcoes"
             }
           ]
@@ -3188,7 +3188,7 @@
                 "en": "No value: loading without knowing how much is left.",
                 "es": "Sin value: cargando sin saber cuánto falta."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/circular_indeterminado.dart",
+              "filePath": "examples/lib/feedback/circular_indeterminado.dart",
               "className": "CircularIndeterminado"
             },
             {
@@ -3203,7 +3203,7 @@
                 "en": "value from 0 to 1 shows how much is done.",
                 "es": "value de 0 a 1 muestra cuánto se ha hecho."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/circular_determinado.dart",
+              "filePath": "examples/lib/feedback/circular_determinado.dart",
               "className": "CircularDeterminado"
             }
           ]
@@ -3228,7 +3228,7 @@
                 "en": "No value: the bar keeps running.",
                 "es": "Sin value: la barra se mueve sin parar."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/linear_indeterminado.dart",
+              "filePath": "examples/lib/feedback/linear_indeterminado.dart",
               "className": "LinearIndeterminado"
             },
             {
@@ -3243,7 +3243,7 @@
                 "en": "Progress through a step-by-step flow, with height and corners.",
                 "es": "Progreso de un paso a paso, con altura y esquinas."
               },
-              "filePath": "apps/showcase/lib/learn/examples/feedback/linear_etapas.dart",
+              "filePath": "examples/lib/feedback/linear_etapas.dart",
               "className": "LinearEtapas"
             }
           ]
@@ -3278,7 +3278,7 @@
                 "en": "A Card with Padding and text.",
                 "es": "Un Card con Padding y texto."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cards/card_basico.dart",
+              "filePath": "examples/lib/cards/card_basico.dart",
               "className": "CardBasico"
             },
             {
@@ -3293,7 +3293,7 @@
                 "en": "Card, Card.filled and Card.outlined.",
                 "es": "Card, Card.filled y Card.outlined."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cards/card_variantes.dart",
+              "filePath": "examples/lib/cards/card_variantes.dart",
               "className": "CardVariantes"
             },
             {
@@ -3308,13 +3308,13 @@
                 "en": "An image at the top, a ListTile and buttons at the bottom.",
                 "es": "Imagen arriba, ListTile y botones al pie."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cards/card_completo.dart",
+              "filePath": "examples/lib/cards/card_completo.dart",
               "className": "CardCompleto",
               "requires": [
                 {
                   "type": "asset",
                   "path": "assets/images/paisagem.png",
-                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                  "filePath": "examples/assets/images/paisagem.png"
                 }
               ]
             },
@@ -3330,7 +3330,7 @@
                 "en": "InkWell inside the Card, with clipBehavior.",
                 "es": "InkWell dentro del Card, con clipBehavior."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cards/card_tocavel.dart",
+              "filePath": "examples/lib/cards/card_tocavel.dart",
               "className": "CardTocavel"
             }
           ]
@@ -3355,7 +3355,7 @@
                 "en": "Tap a question to see the answer.",
                 "es": "Toca una pregunta para ver la respuesta."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cards/expansion_tile_basico.dart",
+              "filePath": "examples/lib/cards/expansion_tile_basico.dart",
               "className": "ExpansionTileBasico"
             },
             {
@@ -3370,7 +3370,7 @@
                 "en": "initiallyExpanded, an icon and onExpansionChanged.",
                 "es": "initiallyExpanded, ícono y onExpansionChanged."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cards/expansion_tile_aberto.dart",
+              "filePath": "examples/lib/cards/expansion_tile_aberto.dart",
               "className": "ExpansionTileAberto"
             }
           ]
@@ -3395,7 +3395,7 @@
                 "en": "You keep track of whether each panel is open.",
                 "es": "Tú guardas si cada panel está abierto o cerrado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cards/expansion_panel_basico.dart",
+              "filePath": "examples/lib/cards/expansion_panel_basico.dart",
               "className": "ExpansionPanelBasico"
             },
             {
@@ -3410,7 +3410,7 @@
                 "en": "ExpansionPanelList.radio closes the others by itself.",
                 "es": "ExpansionPanelList.radio cierra los demás por sí solo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cards/expansion_panel_radio.dart",
+              "filePath": "examples/lib/cards/expansion_panel_radio.dart",
               "className": "ExpansionPanelRadioExemplo"
             }
           ]
@@ -3445,7 +3445,7 @@
                 "en": "Change the values with setState and watch the transition.",
                 "es": "Cambia los valores con setState y mira la transición."
               },
-              "filePath": "apps/showcase/lib/learn/examples/animations/animated_container_basico.dart",
+              "filePath": "examples/lib/animations/animated_container_basico.dart",
               "className": "AnimatedContainerBasico"
             },
             {
@@ -3460,7 +3460,7 @@
                 "en": "The same animation with different curves.",
                 "es": "La misma animación con curvas diferentes."
               },
-              "filePath": "apps/showcase/lib/learn/examples/animations/animated_container_curvas.dart",
+              "filePath": "examples/lib/animations/animated_container_curvas.dart",
               "className": "AnimatedContainerCurvas"
             }
           ]
@@ -3485,7 +3485,7 @@
                 "en": "opacity from 1 to 0 over a duration.",
                 "es": "opacity de 1 a 0 con una duración."
               },
-              "filePath": "apps/showcase/lib/learn/examples/animations/animated_opacity_basico.dart",
+              "filePath": "examples/lib/animations/animated_opacity_basico.dart",
               "className": "AnimatedOpacityBasico"
             },
             {
@@ -3500,7 +3500,7 @@
                 "en": "Invisible still takes up space: onEnd removes it after the fade.",
                 "es": "Invisible todavía ocupa espacio: onEnd lo quita después del fade."
               },
-              "filePath": "apps/showcase/lib/learn/examples/animations/animated_opacity_espaco.dart",
+              "filePath": "examples/lib/animations/animated_opacity_espaco.dart",
               "className": "AnimatedOpacityEspaco"
             }
           ]
@@ -3525,7 +3525,7 @@
                 "en": "Each new number fades in. The key does the magic.",
                 "es": "Cada número nuevo entra con fade. La key hace la magia."
               },
-              "filePath": "apps/showcase/lib/learn/examples/animations/animated_switcher_contador.dart",
+              "filePath": "examples/lib/animations/animated_switcher_contador.dart",
               "className": "AnimatedSwitcherContador"
             },
             {
@@ -3540,7 +3540,7 @@
                 "en": "transitionBuilder with a ScaleTransition on the icon.",
                 "es": "transitionBuilder con ScaleTransition en el ícono."
               },
-              "filePath": "apps/showcase/lib/learn/examples/animations/animated_switcher_transicao.dart",
+              "filePath": "examples/lib/animations/animated_switcher_transicao.dart",
               "className": "AnimatedSwitcherTransicao"
             }
           ]
@@ -3565,13 +3565,13 @@
                 "en": "The same tag on both screens. Tap the photo.",
                 "es": "La misma tag en las dos pantallas. Toca la foto."
               },
-              "filePath": "apps/showcase/lib/learn/examples/animations/hero_imagem.dart",
+              "filePath": "examples/lib/animations/hero_imagem.dart",
               "className": "HeroImagem",
               "requires": [
                 {
                   "type": "asset",
                   "path": "assets/images/paisagem.png",
-                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                  "filePath": "examples/assets/images/paisagem.png"
                 }
               ]
             },
@@ -3587,7 +3587,7 @@
                 "en": "Two Heroes, and the Material that protects the text in flight.",
                 "es": "Dos Heroes y el Material que protege el texto durante el vuelo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/animations/hero_perfil.dart",
+              "filePath": "examples/lib/animations/hero_perfil.dart",
               "className": "HeroPerfil"
             }
           ]
@@ -3612,7 +3612,7 @@
                 "en": "The balance counts up to the new value.",
                 "es": "El saldo sube contando hasta el valor nuevo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/animations/tween_numero.dart",
+              "filePath": "examples/lib/animations/tween_numero.dart",
               "className": "TweenNumero"
             },
             {
@@ -3627,7 +3627,7 @@
                 "en": "ColorTween: the heart changes color smoothly.",
                 "es": "ColorTween: el corazón cambia de color suavemente."
               },
-              "filePath": "apps/showcase/lib/learn/examples/animations/tween_cor.dart",
+              "filePath": "examples/lib/animations/tween_cor.dart",
               "className": "TweenCor"
             }
           ]
@@ -3662,7 +3662,7 @@
                 "en": "onTap, onDoubleTap and onLongPress on the same box.",
                 "es": "onTap, onDoubleTap y onLongPress en la misma caja."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/gesture_detector_toques.dart",
+              "filePath": "examples/lib/gestures/gesture_detector_toques.dart",
               "className": "GestureDetectorToques"
             },
             {
@@ -3677,7 +3677,7 @@
                 "en": "onHorizontalDragUpdate moves the ball along the track.",
                 "es": "onHorizontalDragUpdate mueve la bolita por el riel."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/gesture_detector_arrastar.dart",
+              "filePath": "examples/lib/gestures/gesture_detector_arrastar.dart",
               "className": "GestureDetectorArrastar"
             },
             {
@@ -3692,7 +3692,7 @@
                 "en": "Tap the empty space in each box: only the right one counts.",
                 "es": "Toca el espacio vacío de cada caja: solo cuenta la de la derecha."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/gesture_detector_area.dart",
+              "filePath": "examples/lib/gestures/gesture_detector_area.dart",
               "className": "GestureDetectorArea"
             }
           ]
@@ -3717,7 +3717,7 @@
                 "en": "onTap with the ripple respecting the corners.",
                 "es": "onTap con la onda respetando las esquinas."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/ink_well_basico.dart",
+              "filePath": "examples/lib/gestures/ink_well_basico.dart",
               "className": "InkWellBasico"
             },
             {
@@ -3732,7 +3732,7 @@
                 "en": "With Container the ripple disappears; with Ink it shows.",
                 "es": "Con Container la onda desaparece; con Ink se ve."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/ink_well_ink.dart",
+              "filePath": "examples/lib/gestures/ink_well_ink.dart",
               "className": "InkWellInk"
             },
             {
@@ -3747,7 +3747,7 @@
                 "en": "customBorder and splashColor on an icon.",
                 "es": "customBorder y splashColor en un ícono."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/ink_well_redondo.dart",
+              "filePath": "examples/lib/gestures/ink_well_redondo.dart",
               "className": "InkWellRedondo"
             }
           ]
@@ -3772,7 +3772,7 @@
                 "en": "A unique key, a red background and onDismissed.",
                 "es": "key única, fondo rojo y onDismissed."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/dismissible_apagar.dart",
+              "filePath": "examples/lib/gestures/dismissible_apagar.dart",
               "className": "DismissibleApagar"
             },
             {
@@ -3787,7 +3787,7 @@
                 "en": "confirmDismiss asks before deleting.",
                 "es": "confirmDismiss pregunta antes de borrar."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/dismissible_confirmar.dart",
+              "filePath": "examples/lib/gestures/dismissible_confirmar.dart",
               "className": "DismissibleConfirmar"
             }
           ]
@@ -3812,7 +3812,7 @@
                 "en": "Draggable with data and a DragTarget that receives the color.",
                 "es": "Draggable con data y un DragTarget que recibe el color."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/draggable_soltar.dart",
+              "filePath": "examples/lib/gestures/draggable_soltar.dart",
               "className": "DraggableSoltar"
             },
             {
@@ -3827,7 +3827,7 @@
                 "en": "LongPressDraggable: it doesn't get in the way of page scrolling.",
                 "es": "LongPressDraggable: no interfiere con el scroll de la página."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/draggable_segurar.dart",
+              "filePath": "examples/lib/gestures/draggable_segurar.dart",
               "className": "DraggableSegurar"
             }
           ]
@@ -3852,13 +3852,13 @@
                 "en": "minScale and maxScale limit the zoom.",
                 "es": "minScale y maxScale limitan el zoom."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/interactive_viewer_zoom.dart",
+              "filePath": "examples/lib/gestures/interactive_viewer_zoom.dart",
               "className": "InteractiveViewerZoom",
               "requires": [
                 {
                   "type": "asset",
                   "path": "assets/images/paisagem.png",
-                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                  "filePath": "examples/assets/images/paisagem.png"
                 }
               ]
             },
@@ -3874,13 +3874,13 @@
                 "en": "TransformationController undoes the zoom from code.",
                 "es": "TransformationController deshace el zoom desde el código."
               },
-              "filePath": "apps/showcase/lib/learn/examples/gestures/interactive_viewer_reset.dart",
+              "filePath": "examples/lib/gestures/interactive_viewer_reset.dart",
               "className": "InteractiveViewerReset",
               "requires": [
                 {
                   "type": "asset",
                   "path": "assets/images/paisagem.png",
-                  "filePath": "apps/showcase/assets/images/paisagem.png"
+                  "filePath": "examples/assets/images/paisagem.png"
                 }
               ]
             }
@@ -3916,7 +3916,7 @@
                 "en": "Default, .tinted and .filled.",
                 "es": "Estándar, .tinted y .filled."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_button_estilos.dart",
+              "filePath": "examples/lib/cupertino/cupertino_button_estilos.dart",
               "className": "CupertinoButtonEstilos"
             },
             {
@@ -3931,7 +3931,7 @@
                 "en": "CupertinoIcons and onPressed: null.",
                 "es": "CupertinoIcons y onPressed: null."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_button_icone.dart",
+              "filePath": "examples/lib/cupertino/cupertino_button_icone.dart",
               "className": "CupertinoButtonIcone"
             }
           ]
@@ -3956,7 +3956,7 @@
                 "en": "value, onChanged and the \"on\" color.",
                 "es": "value, onChanged y el color de encendido."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_switch_basico.dart",
+              "filePath": "examples/lib/cupertino/cupertino_switch_basico.dart",
               "className": "CupertinoSwitchBasico"
             },
             {
@@ -3971,7 +3971,7 @@
                 "en": ".adaptive becomes Cupertino on iPhone. Switch the platform.",
                 "es": ".adaptive se vuelve Cupertino en el iPhone. Cambia la plataforma."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/widgets_adaptativos.dart",
+              "filePath": "examples/lib/cupertino/widgets_adaptativos.dart",
               "className": "WidgetsAdaptativos"
             }
           ]
@@ -3996,7 +3996,7 @@
                 "en": "CupertinoPageScaffold with a title and a button.",
                 "es": "CupertinoPageScaffold con título y botón."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_nav_bar_basico.dart",
+              "filePath": "examples/lib/cupertino/cupertino_nav_bar_basico.dart",
               "className": "CupertinoNavBarBasico"
             },
             {
@@ -4011,7 +4011,7 @@
                 "en": "CupertinoSliverNavigationBar shrinks as you scroll.",
                 "es": "CupertinoSliverNavigationBar se encoge al desplazarse."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_nav_bar_titulo_grande.dart",
+              "filePath": "examples/lib/cupertino/cupertino_nav_bar_titulo_grande.dart",
               "className": "CupertinoNavBarTituloGrande"
             }
           ]
@@ -4036,7 +4036,7 @@
                 "en": "showCupertinoDialog with the recommended action in bold.",
                 "es": "showCupertinoDialog con la acción recomendada en negrita."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_alert_basico.dart",
+              "filePath": "examples/lib/cupertino/cupertino_alert_basico.dart",
               "className": "CupertinoAlertBasico"
             },
             {
@@ -4051,7 +4051,7 @@
                 "en": "isDestructiveAction makes the dangerous action red.",
                 "es": "isDestructiveAction pone la acción peligrosa en rojo."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_alert_destrutivo.dart",
+              "filePath": "examples/lib/cupertino/cupertino_alert_destrutivo.dart",
               "className": "CupertinoAlertDestrutivo"
             },
             {
@@ -4066,7 +4066,7 @@
                 "en": "Options that slide up from the bottom, with Cancel set apart.",
                 "es": "Opciones que suben desde abajo, con Cancelar separado."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_action_sheet.dart",
+              "filePath": "examples/lib/cupertino/cupertino_action_sheet.dart",
               "className": "CupertinoActionSheetExemplo"
             }
           ]
@@ -4091,7 +4091,7 @@
                 "en": "itemExtent, an initial controller and onSelectedItemChanged.",
                 "es": "itemExtent, controller inicial y onSelectedItemChanged."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_picker_lista.dart",
+              "filePath": "examples/lib/cupertino/cupertino_picker_lista.dart",
               "className": "CupertinoPickerLista"
             },
             {
@@ -4106,7 +4106,7 @@
                 "en": "The time wheel, in 24-hour format.",
                 "es": "La rueda de horario, en formato de 24 h."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_date_picker.dart",
+              "filePath": "examples/lib/cupertino/cupertino_date_picker.dart",
               "className": "CupertinoDatePickerExemplo"
             }
           ]
@@ -4131,7 +4131,7 @@
                 "en": "value, min, max and divisions, like the Slider.",
                 "es": "value, min, max y divisions, como en el Slider."
               },
-              "filePath": "apps/showcase/lib/learn/examples/cupertino/cupertino_slider_basico.dart",
+              "filePath": "examples/lib/cupertino/cupertino_slider_basico.dart",
               "className": "CupertinoSliderBasico"
             }
           ]

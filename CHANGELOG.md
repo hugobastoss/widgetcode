@@ -7,6 +7,11 @@ código do desenvolvedor, e foi renomeado para **WidgetCode: Widgets for
 Flutter** (repositório `widgetcode`, skill `widgetcode`, app Android
 `com.hvcb.appgames.widgetcode`).
 
+- Repositório enxuto, só com o que interessa a quem busca exemplos: os
+  exemplos e o cadastro das seções viraram o pacote `examples/`, e o
+  `CATALOG.md` lista todos eles com link para o arquivo (gerado junto com o
+  manifest). O código do app saiu deste repositório, assim como o pacote
+  inativo `packages/flutter_widgets_hub`.
 - App de vitrine refeito: 12 seções, 79 widgets e 210 exemplos rodando ao
   vivo, com o código de cada um num painel arrastável.
 - App em português, inglês e espanhol, com tema claro, escuro ou seguindo o

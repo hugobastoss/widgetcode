@@ -6,8 +6,12 @@ on:
   pull_request:
 
 jobs:
+  # O nome é o que a proteção do branch main exige como verificação.
   analyze-test-build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples
     steps:
       - uses: actions/checkout@v4
 
@@ -15,22 +19,13 @@ jobs:
         with:
           channel: stable
 
-      - name: Install workspace dependencies
+      - name: Install dependencies
         run: flutter pub get
 
-      - name: Analyze (packages + showcase)
+      - name: Analyze
         run: flutter analyze
 
-      # O pacote packages/flutter_widgets_hub está inativo neste projeto (são
-      # widgets de design de outros apps): continua sendo analisado acima, mas
-      # não tem mais etapa de teste própria.
-
-      # Inclui o teste que falha se manifest/widgets.json não bater com os
-      # exemplos cadastrados no app.
-      - name: Test showcase app
+      # Roda cada exemplo numa tela de 360 de largura e falha se o
+      # manifest/widgets.json ou o CATALOG.md não baterem com o cadastro.
+      - name: Test
         run: flutter test
-        working-directory: apps/showcase
-
-      - name: Build showcase app (web)
-        run: flutter build web
-        working-directory: apps/showcase

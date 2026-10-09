@@ -14,9 +14,6 @@ the ids of every favorite, comma-separated and in quotes). That repository
 is NOT part of this project:
 treat every fetch below as reading an external reference.
 
-Ignore `packages/flutter_widgets_hub` in that repository: it holds inactive
-design components of other apps and is not part of the catalog.
-
 ## Steps
 
 1. Fetch
