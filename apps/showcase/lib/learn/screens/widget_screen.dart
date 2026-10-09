@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../models.dart';
-import 'code_screen.dart';
+import 'code_sheet.dart';
 
 /// Página de um widget: quando usar e todos os exemplos empilhados, cada um
 /// com a demo ao vivo e o botão que abre o código-fonte.
@@ -37,11 +37,10 @@ class WidgetScreen extends StatelessWidget {
             _ExampleCard(
               number: i + 1,
               example: exemplo,
-              onShowCode: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) =>
-                      CodeScreen(widgetName: doc.name, example: exemplo),
-                ),
+              onShowCode: () => CodeSheet.show(
+                context,
+                widgetName: doc.name,
+                example: exemplo,
               ),
             ),
           ],

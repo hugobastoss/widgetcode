@@ -43,7 +43,7 @@ void main() {
       expect(find.text('1 · Básico'), findsOneWidget);
 
       await tester.tap(find.text('Código').first);
-      await tester.pump(); // monta a CodeScreen, que começa a ler o asset
+      await tester.pump(); // monta o CodeSheet, que começa a ler o asset
       // A leitura do asset é I/O de verdade, que não avança no relógio falso
       // do teste — sem isto o indicador de carregamento gira pra sempre e o
       // pumpAndSettle nunca termina.
@@ -55,6 +55,9 @@ void main() {
         find.textContaining('class ElevatedButtonBasico'),
         findsOneWidget,
       );
+      // O código abre num painel por cima: a página do widget continua lá.
+      expect(find.byType(BottomSheet), findsOneWidget);
+      expect(find.text('Exemplos (5)'), findsOneWidget);
     },
   );
 
