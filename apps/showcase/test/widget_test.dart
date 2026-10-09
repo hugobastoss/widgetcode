@@ -19,7 +19,7 @@ void main() {
       await tester.pumpWidget(const ShowcaseApp());
 
       expect(find.text('Flutter Widgets Hub'), findsOneWidget);
-      expect(find.text('12 seções · 78 widgets'), findsOneWidget);
+      expect(find.text('12 seções · 79 widgets'), findsOneWidget);
 
       await tester.tap(find.text('Botões'));
       await tester.pumpAndSettle();

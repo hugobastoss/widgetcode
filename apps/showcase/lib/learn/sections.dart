@@ -6,6 +6,7 @@ import 'sections/feedback.dart';
 import 'sections/forms.dart';
 import 'sections/layout.dart';
 import 'sections/lists.dart';
+import 'sections/navigation.dart';
 import 'sections/selection.dart';
 import 'sections/text_images.dart';
 
@@ -60,13 +61,13 @@ final kLearnSections = <LearnSection>[
         'Listas, grades e tudo o que rola na tela. Quase todo app tem pelo menos uma.',
     docs: kListsDocs,
   ),
-  const LearnSection(
+  LearnSection(
     name: 'Navegação',
     icon: Icons.explore_outlined,
-    plannedWidgets: [
-      'AppBar', 'NavigationBar', 'NavigationRail', 'NavigationDrawer', //
-      'TabBar', 'BottomAppBar',
-    ],
+    plannedWidgets: [for (final doc in kNavigationDocs) doc.name],
+    intro:
+        'Como a pessoa anda pelo app: barras, abas, menus e a troca entre telas.',
+    docs: kNavigationDocs,
   ),
   LearnSection(
     name: 'Diálogos e avisos',
