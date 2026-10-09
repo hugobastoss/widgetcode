@@ -4,6 +4,7 @@ import 'models.dart';
 import 'sections/buttons.dart';
 import 'sections/cards.dart';
 import 'sections/feedback.dart';
+import 'sections/gestures.dart';
 import 'sections/forms.dart';
 import 'sections/layout.dart';
 import 'sections/lists.dart';
@@ -94,13 +95,13 @@ final kLearnSections = <LearnSection>[
       'TweenAnimationBuilder',
     ],
   ),
-  const LearnSection(
+  LearnSection(
     name: 'Gestos',
     icon: Icons.touch_app_outlined,
-    plannedWidgets: [
-      'GestureDetector', 'InkWell', 'Dismissible', 'Draggable', //
-      'InteractiveViewer',
-    ],
+    plannedWidgets: [for (final doc in kGesturesDocs) doc.name],
+    intro:
+        'Interações além do botão: toques, arrastos, deslizar para apagar e zoom.',
+    docs: kGesturesDocs,
   ),
   const LearnSection(
     name: 'Estilo iOS',
