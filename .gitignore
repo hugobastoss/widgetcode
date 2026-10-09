@@ -1,5 +1,4 @@
-# Monorepo-wide: sem âncora de barra inicial, pra valer em qualquer
-# subpasta (raiz, packages/flutter_widgets_hub, apps/showcase).
+# Sem âncora de barra inicial, pra valer na raiz e em examples/.
 
 # Diversos
 *.class
@@ -32,11 +31,5 @@ migrate_working_dir/
 build/
 coverage/
 
-# Símbolos / obfuscation
-app.*.symbols
-app.*.map.json
-
-# Android Studio
-android/app/debug
-android/app/profile
-android/app/release
+# Pacote (não app): o pubspec.lock não vai para o repositório.
+pubspec.lock

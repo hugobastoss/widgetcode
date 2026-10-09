@@ -1,9 +1,0 @@
-name: flutterwidgetshub_workspace
-publish_to: 'none'
-
-environment:
-  sdk: ^3.9.0
-
-workspace:
-  - packages/flutter_widgets_hub
-  - apps/showcase

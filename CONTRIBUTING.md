@@ -5,9 +5,10 @@ issue descrevendo o exemplo, para alinhar o escopo e evitar retrabalho.
 
 ## Adicionando um exemplo
 
-Os comandos abaixo rodam a partir de `apps/showcase/`.
+Os exemplos ficam no pacote `examples/`, e os comandos abaixo rodam a
+partir dessa pasta.
 
-1. **Crie o arquivo** em `lib/learn/examples/<seção>/<widget>_<variação>.dart`.
+1. **Crie o arquivo** em `lib/<seção>/<widget>_<variação>.dart`.
    - Ele precisa ser **autocontido**: só importa
      `package:flutter/material.dart`, `cupertino.dart` ou `services.dart`,
      e nunca outro arquivo do repositório. É isso que deixa a IA (e quem
@@ -19,7 +20,7 @@ Os comandos abaixo rodam a partir de `apps/showcase/`.
    - Os textos de tela precisam caber num celular de 360 de largura, mesmo
      com fonte grande. Prefira `Flexible`, `Wrap` ou `Column` a uma `Row`
      cheia de textos.
-2. **Cadastre o exemplo** em `lib/learn/sections/<seção>.dart`, com título e
+2. **Cadastre o exemplo** em `lib/src/sections/<seção>.dart`, com título e
    descrição nos três idiomas:
 
    ```dart
@@ -36,23 +37,20 @@ Os comandos abaixo rodam a partir de `apps/showcase/`.
 3. **Pasta ou imagem nova?** Toda pasta de exemplos precisa de uma linha em
    `flutter: assets:` no `pubspec.yaml`, porque pastas de asset não são
    recursivas. Imagens usadas pelos exemplos ficam em `assets/images/`.
-4. **Atualize o manifest:**
+4. **Atualize o manifest e o catálogo:**
 
    ```bash
    flutter test --dart-define=UPDATE_MANIFEST=true test/manifest_test.dart
    ```
 
+   O mesmo comando regrava o `manifest/widgets.json` e o `CATALOG.md`, na
+   raiz do repositório.
 5. **Rode `flutter analyze` e `flutter test`.** O teste dos exemplos roda
    cada um numa tela de 360 de largura e confere que o arquivo define a
-   classe usada. O teste do manifest falha se ele estiver desatualizado.
-
-## Textos da interface
-
-Os textos fixos da interface ficam em `lib/l10n/app_pt.arb` (o modelo),
-`app_en.arb` e `app_es.arb`. `flutter gen-l10n` regenera as classes, e isso
-também roda no build.
+   classe usada. Os testes do manifest e do catálogo falham se algum deles
+   estiver desatualizado.
 
 ## CI
 
-O CI roda `flutter analyze`, `flutter test` (que inclui a conferência do
-manifest) e `flutter build web` do app. Tudo precisa passar antes do merge.
+O CI roda `flutter analyze` e `flutter test` no pacote `examples/`. Tudo
+precisa passar antes do merge.

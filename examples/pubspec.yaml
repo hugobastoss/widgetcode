@@ -1,0 +1,43 @@
+name: widgetcode_examples
+description: >
+  Os exemplos do WidgetCode: um arquivo Dart autocontido por exemplo dos
+  widgets nativos do Flutter, com o cadastro das seções em português,
+  inglês e espanhol.
+version: 0.1.0
+publish_to: 'none'
+repository: https://github.com/hugobastoss/widgetcode
+
+environment:
+  sdk: ^3.9.0
+  flutter: ">=3.35.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  # Os arquivos dos exemplos também são assets: um app que usa este pacote
+  # mostra o código de cada exemplo lendo o próprio arquivo (ver
+  # WidgetExample.assetKey). Pastas de asset não são recursivas: cada seção
+  # nova precisa da sua linha aqui.
+  assets:
+    - lib/animations/
+    - lib/buttons/
+    - lib/cards/
+    - lib/cupertino/
+    - lib/feedback/
+    - lib/forms/
+    - lib/gestures/
+    - lib/layout/
+    - lib/lists/
+    - lib/navigation/
+    - lib/selection/
+    - lib/text_images/
+    # Imagens usadas pelos próprios exemplos (Image.asset, AssetImage).
+    - assets/images/

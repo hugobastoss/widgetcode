@@ -1,13 +1,17 @@
 # WidgetCode: Widgets for Flutter
 
-Vitrine dos **widgets nativos do Flutter**: um app com 12 seções, 79 widgets
-e 210 exemplos rodando de verdade, cada um com o código-fonte real. O
-repositório é organizado para a **IA de código** do desenvolvedor trazer
-qualquer um desses exemplos para o projeto dele. Licença MIT.
+Exemplos dos **widgets nativos do Flutter**: 12 seções, 79 widgets e 210
+exemplos, cada um num arquivo Dart autocontido. Eles rodam de verdade no
+app WidgetCode, e este repositório guarda os exemplos e o índice que a
+**IA de código** do desenvolvedor usa para trazer qualquer um deles para o
+projeto dele. Licença MIT.
+
+Todos os exemplos, com descrição e link para o arquivo, estão no
+**[catálogo](CATALOG.md)**.
 
 ## Como funciona
 
-1. **O app é o expositor.** O dev navega por Seções → Widget → Exemplos,
+1. **O app WidgetCode é o expositor.** O dev navega por Seções → Widget → Exemplos,
    vê cada exemplo funcionando e abre o código num painel. O app está em
    português, inglês e espanhol, com tema claro e escuro.
 2. **O repositório e a skill são a documentação para a IA.**
@@ -74,7 +78,7 @@ Inclua no pedido:
 ## O manifest
 
 [`manifest/widgets.json`](manifest/widgets.json) é **gerado** a partir do
-cadastro de seções do app. Não edite à mão. O formato é
+cadastro das seções, em `examples/lib/src/sections/`. Não edite à mão. O formato é
 `sections[] → widgets[] → examples[]`, e cada exemplo tem:
 
 ```json
@@ -82,10 +86,10 @@ cadastro de seções do app. Não edite à mão. O formato é
   "id": "text_images/image_asset",
   "title": { "pt": "Do app (asset)", "en": "From the app (asset)", "es": "De la app (asset)" },
   "description": { "pt": "…", "en": "…", "es": "…" },
-  "filePath": "apps/showcase/lib/learn/examples/text_images/image_asset.dart",
+  "filePath": "examples/lib/text_images/image_asset.dart",
   "className": "ImageAsset",
   "requires": [
-    { "type": "asset", "path": "assets/images/paisagem.png", "filePath": "apps/showcase/assets/images/paisagem.png" }
+    { "type": "asset", "path": "assets/images/paisagem.png", "filePath": "examples/assets/images/paisagem.png" }
   ]
 }
 ```
@@ -117,38 +121,22 @@ nunca outro arquivo do repositório.
 | Gestos | GestureDetector, InkWell, Dismissible, Draggable, InteractiveViewer |
 | Estilo iOS | CupertinoButton, CupertinoSwitch, CupertinoNavigationBar, CupertinoAlertDialog, CupertinoPicker, CupertinoSlider |
 
-Os exemplos de cada widget, com descrição, estão no manifest.
-
-## Rodando o app
-
-```bash
-cd apps/showcase
-flutter pub get
-flutter run
-```
-
-Para gerar o APK: `flutter build apk --release`.
+Os exemplos de cada widget, com descrição e link para o arquivo, estão no
+[catálogo](CATALOG.md).
 
 ## Estrutura
 
 ```
 widgetcode/
-    manifest/widgets.json              índice dos exemplos para a IA (gerado)
-    .claude/skills/widgetcode/         skill que traz um exemplo para outro projeto
-    apps/showcase/                     o app de vitrine
-        lib/learn/examples/<seção>/    um arquivo por exemplo
-        lib/learn/sections/            cadastro de cada seção, com textos em pt/en/es
-        lib/l10n/                      textos da interface (ARB)
-        assets/icon/                   imagens de origem do ícone do app
-        test/                          testes, incluindo o que gera e confere o manifest
-    packages/flutter_widgets_hub/      inativo (veja abaixo)
+    CATALOG.md                    todos os exemplos, com links (gerado)
+    manifest/widgets.json         índice dos exemplos para a IA (gerado)
+    .claude/skills/widgetcode/    skill que traz um exemplo para outro projeto
+    examples/                     pacote Dart com os exemplos
+        lib/<seção>/              um arquivo por exemplo
+        lib/src/sections/         cadastro de cada seção, com textos em pt/en/es
+        assets/images/            imagens usadas pelos exemplos
+        test/                     testes dos exemplos e geração dos índices
 ```
-
-## Pacote `packages/flutter_widgets_hub` (inativo)
-
-Reúne componentes de design de outros apps do autor. O pacote continua no
-repositório, mas **não faz parte da vitrine, do manifest nem da skill** e
-não recebe manutenção aqui.
 
 ## Contribuindo
 
