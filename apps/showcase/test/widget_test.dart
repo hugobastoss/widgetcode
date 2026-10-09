@@ -7,7 +7,6 @@ import 'package:flutter_widgets_hub_showcase/learn/screens/widget_screen.dart';
 import 'package:flutter_widgets_hub_showcase/learn/sections.dart';
 import 'package:flutter_widgets_hub_showcase/learn/theme_mode_controller.dart';
 import 'package:flutter_widgets_hub_showcase/main.dart';
-import 'package:flutter_widgets_hub_showcase/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// O app em português — os testes procuram os textos em pt —, salvo quando
@@ -256,27 +255,6 @@ void main() {
       }
 
       expect(falhas, isEmpty, reason: falhas.join('\n'));
-    },
-  );
-
-  testWidgets(
-    'catálogo Hub antigo: Home -> categoria -> detalhe com demo ao vivo',
-    (tester) async {
-      await tester.pumpWidget(const MaterialApp(home: HomeScreen()));
-
-      expect(find.text('Flutter Widgets Hub'), findsOneWidget);
-      expect(find.text('Diálogos'), findsOneWidget);
-
-      await tester.tap(find.text('Diálogos'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Confirmation Dialog'), findsOneWidget);
-      await tester.tap(find.text('Confirmation Dialog'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('Abrir diálogo'), findsOneWidget);
-      expect(find.text('Código-fonte'), findsOneWidget);
-      expect(find.textContaining('HubConfirmationDialog'), findsWidgets);
     },
   );
 }

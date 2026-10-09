@@ -54,8 +54,6 @@ class ShowcaseApp extends StatelessWidget {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         localeListResolutionCallback: (doSistema, _) =>
             LocaleController.resolve(doSistema),
-        // A Home antiga do catálogo Hub (screens/home_screen.dart) continua
-        // no projeto, só deixou de ser a tela inicial.
         home: LearnHomeScreen(
           themeController: themeController,
           localeController: localeController,

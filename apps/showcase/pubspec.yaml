@@ -1,7 +1,7 @@
 name: flutter_widgets_hub_showcase
 description: >
-  App de vitrine do flutterwidgetshub — renderiza cada widget do catálogo
-  de verdade, lado a lado com o código-fonte real.
+  App de vitrine do flutterwidgetshub — exemplos dos widgets nativos do
+  Flutter rodando de verdade, com o código-fonte real de cada um.
 version: 0.1.0
 publish_to: 'none'
 resolution: workspace
@@ -15,8 +15,6 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  flutter_widgets_hub:
-    path: ../../packages/flutter_widgets_hub
   intl: any
   shared_preferences: ^2.5.6
   url_launcher: ^6.3.0
