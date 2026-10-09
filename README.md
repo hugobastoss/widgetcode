@@ -27,15 +27,45 @@ qualquer um desses exemplos para o projeto dele. Licença MIT.
 
 ## Dando à sua IA a referência do repositório
 
-**Com a skill (Claude Code).** Copie a pasta
-[`.claude/skills/widgetcode/`](.claude/skills/widgetcode/)
-para a pasta `.claude/skills/` do seu projeto. A partir daí, qualquer pedido
-que cite o WidgetCode ou um ID de exemplo aciona a skill. Ela acha o
-exemplo, copia o arquivo, troca o nome da classe e os textos de
+### Com a skill (Claude Code)
+
+Instale a skill pelo terminal, na pasta raiz do seu projeto Flutter.
+
+**Windows (PowerShell)**
+
+```powershell
+New-Item -ItemType Directory -Force .claude\skills\widgetcode | Out-Null
+Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/hugobastoss/widgetcode/main/.claude/skills/widgetcode/SKILL.md -OutFile .claude\skills\widgetcode\SKILL.md
+```
+
+**macOS e Linux**
+
+```bash
+mkdir -p .claude/skills/widgetcode
+curl -fsSL https://raw.githubusercontent.com/hugobastoss/widgetcode/main/.claude/skills/widgetcode/SKILL.md -o .claude/skills/widgetcode/SKILL.md
+```
+
+Para ter a skill em todos os seus projetos, troque `.claude` por
+`$HOME\.claude` (Windows) ou `~/.claude` (macOS e Linux) nos comandos.
+Rodar os mesmos comandos de novo atualiza a skill. Se preferir, copie à mão
+a pasta [`.claude/skills/widgetcode/`](.claude/skills/widgetcode/) para a
+pasta `.claude/skills/` do seu projeto.
+
+Depois, no Claude Code, cole o pedido copiado do app ou chame a skill pelo
+nome, com o ID do exemplo:
+
+```
+/widgetcode buttons/elevated_button_carregando
+```
+
+Qualquer pedido que cite o WidgetCode ou um ID de exemplo aciona a skill.
+Ela acha o exemplo, copia o arquivo, troca o nome da classe e os textos de
 demonstração e configura o que o exemplo precisar, como a imagem no
 `pubspec.yaml` ou a permissão de internet do Android.
 
-**Sem a skill (qualquer IA com acesso à internet).** Inclua no pedido:
+### Sem a skill (qualquer IA com acesso à internet)
+
+Inclua no pedido:
 
 > Leia https://raw.githubusercontent.com/hugobastoss/widgetcode/main/manifest/widgets.json,
 > ache o exemplo `<id>` e traga o arquivo do campo `filePath` para o meu
