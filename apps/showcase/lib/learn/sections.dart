@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'models.dart';
 import 'sections/buttons.dart';
 import 'sections/layout.dart';
+import 'sections/text_images.dart';
 
 /// As 12 seções da tela inicial, na ordem de exibição. Só as que têm `docs`
 /// abrem; as demais mostram "em construção".
@@ -15,13 +16,13 @@ final kLearnSections = <LearnSection>[
         'Widgets de layout organizam os outros na tela: lado a lado, empilhados, sobrepostos ou com espaço entre eles.',
     docs: kLayoutDocs,
   ),
-  const LearnSection(
+  LearnSection(
     name: 'Texto e imagens',
     icon: Icons.text_fields,
-    plannedWidgets: [
-      'Text', 'RichText', 'SelectableText', 'Icon', 'Image', //
-      'CircleAvatar', 'Badge',
-    ],
+    plannedWidgets: [for (final doc in kTextImagesDocs) doc.name],
+    intro:
+        'Widgets que mostram conteúdo: textos, ícones, imagens e avatares.',
+    docs: kTextImagesDocs,
   ),
   LearnSection(
     name: 'Botões',

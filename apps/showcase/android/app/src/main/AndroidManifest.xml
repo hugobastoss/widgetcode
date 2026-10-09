@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Exemplos com Image.network baixam imagens da internet. Sem esta
+         permissão, só os builds de debug/profile conseguem. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="flutter_widgets_hub_showcase"
         android:name="${applicationName}"
