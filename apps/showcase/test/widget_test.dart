@@ -4,8 +4,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_widgets_hub_showcase/learn/models.dart';
 import 'package:flutter_widgets_hub_showcase/learn/screens/widget_screen.dart';
 import 'package:flutter_widgets_hub_showcase/learn/sections.dart';
+import 'package:flutter_widgets_hub_showcase/learn/theme_mode_controller.dart';
 import 'package:flutter_widgets_hub_showcase/main.dart';
 import 'package:flutter_widgets_hub_showcase/screens/home_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   // O rootBundle guarda em cache o Future de cada asset lido, preso à zona
@@ -16,7 +18,9 @@ void main() {
   testWidgets(
     'navega Início -> Botões -> ElevatedButton -> código do exemplo',
     (tester) async {
-      await tester.pumpWidget(const ShowcaseApp());
+      await tester.pumpWidget(
+        ShowcaseApp(themeController: ThemeModeController.inMemory()),
+      );
 
       expect(find.text('Flutter Widgets Hub'), findsOneWidget);
       expect(find.text('12 seções · 79 widgets'), findsOneWidget);
@@ -46,8 +50,44 @@ void main() {
     },
   );
 
+  testWidgets('o menu de tema troca o app para claro e escuro', (tester) async {
+    final tema = ThemeModeController.inMemory();
+    await tester.pumpWidget(ShowcaseApp(themeController: tema));
+
+    ThemeMode modoDoApp() =>
+        tester.widget<MaterialApp>(find.byType(MaterialApp)).themeMode!;
+    expect(modoDoApp(), ThemeMode.system);
+
+    await tester.tap(find.byTooltip('Tema'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Claro'));
+    await tester.pumpAndSettle();
+    expect(tema.value, ThemeMode.light);
+    expect(modoDoApp(), ThemeMode.light);
+
+    await tester.tap(find.byTooltip('Tema'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Escuro'));
+    await tester.pumpAndSettle();
+    expect(modoDoApp(), ThemeMode.dark);
+  });
+
+  test('a escolha de tema fica salva para a próxima abertura', () async {
+    SharedPreferences.setMockInitialValues({});
+
+    final primeiraVez = await ThemeModeController.load();
+    expect(primeiraVez.value, ThemeMode.system);
+
+    await primeiraVez.select(ThemeMode.light);
+
+    final proximaAbertura = await ThemeModeController.load();
+    expect(proximaAbertura.value, ThemeMode.light);
+  });
+
   testWidgets('a seção Layout abre com seus 11 widgets', (tester) async {
-    await tester.pumpWidget(const ShowcaseApp());
+    await tester.pumpWidget(
+      ShowcaseApp(themeController: ThemeModeController.inMemory()),
+    );
 
     await tester.tap(find.text('Layout'));
     await tester.pumpAndSettle();

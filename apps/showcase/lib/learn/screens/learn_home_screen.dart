@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../models.dart';
 import '../sections.dart';
+import '../theme_mode_controller.dart';
 import 'section_screen.dart';
 
 /// Tela inicial: grade com todas as seções.
 class LearnHomeScreen extends StatelessWidget {
-  const LearnHomeScreen({super.key});
+  const LearnHomeScreen({super.key, required this.themeController});
+
+  final ThemeModeController themeController;
 
   void _abrirSecao(BuildContext context, LearnSection secao) {
     if (secao.docs.isEmpty) {
@@ -29,14 +32,7 @@ class LearnHomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter Widgets Hub'),
-        actions: [
-          IconButton(
-            tooltip: 'Alternar tema claro ou escuro',
-            icon: const Icon(Icons.dark_mode_outlined),
-            onPressed: () =>
-                _avisar(context, 'Troca de tema ainda não implementada.'),
-          ),
-        ],
+        actions: [_ThemeMenu(controller: themeController)],
       ),
       body: CustomScrollView(
         slivers: [
@@ -157,6 +153,41 @@ class _SectionTile extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+/// Botão da AppBar com o ícone do tema atual; abre as três opções, com um ✓
+/// na escolhida.
+class _ThemeMenu extends StatelessWidget {
+  const _ThemeMenu({required this.controller});
+
+  final ThemeModeController controller;
+
+  static const _opcoes = {
+    ThemeMode.light: ('Claro', Icons.light_mode_outlined),
+    ThemeMode.dark: ('Escuro', Icons.dark_mode_outlined),
+    ThemeMode.system: ('Seguir o sistema', Icons.brightness_auto_outlined),
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: controller,
+      builder: (context, atual, _) => PopupMenuButton<ThemeMode>(
+        tooltip: 'Tema',
+        icon: Icon(_opcoes[atual]!.$2),
+        initialValue: atual,
+        onSelected: controller.select,
+        itemBuilder: (context) => [
+          for (final opcao in _opcoes.entries)
+            CheckedPopupMenuItem(
+              value: opcao.key,
+              checked: opcao.key == atual,
+              child: Text(opcao.value.$1),
+            ),
+        ],
       ),
     );
   }
