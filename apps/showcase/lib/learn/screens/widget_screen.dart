@@ -112,6 +112,37 @@ class _ExampleCard extends StatelessWidget {
   }
 }
 
+/// Zera os espaços que o sistema reserva (barra de status, barra de gestos,
+/// teclado) para o filho. Telas em miniatura dentro de um cartão — um
+/// Scaffold com AppBar, uma NavigationBar — senão reservariam esses espaços
+/// como se ocupassem a tela inteira.
+class WithoutSystemInsets extends StatelessWidget {
+  const WithoutSystemInsets({super.key, required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return MediaQuery(
+      data: MediaQuery.of(context)
+          .removePadding(
+            removeTop: true,
+            removeBottom: true,
+            removeLeft: true,
+            removeRight: true,
+          )
+          .removeViewInsets(removeBottom: true)
+          .removeViewPadding(
+            removeTop: true,
+            removeBottom: true,
+            removeLeft: true,
+            removeRight: true,
+          ),
+      child: child,
+    );
+  }
+}
+
 /// A área onde a demo de um exemplo roda. Pública porque os testes
 /// renderizam cada exemplo nela, com as mesmas restrições de tamanho da
 /// página de verdade — um exemplo que estoura aqui estoura no aparelho.
@@ -137,11 +168,14 @@ class ExampleDemo extends StatelessWidget {
       // Numa tela de verdade, quem faz esse papel é o Scaffold.
       child: Material(
         type: MaterialType.transparency,
-        // A demo é interativa. HeroMode desligado pelo mesmo motivo da tela
-        // da seção: vários FABs com a hero tag padrão.
-        child: HeroMode(
-          enabled: false,
-          child: Builder(builder: example.builder),
+        child: WithoutSystemInsets(
+          // A demo é interativa. HeroMode desligado pelo mesmo motivo da
+          // tela da seção (vários FABs com a hero tag padrão), exceto nos
+          // exemplos que ensinam Hero.
+          child: HeroMode(
+            enabled: example.usesHero,
+            child: Builder(builder: example.builder),
+          ),
         ),
       ),
     );

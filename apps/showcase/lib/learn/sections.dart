@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'models.dart';
 import 'sections/buttons.dart';
+import 'sections/feedback.dart';
 import 'sections/forms.dart';
 import 'sections/layout.dart';
 import 'sections/lists.dart';
@@ -67,13 +68,13 @@ final kLearnSections = <LearnSection>[
       'TabBar', 'BottomAppBar',
     ],
   ),
-  const LearnSection(
+  LearnSection(
     name: 'Diálogos e avisos',
     icon: Icons.chat_bubble_outline,
-    plannedWidgets: [
-      'AlertDialog', 'SnackBar', 'BottomSheet', 'Tooltip', 'MaterialBanner', //
-      'CircularProgressIndicator', 'LinearProgressIndicator',
-    ],
+    plannedWidgets: [for (final doc in kFeedbackDocs) doc.name],
+    intro:
+        'Como o app conversa com a pessoa: confirmações, avisos, painéis e indicadores de carregando.',
+    docs: kFeedbackDocs,
   ),
   const LearnSection(
     name: 'Cartões e painéis',

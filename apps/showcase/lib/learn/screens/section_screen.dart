@@ -84,10 +84,12 @@ class _WidgetCard extends StatelessWidget {
               alignment: Alignment.center,
               // HeroMode desligado: vários FABs na mesma tela teriam a mesma
               // hero tag padrão e quebrariam a transição de rota.
-              child: HeroMode(
-                enabled: false,
-                child: IgnorePointer(
-                  child: ExcludeSemantics(child: doc.preview),
+              child: WithoutSystemInsets(
+                child: HeroMode(
+                  enabled: false,
+                  child: IgnorePointer(
+                    child: ExcludeSemantics(child: doc.preview),
+                  ),
                 ),
               ),
             ),

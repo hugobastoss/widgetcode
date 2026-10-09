@@ -51,6 +51,7 @@ class WidgetExample {
     required this.description,
     required this.sourcePath,
     required this.builder,
+    this.usesHero = false,
   });
 
   final String title;
@@ -61,4 +62,9 @@ class WidgetExample {
   final String sourcePath;
 
   final WidgetBuilder builder;
+
+  /// A área da demo desliga as animações Hero (vários FABs na mesma página
+  /// teriam a mesma hero tag). Exemplos que ensinam Hero religam com isto —
+  /// e precisam usar tags únicas no app.
+  final bool usesHero;
 }
