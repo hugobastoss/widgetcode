@@ -131,11 +131,18 @@ class ExampleDemo extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       alignment: Alignment.center,
-      // A demo é interativa. HeroMode desligado pelo mesmo motivo da tela da
-      // seção: vários FABs com a hero tag padrão.
-      child: HeroMode(
-        enabled: false,
-        child: Builder(builder: example.builder),
+      // Material transparente por cima do fundo colorido: ListTile e InkWell
+      // pintam fundo de seleção e efeito de toque no Material mais próximo,
+      // e sem este o mais próximo seria o do cartão — escondido pelo fundo.
+      // Numa tela de verdade, quem faz esse papel é o Scaffold.
+      child: Material(
+        type: MaterialType.transparency,
+        // A demo é interativa. HeroMode desligado pelo mesmo motivo da tela
+        // da seção: vários FABs com a hero tag padrão.
+        child: HeroMode(
+          enabled: false,
+          child: Builder(builder: example.builder),
+        ),
       ),
     );
   }

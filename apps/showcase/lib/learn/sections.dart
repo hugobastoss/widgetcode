@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'models.dart';
 import 'sections/buttons.dart';
 import 'sections/layout.dart';
+import 'sections/lists.dart';
 import 'sections/text_images.dart';
 
 /// As 12 seções da tela inicial, na ordem de exibição. Só as que têm `docs`
@@ -48,13 +49,13 @@ final kLearnSections = <LearnSection>[
       'ChoiceChip',
     ],
   ),
-  const LearnSection(
+  LearnSection(
     name: 'Listas e rolagem',
     icon: Icons.list,
-    plannedWidgets: [
-      'ListView', 'GridView', 'ListTile', 'SingleChildScrollView', //
-      'PageView', 'CustomScrollView', 'RefreshIndicator', 'DataTable',
-    ],
+    plannedWidgets: [for (final doc in kListsDocs) doc.name],
+    intro:
+        'Listas, grades e tudo o que rola na tela. Quase todo app tem pelo menos uma.',
+    docs: kListsDocs,
   ),
   const LearnSection(
     name: 'Navegação',
