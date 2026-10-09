@@ -32,5 +32,6 @@ flutter:
     - lib/learn/examples/layout/
     - lib/learn/examples/text_images/
     - lib/learn/examples/lists/
+    - lib/learn/examples/forms/
     # Imagens usadas pelos próprios exemplos (Image.asset, AssetImage).
     - assets/images/

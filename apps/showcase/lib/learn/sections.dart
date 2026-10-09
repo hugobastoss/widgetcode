@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'models.dart';
 import 'sections/buttons.dart';
+import 'sections/forms.dart';
 import 'sections/layout.dart';
 import 'sections/lists.dart';
 import 'sections/text_images.dart';
@@ -33,13 +34,13 @@ final kLearnSections = <LearnSection>[
         'Botões disparam uma ação quando tocados. Escolha o tipo pela importância da ação na tela.',
     docs: kButtonDocs,
   ),
-  const LearnSection(
+  LearnSection(
     name: 'Formulários',
     icon: Icons.input,
-    plannedWidgets: [
-      'TextField', 'TextFormField', 'Form', 'SearchBar', 'DropdownMenu', //
-      'Autocomplete',
-    ],
+    plannedWidgets: [for (final doc in kFormsDocs) doc.name],
+    intro:
+        'Campos para a pessoa digitar e escolher: a base das telas de login, cadastro e busca.',
+    docs: kFormsDocs,
   ),
   const LearnSection(
     name: 'Seleção',
