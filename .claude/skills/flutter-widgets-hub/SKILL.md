@@ -1,34 +1,61 @@
 ---
 name: flutter-widgets-hub
-description: Use this skill when the user asks to use, port, copy, or reference a widget from the "flutterwidgetshub" (or "flutter widgets hub") repository/catalog into the current Flutter project — phrases like "use the confirmation dialog from flutterwidgetshub", "pull in the FAB widget from the hub", "port widget X from github.com/hugobastoss/flutterwidgetshub".
+description: Use this skill when the user asks to bring, use, copy or port an example from the "Flutter Widgets Hub" app or the "flutterwidgetshub" repository (github.com/hugobastoss/flutterwidgetshub) into the current Flutter project — e.g. "traga o exemplo buttons/elevated_button_carregando do Flutter Widgets Hub", "use the ElevatedButton loading example from flutterwidgetshub", "trae el ejemplo de SegmentedButton con selección múltiple del hub" — or pastes an example id shaped like <section>/<file> (e.g. lists/refresh_indicator_basico).
 ---
 
 # Flutter Widgets Hub — consumer skill
 
-This project has installed this skill to port widgets from
-`github.com/hugobastoss/flutterwidgetshub` into itself. That repository is
-NOT part of this project — treat every fetch below as reading an external
-reference, not local project code.
+`github.com/hugobastoss/flutterwidgetshub` is a showcase app of Flutter's
+native widgets: 12 sections, 79 widgets, 210 examples. Every example is one
+self-contained Dart file that runs live in the app, and the person picks
+one there (the app's code panel has a "copy request for the AI" button that
+includes the example id). That repository is NOT part of this project —
+treat every fetch below as reading an external reference.
+
+Ignore `packages/flutter_widgets_hub` in that repository: it holds inactive
+design components of other apps and is not part of the catalog.
 
 ## Steps
 
-1. Fetch `https://raw.githubusercontent.com/hugobastoss/flutterwidgetshub/main/manifest/widgets.json`.
-2. Find the entry whose `name`/`description`/`exportedSymbols` best matches
-   what the user asked for. If more than one plausibly matches, ask the
-   user to disambiguate rather than guessing.
-3. Fetch the raw source at
-   `https://raw.githubusercontent.com/hugobastoss/flutterwidgetshub/main/<filePath>`
-   (the `filePath` field from the manifest entry).
-4. Copy that widget into this project (e.g. `lib/widgets/<file-name>`),
-   preserving its doc-comment header.
-5. **Do not** also copy any token/theme system from the hub repo — every
-   widget there is self-contained by design (`selfContained: true` in the
-   manifest) and uses only `Theme.of(context)` plus its own parameters.
-   Adapt call sites to pass this project's own colors/spacing as explicit
-   parameters if the widget exposes them; never invent a dependency on a
-   `flutter_widgets_hub` token class, because none of the widgets require
-   one.
-6. If the manifest entry lists more than one `exportedSymbols` (e.g. a FAB
-   file exporting both a primary and an extended variant), bring over only
-   the symbol(s) the user actually asked for, unless they want the whole
-   file.
+1. Fetch
+   `https://raw.githubusercontent.com/hugobastoss/flutterwidgetshub/main/manifest/widgets.json`.
+   Shape: `sections[] → widgets[] → examples[]`. Each example has `id`,
+   `title` and `description` (each in `pt`/`en`/`es`), `filePath`,
+   `className` and, when needed, `requires`. Widgets have `name` (the
+   Flutter class, e.g. `SegmentedButton`) and a translated `description`.
+2. Find the example:
+   - If the user gave an id (`buttons/elevated_button_carregando`), match
+     `examples[].id` exactly.
+   - Otherwise match by widget `name` plus example `title`/`description`,
+     in whichever of the three languages the user wrote.
+   - If more than one plausibly matches, or the user named only a widget,
+     list the candidates (id + title in the user's language) and ask —
+     don't guess.
+3. Fetch the source at `<rawBaseUrl><filePath>` (both from the manifest).
+4. Put it in this project — by default `lib/widgets/<file name>`, or wherever
+   this project keeps widgets or the user asked. The file only imports
+   `package:flutter/material.dart` / `cupertino.dart` / `services.dart`; it
+   never depends on other files of the repository.
+5. Adapt it, because it was written as a demo:
+   - The public class (`className`, e.g. `ElevatedButtonCarregando`) is
+     named after the example, in Portuguese. Rename it to what it does in
+     this project, or, if the user asked for it inside a specific screen,
+     move the relevant widget code into that screen instead of keeping the
+     demo wrapper.
+   - On-screen texts and code comments are in Portuguese: translate texts
+     to this project's language; follow this project's convention for
+     comments.
+   - Demo values (sample data, fixed colors like `Colors.indigo`, fake
+     delays standing in for real work) should be replaced with this
+     project's theme, data and logic where the user expects real behavior.
+6. Handle every entry in `requires`:
+   - `type: asset` — the example loads a bundled image at `path`. Download
+     `<rawBaseUrl><filePath>` to the same `path` in this project and
+     declare its folder under `flutter: assets:` in `pubspec.yaml`, or point
+     the code at an image this project already has.
+   - `type: androidPermission` — make sure
+     `<uses-permission android:name="<name>"/>` is in
+     `android/app/src/main/AndroidManifest.xml` (release builds need it).
+7. Tell the user where the file went and show the one line that uses it
+   (the import plus e.g. `const SaveButton()` in their widget tree), then
+   run `flutter analyze`.
