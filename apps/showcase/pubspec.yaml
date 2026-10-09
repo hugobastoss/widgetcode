@@ -24,3 +24,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  # Os arquivos de exemplo também viram assets: a tela de código lê o
+  # próprio arquivo que roda na demo. Pastas de asset não são recursivas —
+  # cada seção nova precisa da sua linha aqui.
+  assets:
+    - lib/learn/examples/buttons/
+    - lib/learn/examples/layout/
