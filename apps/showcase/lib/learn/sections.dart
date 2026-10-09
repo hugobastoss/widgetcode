@@ -4,6 +4,7 @@ import 'models.dart';
 import 'sections/animations.dart';
 import 'sections/buttons.dart';
 import 'sections/cards.dart';
+import 'sections/cupertino.dart';
 import 'sections/feedback.dart';
 import 'sections/gestures.dart';
 import 'sections/forms.dart';
@@ -104,12 +105,12 @@ final kLearnSections = <LearnSection>[
         'Interações além do botão: toques, arrastos, deslizar para apagar e zoom.',
     docs: kGesturesDocs,
   ),
-  const LearnSection(
+  LearnSection(
     name: 'Estilo iOS',
     icon: Icons.phone_iphone,
-    plannedWidgets: [
-      'CupertinoButton', 'CupertinoSwitch', 'CupertinoNavigationBar', //
-      'CupertinoAlertDialog', 'CupertinoPicker', 'CupertinoSlider',
-    ],
+    plannedWidgets: [for (final doc in kCupertinoDocs) doc.name],
+    intro:
+        'O visual do iPhone: os widgets Cupertino imitam os componentes nativos do iOS.',
+    docs: kCupertinoDocs,
   ),
 ];

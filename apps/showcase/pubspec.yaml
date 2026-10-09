@@ -39,5 +39,6 @@ flutter:
     - lib/learn/examples/cards/
     - lib/learn/examples/gestures/
     - lib/learn/examples/animations/
+    - lib/learn/examples/cupertino/
     # Imagens usadas pelos próprios exemplos (Image.asset, AssetImage).
     - assets/images/
