@@ -75,19 +75,13 @@ class AppLocalizationsEs extends AppLocalizations {
       'Los comentarios del código están en portugués.';
 
   @override
-  String get themeTooltip => 'Tema';
-
-  @override
   String get themeLight => 'Claro';
 
   @override
   String get themeDark => 'Oscuro';
 
   @override
-  String get themeSystem => 'Seguir el sistema';
-
-  @override
-  String get languageTooltip => 'Idioma';
+  String get themeSystem => 'Automático';
 
   @override
   String get languageSystem => 'Seguir el sistema';
@@ -167,4 +161,82 @@ class AppLocalizationsEs extends AppLocalizations {
   String aiRequestMany(String ids) {
     return 'Trae estos ejemplos de Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) a mi proyecto: $ids.';
   }
+
+  @override
+  String get settingsTitle => 'Configuración';
+
+  @override
+  String get settingsAppearance => 'Apariencia';
+
+  @override
+  String get settingsLanguage => 'Idioma';
+
+  @override
+  String get settingsHelp => 'Ayuda';
+
+  @override
+  String get settingsGeneral => 'General';
+
+  @override
+  String get settingsAbout => 'Acerca de';
+
+  @override
+  String get contactSupport => 'Contactar con soporte';
+
+  @override
+  String get contactSupportSubtitle => 'Abre un issue en GitHub';
+
+  @override
+  String supportIssueBody(String version) {
+    return 'Describe tu duda o el problema:\n\n\n---\nFlutter Widgets Hub $version';
+  }
+
+  @override
+  String get shareApp => 'Compartir la app';
+
+  @override
+  String shareMessage(String link) {
+    return 'Conoce Flutter Widgets Hub: ejemplos de los widgets nativos de Flutter funcionando de verdad, con el código de cada uno. $link';
+  }
+
+  @override
+  String get rateApp => 'Calificar la app';
+
+  @override
+  String get rateAppSubtitle => 'En Google Play';
+
+  @override
+  String get moreApps => 'Más aplicaciones';
+
+  @override
+  String moreAppsSubtitle(String developer) {
+    return 'Otras apps de $developer';
+  }
+
+  @override
+  String get termsOfUse => 'Términos de uso';
+
+  @override
+  String get privacyPolicy => 'Política de privacidad';
+
+  @override
+  String get comingSoon => 'Próximamente';
+
+  @override
+  String get aboutApp => 'Acerca de la app';
+
+  @override
+  String get aboutDescription =>
+      'Vitrina de los widgets nativos de Flutter: cada ejemplo funciona de verdad y muestra su propio código, listo para que tu IA de código lo lleve a tu proyecto.';
+
+  @override
+  String get aboutLicense => 'Código abierto, licencia MIT.';
+
+  @override
+  String versionLabel(String version) {
+    return 'Versión $version';
+  }
+
+  @override
+  String get openLinkFailed => 'No se pudo abrir el enlace.';
 }

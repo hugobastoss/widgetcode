@@ -15,6 +15,10 @@ código do desenvolvedor.
 - Botão "Pedir para a IA" e tela "Como usar" no app.
 - Favoritos: a estrela guarda um exemplo numa lista salva, e a tela
   Favoritos pede todos para a IA de uma vez.
+- Tela de Configurações, aberta pela engrenagem da tela inicial: tema,
+  idioma, como usar, suporte (issues do GitHub), compartilhar, avaliar, mais
+  aplicativos e sobre. Termos de uso e política de privacidade ainda em
+  breve.
 - Plataforma Android adicionada ao app.
 - O pacote `packages/flutter_widgets_hub` ficou inativo (componentes de
   design de outros apps).

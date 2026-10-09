@@ -9,6 +9,7 @@ import '../theme_mode_controller.dart';
 import 'favorites_screen.dart';
 import 'help_screen.dart';
 import 'section_screen.dart';
+import 'settings_screen.dart';
 import 'system_padding.dart';
 
 /// Tela inicial: grade com todas as seções.
@@ -48,8 +49,18 @@ class LearnHomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Flutter Widgets Hub'),
         actions: [
-          _LanguageMenu(controller: localeController),
-          _ThemeMenu(controller: themeController),
+          IconButton(
+            tooltip: textos.settingsTitle,
+            icon: const Icon(Icons.settings_outlined),
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => SettingsScreen(
+                  themeController: themeController,
+                  localeController: localeController,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
       body: CustomScrollView(
@@ -217,95 +228,6 @@ class _SectionTile extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-/// Botão da AppBar com o ícone do tema atual; abre as três opções, com um ✓
-/// na escolhida.
-class _ThemeMenu extends StatelessWidget {
-  const _ThemeMenu({required this.controller});
-
-  final ThemeModeController controller;
-
-  static const _icones = {
-    ThemeMode.light: Icons.light_mode_outlined,
-    ThemeMode.dark: Icons.dark_mode_outlined,
-    ThemeMode.system: Icons.brightness_auto_outlined,
-  };
-
-  @override
-  Widget build(BuildContext context) {
-    final textos = AppLocalizations.of(context);
-    final rotulos = {
-      ThemeMode.light: textos.themeLight,
-      ThemeMode.dark: textos.themeDark,
-      ThemeMode.system: textos.themeSystem,
-    };
-
-    return ValueListenableBuilder<ThemeMode>(
-      valueListenable: controller,
-      builder: (context, atual, _) => PopupMenuButton<ThemeMode>(
-        tooltip: textos.themeTooltip,
-        icon: Icon(_icones[atual]),
-        initialValue: atual,
-        onSelected: controller.select,
-        itemBuilder: (context) => [
-          for (final rotulo in rotulos.entries)
-            CheckedPopupMenuItem(
-              value: rotulo.key,
-              checked: rotulo.key == atual,
-              child: Text(rotulo.value),
-            ),
-        ],
-      ),
-    );
-  }
-}
-
-/// Botão da AppBar para escolher o idioma. Os nomes dos idiomas ficam no
-/// próprio idioma, como é costume, para quem não lê o idioma atual.
-class _LanguageMenu extends StatelessWidget {
-  const _LanguageMenu({required this.controller});
-
-  final LocaleController controller;
-
-  // O PopupMenuButton trata o valor null como "fechou sem escolher", então
-  // "seguir o sistema" vira um código próprio.
-  static const _seguirSistema = 'system';
-  static const _nomes = {'pt': 'Português', 'en': 'English', 'es': 'Español'};
-
-  @override
-  Widget build(BuildContext context) {
-    final textos = AppLocalizations.of(context);
-
-    return ValueListenableBuilder<Locale?>(
-      valueListenable: controller,
-      builder: (context, atual, _) {
-        final codigoAtual = atual?.languageCode ?? _seguirSistema;
-        return PopupMenuButton<String>(
-          tooltip: textos.languageTooltip,
-          icon: const Icon(Icons.translate),
-          initialValue: codigoAtual,
-          onSelected: (codigo) => controller.select(
-            codigo == _seguirSistema ? null : Locale(codigo),
-          ),
-          itemBuilder: (context) => [
-            for (final idioma in LocaleController.supportedLocales)
-              CheckedPopupMenuItem(
-                value: idioma.languageCode,
-                checked: idioma.languageCode == codigoAtual,
-                child: Text(_nomes[idioma.languageCode]!),
-              ),
-            const PopupMenuDivider(),
-            CheckedPopupMenuItem(
-              value: _seguirSistema,
-              checked: codigoAtual == _seguirSistema,
-              child: Text(textos.languageSystem),
-            ),
-          ],
-        );
-      },
     );
   }
 }

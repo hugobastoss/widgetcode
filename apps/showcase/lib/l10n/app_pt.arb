@@ -32,11 +32,9 @@
   "codeCopied": "Código copiado.",
   "codeLoadError": "Não foi possível carregar o código.",
   "codeCommentsNote": "Os comentários do código estão em português.",
-  "themeTooltip": "Tema",
   "themeLight": "Claro",
   "themeDark": "Escuro",
-  "themeSystem": "Seguir o sistema",
-  "languageTooltip": "Idioma",
+  "themeSystem": "Automático",
   "languageSystem": "Seguir o sistema",
   "askAiButton": "Pedir para a IA",
   "aiRequestCopied": "Pedido copiado",
@@ -65,5 +63,40 @@
   "aiRequestMany": "Traga estes exemplos do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto: {ids}.",
   "@aiRequestMany": {
     "placeholders": {"ids": {"type": "String"}}
-  }
+  },
+  "settingsTitle": "Configurações",
+  "settingsAppearance": "Aparência",
+  "settingsLanguage": "Idioma",
+  "settingsHelp": "Ajuda",
+  "settingsGeneral": "Geral",
+  "settingsAbout": "Sobre",
+  "contactSupport": "Falar com o suporte",
+  "contactSupportSubtitle": "Abre uma issue no GitHub",
+  "supportIssueBody": "Descreva sua dúvida ou o problema:\n\n\n---\nFlutter Widgets Hub {version}",
+  "@supportIssueBody": {
+    "placeholders": {"version": {"type": "String"}}
+  },
+  "shareApp": "Compartilhar o app",
+  "shareMessage": "Conheça o Flutter Widgets Hub: exemplos dos widgets nativos do Flutter rodando de verdade, com o código de cada um. {link}",
+  "@shareMessage": {
+    "placeholders": {"link": {"type": "String"}}
+  },
+  "rateApp": "Avaliar o app",
+  "rateAppSubtitle": "Na Play Store",
+  "moreApps": "Mais aplicativos",
+  "moreAppsSubtitle": "Outros apps da {developer}",
+  "@moreAppsSubtitle": {
+    "placeholders": {"developer": {"type": "String"}}
+  },
+  "termsOfUse": "Termos de uso",
+  "privacyPolicy": "Política de privacidade",
+  "comingSoon": "Em breve",
+  "aboutApp": "Sobre o app",
+  "aboutDescription": "Vitrine dos widgets nativos do Flutter: cada exemplo roda de verdade e mostra o próprio código, pronto para a sua IA de código levar para o seu projeto.",
+  "aboutLicense": "Código aberto, licença MIT.",
+  "versionLabel": "Versão {version}",
+  "@versionLabel": {
+    "placeholders": {"version": {"type": "String"}}
+  },
+  "openLinkFailed": "Não foi possível abrir o link."
 }

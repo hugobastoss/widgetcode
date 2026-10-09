@@ -184,12 +184,6 @@ abstract class AppLocalizations {
   /// **'Os comentários do código estão em português.'**
   String get codeCommentsNote;
 
-  /// No description provided for @themeTooltip.
-  ///
-  /// In pt, this message translates to:
-  /// **'Tema'**
-  String get themeTooltip;
-
   /// No description provided for @themeLight.
   ///
   /// In pt, this message translates to:
@@ -205,14 +199,8 @@ abstract class AppLocalizations {
   /// No description provided for @themeSystem.
   ///
   /// In pt, this message translates to:
-  /// **'Seguir o sistema'**
+  /// **'Automático'**
   String get themeSystem;
-
-  /// No description provided for @languageTooltip.
-  ///
-  /// In pt, this message translates to:
-  /// **'Idioma'**
-  String get languageTooltip;
 
   /// No description provided for @languageSystem.
   ///
@@ -351,6 +339,144 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Traga estes exemplos do Flutter Widgets Hub (github.com/hugobastoss/flutterwidgetshub) para o meu projeto: {ids}.'**
   String aiRequestMany(String ids);
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Configurações'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsAppearance.
+  ///
+  /// In pt, this message translates to:
+  /// **'Aparência'**
+  String get settingsAppearance;
+
+  /// No description provided for @settingsLanguage.
+  ///
+  /// In pt, this message translates to:
+  /// **'Idioma'**
+  String get settingsLanguage;
+
+  /// No description provided for @settingsHelp.
+  ///
+  /// In pt, this message translates to:
+  /// **'Ajuda'**
+  String get settingsHelp;
+
+  /// No description provided for @settingsGeneral.
+  ///
+  /// In pt, this message translates to:
+  /// **'Geral'**
+  String get settingsGeneral;
+
+  /// No description provided for @settingsAbout.
+  ///
+  /// In pt, this message translates to:
+  /// **'Sobre'**
+  String get settingsAbout;
+
+  /// No description provided for @contactSupport.
+  ///
+  /// In pt, this message translates to:
+  /// **'Falar com o suporte'**
+  String get contactSupport;
+
+  /// No description provided for @contactSupportSubtitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Abre uma issue no GitHub'**
+  String get contactSupportSubtitle;
+
+  /// No description provided for @supportIssueBody.
+  ///
+  /// In pt, this message translates to:
+  /// **'Descreva sua dúvida ou o problema:\n\n\n---\nFlutter Widgets Hub {version}'**
+  String supportIssueBody(String version);
+
+  /// No description provided for @shareApp.
+  ///
+  /// In pt, this message translates to:
+  /// **'Compartilhar o app'**
+  String get shareApp;
+
+  /// No description provided for @shareMessage.
+  ///
+  /// In pt, this message translates to:
+  /// **'Conheça o Flutter Widgets Hub: exemplos dos widgets nativos do Flutter rodando de verdade, com o código de cada um. {link}'**
+  String shareMessage(String link);
+
+  /// No description provided for @rateApp.
+  ///
+  /// In pt, this message translates to:
+  /// **'Avaliar o app'**
+  String get rateApp;
+
+  /// No description provided for @rateAppSubtitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Na Play Store'**
+  String get rateAppSubtitle;
+
+  /// No description provided for @moreApps.
+  ///
+  /// In pt, this message translates to:
+  /// **'Mais aplicativos'**
+  String get moreApps;
+
+  /// No description provided for @moreAppsSubtitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Outros apps da {developer}'**
+  String moreAppsSubtitle(String developer);
+
+  /// No description provided for @termsOfUse.
+  ///
+  /// In pt, this message translates to:
+  /// **'Termos de uso'**
+  String get termsOfUse;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In pt, this message translates to:
+  /// **'Política de privacidade'**
+  String get privacyPolicy;
+
+  /// No description provided for @comingSoon.
+  ///
+  /// In pt, this message translates to:
+  /// **'Em breve'**
+  String get comingSoon;
+
+  /// No description provided for @aboutApp.
+  ///
+  /// In pt, this message translates to:
+  /// **'Sobre o app'**
+  String get aboutApp;
+
+  /// No description provided for @aboutDescription.
+  ///
+  /// In pt, this message translates to:
+  /// **'Vitrine dos widgets nativos do Flutter: cada exemplo roda de verdade e mostra o próprio código, pronto para a sua IA de código levar para o seu projeto.'**
+  String get aboutDescription;
+
+  /// No description provided for @aboutLicense.
+  ///
+  /// In pt, this message translates to:
+  /// **'Código aberto, licença MIT.'**
+  String get aboutLicense;
+
+  /// No description provided for @versionLabel.
+  ///
+  /// In pt, this message translates to:
+  /// **'Versão {version}'**
+  String versionLabel(String version);
+
+  /// No description provided for @openLinkFailed.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não foi possível abrir o link.'**
+  String get openLinkFailed;
 }
 
 class _AppLocalizationsDelegate

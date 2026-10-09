@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_widgets_hub_showcase/learn/favorites.dart';
+import 'package:flutter_widgets_hub_showcase/learn/links.dart';
 import 'package:flutter_widgets_hub_showcase/learn/locale_controller.dart';
 import 'package:flutter_widgets_hub_showcase/learn/models.dart';
 import 'package:flutter_widgets_hub_showcase/learn/screens/widget_screen.dart';
 import 'package:flutter_widgets_hub_showcase/learn/sections.dart';
 import 'package:flutter_widgets_hub_showcase/learn/theme_mode_controller.dart';
 import 'package:flutter_widgets_hub_showcase/main.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// O app em português — os testes procuram os textos em pt — e sem
@@ -29,6 +31,17 @@ void main() {
   // de relógio falso do teste que o criou. Reaproveitado num teste seguinte,
   // ele nunca completa — então cada teste começa com o cache vazio.
   setUp(rootBundle.clear);
+
+  // O app instalado, para a versão e os links da Play Store.
+  setUp(
+    () => PackageInfo.setMockInitialValues(
+      appName: 'Flutter Widgets Hub',
+      packageName: 'com.exemplo.hub',
+      version: '0.1.0',
+      buildNumber: '1',
+      buildSignature: '',
+    ),
+  );
 
   testWidgets(
     'navega Início -> Botões -> ElevatedButton -> código do exemplo',
@@ -93,7 +106,9 @@ void main() {
     },
   );
 
-  testWidgets('o menu de tema troca o app para claro e escuro', (tester) async {
+  testWidgets('as configurações trocam o app para claro e escuro', (
+    tester,
+  ) async {
     final tema = ThemeModeController.inMemory();
     await tester.pumpWidget(_app(tema: tema));
 
@@ -101,22 +116,22 @@ void main() {
         tester.widget<MaterialApp>(find.byType(MaterialApp)).themeMode!;
     expect(modoDoApp(), ThemeMode.system);
 
-    await tester.tap(find.byTooltip('Tema'));
+    await tester.tap(find.byTooltip('Configurações'));
     await tester.pumpAndSettle();
-    await tester.tap(
-      find.widgetWithText(CheckedPopupMenuItem<ThemeMode>, 'Claro'),
-    );
+    expect(find.text('APARÊNCIA'), findsOneWidget);
+
+    await tester.tap(find.text('Claro'));
     await tester.pumpAndSettle();
     expect(tema.value, ThemeMode.light);
     expect(modoDoApp(), ThemeMode.light);
 
-    await tester.tap(find.byTooltip('Tema'));
-    await tester.pumpAndSettle();
-    await tester.tap(
-      find.widgetWithText(CheckedPopupMenuItem<ThemeMode>, 'Escuro'),
-    );
+    await tester.tap(find.text('Escuro'));
     await tester.pumpAndSettle();
     expect(modoDoApp(), ThemeMode.dark);
+
+    await tester.tap(find.text('Automático'));
+    await tester.pumpAndSettle();
+    expect(modoDoApp(), ThemeMode.system);
   });
 
   test('a escolha de tema fica salva para a próxima abertura', () async {
@@ -131,7 +146,9 @@ void main() {
     expect(proximaAbertura.value, ThemeMode.light);
   });
 
-  testWidgets('o menu de idioma troca o app entre pt, en e es', (tester) async {
+  testWidgets('as configurações trocam o app entre pt, en e es', (
+    tester,
+  ) async {
     // Celular pequeno: textos em en/es têm outros tamanhos e não podem
     // estourar a largura.
     tester.view.physicalSize = const Size(1080, 2400);
@@ -144,20 +161,27 @@ void main() {
     expect(find.text('Seções'), findsOneWidget);
     expect(find.text('Botões'), findsOneWidget);
 
-    Future<void> escolher(String nome) async {
-      await tester.tap(find.byType(PopupMenuButton<String>));
+    // Abre as configurações pelo ícone (a dica muda com o idioma), escolhe
+    // o idioma e volta para a tela inicial.
+    Future<void> escolher(String nome, {required String configuracoes}) async {
+      await tester.tap(find.byIcon(Icons.settings_outlined));
       await tester.pumpAndSettle();
-      await tester.tap(find.widgetWithText(CheckedPopupMenuItem<String>, nome));
+      expect(find.text(configuracoes), findsNothing);
+      await tester.tap(find.text(nome));
+      await tester.pumpAndSettle();
+      // A tela continua aberta, já no idioma novo.
+      expect(find.text(configuracoes), findsOneWidget);
+      await tester.tap(find.byType(BackButton));
       await tester.pumpAndSettle();
     }
 
-    await escolher('English');
+    await escolher('English', configuracoes: 'Settings');
     expect(idioma.value, const Locale('en'));
     expect(find.text('Sections'), findsOneWidget);
     expect(find.text('Buttons'), findsOneWidget);
     expect(find.text('12 sections · 79 widgets'), findsOneWidget);
 
-    await escolher('Español');
+    await escolher('Español', configuracoes: 'Configuración');
     expect(find.text('Secciones'), findsOneWidget);
     expect(find.text('Botones'), findsOneWidget);
 
@@ -236,6 +260,13 @@ void main() {
         find.ancestor(of: find.text(texto), matching: find.byType(Card)).first;
 
     await tester.pumpWidget(_app());
+    await tester.tap(find.byTooltip('Configurações'));
+    await tester.pumpAndSettle();
+    await rolarAteOFim();
+    acimaDaBarra(find.text('Versão 0.1.0 (1)'));
+    await tester.tap(find.byType(BackButton));
+    await tester.pumpAndSettle();
+
     await rolarAteOFim();
     acimaDaBarra(cartaoCom('Estilo iOS'));
 
@@ -364,6 +395,76 @@ void main() {
       ],
       ['lists/page_view_botoes'],
     );
+  });
+
+  testWidgets('configurações: compartilhar, sobre e opções ainda em breve', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.devicePixelRatio = 3;
+    addTearDown(tester.view.reset);
+
+    const canal = MethodChannel('dev.fluttercommunity.plus/share');
+    Map<Object?, Object?>? compartilhado;
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(canal, (
+      chamada,
+    ) async {
+      compartilhado = chamada.arguments as Map<Object?, Object?>;
+      return 'dev.fluttercommunity.plus/share/unavailable';
+    });
+    addTearDown(
+      () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
+        canal,
+        null,
+      ),
+    );
+
+    await tester.pumpWidget(_app());
+    await tester.tap(find.byTooltip('Configurações'));
+    await tester.pumpAndSettle();
+
+    // Compartilhar manda o link da Play Store com o ID do app instalado.
+    await tester.scrollUntilVisible(find.text('Compartilhar o app'), 200);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Compartilhar o app'));
+    await tester.pumpAndSettle();
+    expect(
+      compartilhado?['text'],
+      endsWith('https://play.google.com/store/apps/details?id=com.exemplo.hub'),
+    );
+
+    // Termos e política aparecem, mas desativados, até ficarem prontos.
+    await tester.scrollUntilVisible(find.text('Sobre o app'), 200);
+    await tester.pumpAndSettle();
+    for (final opcao in ['Termos de uso', 'Política de privacidade']) {
+      expect(
+        tester.widget<ListTile>(find.widgetWithText(ListTile, opcao)).enabled,
+        isFalse,
+      );
+    }
+    expect(find.text('Em breve'), findsNWidgets(2));
+
+    await tester.tap(find.text('Sobre o app'));
+    await tester.pumpAndSettle();
+    expect(find.byType(AboutDialog), findsOneWidget);
+    expect(find.text('0.1.0 (1)'), findsOneWidget);
+    expect(
+      find.text('© 2026 HVCB App&Games\nCódigo aberto, licença MIT.'),
+      findsOneWidget,
+    );
+  });
+
+  test('os links das configurações', () {
+    expect(
+      playStoreAppUri('com.exemplo.hub').toString(),
+      'https://play.google.com/store/apps/details?id=com.exemplo.hub',
+    );
+    // O & do nome não pode cortar o parâmetro.
+    expect(playStoreDeveloperUri().queryParameters['id'], 'HVCB App&Games');
+    final suporte = newIssueUri('Dúvida:\n\n---\nversão 1');
+    expect(suporte.host, 'github.com');
+    expect(suporte.path, '/hugobastoss/flutterwidgetshub/issues/new');
+    expect(suporte.queryParameters['body'], 'Dúvida:\n\n---\nversão 1');
   });
 
   testWidgets('o cartão da tela inicial abre o "Como usar"', (tester) async {
