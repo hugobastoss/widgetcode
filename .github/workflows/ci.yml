@@ -6,7 +6,8 @@ on:
   pull_request:
 
 jobs:
-  analyze-test:
+  # O nome é o que a proteção do branch main exige como verificação.
+  analyze-test-build:
     runs-on: ubuntu-latest
     defaults:
       run:
