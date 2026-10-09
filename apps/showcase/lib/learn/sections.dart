@@ -5,6 +5,7 @@ import 'sections/buttons.dart';
 import 'sections/forms.dart';
 import 'sections/layout.dart';
 import 'sections/lists.dart';
+import 'sections/selection.dart';
 import 'sections/text_images.dart';
 
 /// As 12 seções da tela inicial, na ordem de exibição. Só as que têm `docs`
@@ -42,13 +43,13 @@ final kLearnSections = <LearnSection>[
         'Campos para a pessoa digitar e escolher: a base das telas de login, cadastro e busca.',
     docs: kFormsDocs,
   ),
-  const LearnSection(
+  LearnSection(
     name: 'Seleção',
     icon: Icons.check_box_outlined,
-    plannedWidgets: [
-      'Checkbox', 'Radio', 'Switch', 'Slider', 'RangeSlider', 'FilterChip', //
-      'ChoiceChip',
-    ],
+    plannedWidgets: [for (final doc in kSelectionDocs) doc.name],
+    intro:
+        'Controles para marcar, ligar, escolher e ajustar valores com um toque.',
+    docs: kSelectionDocs,
   ),
   LearnSection(
     name: 'Listas e rolagem',
