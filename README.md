@@ -103,14 +103,15 @@ Para gerar o APK: `flutter build apk --release`.
 
 ```
 widgetcode/
-├── manifest/widgets.json                # índice dos exemplos para a IA (gerado)
-├── .claude/skills/widgetcode/  # skill que traz um exemplo para outro projeto
-├── apps/showcase/                       # o app de vitrine
-│   ├── lib/learn/examples/<seção>/      # um arquivo por exemplo
-│   ├── lib/learn/sections/              # cadastro de cada seção, com textos em pt/en/es
-│   ├── lib/l10n/                        # textos da interface (ARB)
-│   └── test/                            # testes, incluindo o que gera e confere o manifest
-└── packages/flutter_widgets_hub/        # inativo (veja abaixo)
+    manifest/widgets.json              índice dos exemplos para a IA (gerado)
+    .claude/skills/widgetcode/         skill que traz um exemplo para outro projeto
+    apps/showcase/                     o app de vitrine
+        lib/learn/examples/<seção>/    um arquivo por exemplo
+        lib/learn/sections/            cadastro de cada seção, com textos em pt/en/es
+        lib/l10n/                      textos da interface (ARB)
+        assets/icon/                   imagens de origem do ícone do app
+        test/                          testes, incluindo o que gera e confere o manifest
+    packages/flutter_widgets_hub/      inativo (veja abaixo)
 ```
 
 ## Pacote `packages/flutter_widgets_hub` (inativo)
