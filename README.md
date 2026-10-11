@@ -1,4 +1,4 @@
-# WidgetCode: Widgets for Flutter
+# WidgetCode: Widgets UI Flutter
 
 Exemplos dos **widgets nativos do Flutter**: 12 seções, 79 widgets e 210
 exemplos, cada um num arquivo Dart autocontido. Eles rodam de verdade no
